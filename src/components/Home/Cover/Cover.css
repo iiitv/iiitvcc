@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&family=Open+Sans:wght@300&display=swap");
+
+#cover-display{
+    background-color: #181818;
+}
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-items: baseline;
+  margin-left: 123px;
+}
+.display-head {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+.display-heading {
+  font-family: "Montserrat";
+  font-style: normal;
+  margin-top: 77px;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 78px;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+.good-line {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+.inf-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 65px;
+}
+.trans-btn {
+  border: 1px solid #f638dc;
+  box-sizing: border-box;
+  border-radius: 27.5px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -0.05em;
+  color: #f638dc;
+  padding: 5px 20px;
+  background-color: #181818;
+}
+.coder-image {
+  margin-left: 120px;
+  width: 450px;
+  height: 550px;
+}
