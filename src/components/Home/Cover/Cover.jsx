@@ -5,7 +5,7 @@ class Cover extends Component {
     render() {
         return (
             <div>
-                Cover Page
+                Cover Page YES
             </div>
         );
     }
