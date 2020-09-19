@@ -6,6 +6,10 @@ class Cover extends Component {
         return (
             <div>
                 Cover Page YES
+
+                <button>
+                    click me
+                </button>
             </div>
         );
     }
