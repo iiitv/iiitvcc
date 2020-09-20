@@ -59,6 +59,10 @@
   background-color: #181818;
   cursor: pointer;
 }
+.trans-btn:hover{
+  background-color: #f638dc;
+  color: #000000;
+}
 .coder-image {
   margin-right: 117px;
   width: 450px;
