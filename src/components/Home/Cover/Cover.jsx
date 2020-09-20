@@ -9,8 +9,8 @@ class Cover extends Component {
           <div id="flex-container">
             <div className="display-head">
               <h1 className="display-heading">
-                Technical Blogging <br />
-                website for posting <br />
+                Technical Blogging  
+                website for posting 
                 Technical blogs
               </h1>
               <p className="good-line">
