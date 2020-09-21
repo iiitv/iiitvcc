@@ -72,8 +72,8 @@
   color: #000000;
 }
 .coder-image {
-  width: 380px;
-  height: 430px;
+  width: 400px;
+  height: 500px;
 }
 @media only screen and (max-width: 900px) {
    #flex-container{
