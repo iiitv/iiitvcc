@@ -1,3 +1,7 @@
+body{
+  background-color: gray;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -48,6 +52,7 @@ nav {
 
 .nav-img {
   width: 60px;
+  border-radius: 50%;
 }
 
 .cta {

@@ -4,8 +4,8 @@ import './Footer.css'
 class Footer extends Component {
     render() {
         return (
-            <div>
-                
+            <div className="Footer">
+                Designed by Dot
             </div>
         );
     }

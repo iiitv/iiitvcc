@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(27,27,27);
+    width:100%;
+}   
+
+.Mid{
+    width: 100%;
+}
+
+@media screen and (min-width:860px){
+    .text{
+        font-size: 12px;
+    }
+}
+
+.text{ 
+   font-size: 170px;
+   color: rgb(53,53,53);
+   padding-left: 120px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+.text-1{
+    position: absolute;
+    color: rgb(163,163,163);
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 250px;
+    padding-top:20px;
+}
+
+hr.ver{
+    position: absolute;
+    width: 1259px;
+    margin-top: 100px;
+    /* border: 1px solid white ; */
+}
+
+.container{
+    display: block;
+    background-color: rgb(53,53,53);
+    box-shadow: 10px 10px 10px 0.3px rgb(24,24,24);
+    margin-left:130px;
+    margin-right:130px;
+    height:2511px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.c-1{
+    display:flex;
+}
+
+.box{
+   position: relative;
+   display: flex; 
+   height: 250px;   
+   width: 240px;
+   margin-top:  220px;
+   margin-left: 250px;
+   background-color: rgb(52,0,105);  
+}
+
+.box>div{
+    visibility: hidden;
+}
+
+
+.box:hover .centerline{
+    visibility: visible;
+    background-color: rgb(96,32,128);
+    cursor: pointer;
+    width:280px;
+    height:280px;
+    z-index: 1;
+    visibility: visible;
+    transition-delay: .1s;
+}
+
+.name{
+    position: absolute;
+    color: aliceblue;
+    background-color: rgb(96,32,128);
+    height: 24px;
+    text-align: center;
+    padding-top: 2px;
+    width: 100%;
+    margin-top: 200px;
+}
+
+.text-2{
+    position: absolute;
+    color: rgb(163,163,163);
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 130px;
+    padding-top:120px;   
+}
+
+.c-2{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 170px;
+}
+
+
+.boxy{
+    position: relative;   
+    height: 250px;   
+    width: 240px;
+    margin-top:  160px;
+    margin-left: 135px;
+    background-color: rgb(52,0,105);
+ }
+
+ 
+hr.ver2{
+    position: absolute;
+    width: 1259px;
+    margin-top: 200px;
+}
+
+.c-3{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 170px;
+}
+
