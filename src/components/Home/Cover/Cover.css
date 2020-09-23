@@ -95,26 +95,28 @@
   .trans-btn {
     font-size: 15px;
     line-height: 12px;
-    padding: 1% 9%;
+    padding: 3% 9%;
   }
   .inf-btn{
-  margin-top: 20px;
-  margin-right:10%;
+  margin-top: 10%;
   }
 
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 810px) {
    #flex-container{
     flex-direction: column-reverse;
     align-items: center;
   } 
+  .manage-goodline{
+    width: 100%;
+  }
   .coder-image
   {
   width: 40%;
   height: 55%;
   }
   .display-heading{
-    margin-top: 0;
+    margin-top: 7%;
     font-weight: 300;
     font-size: 30px;
     line-height: 35px;
@@ -129,7 +131,7 @@
     padding: 2% 9%;
   }
   .inf-btn{
-  margin-top: 20px;
-  margin-right:10%;
+  margin-top: 10%;
+  margin: 3% 3%;
   }
 }
