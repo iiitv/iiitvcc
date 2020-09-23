@@ -102,6 +102,7 @@ nav {
 .overlay a:focus {
   color: #0088a9;
 }
+
 .overlay .close {
   position: absolute;
   top: 20px;
