@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&family=Open+Sans:wght@300&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 #cover-display {
   background-color: #181818;
   width: 100%;
@@ -32,7 +33,7 @@
   letter-spacing: -0.05em;
   color: #ffffff;
 }
-.manage-goodline{
+.manage-goodline {
   width: 80%;
 }
 .good-line {
@@ -68,7 +69,7 @@
   background-color: #181818;
   cursor: pointer;
 }
-.trans-btn:hover{
+.trans-btn:hover {
   background-color: #f638dc;
   color: #000000;
 }
@@ -76,46 +77,44 @@
   width: 40%;
   height: 55%;
 }
-@media only screen and (max-width: 1050px){
-  .display-heading{
+@media only screen and (max-width: 1050px) {
+  .display-heading {
     font-weight: 300;
     font-size : 42px;
     line-height: 45px;
     margin-top: 0;
   }
-  .good-line{
+  .good-line {
     font-size: 22px;
     line-height: 30px; 
   }
-  .coder-image
-  {
-  width: 40%;
-  height: 55%;
+  .coder-image {
+    width: 40%;
+    height: 55%;
   }
   .trans-btn {
     font-size: 15px;
     line-height: 12px;
     padding: 3% 9%;
   }
-  .inf-btn{
-  margin-top: 10%;
+  .inf-btn {
+    margin-top: 10%;
   }
 
 }
 @media only screen and (max-width: 810px) {
-   #flex-container{
+  #flex-container {
     flex-direction: column-reverse;
     align-items: center;
   } 
-  .manage-goodline{
+  .manage-goodline {
     width: 100%;
   }
-  .coder-image
-  {
-  width: 40%;
-  height: 55%;
+  .coder-image {
+    width: 40%;
+    height: 55%;
   }
-  .display-heading{
+  .display-heading {
     margin-top: 7%;
     font-weight: 300;
     font-size: 30px;
@@ -130,8 +129,8 @@
     line-height: 12px;
     padding: 2% 9%;
   }
-  .inf-btn{
-  margin-top: 10%;
-  margin: 3% 3%;
+  .inf-btn {
+    margin-top: 10%;
+    margin: 3% 3%;
   }
 }
