@@ -9,14 +9,16 @@ class Cover extends Component {
           <div id="flex-container">
             <div className="display-head">
               <h1 className="display-heading">
-                Technical Blogging <br />
-                website for posting <br />
+                Technical blogging  
+                website for posting 
                 Technical blogs
               </h1>
+              <div className ="manage-goodline">
               <p className="good-line">
                 A random good line for the good work
-                <br /> of coding club and this website
+                 of coding club and this website
               </p>
+              </div>
               <div className="inf-btn">
                 <button className="trans-btn">Know us</button>
                 <button className="trans-btn">Contact Us</button>
