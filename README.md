@@ -4,20 +4,15 @@
 Design -
 https://www.figma.com/file/5aLa8I7PiRdc25UrB1cL3e/CC-BLOG-Website
 
-## For test
+## For dev
 
 ```
 yarn install
-yarn start
+yarn run dev
 ```
 
-<br />
-<br />
-<br />
-<br />
-
 ```
-Try to follow project structure.
-Use BEM for css class naming or use component name as prefix
-Do not repeat class names
+next, react
+gray-matter
+react-markdown
 ```
