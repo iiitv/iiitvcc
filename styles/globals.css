@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  height: 100px;
+  text-align: center;
+  padding-top: 32px;
+  font-size: 20px;
+}
+
+a {
+  color: rgb(235 65 138);
+}
