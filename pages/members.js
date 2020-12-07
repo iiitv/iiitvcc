@@ -13,8 +13,8 @@ function Members() {
         <div className="text">CODING CLUB 2020</div>
 
         <div className="container" >
-        <p className="sub__text">LEADS</p>
-        <hr className="ver" />
+          <p className="sub__text">LEADS</p>
+          <hr className="ver" />
           <div className="c-1">
             {
               members.leads.map((ele, ind) => {

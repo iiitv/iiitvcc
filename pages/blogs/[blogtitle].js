@@ -26,7 +26,7 @@ export async function getStaticProps({ ...ctx }) {
   const content = await import(`../../blogs/${blogtitle}.md`)
   // console.log(content)
   const data = matter(content.default)
-  console.log(data)
+  // console.log(data)
   return {
     props: {
       frontmatter: data.data,
@@ -41,18 +41,20 @@ export default function Blog({ setTitle, frontmatter, markdownBody }) {
     <>
       <Header pageTitle={frontmatter.title} description={frontmatter.title} />
       <main className="post">
-        <div className="main__text">Blogs</div>
-        <h1 className="post-title" >{frontmatter.title}</h1>
-        <p className="post-date">{frontmatter.date}</p>
-        <div>
-          <ReactMarkdown source={markdownBody} />
+        <div className="post_wrap">
+          <div className="main__text">Blogs</div>
+          <h1 className="post-title" >{frontmatter.title}</h1>
+          <p className="post-date">{frontmatter.date}</p>
+          <div>
+            <ReactMarkdown source={markdownBody} />
+          </div>
+
+          <hr />
+
+          <Link href="/blog">
+            <a>← Back to post list</a>
+          </Link>
         </div>
-
-        <hr />
-
-        <Link href="/blog">
-          <a>← Back to post list</a>
-        </Link>
       </main>
     </>
   )

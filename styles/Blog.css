@@ -1,12 +1,24 @@
 .main__blog {
-  max-width: 672px;
+  color: #ffffff;
+}
+.blog_text {
+  position: absolute;
+  top: -4%;
+  left: -3%;
+  font-size: 16vw;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgb(53, 53, 53, 0.2);
+  user-select: none;
+}
+.main__blog__wrap {
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   padding: 56px 28px;
 }
 .main__text {
   font-size: 80px;
-  color: #f05454;
+  color: #29a19c;
   margin-bottom: 30px;
 }
 .blog-title {
@@ -19,8 +31,12 @@
   cursor: pointer;
   text-decoration: underline;
 }
+.blog-title a {
+  color: #a3f7bf;
+}
 small {
   font-size: smaller;
+  color: rgb(235 65 138);
 }
 .blog-desc {
   padding: 0;

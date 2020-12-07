@@ -1,24 +1,25 @@
 .mid {
   width: 100%;
-  background-color: rgb(27, 27, 27);
+  background-color: #181818;
   overflow-x: hidden;
+  margin-bottom: 30px;
 }
 
 .text {
   width: 120%;
   font-size: 14vw;
   color: rgb(53, 53, 53);
+  user-select: none;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-
 .sub__text {
   position: absolute;
-  height: 100px;
+  /* height: 100px; */
   color: rgb(163, 163, 163);
   font-size: 50px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  padding-top: 35px;
-  padding-left: 40px;
+  padding-top: 22px;
+  padding-left: 35px;
 }
 
 hr.ver {
@@ -33,7 +34,7 @@ hr.ver {
   background-color: rgb(53, 53, 53);
   box-shadow: 10px 10px 10px 0.3px rgb(24, 24, 24);
   max-width: 80vw;
-  margin: -100px auto 20px auto;
+  margin: -130px auto 20px auto;
   justify-content: space-around;
   flex-wrap: wrap;
 }
@@ -86,9 +87,13 @@ hr.ver {
 @media only screen and (max-width: 700px) {
   .container {
     max-width: 90vw;
+    margin: -40px auto 20px auto;
   }
   .c-1 {
     grid-template-columns: auto;
+  }
+  .sub__text {
+    padding-left: 25px;
   }
   hr.ver {
     position: absolute;
