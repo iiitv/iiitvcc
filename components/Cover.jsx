@@ -9,7 +9,7 @@ function Cover() {
             <h1 className="display-heading">
               Technical blogging
               website for posting
-              Technical blogs
+              technical blogs
               </h1>
             <div className="manage-goodline">
               <p className="good-line">

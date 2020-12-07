@@ -22,7 +22,7 @@ export async function getStaticProps() {
     return data
   })(require.context('../blogs', true, /\.md$/))
 
-  console.log(posts)
+  // console.log(posts)
 
   return {
     props: {
@@ -36,20 +36,24 @@ function Blog({ posts, ...props }) {
     <React.Fragment>
       <Header pageTitle="Blog" description="Blog Page" />
       <main className="main__blog">
-        <div className="main__text">Blogs</div>
-        {!posts && <div>No posts! 📝✏️</div>}
-        {posts &&
-          posts.map((post) => {
-            return (
-              <div key={post.slug}>
-                <Link href={{ pathname: `/blogs/${post.slug}` }}>
-                  <h2 className="blog-title"><a>{post.frontmatter.title}</a></h2>
-                </Link>
-                <small>{post.frontmatter.date}</small>
-                <p className="blog-desc">{post.markdownBody.substring(0, 100) + '...'}</p>
-              </div>
-            )
-          })}
+        <div className="blog_text">CODING</div>
+        <div className="main__blog__wrap">
+          <div className="main__text">Blogs</div>
+          {!posts && <div>No posts! 📝✏️</div>}
+          {posts &&
+            posts.map((post) => {
+              return (
+                <div key={post.slug}>
+                  <Link href={{ pathname: `/blogs/${post.slug}` }}>
+                    <h2 className="blog-title"><a>{post.frontmatter.title}</a></h2>
+                  </Link>
+                  <small>{post.frontmatter.date}</small>
+                  <p className="blog-desc">{post.markdownBody.substring(0, 120) + '...'}</p>
+                </div>
+              )
+            })}
+        </div>
+        <Footer />
       </main>
       {/*<Footer />*/}
     </React.Fragment>

@@ -49,6 +49,7 @@ nav {
 .nav-img {
   width: 53px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .cta {
@@ -130,5 +131,6 @@ nav {
   }
   .menu {
     display: initial;
+    margin: auto 0;
   }
 }

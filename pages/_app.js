@@ -4,6 +4,8 @@ import '../styles/Home.css'
 import '../styles/Members.css'
 import '../styles/Blog.css'
 import '../styles/BlogPage.css'
+import '../styles/Footer.css'
+import '../styles/Events.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

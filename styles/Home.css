@@ -29,16 +29,17 @@
   font-family: "Montserrat";
   font-style: normal;
   margin-top: 77px;
-  font-weight: 50;
-  font-size: 64px;
+  font-weight: 300;
+  font-size: 5vw;
   font-size-adjust: 0.58;
-  line-height: 78px;
+  line-height: 70px;
   letter-spacing: -0.05em;
   color: #ffffff;
 }
 
 .manage-goodline {
   width: 80%;
+  margin-top: 10px;
 }
 
 .good-line {
@@ -88,18 +89,14 @@
 
 @media only screen and (max-width: 1050px) {
   .display-heading {
-    font-weight: 300;
-    font-size: 42px;
     line-height: 45px;
-    margin-top: 0;
   }
   .good-line {
     font-size: 22px;
     line-height: 30px;
   }
   .coder-image {
-    width: 40%;
-    height: 55%;
+    width: 45%;
   }
   .trans-btn {
     font-size: 15px;
@@ -120,12 +117,10 @@
     width: 100%;
   }
   .coder-image {
-    width: 40%;
-    height: 55%;
+    width: 60%;
   }
   .display-heading {
     margin-top: 7%;
-    font-weight: 300;
     font-size: 30px;
     line-height: 35px;
   }
@@ -141,5 +136,11 @@
   .inf-btn {
     margin-top: 10%;
     margin: 3% 3%;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .coder-image {
+    width: 75%;
   }
 }

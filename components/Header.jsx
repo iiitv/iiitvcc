@@ -20,11 +20,14 @@ export default function Header({ pageTitle, description }) {
       </Head>
 
       <header>
-        <Link href="/"><img className="nav-img" src="/media/cc_logo.png" alt="logo" /></Link>
+        <Link href="/"><img className="nav-img" draggable="false" src="/media/cc_logo.png" alt="logo" /></Link>
         <nav>
           <ul className="nav__links">
             <li>
-              <Link href="/">Events</Link>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/events">Events</Link>
             </li>
             <li>
               <Link href="/blog">Blogs</Link>
@@ -36,7 +39,7 @@ export default function Header({ pageTitle, description }) {
               <Link href="/members">Members</Link>
             </li>
             <li>
-              <Link href="/">Contact Us</Link>
+              <Link href="/#contact_us">Contact Us</Link>
             </li>
           </ul>
         </nav>
@@ -46,7 +49,8 @@ export default function Header({ pageTitle, description }) {
       <div style={{ width: wid }} className="overlay">
         <a className="close" onClick={closeNav}>&times;</a>
         <div className="overlay__content">
-          <Link href="/">Events</Link>
+          <Link href="/">Home</Link>
+          <Link href="/events">Events</Link>
           <Link href="/blog">Blogs</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/members">Members</Link>
