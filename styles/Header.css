@@ -15,6 +15,23 @@ nav {
   order: 1;
 }
 
+.nav-title {
+  color: white;
+  font-size: 35px;
+  margin-right: auto;
+  margin-left: 13px;
+}
+@media screen and (max-width: 360px) {
+  .nav-title {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 1050px) {
+  .nav-title {
+    font-size: 25px;
+  }
+}
+
 .nav__links a,
 .cta,
 .overlay__content a {
@@ -124,7 +141,7 @@ nav {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 990px) {
   .nav__links,
   .cta {
     display: none;
