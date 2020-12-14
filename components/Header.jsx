@@ -21,6 +21,7 @@ export default function Header({ pageTitle, description }) {
 
       <header>
         <Link href="/"><img className="nav-img" draggable="false" src="/media/cc_logo.png" alt="logo" /></Link>
+        <div className="nav-title">Coding Club</div>
         <nav>
           <ul className="nav__links">
             <li>
