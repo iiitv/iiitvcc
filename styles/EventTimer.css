@@ -1,0 +1,37 @@
+.timer-container {
+  width: 80vw;
+  margin: 4% auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.timer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+.timer-title {
+  font-family: Orbitron;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #707070;
+}
+
+.timer-value {
+  font-family: Orbitron;
+  font-size: 144px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 181px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #707070;
+}

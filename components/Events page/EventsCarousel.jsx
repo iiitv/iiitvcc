@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Keyboard, Pagination } from "swiper";
 import Link from "next/link";
-import { events } from "../events/events.json";
+import { events } from "../../events/events.json";
 
 SwiperCore.use([Autoplay, Keyboard, Pagination]);
 
@@ -11,7 +11,7 @@ const EventsCarousel = () => {
       slidesPerView={1}
       spaceBetween={30}
       autoplay={{
-        delay: 3000,
+        delay: 4000,
         disableOnInteraction: false,
       }}
       keyboard={{
@@ -42,7 +42,6 @@ const EventsCarousel = () => {
             "November",
             "December",
           ];
-
           return (
             <SwiperSlide>
               <div className="event-slide">

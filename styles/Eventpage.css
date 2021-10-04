@@ -1,3 +1,126 @@
-#temp{
-    color: white;
+.back-btn{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    padding: 1px;
+    bottom: 3%;
+    left: 1%;
+    border-radius: 50%;
+    background-color: #602080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.back-btn img{
+    width: 60%;
+}
+.event-container{
+    width: 88vw;
+    margin: 2% auto;
+    display: flex;
+    height: 78vh;
+    position: relative;
+}
+.event-l-col{
+    width: 60%;
+    border-right: 2px solid #602080;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.event-r-col{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.cont-horiz{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.event-details{
+    font-family: Open Sans;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #F2F2F2;
+    width: 80%;
+}
+.event-address{
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #602080;
+    width: 50%;
+}
+.register{
+    height: fit-content;
+}
+.event-info{
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+}
+.event-key{
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #602080;
+    width: 50%;
+}
+.event-value{
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #F2F2F2;
+    width: 50%;
+}
+.poweredby{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #602080;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.poweredby img{
+    max-width: 54px;
+    max-height: 54px;
+    border-radius: 100%;
+    border: none;
+}
+.calendar{
+    display: block;
+    width: 17%;
+    margin: 0 auto 4% auto;
 }

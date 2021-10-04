@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+.bg-text {
+  font-family: Josefin Sans;
+  font-size: 24vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 375px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 100%;
+  z-index: -1;
+  color: rgb(53, 53, 53);
+  /* user-select: none; */
+  position: relative;
+  bottom: 15vh;
+  overflow:hidden;
+}
+#temp{
+    color: white;
+}

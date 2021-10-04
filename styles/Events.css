@@ -1,9 +1,11 @@
+.carousel-bg {
+  background-color: rgb(24, 24, 24);
+}
 .mySwiper {
   width: 80vw;
   height: 80vh;
   padding-top: 2%;
   color: white;
-  background-color: rgb(24,24,24);
 }
 .swiper-pagination-bullet {
   width: 18px;
@@ -18,18 +20,20 @@
   height: 22px;
   background: #602080;
 }
-.event-slide{
+
+/* Carousel Styling */
+.event-slide {
   height: fit-content;
   width: 100%;
   display: grid;
-  grid-template-areas: 
-  'name photo'
-  'name photo'
-  'date photo'
-  'buttons photo';
-  row-gap: auto;
+  grid-template-areas:
+    "name photo"
+    "name photo"
+    "date photo"
+    "buttons photo";
+  row-gap: 5%;
 }
-.event-name{
+.event-name {
   grid-area: name;
   width: 40vw;
   height: fit-content;
@@ -40,44 +44,42 @@
   line-height: 78px;
   letter-spacing: 0em;
   text-align: left;
+  color: #f6eeff;
 }
-.event-date{
+.event-date {
   grid-area: date;
   width: 40vw;
-  /* height: fit-content; */
   font-family: Arial;
   font-style: normal;
-  /* padding-bottom: 5%; */
 }
-.day{
+.day {
   padding-right: 10px;
   font-weight: 700;
   font-size: 45px;
   line-height: 52px;
+  color: #f6eeff;
 }
-.month{
+.month {
   color: #602080;
   font-weight: 400;
   font-size: 40px;
   line-height: 46px;
 }
-.event-photo{
-  /* width: 35vw; */
-  /* height: fit-content; */
+.event-photo {
   height: 100%;
   grid-area: photo;
 }
-.event-photo img{
+.event-photo img {
   width: 100%;
 }
-.event-buttons{
+.event-buttons {
   width: 40vw;
-  /* height: fit-content; */
   grid-area: buttons;
 }
-.register,.details{
-  width: 25%;
-  color: #F2F2F2;
+.register,
+.details {
+  width: 10vw;
+  color: #f2f2f2;
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
