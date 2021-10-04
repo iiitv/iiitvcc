@@ -1,1 +1,40 @@
-{}
+{
+  "events": [
+    {
+      "title": "GITHUB INTRODUCTION WORKSHOP",
+      "date": "2020-06-20",
+      "photos": ["/media/event0.jpg"],
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed ipsa nulla consequuntur unde quia quo eaque neque aperiam iste enim ullam laudantium consequatur nam exercitationem at.",
+      "address": "Lorem ipsum dolor sit amet",
+      "speakers": ["speaker1", "speaker2"],
+      "skillreq": 1,
+      "prerequisites": "None",
+      "requirements": "Lorem ipsum dolor sit amet",
+      "poweredby": "GitHub"
+    },
+    {
+      "title": "UI/UX INTRODUCTION WORKSHOP",
+      "date": "2020-06-20",
+      "photos": ["/media/event0.jpg"],
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed ipsa nulla consequuntur unde quia quo eaque neque aperiam iste enim ullam laudantium consequatur nam exercitationem at.",
+      "address": "Lorem ipsum dolor sit amet",
+      "speakers": ["speaker1", "speaker2"],
+      "skillreq": 1,
+      "prerequisites": "None",
+      "requirements": "Lorem ipsum dolor sit amet",
+      "poweredby": "GitHub"
+    },
+    {
+      "title": "GITHUB INTRODUCTION WORKSHOP",
+      "date": "2020-06-20",
+      "photos": ["/media/event0.jpg"],
+      "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed ipsa nulla consequuntur unde quia quo eaque neque aperiam iste enim ullam laudantium consequatur nam exercitationem at.",
+      "address": "Lorem ipsum dolor sit amet",
+      "speakers": ["speaker1", "speaker2"],
+      "skillreq": 1,
+      "prerequisites": "None",
+      "requirements": "Lorem ipsum dolor sit amet",
+      "poweredby": "GitHub"
+    }
+  ]
+}
