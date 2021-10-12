@@ -38,10 +38,10 @@
   width: 40vw;
   height: fit-content;
   font-family: Montserrat;
-  font-size: 64px;
+  font-size: 4.5vw;
   font-style: normal;
   font-weight: 300;
-  line-height: 78px;
+  line-height: 5vw;
   letter-spacing: 0em;
   text-align: left;
   color: #f6eeff;
@@ -55,15 +55,15 @@
 .day {
   padding-right: 10px;
   font-weight: 700;
-  font-size: 45px;
-  line-height: 52px;
+  font-size: 3vw;
+  line-height: 3.5vw;
   color: #f6eeff;
 }
 .month {
   color: #602080;
   font-weight: 400;
-  font-size: 40px;
-  line-height: 46px;
+  font-size: 2.6vw;
+  line-height: 3.2vw;
 }
 .event-photo {
   height: 100%;
@@ -81,16 +81,16 @@
   width: 10vw;
   color: #f2f2f2;
   font-family: Montserrat;
-  font-size: 24px;
+  font-size: 1.6vw;
   font-style: normal;
   font-weight: 400;
-  line-height: 29px;
+  line-height: 1.9vw;
   letter-spacing: 0em;
   text-align: left;
   background-color: #602080;
   border: none;
   border-radius: 11px;
-  padding: 10px 0;
+  padding: 10px 15px;
   margin-right: 30px;
   text-align: center;
   cursor: pointer;

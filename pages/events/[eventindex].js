@@ -98,7 +98,7 @@ const Eventpage = (props) => {
       </div>
       <EventTimer date={eventDate} />
       <Link href={`${props.eventindex}`}>
-        <button className="register calendar">Add to Calender</button>
+        <button className="register calendar-btn">Add to Calender</button>
       </Link>
     </div>
   );

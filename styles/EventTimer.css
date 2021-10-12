@@ -9,17 +9,17 @@
 .timer-item {
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 
 .timer-title {
   font-family: Orbitron;
-  font-size: 36px;
+  font-size: 2.4vw;
   font-style: normal;
   font-weight: 400;
-  line-height: 45px;
+  line-height: 3vw;
   letter-spacing: 0em;
   text-align: left;
   color: #707070;
@@ -27,11 +27,27 @@
 
 .timer-value {
   font-family: Orbitron;
-  font-size: 144px;
+  font-size: 10vw;
   font-style: normal;
   font-weight: 400;
-  line-height: 181px;
+  line-height: 11.2vw;
   letter-spacing: 0em;
   text-align: left;
   color: #707070;
+}
+
+@media screen and (max-width: 850px) {
+  .timer-container {
+    margin: 8% auto;
+    width: 82vw;
+  }
+  .timer-title {
+    font-size: 3vw;
+    line-height: 3.5vw;
+  }
+
+  .timer-value {
+    font-size: 14vw;
+    line-height: 14vw;
+  }
 }
