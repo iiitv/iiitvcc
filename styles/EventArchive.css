@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
-.event-archive-parent{
-    width: 80vw;
-    margin: 5% auto;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+.event-archive-parent {
+  width: 80vw;
+  margin: 6% auto 3% auto;
 }
 .bg-text {
   font-family: Josefin Sans;
@@ -14,7 +15,7 @@
   width: 100%;
   z-index: -1;
   color: rgb(34, 34, 34);
-  /* user-select: none; */
+  user-select: none;
   position: absolute;
   bottom: -25vh;
   overflow: hidden;
@@ -42,15 +43,17 @@
   border-radius: 50%;
   background-color: #602080;
 }
-.event-archive-head-img img{
+.event-archive-head-img img {
   width: 100%;
 }
-.event-archive-btns{
-  margin: 6% 0 3% 0;
+.event-archive-btns {
+  margin: 3% 0 2% 0;
   display: flex;
   flex-direction: row-reverse;
 }
-.btn-year1,.btn-year2{
+.btn-year1,
+.btn-year2 {
+  width: 13%;
   color: #f2f2f2;
   font-family: Arial;
   font-size: 36px;
@@ -59,9 +62,87 @@
   line-height: 41px;
   letter-spacing: 0em;
   text-align: left;
-  background:none;
-  padding: 10px 38px;
+  background: none;
+  padding: 8px 40px;
   border: none;
-  border-radius: 20%;
+  border-radius: 32px;
   margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: background-color;
+  transition-duration: 0.38s;
+  transition-timing-function: ease-in-out;
+}
+
+.btn-year1 {
+  background-color: #602080;
+}
+
+.event-archive .year1{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  transition-property: display;
+  transition-duration: 0.38s;
+  transition-timing-function: ease-in-out;
+}
+.event-archive .year2 {
+  display: none;
+  flex-flow: row;
+  justify-content: space-between;
+  transition-property: display;
+  transition-duration: 0.38s;
+  transition-timing-function: ease-in-out;
+}
+
+.archived-event-detail {
+  width: 30%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  height: 30vw;
+  cursor: pointer;
+}
+
+.archived-event-photo{
+  width: fit-content;
+  height: fit-content;
+}
+.archived-event-photo img {
+  width: 100%;
+}
+
+.archived-event-name {
+  font-family: Roboto Slab;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  color: #f2f2f2;
+}
+
+.archived-event-date {
+  display: flex;
+  align-items: center;
+}
+
+.archived-event-date-img {
+  padding: 0 10px 0 0;
+}
+
+.archived-event-date-img img {
+  width: 80%;
+}
+
+.archived-event-date-text {
+  font-family: Arsenal;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  color: #ffffff;
 }

@@ -1,8 +1,8 @@
 {
   "eventarchive": [
     {
-      "title": "GITHUB INTRODUCTION WORKSHOP '20",
-      "date": "2020-01-01 00:00:00",
+      "title": "GITHUB INTRODUCTION WORKSHOP '22",
+      "date": "2022-01-01 00:00:00",
       "photos": ["/media/event0.jpg"],
       "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed.",
       "address": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
@@ -13,8 +13,8 @@
       "poweredby": "GitHub"
     },
     {
-      "title": "UI/UX INTRODUCTION WORKSHOP '20",
-      "date": "2020-06-20T00:00:00",
+      "title": "UI/UX INTRODUCTION WORKSHOP '22",
+      "date": "2022-06-20T00:00:00",
       "photos": ["/media/event0.jpg"],
       "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed",
       "address": "Lorem ipsum dolor sit amet",
@@ -25,8 +25,8 @@
       "poweredby": "GitHub"
     },
     {
-      "title": "GITHUB INTRODUCTION WORKSHOP '20'",
-      "date": "2020-06-20T00:00:00",
+      "title": "GITHUB INTRODUCTION WORKSHOP '22",
+      "date": "2022-06-20T00:00:00",
       "photos": ["/media/event0.jpg"],
       "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed",
       "address": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
@@ -37,8 +37,8 @@
       "poweredby": "GitHub"
     },
     {
-      "title": "GITHUB INTRODUCTION WORKSHOP '19",
-      "date": "2019-01-01 00:00:00",
+      "title": "GITHUB INTRODUCTION WORKSHOP '21",
+      "date": "2021-12-01 00:00:00",
       "photos": ["/media/event0.jpg"],
       "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed.",
       "address": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
@@ -49,8 +49,8 @@
       "poweredby": "GitHub"
     },
     {
-      "title": "UI/UX INTRODUCTION WORKSHOP '19",
-      "date": "2019-06-20T00:00:00",
+      "title": "UI/UX INTRODUCTION WORKSHOP '21",
+      "date": "2021-11-20T00:00:00",
       "photos": ["/media/event0.jpg"],
       "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed",
       "address": "Lorem ipsum dolor sit amet",
@@ -61,8 +61,8 @@
       "poweredby": "GitHub"
     },
     {
-      "title": "GITHUB INTRODUCTION WORKSHOP '19'",
-      "date": "2019-06-20T00:00:00",
+      "title": "GITHUB INTRODUCTION WORKSHOP '21",
+      "date": "2021-12-20T00:00:00",
       "photos": ["/media/event0.jpg"],
       "details": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, est velit impedit sed",
       "address": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",

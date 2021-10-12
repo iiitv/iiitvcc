@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Header from "../../components/Header";
 import EventTimer from "../../components/Events page/EventTimer";
-import { events } from "../../events/events.json";
+import { eventarchive } from "../../events/eventarchive.json";
 
 export async function getStaticPaths() {
-  let paths = events.map((e, i) => `/events/${i}`);
+  let paths = eventarchive.map((e, i) => `/events/${i}`);
   return {
     paths,
     fallback: false,
@@ -30,7 +30,7 @@ const Eventpage = (props) => {
     prerequisites,
     requirements,
     poweredby,
-  } = events[props.eventindex];
+  } = eventarchive[props.eventindex];
   let eventDate = new Date(date);
   const monthNames = [
     "January",
