@@ -65,6 +65,9 @@ const EventsCarousel = () => {
                       query: {
                         eventindex: index,
                       },
+                      params: {
+                        eventindex: index,
+                      },
                     }}
                   >
                     <button className="details">Details</button>

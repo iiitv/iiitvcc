@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+.event-archive-parent{
+    width: 80vw;
+    margin: 5% auto;
+}
 .bg-text {
   font-family: Josefin Sans;
   font-size: 24vw;
@@ -9,12 +13,55 @@
   text-align: center;
   width: 100%;
   z-index: -1;
-  color: rgb(53, 53, 53);
+  color: rgb(34, 34, 34);
   /* user-select: none; */
-  position: relative;
-  bottom: 15vh;
-  overflow:hidden;
+  position: absolute;
+  bottom: -25vh;
+  overflow: hidden;
 }
-#temp{
-    color: white;
+.event-archive-head-cont {
+  width: 26%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.event-archive-head-text {
+  font-family: Open Sans;
+  font-size: 42px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 57px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #f2f2f2;
+}
+.event-archive-head-img {
+  width: 65px;
+  height: 65px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #602080;
+}
+.event-archive-head-img img{
+  width: 100%;
+}
+.event-archive-btns{
+  margin: 6% 0 3% 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn-year1,.btn-year2{
+  color: #f2f2f2;
+  font-family: Arial;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: left;
+  background:none;
+  padding: 10px 38px;
+  border: none;
+  border-radius: 20%;
+  margin-left: 10px;
 }

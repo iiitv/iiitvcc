@@ -3,11 +3,18 @@ import Header from "../../components/Header";
 import EventTimer from "../../components/Events page/EventTimer";
 import { events } from "../../events/events.json";
 
-export async function getServerSideProps(context) {
-  console.log(context.query);
+export async function getStaticPaths() {
+  let paths = events.map((e, i) => `/events/${i}`);
+  return {
+    paths,
+    fallback: true,
+  };
+}
+export async function getStaticProps(context) {
+  console.log(context.params);
   return {
     props: {
-      eventindex: context.query.eventindex,
+      eventindex: context.params.eventindex,
     },
   };
 }

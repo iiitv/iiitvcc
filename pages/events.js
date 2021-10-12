@@ -12,9 +12,7 @@ const events = () => {
         <div className="carousel-bg">
           <EventsCarousel />
         </div>
-        
-        <EventsArchive/>
-        <Footer />
+        <EventsArchive />
       </main>
     </React.Fragment>
   );
