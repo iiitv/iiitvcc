@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   let paths = events.map((e, i) => `/events/${i}`);
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 export async function getStaticProps(context) {
