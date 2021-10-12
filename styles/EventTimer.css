@@ -38,16 +38,16 @@
 
 @media screen and (max-width: 850px) {
   .timer-container {
-    margin: 8% auto;
+    margin: 9% auto;
     width: 82vw;
   }
   .timer-title {
-    font-size: 3vw;
-    line-height: 3.5vw;
+    font-size: 4vw;
+    line-height: 5vw;
   }
 
   .timer-value {
-    font-size: 14vw;
-    line-height: 14vw;
+    font-size: 15.5vw;
+    line-height: 16vw;
   }
 }

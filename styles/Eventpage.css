@@ -161,81 +161,83 @@
   .event-info {
     width: fit-content;
   }
-  .register {
-    box-sizing: border-box;
-    font-size: 3.5vw;
-    width: fit-content;
-    padding: 3% 6%;
-    margin: 0 auto;
-  }
   .event-name {
-    font-size: 8vw;
-    line-height: 9vw;
+    font-size: 9vw;
+    line-height: 10vw;
     width: 85%;
-    padding-top: 5%;
+    padding-top: 6%;
   }
   .event-date {
-    padding-top: 5%;
+    padding-top: 6%;
   }
   .day {
-    font-size: 6.5vw;
-    line-height: 4vw;
+    font-size: 7vw;
+    line-height: 4.5vw;
   }
   .month {
-    font-size: 5.5vw;
-    line-height: 3vw;
+    font-size: 7vw;
+    line-height: 4.5vw;
   }
   .event-details {
-    padding-top: 5%;
-    font-size: 3.5vw;
-    line-height: 4vw;
+    padding-top: 6%;
+    font-size: 5vw;
+    line-height: 6vw;
     width: 100%;
   }
   .cont-horiz {
-    padding-top: 6%;
-    padding-bottom: 3%;
+    padding-top: 7%;
+    padding-bottom: 4%;
   }
   .event-address {
-    font-size: 3.4vw;
-    line-height: 3.8vw;
-    width: 65%;
+    font-size: 5vw;
+    line-height: 6vw;
+    width: 60%;
+  }
+  .register {
+    box-sizing: border-box;
+    font-size: 4.5vw;
+    font-weight: 500;
+    width: fit-content;
+    padding: 5% 6%;
+    margin: 0 auto;
   }
   .event-info {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    padding-top: 5%;
+    padding-top: 6%;
   }
   .event-key {
-    font-size: 3.5vw;
-    line-height: 4vw;
-    width: 40%;
+    font-size: 5vw;
+    line-height: 6vw;
+    width: 45%;
   }
   .event-value {
-    font-size: 3.5vw;
-    line-height: 4vw;
+    font-size: 5vw;
+    line-height: 6vw;
     width: fit-content;
+    padding-left: 5%;
   }
   .poweredby {
     position: relative;
-    font-size: 3.5vw;
-    line-height: 3.5vw;
-    width: 38%;
-    padding-top: 5%;
+    font-size: 5vw;
+    line-height: 6vw;
+    width: 50%;
+    padding-top: 6%;
   }
   .poweredby img {
-    max-width: 6vw;
-    max-height: 6vw;
+    max-width: 7vw;
+    max-height: 7vw;
   }
   .back-btn {
     position: fixed;
-    width: 5vw;
-    height: 5vw;
+    width: 6vw;
+    height: 6vw;
     padding: 1px;
     bottom: 3%;
-    left: 1.5%;
+    left: 2%;
   }
   .calendar-btn {
-    margin: 0 auto 5% auto;
+    margin: 0 auto 6% auto;
   }
 }
