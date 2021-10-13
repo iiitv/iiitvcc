@@ -156,19 +156,19 @@
 
 @media screen and (max-width: 850px) {
   .event-archive-head-cont {
-    width: 58%;
+    width: 63%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .event-archive-head-text {
-    font-size: 7vw;
-    line-height: 4.5vw;
+    font-size: 7.5vw;
+    line-height: 5vw;
   }
   .event-archive-head-img {
-    width: 8vw;
-    height: 8vw;
-    padding: 1.2vw;
+    width: 10vw;
+    height: 10vw;
+    padding: 1.5vw;
     border-radius: 50%;
     background-color: #602080;
     display: flex;
@@ -179,10 +179,10 @@
   .btn-year1,
   .btn-year2 {
     width: 13%;
-    font-size: 3vw;
-    line-height: 3.5vw;
-    padding: 1vw 3.5vw;
-    margin-left: 3.5vw;
+    font-size: 4vw;
+    line-height: 4vw;
+    padding: 1vw 7vw;
+    margin-left: 4vw;
   }
 
   .event-archive .year1 {
@@ -196,36 +196,36 @@
   .archived-event-detail {
     width: 100%;
     height: fit-content;
-    padding-top: 6%;
-    padding-bottom: 7%;
+    padding-top: 7%;
+    padding-bottom: 8%;
     display: flex;
     flex-flow: column;
     align-items: center;
   }
   .archived-event-photo {
-    width: 70%;
+    width: 80%;
   }
   .archived-event-name {
-    padding-top: 2%;
-    width: 70%;
-    font-size: 4.5vw;
-    line-height: 5.5vw;
+    padding-top: 3%;
+    width: 80%;
+    font-size: 5vw;
+    line-height: 6vw;
   }
   .archived-event-date {
-    padding-top: 2%;
+    width: 80%;
+    padding-top: 3%;
     display: flex;
     align-items: center;
-    width: 70%;
   }
   .archived-event-date-img {
-    padding: 0 0.5vw 0 0;
+    padding: 0 0.7vw 0 0;
   }
   .archived-event-date-img img {
-    width: 6vw;
-    height: 6vw;
+    width: 7vw;
+    height: 7vw;
   }
   .archived-event-date-text {
-    font-size: 3.5vw;
-    line-height: 4.5vw;
+    font-size: 4.5vw;
+    line-height: 5vw;
   }
 }

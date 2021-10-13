@@ -96,6 +96,7 @@
   border-radius: 11px;
   padding: 0.73vw 1.1vw;
   margin-right: 2.2vw;
+  margin-top: 1.1vw;
   text-align: center;
   cursor: pointer;
 }
@@ -107,20 +108,20 @@
     align-items: center;
   }
   .event-photo {
-    width: 85%;
+    width: 90%;
     height: fit-content;
     grid-area: photo;
   }
   .event-name {
     width: 100%;
     text-align: center;
-    padding-top: 6%;
+    padding-top: 7%;
     font-size: 9vw;
     line-height: 10vw;
   }
   .event-date {
     text-align: center;
-    padding-top: 6%;
+    padding-top: 7%;
   }
   .day {
     font-size: 7vw;
@@ -131,16 +132,18 @@
     line-height: 4.5vw;
   }
   .event-buttons{
-    padding-top: 6%;
+    padding-top: 7%;
     display: flex;
     justify-content: center;
+    width: 60%;
   }
   .register,.details {
+    width: 50%;
     box-sizing: border-box;
     font-size: 4.3vw;
     font-weight: 500;
     width: 100%;
     padding: 8% 9%;
-    margin: 0 5%;
+    margin: 6% 7%;
   }
 }
