@@ -135,13 +135,11 @@
 @media screen and (max-width: 1250px) {
   .event-container {
     height: 55vh;
-    width: 92vw;
   }
 }
 @media screen and (max-width: 1050px) {
   .event-container {
     height: 48vh;
-    width: 92vw;
   }
 }
 @media screen and (max-width: 850px) {

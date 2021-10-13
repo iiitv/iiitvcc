@@ -155,6 +155,10 @@
 }
 
 @media screen and (max-width: 850px) {
+  .event-archive-parent {
+    width: 82vw;
+    margin: 6% auto 3% auto;
+  }
   .event-archive-head-cont {
     width: 63%;
     display: flex;
@@ -179,9 +183,9 @@
   .btn-year1,
   .btn-year2 {
     width: 13%;
-    font-size: 4vw;
-    line-height: 4vw;
-    padding: 1vw 7vw;
+    font-size: 4.5vw;
+    line-height: 4.5vw;
+    padding: 2vw 8vw;
     margin-left: 4vw;
   }
 
@@ -203,16 +207,16 @@
     align-items: center;
   }
   .archived-event-photo {
-    width: 80%;
+    width: 85%;
   }
   .archived-event-name {
     padding-top: 3%;
-    width: 80%;
-    font-size: 5vw;
-    line-height: 6vw;
+    width: 85%;
+    font-size: 5.5vw;
+    line-height: 6.5vw;
   }
   .archived-event-date {
-    width: 80%;
+    width: 85%;
     padding-top: 3%;
     display: flex;
     align-items: center;
