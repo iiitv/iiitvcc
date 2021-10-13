@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+#foobar {
+  position: relative;
+}
 .event-archive-parent {
   width: 80vw;
   margin: 6% auto 3% auto;
@@ -9,7 +12,7 @@
   font-size: 24vw;
   font-style: normal;
   font-weight: 700;
-  line-height: 375px;
+  line-height: 23.4vw;
   letter-spacing: 0em;
   text-align: center;
   width: 100%;
@@ -17,31 +20,34 @@
   color: rgb(34, 34, 34);
   user-select: none;
   position: absolute;
-  bottom: -25vh;
+  top: -10vw;
   overflow: hidden;
 }
 .event-archive-head-cont {
-  width: 26%;
+  width: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .event-archive-head-text {
   font-family: Open Sans;
-  font-size: 2.62rem;
+  font-size: 2.8vw;
   font-style: normal;
   font-weight: 400;
-  line-height: 57px;
+  line-height: 3.8vw;
   letter-spacing: 0em;
   text-align: left;
   color: #f2f2f2;
 }
 .event-archive-head-img {
-  width: 65px;
-  height: 65px;
-  padding: 10px;
+  width: 4.2vw;
+  height: 4.2vw;
+  padding: 0.68vw;
   border-radius: 50%;
   background-color: #602080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .event-archive-head-img img {
   width: 100%;
@@ -56,17 +62,17 @@
   width: 13%;
   color: #f2f2f2;
   font-family: Arial;
-  font-size: 2.25rem;
+  font-size: 2.25vw;
   font-style: normal;
   font-weight: 700;
-  line-height: 41px;
+  line-height: 2.5vw;
   letter-spacing: 0em;
   text-align: left;
   background: none;
-  padding: 8px 40px;
+  padding: 0.5vw 2.2vw;
   border: none;
   border-radius: 32px;
-  margin-left: 10px;
+  margin-left: 0.625vw;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -80,7 +86,7 @@
   background-color: #602080;
 }
 
-.event-archive .year1{
+.event-archive .year1 {
   display: flex;
   flex-flow: row;
   justify-content: space-between;
@@ -106,7 +112,7 @@
   cursor: pointer;
 }
 
-.archived-event-photo{
+.archived-event-photo {
   width: fit-content;
   height: fit-content;
 }
@@ -116,10 +122,10 @@
 
 .archived-event-name {
   font-family: Roboto Slab;
-  font-size: 1.75rem;
+  font-size: 1.8vw;
   font-style: normal;
   font-weight: 700;
-  line-height: 40px;
+  line-height: 2.4vw;
   letter-spacing: 0em;
   color: #f2f2f2;
 }
@@ -130,19 +136,96 @@
 }
 
 .archived-event-date-img {
-  padding: 0 10px 0 0;
+  padding: 0 0.5vw 0 0;
 }
 
 .archived-event-date-img img {
-  width: 80%;
+  width: 3vw;
+  height: 3vw;
 }
 
 .archived-event-date-text {
   font-family: Arsenal;
-  font-size: 1.56rem;
+  font-size: 1.65vw;
   font-style: italic;
   font-weight: 400;
   line-height: 35px;
   letter-spacing: 0em;
   color: #ffffff;
+}
+
+@media screen and (max-width: 850px) {
+  .event-archive-head-cont {
+    width: 58%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .event-archive-head-text {
+    font-size: 7vw;
+    line-height: 4.5vw;
+  }
+  .event-archive-head-img {
+    width: 8vw;
+    height: 8vw;
+    padding: 1.2vw;
+    border-radius: 50%;
+    background-color: #602080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-year1,
+  .btn-year2 {
+    width: 13%;
+    font-size: 3vw;
+    line-height: 3.5vw;
+    padding: 1vw 3.5vw;
+    margin-left: 3.5vw;
+  }
+
+  .event-archive .year1 {
+    flex-flow: column;
+    justify-content: space-between;
+  }
+  .event-archive .year2 {
+    display: none;
+    flex-flow: column;
+  }
+  .archived-event-detail {
+    width: 100%;
+    height: fit-content;
+    padding-top: 6%;
+    padding-bottom: 7%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .archived-event-photo {
+    width: 70%;
+  }
+  .archived-event-name {
+    padding-top: 2%;
+    width: 70%;
+    font-size: 4.5vw;
+    line-height: 5.5vw;
+  }
+  .archived-event-date {
+    padding-top: 2%;
+    display: flex;
+    align-items: center;
+    width: 70%;
+  }
+  .archived-event-date-img {
+    padding: 0 0.5vw 0 0;
+  }
+  .archived-event-date-img img {
+    width: 6vw;
+    height: 6vw;
+  }
+  .archived-event-date-text {
+    font-size: 3.5vw;
+    line-height: 4.5vw;
+  }
 }

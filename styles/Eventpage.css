@@ -161,20 +161,21 @@
   .event-info {
     width: fit-content;
   }
-  .event-name {
+  .event-name-detailpg {
+    text-align: left;
     font-size: 9vw;
     line-height: 10vw;
     width: 85%;
     padding-top: 6%;
   }
-  .event-date {
+  .event-date-detailpg {
     padding-top: 6%;
   }
-  .day {
+  .day-detailpg {
     font-size: 7vw;
     line-height: 4.5vw;
   }
-  .month {
+  .month-detailpg {
     font-size: 7vw;
     line-height: 4.5vw;
   }
@@ -193,7 +194,7 @@
     line-height: 6vw;
     width: 60%;
   }
-  .register {
+  .register-detailpg {
     box-sizing: border-box;
     font-size: 4.5vw;
     font-weight: 500;

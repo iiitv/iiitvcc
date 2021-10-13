@@ -24,11 +24,11 @@ const EventsArchive = () => {
     hideyear.style.display = "none";
     let focusbutton = document.getElementsByClassName(`btn-${show}`)[0];
     let unfocusbutton = document.getElementsByClassName(`btn-${hide}`)[0];
-    focusbutton.style.backgroundColor = "#602080";
-    unfocusbutton.style.backgroundColor = "black";
+    focusbutton.style.background = "#602080";
+    unfocusbutton.style.background = "none";
   };
   return (
-    <div style={{ display: "relative" }}>
+    <div id="foobar">
       <div className="bg-text">CODING</div>
       <div className="event-archive-parent">
         <div className="event-archive-head-cont">
