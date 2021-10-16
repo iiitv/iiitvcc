@@ -82,10 +82,6 @@
   transition-timing-function: ease-in-out;
 }
 
-.btn-year1 {
-  background-color: #602080;
-}
-
 .event-archive .year1 {
   display: flex;
   flex-flow: row;
@@ -95,7 +91,7 @@
   transition-timing-function: ease-in-out;
 }
 .event-archive .year2 {
-  display: none;
+  display: flex;
   flex-flow: row;
   justify-content: space-between;
   transition-property: display;
@@ -194,7 +190,6 @@
     justify-content: space-between;
   }
   .event-archive .year2 {
-    display: none;
     flex-flow: column;
   }
   .archived-event-detail {

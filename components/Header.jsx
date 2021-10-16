@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import easterEgg from './easterEgg'
 
 export default function Header({ pageTitle, description }) {
-  console.log(easterEgg, "font-family:monospace");
-
+  
   const [wid, setWid] = React.useState('')
   const openNav = () => setWid('100%')
   const closeNav = () => setWid('0%')
+  
+  useEffect(()=>{
+    console.log(easterEgg, "font-family:monospace");
+  }
+  ,[]);
 
   return (
     <React.Fragment>
