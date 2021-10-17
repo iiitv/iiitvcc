@@ -473,8 +473,9 @@
 }
 @media screen and (max-width: 360px){
   .register-detailpg {
-    box-sizing: border-box;
     font-size: 1rem;
-    font-weight: 500;
-  }  
+  }
+  .event-name-detailpg, .day-detailpg,.month-detailpg, .event-details, .event-address, .event-info {
+    padding-bottom: 8%;
+  }
 }
