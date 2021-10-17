@@ -1,0 +1,103 @@
+.mid {
+  width: 100%;
+  background-color: #181818;
+  overflow-x: hidden;
+  margin-bottom: 30px;
+}
+
+.text {
+  width: 120%;
+  font-size: 14vw;
+  color: rgb(53, 53, 53);
+  user-select: none;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.sub__text {
+  position: absolute;
+  /* height: 100px; */
+  color: rgb(163, 163, 163);
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding-top: 22px;
+  padding-left: 35px;
+}
+
+hr.ver {
+  position: absolute;
+  width: 80vw;
+  margin-top: 100px;
+  /* border: 1px solid white ; */
+}
+
+.container {
+  display: block;
+  background-color: rgb(53, 53, 53);
+  box-shadow: 10px 10px 10px 0.3px rgb(24, 24, 24);
+  max-width: 80vw;
+  margin: -130px auto 20px auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.c-1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 50px;
+  /* background-color: #2196f3; */
+  padding: 10px;
+  padding-top: 125px;
+}
+
+.box {
+  position: relative;
+  display: flex;
+  width: 276px;
+  height: 286px;
+  margin: auto;
+  background: #340069;
+}
+
+.box > div {
+  visibility: hidden;
+}
+
+.box:hover .centerline {
+  visibility: visible;
+  background-color: rgb(96, 32, 128);
+  cursor: pointer;
+  width: 280px;
+  height: 280px;
+  z-index: 1;
+  visibility: visible;
+  transition-delay: 0.1s;
+}
+
+.name {
+  position: absolute;
+  color: aliceblue;
+  background-color: rgb(96, 32, 128);
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 2px;
+  width: 100%;
+  margin-top: 200px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    max-width: 90vw;
+    margin: -40px auto 20px auto;
+  }
+  .c-1 {
+    grid-template-columns: auto;
+  }
+  .sub__text {
+    padding-left: 25px;
+  }
+  hr.ver {
+    position: absolute;
+    width: 90vw;
+    margin-top: 100px;
+  }
+}

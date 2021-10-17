@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans&family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+#cover-display {
+  background-color: #181818;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  width: 83%;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+}
+
+.display-head {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.display-heading {
+  font-family: "Montserrat";
+  font-style: normal;
+  margin-top: 77px;
+  font-weight: 300;
+  font-size: 5vw;
+  font-size-adjust: 0.58;
+  line-height: 70px;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.manage-goodline {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.good-line {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 45px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.inf-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 65px;
+  margin-left: 10%;
+  margin-right: 20%;
+}
+
+.trans-btn {
+  border: 1px solid #f638dc;
+  box-sizing: border-box;
+  border-radius: 27.5px;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: -0.05em;
+  color: #f638dc;
+  padding: 1% 9%;
+  background-color: #181818;
+  cursor: pointer;
+}
+
+.trans-btn:hover {
+  background-color: #f638dc;
+  color: #000000;
+}
+
+.coder-image {
+  width: 40%;
+  height: 55%;
+}
+
+@media only screen and (max-width: 1050px) {
+  .display-heading {
+    line-height: 45px;
+  }
+  .good-line {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .coder-image {
+    width: 45%;
+  }
+  .trans-btn {
+    font-size: 15px;
+    line-height: 12px;
+    padding: 3% 9%;
+  }
+  .inf-btn {
+    margin-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  #flex-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .manage-goodline {
+    width: 100%;
+  }
+  .coder-image {
+    width: 60%;
+  }
+  .display-heading {
+    margin-top: 7%;
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .good-line {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .trans-btn {
+    font-size: 15px;
+    line-height: 12px;
+    padding: 2% 9%;
+  }
+  .inf-btn {
+    margin-top: 10%;
+    margin: 3% 3%;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .coder-image {
+    width: 75%;
+  }
+}
