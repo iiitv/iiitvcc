@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { eventarchive } from "../../events/eventarchive.json";
 import Link from "next/link";
-// impo
 const EventsArchive = () => {
   const monthNames = [
     "Jan",
@@ -20,8 +19,6 @@ const EventsArchive = () => {
   let year1 = "2022";
   let year2 = "2021";
   const [year, setYear] = useState("year1");
-  const [btnYear1Bg, setbtnYear1Bg] = useState("#602080");
-  const [btnYear2Bg, setbtnYear2Bg] = useState("none");
   return (
     <div id="foobar">
       <div className="bg-text">CODING</div>
@@ -32,31 +29,30 @@ const EventsArchive = () => {
           </div>
           <div className="event-archive-head-text">Past Events</div>
         </div>
-        <div className="event-archive-cont">
-          <div className="event-archive-btns">
-            {/* year1 will be open by default */}
-            <button
-              className="btn-year1"
-              onClick={() => {
-                setYear("year1");
-                setbtnYear1Bg("#602080");
-                setbtnYear2Bg("none");
-              }}
-              style={{background:`${btnYear1Bg}`}}
-            >
-              {year1}
-            </button>
-            <button className="btn-year2" onClick={() => {
-                setYear("year2");
-                setbtnYear1Bg("none");
-                setbtnYear2Bg("#602080");
-              }}
-              style={{background:`${btnYear2Bg}`}}>
-              {year2}
-            </button>
-          </div>
-          <div className="event-archive">
-            {year == "year1" ? (
+
+        {year == "year1" ? (
+          <div className="event-archive-cont">
+            <div className="event-archive-btns">
+              <button
+                className="btn-year1"
+                onClick={() => {
+                  setYear("year1");
+                }}
+                style={{ background: "#602080" }}
+              >
+                {year1}
+              </button>
+              <button
+                className="btn-year2"
+                onClick={() => {
+                  setYear("year2");
+                }}
+                style={{ background: "none" }}
+              >
+                {year2}
+              </button>
+            </div>
+            <div className="event-archive">
               <div className="year1">
                 {eventarchive.map((e, index) => {
                   let date = new Date(e.date);
@@ -92,7 +88,31 @@ const EventsArchive = () => {
                   }
                 })}
               </div>
-            ) : (
+            </div>
+          </div>
+        ) : (
+          <div className="event-archive-cont">
+            <div className="event-archive-btns">
+              <button
+                className="btn-year1"
+                onClick={() => {
+                  setYear("year1");
+                }}
+                style={{ background: "none" }}
+              >
+                {year1}
+              </button>
+              <button
+                className="btn-year2"
+                onClick={() => {
+                  setYear("year2");
+                }}
+                style={{ background: "#602080" }}
+              >
+                {year2}
+              </button>
+            </div>
+            <div className="event-archive">
               <div className="year2">
                 {eventarchive.map((e, index) => {
                   let date = new Date(e.date);
@@ -128,9 +148,9 @@ const EventsArchive = () => {
                   }
                 })}
               </div>
-            )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

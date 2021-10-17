@@ -5,11 +5,11 @@
   width: 80vw;
   height: fit-content;
   padding-top: 3%;
-  padding-bottom: 8%;
+  padding-bottom: 10%;
   color: white;
 }
 .swiper-container-horizontal > .swiper-pagination-bullets {
-  bottom: 2vw;
+  bottom: 2.5vw;
 }
 .swiper-pagination-bullet {
   width: 1.2vw;
@@ -35,17 +35,17 @@
     "name photo"
     "date photo"
     "buttons photo";
-  row-gap: 5%;
+  row-gap: 6%;
 }
 .event-name {
   grid-area: name;
   width: 40vw;
   height: fit-content;
   font-family: Montserrat;
-  font-size: 4.5vw;
+  font-size: 3.5rem;
   font-style: normal;
   font-weight: 300;
-  line-height: 5vw;
+  line-height: 4rem;
   letter-spacing: 0em;
   text-align: left;
   color: #f6eeff;
@@ -59,22 +59,24 @@
 .day {
   padding-right: 10px;
   font-weight: 700;
-  font-size: 3vw;
-  line-height: 3.5vw;
+  font-size: 2.3rem;
+  line-height: 2.3rem;
   color: #f6eeff;
 }
 .month {
   color: #602080;
   font-weight: 400;
-  font-size: 2.6vw;
-  line-height: 3.2vw;
+  font-size: 2.3rem;
+  line-height: 2.3rem;
 }
 .event-photo {
   height: 100%;
   grid-area: photo;
 }
 .event-photo img {
-  width: 100%;
+  width: 85%;
+  margin: 0 auto;
+  display: block;
 }
 .event-buttons {
   width: 40vw;
@@ -82,23 +84,53 @@
 }
 .register,
 .details {
-  width: 10vw;
+  min-width: 11vw;
   color: #f2f2f2;
   font-family: Montserrat;
-  font-size: 1.5vw;
+  font-size: 1.3rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.8vw;
+  line-height: 1.5rem;
   letter-spacing: 0em;
   text-align: left;
   background-color: #602080;
   border: none;
   border-radius: 11px;
-  padding: 0.73vw 1.1vw;
+  padding: 0.7vw 1vw;
   margin-right: 2.2vw;
   margin-top: 1.1vw;
   text-align: center;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1150px) {
+  .event-name{
+    font-size: 3rem;
+    line-height: 3.7rem;
+  }
+  .day {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+  .month {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .event-name{
+    font-size: 2.6rem;
+    line-height: 3.5rem;
+  }
+  .day {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .month {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -109,7 +141,7 @@
     align-items: center;
   }
   .event-photo {
-    width: 95%;
+    width: 85%;
     height: fit-content;
     grid-area: photo;
   }
@@ -117,20 +149,20 @@
     width: 100%;
     text-align: center;
     padding-top: 7%;
-    font-size: 9vw;
-    line-height: 10vw;
+    font-size: 4rem;
+    line-height: 5rem;
   }
   .event-date {
     text-align: center;
     padding-top: 7%;
   }
   .day {
-    font-size: 7vw;
-    line-height: 4.5vw;
+    font-size: 3rem;
+    line-height: 2rem;
   }
   .month {
-    font-size: 7vw;
-    line-height: 4.5vw;
+    font-size: 3rem;
+    line-height: 2.5rem;
   }
   .event-buttons{
     padding-top: 7%;
@@ -141,10 +173,82 @@
   .register,.details {
     width: 50%;
     box-sizing: border-box;
-    font-size: 4.3vw;
+    font-size: 1.9rem;
     font-weight: 500;
-    width: 100%;
-    padding: 6% 0%;
+    padding: 5% 0%;
     margin: 6% 7%;
   }
+}
+
+@media screen and (max-width: 650px){
+  .event-name {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+  .day {
+    font-size: 2.3rem;
+    line-height: 2rem;
+  }
+  .month {
+    font-size: 2.3rem;
+    line-height: 2rem;
+  }
+  .event-buttons{
+    width: 80%;
+  }
+  .register,.details {
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    padding: 5% 0%;
+    margin: 6% 7%;
+  } 
+}
+
+@media screen and (max-width: 500px){
+  .event-name {
+    font-size: 2.3rem;
+    line-height: 3rem;
+  }
+  .day {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .month {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .event-buttons{
+    width: 100%;
+  }
+  .register,.details {
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    padding: 4% 0%;
+  } 
+}
+
+@media screen and (max-width: 380px){
+  .event-name {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  .day {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  .month {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+  .event-buttons{
+    width: 100%;
+  }
+  .register,.details {
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    padding: 4% 0%;
+  } 
 }
