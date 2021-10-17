@@ -8,7 +8,7 @@ import '../styles/Footer.css'
 import "swiper/swiper-bundle.min.css"
 import "swiper/swiper.min.css"
 import '../styles/Events.css'
-import '../styles/eventpage.css'
+import '../styles/eventPage.css'
 import "../styles/eventTimer.css"
 import "../styles/eventArchive.css"
 
