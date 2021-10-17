@@ -16,7 +16,7 @@
   width: 60%;
 }
 .event-container {
-  width: 88vw;
+  width: 88%;
   margin: 2% auto 5% auto;
   display: flex;
   position: relative;
@@ -84,6 +84,7 @@
 .content-horiz {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding-bottom: 5%;
 }
@@ -147,7 +148,6 @@
 }
 .poweredby {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   color: #602080;
   font-family: Montserrat;
@@ -161,12 +161,17 @@
   bottom: 0;
   right: 0;
 }
-.poweredby img {
-  max-width: 3.4vw;
-  max-height: 3.4vw;
+.poweredby__text{
+  margin-right: 2vw;
+}
+.poweredby__img {
+  width: 3vw;
+  height: 3vw;
   border-radius: 100%;
   border: none;
-  padding-left: 6%;
+}
+.poweredby__img img {
+  width: 100%;
 }
 .calendar-btn {
   display: block;
@@ -176,7 +181,7 @@
 
 @media screen and (max-width: 1400px) {
   .event-container {
-    width: 92vw;
+    width: 92%;
   }
 }
 @media screen and (max-width: 1080px){
@@ -215,15 +220,12 @@
     font-size: 1.6rem;
     line-height: 1.6rem;
   }
-  .poweredby img {
-    max-width: 6vw;
-    max-height: 6vw;
-  } 
 }
 @media screen and (max-width: 850px) {
   .event-container {
     flex-direction: column;
     height: fit-content;
+    margin: 2% 0 5% 6%;
   }
   .event-l-col {
     border: none;
@@ -233,82 +235,246 @@
     width: 100%;
     align-items: flex-start;
   }
-  .event-info {
-    width: fit-content;
-  }
   .event-name-detailpg {
     text-align: left;
-    font-size: 5.5rem;
-    line-height: 12vw;
+    font-size: 4.5rem;
+    line-height:5.5rem;
     width: 90%;
-    padding-top: 6%;
-  }
-  .event-date-detailpg {
-    padding-top: 6%;
   }
   .day-detailpg,.month-detailpg {
-    font-size: 5rem;
-    line-height: 3rem;
+    font-size: 3.5rem;
+    line-height: 2.5rem;
   }
   .event-details {
-    padding-top: 6%;
-    font-size: 3rem;
-    line-height: 4rem;
+    font-size: 2rem;
+    line-height: 3rem;
     width: 100%;
   }
-  .cont-horiz {
-    padding-top: 7%;
-    padding-bottom: 4%;
-  }
   .event-address {
-    font-size: 3rem;
-    line-height: 4rem;
+    font-size: 2rem;
+    line-height: 3rem;
     width: 70%;
   }
   .register-detailpg {
     box-sizing: border-box;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
-    padding: 5% 5%;
+    padding: 4% 2%;
+    margin-left: 6%;
     text-align:center;
   }
   .event-info {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    padding-top: 6%;
   }
   .event-key {
-    font-size: 5rem;
-    line-height: 6rem;
-    width: 45%;
+    font-size: 2rem;
+    line-height: 3rem;
+    width: 38%;
   }
   .event-value {
-    font-size: 5rem;
-    line-height: 6rem;
-    width: fit-content;
+    font-size: 2rem;
+    line-height: 3rem;
     padding-left: 5%;
   }
   .poweredby {
     position: relative;
-    font-size: 5rem;
-    line-height: 6rem;
-    width: 50%;
-    padding-top: 6%;
+    font-size: 2rem;
+    line-height: 3rem;
   }
-  .poweredby img {
-    max-width: 7vw;
-    max-height: 7vw;
+  .poweredby__img {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    border: none;
   }
   .back-btn {
-    position: fixed;
-    width: 6vw;
-    height: 6vw;
-    padding: 1px;
-    bottom: 3%;
-    left: 2%;
+    width: 8vw;
+    height: 8vw;
+    bottom: 5%;
+    left: 3%;
   }
   .calendar-btn {
     margin: 0 auto 6% auto;
   }
+}
+
+@media screen and (max-width: 700px) {
+  .event-name-detailpg {
+    font-size: 3.5rem;
+    line-height:4.5rem;
+  }
+  .day-detailpg,.month-detailpg {
+    font-size: 3rem;
+    line-height: 2rem;
+  }
+  .event-details {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+  .event-address {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+  .register-detailpg {
+    box-sizing: border-box;
+    font-size: 1.75rem;
+    font-weight: 500;
+    padding: 4% 4%;
+    margin-left: 6%;
+    text-align:center;
+  }
+  .event-info {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .event-key {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    width: 38%;
+  }
+  .event-value {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    padding-left: 5%;
+  }
+  .poweredby {
+    position: relative;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+  }
+  .back-btn {
+    width: 8vw;
+    height: 8vw;
+    bottom: 5%;
+    left: 3%;
+  }
+  .calendar-btn {
+    margin: 0 auto 6% auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .event-name-detailpg {
+    font-size: 3rem;
+    line-height:4rem;
+    padding-bottom: 6%;
+  }
+  .day-detailpg,.month-detailpg {
+    font-size: 2.5rem;
+    line-height: 2rem;
+    padding-bottom: 6%;
+  }
+  .event-details {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    padding-bottom: 6%;
+  }
+  .event-address {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    padding-bottom: 6%;
+  }
+  .register-detailpg {
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 4% 4%;
+    margin-left: 4%;
+    text-align:center;
+  }
+  .event-info {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 6%;
+  }
+  .event-key {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    width: 42%;
+  }
+  .event-value {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding-left: 5%;
+  }
+  .poweredby {
+    position: relative;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .back-btn {
+    width: 8vw;
+    height: 8vw;
+    bottom: 5%;
+    left: 3%;
+  }
+  .calendar-btn {
+    margin: 0 auto 6% auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .event-name-detailpg {
+    font-size: 2rem;
+    line-height:2.5rem;
+  }
+  .day-detailpg,.month-detailpg {
+    font-size: 2rem;
+    line-height: 1.5rem;
+  }
+  .event-details {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+  .event-address {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+  .register-detailpg {
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 3% 4%;
+  }
+  .event-info {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 6%;
+  }
+  .event-key {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    width: 42%;
+  }
+  .event-value {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    padding-left: 5%;
+  }
+  .poweredby {
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+  .back-btn {
+    width: 8vw;
+    height: 8vw;
+    bottom: 5%;
+    left: 3%;
+  }
+  .calendar-btn {
+    margin: 0 auto 6% auto;
+  }
+}
+@media screen and (max-width: 360px){
+  .register-detailpg {
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 500;
+  }  
 }

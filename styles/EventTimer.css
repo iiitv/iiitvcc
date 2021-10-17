@@ -50,15 +50,75 @@
 @media screen and (max-width: 850px) {
   .timer-container {
     margin: 9% auto;
-    width: 82vw;
+    width: 82%;
   }
   .timer-title {
-    font-size: 4rem;
-    line-height: 5rem;
+    font-size: 3rem;
+    line-height: 4rem;
   }
 
   .timer-value {
-    font-size: 15.5rem;
-    line-height: 16rem;
+    font-size: 7rem;
+    line-height: 9rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .timer-value {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  .timer-value {
+    font-size: 4.5rem;
+    line-height: 6.5rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .timer-value {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+
+  .timer-value {
+    font-size: 3rem;
+    line-height: 4rem;
   }
 }

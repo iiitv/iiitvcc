@@ -59,13 +59,15 @@ const Eventpage = (props) => {
           <div className="event-name-detailpg">{title}</div>
           <div className="event-date-detailpg">
             <span className="day-detailpg">{eventDate.getDate()}</span>
-            <span className="month-detailpg">{monthNames[eventDate.getMonth()]}</span>
+            <span className="month-detailpg">
+              {monthNames[eventDate.getMonth()]}
+            </span>
           </div>
           <div className="event-details">{details}</div>
           <div className="content-horiz">
             <div className="event-address">{address}</div>
             <Link href={`${props.eventindex}`}>
-              <button className="register register-detailpg">Register</button>
+              <button className="register-detailpg">Register</button>
             </Link>
           </div>
         </div>
@@ -91,14 +93,18 @@ const Eventpage = (props) => {
             <div className="event-value">{requirements}</div>
           </div>
           <div className="poweredby">
-            <div>Powered By:</div>
-            <img src="/media/logos/github.jpg" alt="githublogo" />
+            <div className="poweredby__text">Powered By:</div>
+            <div className="poweredby__img">
+              <img src="/media/logos/github.jpg" alt="githublogo" />
+            </div>
           </div>
         </div>
       </div>
       <EventTimer date={eventDate} />
       <Link href={`${props.eventindex}`}>
-        <button className="register-detailpg calendar-btn">Add to Calender</button>
+        <button className="register-detailpg calendar-btn">
+          Add to Calender
+        </button>
       </Link>
     </div>
   );
