@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Keyboard, Pagination } from "swiper";
 import Link from "next/link";
-import { eventarchive } from "../../events/eventarchive.json";
+import { eventarchive } from "../../events/eventArchive.json";
 
 SwiperCore.use([Autoplay, Keyboard, Pagination]);
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { eventarchive } from "../../events/eventarchive.json";
+import { eventarchive } from "../../events/eventArchive.json";
 import Link from "next/link";
-// impo
 const EventsArchive = () => {
   const monthNames = [
     "Jan",
@@ -20,8 +19,6 @@ const EventsArchive = () => {
   let year1 = "2022";
   let year2 = "2021";
   const [year, setYear] = useState("year1");
-  const [btnYear1Bg, setbtnYear1Bg] = useState("#602080");
-  const [btnYear2Bg, setbtnYear2Bg] = useState("none");
   return (
     <div id="foobar">
       <div className="bg-text">CODING</div>
