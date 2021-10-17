@@ -56,13 +56,13 @@ const Eventpage = (props) => {
       </div>
       <div className="event-container">
         <div className="event-l-col">
-          <div className="event-name event-name-detailpg">{title}</div>
-          <div className="event-date event-date-detailpg">
-            <span className="day day-detailpg">{eventDate.getDate()}</span>
-            <span className="month month-detailpg">{monthNames[eventDate.getMonth()]}</span>
+          <div className="event-name-detailpg">{title}</div>
+          <div className="event-date-detailpg">
+            <span className="day-detailpg">{eventDate.getDate()}</span>
+            <span className="month-detailpg">{monthNames[eventDate.getMonth()]}</span>
           </div>
           <div className="event-details">{details}</div>
-          <div className="cont-horiz">
+          <div className="content-horiz">
             <div className="event-address">{address}</div>
             <Link href={`${props.eventindex}`}>
               <button className="register register-detailpg">Register</button>
@@ -98,7 +98,7 @@ const Eventpage = (props) => {
       </div>
       <EventTimer date={eventDate} />
       <Link href={`${props.eventindex}`}>
-        <button className="register register-detailpg calendar-btn">Add to Calender</button>
+        <button className="register-detailpg calendar-btn">Add to Calender</button>
       </Link>
     </div>
   );

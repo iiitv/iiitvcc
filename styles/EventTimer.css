@@ -16,10 +16,10 @@
 
 .timer-title {
   font-family: Orbitron;
-  font-size: 2.4vw;
+  font-size: 2.4rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 3vw;
+  line-height: 3rem;
   letter-spacing: 0em;
   text-align: left;
   color: #707070;
@@ -27,27 +27,38 @@
 
 .timer-value {
   font-family: Orbitron;
-  font-size: 10vw;
+  font-size: 10rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 11.2vw;
+  line-height: 11.2rem;
   letter-spacing: 0em;
   text-align: left;
   color: #707070;
 }
 
+@media screen and (max-width: 1080px){
+  .timer-title {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+  
+  .timer-value {
+    font-size: 8rem;
+    line-height: 9rem;
+  } 
+}
 @media screen and (max-width: 850px) {
   .timer-container {
     margin: 9% auto;
     width: 82vw;
   }
   .timer-title {
-    font-size: 4vw;
-    line-height: 5vw;
+    font-size: 4rem;
+    line-height: 5rem;
   }
 
   .timer-value {
-    font-size: 15.5vw;
-    line-height: 16vw;
+    font-size: 15.5rem;
+    line-height: 16rem;
   }
 }
