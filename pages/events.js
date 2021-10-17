@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
-import EventsCarousel from "../components/Events page/EventsCarousel";
-import EventsArchive from "../components/Events page/EventsArchive";
+import EventsCarousel from "../components/eventsPage/eventsCarousel";
+import EventsArchive from "../components/eventsPage/eventsArchive";
 
 const events = () => {
   return (

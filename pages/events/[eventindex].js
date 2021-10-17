@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "../../components/Header";
-import EventTimer from "../../components/Events page/EventTimer";
-import { eventarchive } from "../../events/eventarchive.json";
+import EventTimer from "../../components/eventsPage/eventTimer";
+import { eventarchive } from "../../events/eventArchive.json";
 
 export async function getStaticPaths() {
   let paths = eventarchive.map((e, i) => `/events/${i}`);
