@@ -1,0 +1,124 @@
+.timer-container {
+  width: 80vw;
+  margin: 4% auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.timer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+.timer-title {
+  font-family: Orbitron;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #707070;
+}
+
+.timer-value {
+  font-family: Orbitron;
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 11.2rem;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #707070;
+}
+
+@media screen and (max-width: 1080px){
+  .timer-title {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+  
+  .timer-value {
+    font-size: 8rem;
+    line-height: 9rem;
+  } 
+}
+@media screen and (max-width: 850px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+  .timer-value {
+    font-size: 7rem;
+    line-height: 9rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .timer-value {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  .timer-value {
+    font-size: 4.5rem;
+    line-height: 6.5rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .timer-value {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+@media screen and (max-width: 360px) {
+  .timer-container {
+    margin: 9% auto;
+    width: 82%;
+  }
+  .timer-title {
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+
+  .timer-value {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+}

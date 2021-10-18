@@ -1,17 +1,20 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import React, { useRef, useState } from "react";
+import Header from "../components/Header";
+import EventsCarousel from "../components/eventsPage/eventsCarousel";
+import EventsArchive from "../components/eventsPage/eventsArchive";
 
 const events = () => {
   return (
     <React.Fragment>
       <main className="main__events">
         <Header />
-          <p style={{height: "100vh", color: "white"}}>events</p>
-        <Footer />
+        <div className="carousel-bg">
+          <EventsCarousel />
+        </div>
+        <EventsArchive />
       </main>
     </React.Fragment>
   );
-}
+};
 
 export default events;
