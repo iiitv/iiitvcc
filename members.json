@@ -1,57 +1,112 @@
 {
   "leads": [
     {
-      "name": "Neeraj Purohit",
-      "desc": "A very good line about this person he is very good in real as well as in virtual world because he lives in both worlds, and once again, I want to say he is very good",
+      "name": "Mugdha Sharma",
+      "desc": "IIITVCC Secretary",
       "links": ""
     },
     {
-      "name": "Pushkar",
-      "desc": ""
+      "name": "Anirudhh Modi",
+      "desc": "IIITVCC Joint Secretary"
     },
     {
-      "name": "Tanmay",
-      "desc": ""
+      "name": "Kalash Shah",
+      "desc": "CP Lead"
     }
   ],
   "members": [
     {
-      "name": "Pushkar",
+      "name": "Vidit Shukla",
       "desc": ""
     },
     {
-      "name": "Pushkar",
+      "name": "Suryansh Kumar",
       "desc": ""
     },
     {
-      "name": "Pushkar",
+      "name": "Chirag Mathur",
       "desc": ""
     },
     {
-      "name": "Pushkar",
+      "name": "Atishay Jain",
       "desc": ""
     },
     {
-      "name": "Pushkar",
+      "name": "Prathmesh Khandelwal",
       "desc": ""
     },
     {
-      "name": "Pushkar",
-      "desc": ""
-    }
-  ],
-  "foobars": [
-    {
-      "name": "Tanmay",
+      "name": "Vikrant Kumar",
       "desc": ""
     },
     {
-      "name": "Tanmay",
+      "name": "Samarth Singh",
       "desc": ""
     },
     {
-      "name": "Tanmay",
+      "name": "Abhijeet Tamrakar",
+      "desc": ""
+    },
+    {
+      "name": "Krishna Gaur",
+      "desc": ""
+    },
+    {
+      "name": "Shreyansh Mishra",
+      "desc": ""
+    },
+    {
+      "name": "Keshav Agarwal",
+      "desc": ""
+    },
+    {
+      "name": "Madhur Gupta",
+      "desc": ""
+    },
+    {
+      "name": "Akhilesh Manda",
+      "desc": ""
+    },
+    {
+      "name": "Prathak Garg",
+      "desc": ""
+    },
+    {
+      "name": "Chitranshi Srivastava",
+      "desc": ""
+    },
+    {
+      "name": "Dhruv Rashiya",
+      "desc": ""
+    },
+    {
+      "name": "Dhruv Dave",
+      "desc": ""
+    },
+    {
+      "name": "Anubhav Kushwaha",
+      "desc": ""
+    },
+    {
+      "name": "Satyam Tripathi",
+      "desc": ""
+    },
+    {
+      "name": "Raj Shah",
+      "desc": ""
+    },
+    {
+      "name": "Poojan Baraiya",
+      "desc": ""
+    },
+    {
+      "name": "Shubh Patel",
+      "desc": ""
+    },
+    {
+      "name": "Krish Patel",
       "desc": ""
     }
   ]
+  
 }
