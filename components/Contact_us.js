@@ -5,6 +5,9 @@ const Contact_us = () => {
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
     min-height:1000px;
+   
+
+    
 
    
     .common-heading{
@@ -24,24 +27,45 @@ const Contact_us = () => {
       padding:1rem;
       }
 
-      @media (max-width:878px){
+      @media (max-width:1018px){
         .contact-form input{
-         width:24rem;
+         width:34rem;
+         max-width:34rem;
+        }
+        .container .contact-form textarea{
+          min-width:34rem;
+          // width:50px;
+          
+         
+        }
+        
+        
+      }
+      @media (max-width:718px){
+        .contact-form input{
+         width:28rem;
+         max-width:28rem;
+        }
+        .container .contact-form textarea{
+          min-width:28rem;
+          width:20px;
+          
+         
+        }
+        
+      }
+      @media (max-width:500px){
+        .contact-form input{
+         width:18rem;
          max-width:18rem;
         }
-        .contact-form textarea{
-          // min-width:10rem;
-          max-width:14rem;
-          width:15px;
+        .container .contact-form textarea{
+          min-width:18rem;
+          width:18px;
+          
+         
         }
-        .contact-form {
-          min-height:25rem;
-          max-width: 10rem;
-          width:20rem;
-          margin: auto;
-          display:flex;
-          color:#f638dc;
-        }
+        
       }
 
       .contact-form textarea{
@@ -132,6 +156,7 @@ const Contact_us = () => {
             />
 
             <textarea
+            className="textarea"
               name="message"
               cols="40"
               rows="4"
