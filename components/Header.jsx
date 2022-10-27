@@ -44,7 +44,7 @@ export default function Header({ pageTitle, description }) {
               <Link href="/members">Members</Link>
             </li>
             <li>
-              <Link href="/#contact_us">Contact Us</Link>
+              <Link href="/Contact_page">Contact Us</Link>
             </li>
           </ul>
         </nav>
@@ -59,6 +59,7 @@ export default function Header({ pageTitle, description }) {
           <Link href="/blog">Blogs</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/members">Members</Link>
+          <Link href="/Contact_page">contact us</Link>
         </div>
       </div>
     </React.Fragment>
