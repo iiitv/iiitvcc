@@ -156,6 +156,7 @@ const Contact_us = () => {
             />
 
             <textarea
+            placeholder="Message"
             className="textarea"
               name="message"
               cols="40"
