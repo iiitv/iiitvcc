@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import matter from 'gray-matter'
 import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+
 
 export async function getStaticProps() {
   const posts = ((blog) => {
@@ -43,12 +44,16 @@ function Blog({ posts, ...props }) {
           {posts &&
             posts.map((post) => {
               return (
+                <div className="blog">
+
+                
                 <div key={post.slug}>
                   <Link href={{ pathname: `/blogs/${post.slug}` }}>
                     <h2 className="blog-title"><a>{post.frontmatter.title}</a></h2>
                   </Link>
                   <small>{post.frontmatter.date}</small>
                   <p className="blog-desc">{post.markdownBody.substring(0, 120) + '...'}</p>
+                </div>
                 </div>
               )
             })}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Cover() {
   return (
@@ -19,7 +20,7 @@ function Cover() {
             </div>
             <div className="inf-btn">
               <button className="trans-btn">Know us</button>
-              <button className="trans-btn">Contact Us</button>
+              <button  className="trans-btn">Contact Us</button>
             </div>
           </div>
           <img

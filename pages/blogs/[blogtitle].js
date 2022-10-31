@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-import Header from '../../components/Header'
+import Header from '../../components/Header';
+
 
 export async function getStaticPaths() {
   const blogSlugs = ((context) => {
@@ -39,6 +40,9 @@ export async function getStaticProps({ ...ctx }) {
 export default function Blog({ setTitle, frontmatter, markdownBody }) {
   return (
     <>
+    <div className="blog">
+
+    
       <Header pageTitle={frontmatter.title} description={frontmatter.title} />
       <main className="post">
         <div className="post_wrap">
@@ -56,6 +60,7 @@ export default function Blog({ setTitle, frontmatter, markdownBody }) {
           </Link>
         </div>
       </main>
+      </div>
     </>
   )
 }
