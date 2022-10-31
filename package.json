@@ -15,6 +15,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^5.0.3",
+    "react-router-dom": "^6.4.2",
     "styled-components": "^5.3.6",
     "swiper": "6.5.0"
   }

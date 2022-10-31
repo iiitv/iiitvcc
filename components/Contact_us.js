@@ -15,7 +15,7 @@ const Contact_us = () => {
       align-item:center;
       justify-content:center;
       font-size:3rem;
-      margin:1rem;
+      margin:auto;
       color:#f638dc;
 
     }
