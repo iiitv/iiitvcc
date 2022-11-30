@@ -7,7 +7,7 @@ function Members() {
     <React.Fragment>
       <Header />
       <main className="mid">
-        <div className="text">CODING CLUB 2020</div>
+        <div className="text">CODING CLUB 2022</div>
 
         <div className="container" >
           <p className="sub__text">FEATURED PROJECTS</p>
