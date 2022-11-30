@@ -10,7 +10,7 @@ function Members() {
       <Header />
       <main className="mid">
         {console.log(members)}
-        <div className="text">CODING CLUB 2020</div>
+        <div className="text">CODING CLUB 2022</div>
 
         <div className="container" >
           <p className="sub__text">LEADS</p>
