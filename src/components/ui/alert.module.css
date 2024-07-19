@@ -1,0 +1,49 @@
+.error_container {
+  position: fixed;
+  color: #ffff;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  z-index: 101;
+}
+.error_box {
+  width: fit-content;
+  max-height: 0;
+  max-width: 490px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  flex-direction: row;
+  border-radius: 4px;
+  color: var(--white);
+  padding: 0 .7em;
+  gap: .5em;
+  transition: max-height .7s ease-in-out, transform .7s ease-in-out;
+}
+.error_box .message {
+  position: relative;
+  width: fit-content;
+  padding: 1em 0;
+}
+.error_box_active {
+  max-height: 100px;
+  box-shadow: 0 0 0 3px white;
+  transform: translateY(22px);
+  transition: max-height .5s ease-in-out, transform .5s ease-in-out;
+}
+.red {
+  background-color: #f45151;
+}
+.green {
+  background-color: #4fbf26;
+}
+.orange {
+  background-color: #f4a442;
+}
+.blue {
+  background-color: #4f8bf2;
+}

@@ -1,0 +1,11 @@
+.error {
+  position: absolute;
+  left:6px;
+  top: -17.5px;
+  height: fit-content !important;
+  color:red !important;
+  font-size:0.7rem !important;
+  word-wrap: no-wrap !important;
+  white-space: nowrap !important;
+  z-index: 10;
+}
