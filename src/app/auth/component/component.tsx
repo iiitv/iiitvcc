@@ -48,7 +48,7 @@ export function Component( props : Props) {
       }
     },
     content : {
-      title: 'Welcome Senpai',
+      title: 'Welcome User',
       subtitle: 'Enter your email to continue'
     }
   }
