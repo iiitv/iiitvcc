@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button"
+
+// -- icons --
 import CircularProgress from '@mui/material/CircularProgress';
+import { FcGoogle } from "react-icons/fc";
 
 import { JSX, SVGProps } from "react"
 
@@ -29,11 +32,11 @@ export function OAuthComponent(props : Props) {
           });
         }}
         variant="outline"
-        className="group relative flex w-full justify-center rounded-md border border-input bg-background py-2 px-4 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-2"
+        className="group relative flex w-full justify-center rounded-[8px] border border-input bg-background py-6 px-4 text-md font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:opacity-90"
       >
-        {loading ? <i style={{display: 'flex', color: '#00000' }}><CircularProgress color="inherit" size={30} thickness={2} style={{}}/></i>:
+        {loading ? <i className="flex text-black"><CircularProgress color="inherit" size={30} thickness={2} style={{}}/></i>:
         <>
-          <ChromeIcon className="mr-2 h-5 w-5" /> Continue with Google
+          <FcGoogle size={21} className="ml-2 mr-[.1em]"/>oogle
         </>}
       </Button>
     </>

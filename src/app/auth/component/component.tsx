@@ -5,9 +5,10 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import CircularProgress from '@mui/material/CircularProgress';
-import { cn } from "@/lib/utils"
 import styles from './styles.module.css'
+import { cn } from "@/lib/utils"
 
 interface Props {
   auth: string | null
@@ -25,13 +26,6 @@ export function Component( props : Props) {
 
   const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (props.email) {
-      const emailElement = document.getElementById('email') as HTMLInputElement;
-      if (emailElement) emailElement.value = props.email || '';
-    }
-  }, [props.email])
-
   let structure = {
     inputfield : {
       limit : 1,
@@ -48,8 +42,8 @@ export function Component( props : Props) {
       }
     },
     content : {
-      title: 'Welcome Senpai',
-      subtitle: 'Enter your email to continue'
+      title: ['Welcome ', 'User'],
+      subtitle: 'Enter your email to continue '
     }
   }
   if (auth === 'login') {
@@ -71,7 +65,7 @@ export function Component( props : Props) {
       }
     }
     structure.content = {
-      title: 'Sign in to your account',
+      title: ['Sign in to your ', 'account'],
       subtitle: ''
     }
   } else if (auth === 'signup'){
@@ -87,7 +81,6 @@ export function Component( props : Props) {
       text: 'Sign up',
       onsubmit: async (e) => {
         e.preventDefault();
-        setLoading(true);
         const current = e.currentTarget;
         const username = current.username.value;
         if ( username.length < 3 ) {
@@ -95,56 +88,58 @@ export function Component( props : Props) {
           nextUserSibling.innerText = 'Username must be at least 3 characters long';
           return ;
         }
-        usernameExisits(username).then(async (data) => {
-          console.log('data = ',data);
-          if (data) {
-            const nextUserSibling = current.username.nextSibling as HTMLElement;
-            nextUserSibling.innerText = 'Username already exists';
+        setLoading(true);
+        const data = await  usernameExisits(username)
+        console.log('data = ',data);
+        if (data) {
+          const nextUserSibling = current.username.nextSibling as HTMLElement;
+          nextUserSibling.innerText = 'Username already exists';
+        } else {
+          const nextUserSibling = current.username.nextSibling as HTMLElement;
+          nextUserSibling.innerText = '';
+          if (validatePassword(password) && password.length>=8) {
+
+            const bool = await props.SignUp(current)
+            if (!bool) setLoading(false);
+
+            const nextSibling = current.password.nextSibling as HTMLElement;
+            nextSibling.innerText = '';
           } else {
-            const nextUserSibling = current.username.nextSibling as HTMLElement;
-            nextUserSibling.innerText = '';
-            if (validatePassword(password) && password.length>=8) {
-
-              const bool = await props.SignUp(current)
-              if (!bool) setLoading(false);
-
-              const nextSibling = current.password.nextSibling as HTMLElement;
-              nextSibling.innerText = '';
-            } else {
-              const nextSibling = current.password.nextSibling as HTMLElement;
-              if (!validatePassword(password, 1)) {
-                nextSibling.innerText = 'Password must be at least 8 characters long';
-              } else if (!validatePassword(password, 2)) {
-                nextSibling.innerText = 'Password must contain at least one uppercase, one lowercase and one digit';
-              } else if (!validatePassword(password, 3)) {
-                nextSibling.innerText = 'Password must contain at least one special character';
-              }
+            const nextSibling = current.password.nextSibling as HTMLElement;
+            if (!validatePassword(password, 1)) {
+              nextSibling.innerText = 'Password must be at least 8 characters long';
+            } else if (!validatePassword(password, 2)) {
+              nextSibling.innerText = 'Password must contain at least one uppercase, one lowercase and one digit';
+            } else if (!validatePassword(password, 3)) {
+              nextSibling.innerText = 'Password must contain at least one special character';
             }
           }
-        })
-
+        }
+        setLoading(false);
       }
     }
     structure.content = {
-      title: 'Create an account',
+      title: ['Create an ' ,'account'],
       subtitle: ''
     }
   }
 
-  const toogleRevealPassword = () => {
-    setRevealPassword(!revealPassword)
-    structure.inputfield.values[2].type = revealPassword?'text':'password'
-  }
-
+  
+  useEffect(() => {
+    if (props.email) {
+      const emailElement = document.getElementById('email') as HTMLInputElement;
+      if (emailElement) emailElement.value = props.email || '';
+    }
+  }, [props.email])
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-foreground">
-              {structure.content.title}
+              {structure.content.title[0]}<span className="text-primary">{structure.content.title[1]}</span>
           </h2>
-          { (structure.content.subtitle !== '') && <p className="mt-1 text-center text-sm tracking-tight text-[#0000008f]">{structure.content.subtitle}</p>}
+          { (structure.content.subtitle !== '') && <p className="mt-1 text-center text-sm tracking-tight text-foreground">{structure.content.subtitle}</p>}
         </div>
         <form className="space-y-6" onSubmit={structure.button.onsubmit}>
         {structure.inputfield.values.map((input) => (
@@ -158,23 +153,25 @@ export function Component( props : Props) {
                 }}
               id={input.name}
               name={input.name}
-              type={input.type || 'text'}
+              type={input.type === 'password' && revealPassword ? 'text' : input.type}
               autoComplete={input.name === 'password' ? 'current-password' : 'email'}
               required
               placeholder={input.label}
               disabled={(props.email && input.name === 'email' && auth)?true:false}
-              className="relative block w-full appearance-none rounded-md border border-input bg-background px-3 py-2 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none focus:ring-primary sm:text-sm"
+              className={cn("rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm",
+                input.name === 'password' && 'pr-12')}
             />
             <span className={cn(styles.error)}></span>
+            <i className={`${!(input.name === 'password') && 'hidden'} ${styles.inputicon} ${styles.eyeicon}`} onClick={() => setRevealPassword(!revealPassword)}>{revealPassword?<VscEyeClosed size='23px'/>:<VscEye size='23px'/>}</i>
           </div>
         ))}
           <div>
             <Button
               type="submit"
-              className="group relative flex w-full justify-center rounded-md bg-primary py-2 px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus:ring-1 focus:ring-primary focus:ring-offset-2"
+              className="group relative flex w-full justify-center rounded-[8px] bg-primary py-6 px-4 text-md font-bold text-primary-foreground transition-colors focus:opacity-90 focus:outline-none"
               disabled={loading}
             >
-              {loading? <i style={{display: 'flex', color: 'white' }}><CircularProgress color="inherit" size={30} thickness={2} style={{}}/></i> : structure.button.text}
+              {loading ? <i className="flex text-primary-foreground mr-2"><CircularProgress color="inherit" size={25} thickness={3}/></i> : structure.button.text}
             </Button>
           </div>
         </form>

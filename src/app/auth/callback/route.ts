@@ -6,7 +6,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
     const code = searchParams.get('code');
 
     const url = req.nextUrl.clone();
-    url.pathname = '/create_form';
+    url.pathname = '/form_create';
     url.searchParams.delete('code');
 
 

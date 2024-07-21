@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import React, { Suspense } from "react";
+import Loading from "@/components/loading";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +18,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+      </head>
+
+      <body className={inter.className}>
+        <Suspense fallback={<Loading />}>{children}</Suspense>
+      </body>
     </html>
   );
 }
