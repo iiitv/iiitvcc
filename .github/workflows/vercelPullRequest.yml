@@ -1,4 +1,4 @@
-name: Create vercel preview URL on pull request
+name: Deploy to vercel on PR
 on:
   pull_request:
     branches:
@@ -7,9 +7,18 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: amondnet/vercel-action@v25
-        id: vercel-deploy
+      - uses: actions/checkout@v2
+      # To set more environment variables on the build, either use Vercel CLI or this:
+      # - uses: dkershner6/vercel-set-env-action@v1
+      #   with:
+      #     token: ${{ secrets.VERCEL_TOKEN }}
+      #     projectName: events-app
+      #     envVariableKeys: SOME_VARIABLE
+      #   env:
+      #     SOME_VARIABLE: ${{ secrets.SOME_VARIABLE }}
+      #     TARGET_SOME_VARIABLE: preview,development,production
+      #     TYPE_SSOME_VARIABLE: encrypted
+      - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
