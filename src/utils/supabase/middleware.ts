@@ -57,7 +57,7 @@ export async function updateSession(request: NextRequest) {
   const { data: {user}} = await supabase.auth.getUser()
   if (user && !user?.confirmed_at && request.nextUrl.pathname === '/form_create') {
     response = NextResponse.redirect(new URL('/auth/confirm_email', request.nextUrl.href))
-  } else if (user && user?.confirmed_at && request.nextUrl.pathname === '/auth/confirm_email') {
+  } else if (user?.confirmed_at && request.nextUrl.pathname === '/auth/confirm_email') {
       response = NextResponse.redirect(new URL('/form_create', request.nextUrl.href))
   } else if (user && request.nextUrl.pathname === '/auth') {
     response = NextResponse.redirect(new URL('/form_create', request.nextUrl.href))

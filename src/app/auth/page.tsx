@@ -61,7 +61,7 @@ export default function Auth(){
           setError(error);
           return false;
         } else {
-          router.push('/auth/confirm_email');
+          router.push('/auth/confirm_email?email=' + email);
         }
     }
     const Authsignin = async () => {
