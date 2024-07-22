@@ -7,7 +7,7 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # To set more environment variables on the build, either use Vercel CLI or this:
       # - uses: dkershner6/vercel-set-env-action@v1
       #   with:
@@ -18,7 +18,7 @@ jobs:
       #     SOME_VARIABLE: ${{ secrets.SOME_VARIABLE }}
       #     TARGET_SOME_VARIABLE: preview,development,production
       #     TYPE_SSOME_VARIABLE: encrypted
-      - uses: amondnet/vercel-action@v20
+      - uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
