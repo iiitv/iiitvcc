@@ -2,32 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background:  #201F31;
+    --foreground: #fcfdff;
+    --card: #ffffff;
+    --card-foreground: #1d0209;
+    --popover: #ffffff;
+    --popover-foreground: #1d0209;
+    --primary: #ffbade;
+    --primary-foreground: #1c2230;
+    --secondary: #f0f4f8;
+    --secondary-foreground: #201F31;
+    --muted: #f0f4f8;
+    --muted-foreground: #707a8a;
+    --accent: #f0f4f8;
+    --accent-foreground: #1c2230;
+    --destructive: #e60000;
+    --destructive-foreground: #fcfdff;
+    --border: #e6eaf0;
+    --input: #e6eaf0;
+    --ring: #1d0209;
+    --radius: 0.5rem;
+    --chart-1: #33cc99;
+    --chart-2: #4db8ff;
+    --chart-3: #3366cc;
+    --chart-4: #ffcc33;
+    --chart-5: #ff9933;
+  }
+
+  .dark {
+    --background:  #201F31;
+    --foreground: #fcfdff;
+    --card: #0d020a;
+    --card-foreground: #fcfdff;
+    --popover: #0d020a;
+    --popover-foreground: #fcfdff;
+    --primary: #ffbade;
+    --primary-foreground: #1c2230;
+    --secondary: #2a2f3d;
+    --secondary-foreground: #fcfdff;
+    --muted: #2a2f3d;
+    --muted-foreground: #a4a9b5;
+    --accent: #2a2f3d;
+    --accent-foreground: #fcfdff;
+    --destructive: #e60000;
+    --destructive-foreground: #fcfdff;
+    --border: #2a2f3d;
+    --input: #2a2f3d;
+    --ring: #d9e1f2;
+    --chart-1: #5a9fd3;
+    --chart-2: #4c9a70;
+    --chart-3: #e6a23c;
+    --chart-4: #8a5aa2;
+    --chart-5: #d64161;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+input, button, textarea, select {
+  font: inherit;
 }
