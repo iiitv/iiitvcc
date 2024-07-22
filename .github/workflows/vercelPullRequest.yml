@@ -2,7 +2,7 @@ name: Create vercel preview URL on pull request
 on:
   pull_request:
     branches:
-      - main
+      - new
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
