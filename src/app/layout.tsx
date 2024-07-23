@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import Loading from "@/components/loading";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
 
       <body className={inter.className}>
         <Suspense fallback={<Loading />}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
   );
