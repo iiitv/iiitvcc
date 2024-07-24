@@ -70,16 +70,6 @@ export const AuthSignIn = async () => {
   return { error: 'Error signing in', url: null };
 }
 
-export async function usernameExisits(username: string): Promise<boolean> {
-  const supabase = createClient();
-  let { data, error } = await supabase
-      .rpc('is_username_exist', {
-        username: username,
-      });
-      if (error) console.error(error)
-  return data;
-}
-
 export const checkEmailForOrganisation = (
   credentials : {
     email: string ,

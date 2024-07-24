@@ -1,5 +1,5 @@
 import React, { FormEvent, use, useEffect, useState } from "react";
-import { usernameExisits } from "@/app/auth/action";
+import axios from "axios";
 
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -90,9 +90,9 @@ export function Component( props : Props) {
           return ;
         }
         setLoading(true);
-        const data = await  usernameExisits(username)
+        const res = await axios.post('/api/rest/v1/isUsername', {username: username});
 
-        if (data) {
+        if (res.data.state) {
           const nextUserSibling = current.username.nextElementSibling as HTMLElement;
           nextUserSibling.innerText = 'Username already exists';
         } else {
