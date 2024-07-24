@@ -26,6 +26,11 @@ export default function Auth(){
     const auth = searchParams.get('auth');
     const organisation = searchParams.get('organisation');
     const oauthhidden = organisation==='iiitv'?true:false;
+    const err = searchParams.get('error');
+
+    useEffect(() => {
+        if (err) setError(err);
+    }, [err]);
 
     const cookies = useCookies();
     const email = cookies.get('email') || null;
@@ -48,22 +53,24 @@ export default function Auth(){
         } else {
           router.push('/form_create');
         }
-    }  
+    }
+
     const signup = async (cur: EventTarget & HTMLFormElement) => {
         const email = cur.email.value;
         const username = cur.username.value;
         const password = cur.password.value;
 
-        cookies.set('username', username);
         setError(null);
-        const { error } = await SignUp({email, password})
+        const { user_id, error } = await SignUp({username, email, password})
+        console.log(error);
         if (error) {
           setError(error);
           return false;
         } else {
-          router.push('/auth/confirm_email?email=' + email);
+          router.push(`/auth/confirm_email?id=${user_id}&user_email=${email}`);
         }
     }
+
     const Authsignin = async () => {
       setError(null);  
       const { error, url } = await AuthSignIn();
@@ -88,13 +95,13 @@ export default function Auth(){
           EmailSubmit={emailSubmit}
           email={email}>
 
-          { auth && 
-            <div className="text-red-500 text-center"><div className="mt-2 text-center text-sm text-muted-foreground">
-            {auth === 'signup' ?
-            <p>Have an account? <Link href={Path('login', organisation)} className="font-medium text-primary hover:text-primary/90" prefetch={false}>Login</Link></p> :
-            <p>Don&apos;t have an account? Create <Link href={Path('signup', organisation)} className="font-medium text-primary hover:text-primary/90" prefetch={false}>here</Link></p>}
-            </div></div>
-          }
+          { auth && (<div className="text-red-500 text-center">
+              <div className="mt-2 text-center text-sm text-muted-foreground">
+              {auth === 'signup' ?
+              <p>Have an account? <Link href={Path('login', organisation)} className="font-medium text-primary hover:text-primary/90" prefetch={false}>Login</Link></p> :
+              <p>Don&apos;t have an account? Create <Link href={Path('signup', organisation)} className="font-medium text-primary hover:text-primary/90" prefetch={false}>here</Link></p>}
+              </div>
+            </div>)}
 
           {oauthhidden && <OAuthComponent onClick={Authsignin} />}
         </Component>

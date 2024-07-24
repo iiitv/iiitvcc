@@ -21,51 +21,53 @@ export const Login = async (
 
 export const SignUp = async (
     credentials : {
+        username: string | null,
         email: string ,
         password: string ,
     }) => {
         const origin = headers().get("origin");
-        const referer = headers().get("referer");
-        const query = referer?.split('?')[1].split('&');
-        const org = query?.find((q) => q.includes('organisation')) || '';
-
+        const username = credentials.username;
         const supabase = createClient();
-        const { data: { session }, error, } = await supabase.auth.signUp({
+
+        const { data: { user, session }, error, } = await supabase.auth.signUp({
             email: credentials.email as string,
             password: credentials.password as string,
             options: {
-                emailRedirectTo: `${origin}/auth/callback`,
+              emailRedirectTo: `${origin}/auth/confirm`,
+              data: { username: username },
             },
         });
+
         if (error) {
+          console.log(error);
           return { error: error.message };
         }
-        if (session) {
+        if (session || user?.role !== 'authenticated') {
           return { error: 'Email already exists' };
         }
-        return { error: null };
+        return { user_id: user?.id, error: null };
 };
 
 export const AuthSignIn = async () => {
-    const origin = headers().get("origin");
-    const gmail = cookies()?.get('email')?.value || '';
-    
-    const supabase = createClient();
-    const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'google',
-        options: {
-          redirectTo: `${origin}/auth/callback`,
-          queryParams: {
-                include_granted_scopes: 'true',
-                access_type: 'offline',
-                prompt: 'select_account',
-                login_hint: gmail,
-            },
-        },
-    });
-    if (error) return { error: error.message, url: null };
-    if (data.url) return { error: null, url: data.url };
-    return { error: 'Error signing in', url: null };
+  const origin = headers().get("origin");
+  const gmail = cookies()?.get('email')?.value || '';
+  
+  const supabase = createClient();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${origin}/auth/callback`,
+        queryParams: {
+              include_granted_scopes: 'true',
+              access_type: 'offline',
+              prompt: 'select_account',
+              login_hint: gmail,
+          },
+      },
+  });
+  if (error) return { error: error.message, url: null };
+  if (data.url) return { error: null, url: data.url };
+  return { error: 'Error signing in', url: null };
 }
 
 export async function usernameExisits(username: string): Promise<boolean> {

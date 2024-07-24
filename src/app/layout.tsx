@@ -27,6 +27,11 @@ export default function RootLayout({
       </head>
 
       <body className={inter.className}>
+        <script
+          type="module"
+          defer
+          src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/spiral.js"
+        ></script>
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>

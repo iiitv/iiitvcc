@@ -1,14 +1,15 @@
-import { FormEvent, use, useEffect, useState } from "react";
+import React, { FormEvent, use, useEffect, useState } from "react";
 import { usernameExisits } from "@/app/auth/action";
 
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import Loader from '@/components/ui/loader'
 
-import { VscEye, VscEyeClosed } from "react-icons/vsc";
-import CircularProgress from '@mui/material/CircularProgress';
+import { VscEye, VscEyeClosed } from "react-icons/vsc"
 import styles from './styles.module.css'
 import { cn } from "@/lib/utils"
+
 
 interface Props {
   auth: string | null
@@ -90,22 +91,21 @@ export function Component( props : Props) {
         }
         setLoading(true);
         const data = await  usernameExisits(username)
-        console.log('data = ',data);
+
         if (data) {
-          const nextUserSibling = current.username.nextSibling as HTMLElement;
+          const nextUserSibling = current.username.nextElementSibling as HTMLElement;
           nextUserSibling.innerText = 'Username already exists';
         } else {
-          const nextUserSibling = current.username.nextSibling as HTMLElement;
+          const nextUserSibling = current.username.nextElementSibling as HTMLElement;
           nextUserSibling.innerText = '';
           if (validatePassword(password) && password.length>=8) {
-
             const bool = await props.SignUp(current)
             if (!bool) setLoading(false);
 
-            const nextSibling = current.password.nextSibling as HTMLElement;
+            const nextSibling = current.password.nextElementSibling as HTMLElement;
             nextSibling.innerText = '';
           } else {
-            const nextSibling = current.password.nextSibling as HTMLElement;
+            const nextSibling = current.password.nextElementSibling as HTMLElement;
             if (!validatePassword(password, 1)) {
               nextSibling.innerText = 'Password must be at least 8 characters long';
             } else if (!validatePassword(password, 2)) {
@@ -171,7 +171,8 @@ export function Component( props : Props) {
               className="group relative flex w-full justify-center rounded-[8px] bg-primary py-6 px-4 text-md font-bold text-primary-foreground transition-colors focus:opacity-90 focus:outline-none"
               disabled={loading}
             >
-              {loading ? <i className="flex text-primary-foreground mr-2"><CircularProgress color="inherit" size={25} thickness={3}/></i> : structure.button.text}
+              {loading ?
+                <i className="flex text-primary-foreground mr-2"><Loader /></i>: structure.button.text}
             </Button>
           </div>
         </form>
@@ -190,7 +191,7 @@ function validateEmail(email: string): boolean {
 function validatePassword(password: string, customCheck: number = 0): boolean {
   const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
   const special = /[!@#$%^&*()_+]/;
-  const upper_lower_digit = /[a-z]/ && /[A-Z]/ && /\d/;
+  const upper_lower_digit = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
   if (!customCheck) return re.test(password);
   if (customCheck === 1) return password.length >= 8;
   if (customCheck === 2) return upper_lower_digit.test(password);
