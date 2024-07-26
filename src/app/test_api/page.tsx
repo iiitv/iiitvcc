@@ -9,7 +9,7 @@ export default function Page() {
   const [selectedBlogFile, setSelectedBlogFile] = useState<File | null>(null);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [eventId, setEventId] = useState<string>("7");
-  const [blogId, setBlogId] = useState<string>("22");
+  const [blogId, setBlogId] = useState<string>("24");
   const [events, setEvents] = useState<any[]>([]);
   const [blogs, setBlogs] = useState<any[]>([]);
   const createEvent = async () => {
@@ -22,7 +22,7 @@ export default function Page() {
         event: {
           name: "CodeStrike v6.0",
           description: "A competitive coding event",
-          date: "2024-05-30",
+          date: "2024-07-30",
           duration: 180,
           mode: true,
           host_link: "https://www.example.com",
@@ -97,7 +97,7 @@ export default function Page() {
   };
 
   const getEvents = async () => {
-    const response = await fetch("/api/v1/get/events/", {
+    const response = await fetch("/api/v1/get/events/?category=past", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export default function Page() {
   };
 
   const getBlogs = async () => {
-    const response = await fetch("/api/v1/get/blogs/?page=4&limit=1", {
+    const response = await fetch("/api/v1/get/blogs/?page=1&limit=5", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
