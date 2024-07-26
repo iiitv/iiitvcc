@@ -63,6 +63,8 @@ export async function updateSession(request: NextRequest) {
     response = NextResponse.redirect(new URL('/form_create', request.nextUrl.href))
   } else if (!user && request.nextUrl.pathname === '/form_create') {
     response = NextResponse.redirect(new URL('/auth', request.nextUrl.href))
+  }else if (!user && request.nextUrl.pathname === '/test_api') {
+    response = NextResponse.redirect(new URL('/auth', request.nextUrl.href))
   }
 
   return response
