@@ -71,7 +71,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         .upload(`blogs/${blogId}/blog`, blogFile),
       supabase.storage
         .from("web_data")
-        .upload(`blogs/${blogId}/poster`, poster),
+        .upload(`images/${blogId}/poster`, poster),
     ];
     if (images.length > 0) {
       images.forEach((image: File) => {

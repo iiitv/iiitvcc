@@ -32,7 +32,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
   
     const blogPromises = blogs.map(async (blog) => {
-      const posterUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/blogs/${blog.id}/poster`;
+      const posterUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/images/${blog.id}/poster`;
       const blogFileUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/blogs/${blog.id}/blog`;
 
       const { data: images, error: imagesError } = await supabase

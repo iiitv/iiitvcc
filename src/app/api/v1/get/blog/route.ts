@@ -26,7 +26,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       );
     }
 
-    const posterUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/blogs/${id}/poster`;
+    const posterUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/images/${id}/poster`;
     const blogFileUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/blogs/${id}/blog`;
 
     const { data: images, error: imagesError } = await supabase
