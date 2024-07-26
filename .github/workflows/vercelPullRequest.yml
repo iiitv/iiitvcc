@@ -11,7 +11,7 @@ jobs:
         timeout-minutes: 240
         with:
           secret: ${{ github.TOKEN }}
-          approvers: thedevyashsaini # GitHub username of the approver
+          approvers: thedevyashsaini,steakfisher # GitHub username of the approver
           minimum-approvals: 1
           issue-title: "Deploying PR to dev from staging"
           issue-body: "Please approve or deny the deployment of this PR."
