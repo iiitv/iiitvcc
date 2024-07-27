@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button"
+import Loader from '@/components/ui/loader'
 
 // -- icons --
-import CircularProgress from '@mui/material/CircularProgress';
 import { FcGoogle } from "react-icons/fc";
-
 import { JSX, SVGProps } from "react"
 
 interface Props{
@@ -34,10 +33,8 @@ export function OAuthComponent(props : Props) {
         variant="outline"
         className="group relative flex w-full justify-center rounded-[8px] border border-input bg-background py-6 px-4 text-md font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:opacity-90"
       >
-        {loading ? <i className="flex text-black"><CircularProgress color="inherit" size={30} thickness={2} style={{}}/></i>:
-        <>
-          <FcGoogle size={21} className="ml-2 mr-[.1em]"/>oogle
-        </>}
+        {loading ? <i className="flex text-black"><Loader /></i> :
+        <><FcGoogle size={21} className="ml-2 mr-[.1em]"/>oogle</>}
       </Button>
     </>
   )

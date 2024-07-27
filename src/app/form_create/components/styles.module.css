@@ -1,0 +1,27 @@
+.error {
+  position: absolute;
+  left:6px;
+  top: -17.5px;
+  height: fit-content !important;
+  color:red !important;
+  font-size:0.7rem !important;
+  word-wrap: no-wrap !important;
+  white-space: nowrap !important;
+  z-index: 10;
+}
+.inputicon {
+  position:absolute;
+  top: 50%;
+  color: rgba(var(--black-light), .45);
+  font-size: 1rem;
+  transform: translateY(-50%);
+  transition: 0.5s ease;
+}
+.eyeicon {
+  right: 15px;
+  padding: 3px;
+  cursor: pointer;
+}
+.eyeicon:hover {
+  color: rgba(var(--black-light), .65);
+}
