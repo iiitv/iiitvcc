@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -8,12 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['var(--font-heading)', ...fontFamily.sans],
+        body: ['var(--font-body)', ...fontFamily.sans],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-    },
       colors: {
             "border": "var(--border)",
             "input": "var(--input)",
@@ -30,6 +34,7 @@ const config: Config = {
             },
             "destructive": {
               "DEFAULT": "var(--destructive)",
+              "hover": "var(--destructive-hover)",
               "foreground": "var(--destructive-foreground)"
             },
             "muted": {
@@ -38,6 +43,7 @@ const config: Config = {
             },
             "accent": {
               "DEFAULT": "var(--accent)",
+              "hover": "var(--accent-hover)",
               "foreground": "var(--accent-foreground)"
             },
             "popover": {
@@ -72,6 +78,7 @@ const config: Config = {
               }
             }
           }
+        },
 },
   plugins: [
     require("tailwindcss-animate"),

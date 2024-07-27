@@ -23,5 +23,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
             console.log('x ',error);
         }
     }
+    
     return NextResponse.redirect(url);
 }
