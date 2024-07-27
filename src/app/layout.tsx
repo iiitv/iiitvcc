@@ -47,6 +47,7 @@ export default function RootLayout({
           defer
           src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/spiral.js"
         ></script>
+        <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <Analytics />
         <SpeedInsights />
