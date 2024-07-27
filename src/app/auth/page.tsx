@@ -61,13 +61,13 @@ export default function Auth(){
         const password = cur.password.value;
 
         setError(null);
-        const { user_id, error } = await SignUp({username, email, password})
+        const { error } = await SignUp({username, email, password})
         console.log(error);
         if (error) {
           setError(error);
           return false;
         } else {
-          router.push(`/auth/confirm_email?id=${user_id}&user_email=${email}`);
+          router.push(`/auth/confirm_email?type=signup`);
         }
     }
 

@@ -1,12 +1,16 @@
 'use client';
 import React, { useState, useEffect, useCallback, use } from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { supabase } from '@/utils/supabase/client';
 import { User } from '@supabase/supabase-js';
 import axios from 'axios';
 
-import { UserForm } from './component/userform';
+import { UserForm } from './components/userform';
+import { Form } from './components/form';
+import { Dropdown_Menu } from "./components/dropdown_menu";
+import { LoggingOut } from './components/loggingout';
+import ErrorDialog from '@/components/error_dialog';
 
 import { cn } from '@/lib/utils';
 
@@ -14,16 +18,17 @@ export default function Page() {
   const [user, setUser] = useState<User | null>(null);
   const [username , setUsername] = useState<string | null>(null);
   const [useremail , setUserEmail] = useState<string | null>(null);
-  const [error_message, setErrorMessage] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const [usernameInput, setUsernameInput] = useState<boolean>(false);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loggingoff, setLogout] = useState<boolean>(false);
 
   const searchParams = useSearchParams();
+  const router = useRouter();
   
   useEffect(() => {
-    console.log()
     const getUser = async () => {
       const { data: { user }, error } = await supabase.auth.getUser();
       if (error) {
@@ -52,7 +57,7 @@ export default function Page() {
         axios.post('/api/rest/v1/users?option=insert', {id: user?.id, username: searchParams.get('username')})
         .then((res) => {
           if (res.data.error) {
-            setErrorMessage(res.data.error);
+            setError(res.data.error);
             return {error: res.data.error};
           }
           setUsername(searchParams.get('username'));
@@ -66,7 +71,6 @@ export default function Page() {
 
   let getUserData = useCallback(async () => {
     try {
-      setLoading(true);
       if (!user) throw new Error('No user on the session');
 
       const { data, error, status } = await supabase
@@ -90,29 +94,33 @@ export default function Page() {
     finally {
       setLoading(false);
     }
+  }, [user]);
+
+  const logout = async () => {
+    setLogout(true);
+    axios.get('/api/logout')
+    .then(() => {
+      router.push('/auth');
+    })
   }
-  , [user]);
+
 
   return (
-    <>
-    {usernameInput ? (
-      <UserForm user_id={user?.id || ''} email={useremail} />
-    ):(
-      <div>
-        <h1 >Welcome, {username}</h1>
-        <p>{useremail}</p>
-        {error_message && <p className='text-destructive'>{error_message}</p>}
-        {loading && <p>Loading...</p>}
-        <Link
-          aria-disabled={loading}
-          href="/api/logout"
-          className="inline-flex items-center rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-          prefetch={false}
-        >
-          Logout
-        </Link>
-      </div>
-    )}
-    </>
+    loggingoff ?
+      (
+        <LoggingOut /> 
+      ):(
+        <>
+          {usernameInput ? (
+            <UserForm user_id={user?.id || ''} email={useremail} />
+          ):(
+            <>
+              <Dropdown_Menu username={username} email={useremail} onLogout={logout}/>
+              <Form username={username} email={useremail} disabled={(error || loading) ?true:false}/>
+            </>
+          )}
+          {error && <ErrorDialog error_message={error} />}
+        </>
+      )
   );
 }

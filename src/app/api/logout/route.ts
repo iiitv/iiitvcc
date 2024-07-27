@@ -6,5 +6,9 @@ export async function GET(req: NextRequest) {
 
   const { error } = await supabase.auth.signOut()
 
-  return NextResponse.redirect(new URL("/form_create", req.url))
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json({ data: 'Logout successful' }, { status: 200 });
 }

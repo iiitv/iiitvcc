@@ -45,7 +45,7 @@ export const SignUp = async (
         if (session || user?.role !== 'authenticated') {
           return { error: 'Email already exists' };
         }
-        return { user_id: user?.id, error: null };
+        return { error: null };
 };
 
 export const AuthSignIn = async () => {

@@ -1,6 +1,6 @@
 import {NextRequest, NextResponse} from "next/server";
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   let response = NextResponse.next({
     request: {
       headers: req.headers,
@@ -16,8 +16,8 @@ export async function POST(req: NextRequest) {
   let res = await fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/rpc/is_username_exist`, {
     method: 'POST',
     headers: {
-      "apikey": process.env.SERVICE_KEY!,
-      "Authorization": `Bearer ${process.env.SERVICE_KEY!}`,
+      "apikey": process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      "Authorization": `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body)

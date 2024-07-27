@@ -191,7 +191,7 @@ function validateEmail(email: string): boolean {
 function validatePassword(password: string, customCheck: number = 0): boolean {
   const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
   const special = /[!@#$%^&*()_+]/;
-  const upper_lower_digit = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  const upper_lower_digit = /^(?=.*[a-z])(?=.*[A-Z])(?=.x\d)[A-Za-z\d]{8,}$/;
   if (!customCheck) return re.test(password);
   if (customCheck === 1) return password.length >= 8;
   if (customCheck === 2) return upper_lower_digit.test(password);

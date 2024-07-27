@@ -2,9 +2,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 
-import { useSearchParams } from 'next/navigation';
+import { useCookies } from 'next-client-cookies';
 import { supabase } from '@/utils/supabase/client';
 import { Button } from '@/components/ui/button';
+import ErrorDialog from '@/components/error_dialog';
 
 import Image from 'next/image';
 
@@ -23,10 +24,15 @@ export default function Confirm() {
     });
   }, []);
 
-  const searchParams = useSearchParams();
-  const user_email = searchParams.get('user_email');
+  const cookies = useCookies();
+  const user_email = cookies.get('email') || null;
 
-  if (!user_email) return null;
+  if (!user_email) return (
+    <ErrorDialog
+      error_message="We're sorry, but we couldn't find your email address. maybe you have cookies disabled?"
+      error="Cookies Setup Error"
+    />
+  )
 
   if(!validateEmail(user_email)) {
     return (

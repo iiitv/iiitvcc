@@ -2,7 +2,7 @@ import {NextRequest, NextResponse} from "next/server";
 import { createClient } from "@/utils/supabase/server";
 import { User } from "@supabase/supabase-js";
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse> {
   let response = NextResponse.next({
     request: {
       headers: req.headers,
