@@ -6,6 +6,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { cn } from "@/lib/utils"
+import Navbar from "@/components/navbar"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,13 +41,13 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
       </head>
-
       <body className={cn(inter.className, 'antialiased' , fontHeading.variable, fontBody.variable)}>
         <script
           type="module"
           defer
           src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/spiral.js"
         ></script>
+        <Navbar />
         <Suspense fallback={<Loading />}>{children}</Suspense>
         <Analytics />
         <SpeedInsights />
