@@ -24,7 +24,10 @@
 	cursor: pointer;
 	transition: transform 0.3s;
 }
-.navbar>*>*:not(.mobile-menu-container):hover{
+.navbar>*>*:not(.mobile-menu-container, .logo-container>*):hover{
+	transform: scale(1.05);
+}
+.mobile-menu-container2>*:hover{
 	transform: scale(1.05);
 }
 .logo-container{
@@ -36,6 +39,7 @@
 
 .logo-img{
 	height: 50px;
+	width: 50px;
 	cursor :pointer;
 }
 

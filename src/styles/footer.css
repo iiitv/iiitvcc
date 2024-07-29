@@ -26,6 +26,7 @@
 }
 .footer-cc-logo-img{
     height: 100px;
+    width: 100px;
 }
 .footer-cc-logo-title{
     font-size: 32px;
@@ -137,6 +138,7 @@
 }
 .footer-cc-logo-img-2{
     height: 35px;
+    width: 35px;
 }
 .footer-container-2-divider{
     position: relative;
@@ -161,16 +163,30 @@
     transform: scale(1.0);
 }
 
+/* Links on hover style */
+.footer-contact-container>div>*:hover{
+    text-decoration: underline;
+    color: aquamarine;
+    transition: 0.5s;
+}
+.footer-links-container>*:not(p):hover{
+    text-decoration: underline;
+    color: aquamarine;
+    transition: 0.5s;
+}
+
 /* Tailwind lg responsiveness */
 @media screen and (max-width : 1280px){
     .footer-cc-logo-img{
         height: 70px;
+        width: 70px;
     }
 }
 /* Tailwind less than sm size resposiveness */
 @media screen and (max-width : 640px){
     .footer-cc-logo-img{
         height: 60px;
+        width: 60px;
     }
     .footer-cc-logo-title{
         font-size: 28px;
