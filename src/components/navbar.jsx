@@ -2,6 +2,7 @@
 import React, { use, useState } from "react";
 import "@/styles/navbar.css";   
 import Link from "next/link";
+import Image from "next/image";
 
 function Navbar() {
     const [hiddenMenu,setHiddenMenu] = useState(true);
@@ -19,7 +20,7 @@ function Navbar() {
             <div id="pseudo"></div>
             <div className="navbar">
                 <Link href="/" className="logo-container" prefetch={false}>
-                    <img className="logo-img"  src="https://avatars.githubusercontent.com/u/9347727?s=200&v=4" alt="IIITV Logo" />
+                    <Image className="logo-img"  src="/cc-logo.png" alt="IIITV Logo" height={512} width={512}/>
                     <p className="logo-title">Coding Club</p>
                 </Link>
                 <div className="menu-container">
