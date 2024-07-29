@@ -18,15 +18,15 @@ function Navbar() {
         <>
             <div id="pseudo"></div>
             <div className="navbar">
-                <a href="/" className="logo-container">
+                <Link href="/" className="logo-container" prefetch={false}>
                     <img className="logo-img"  src="https://avatars.githubusercontent.com/u/9347727?s=200&v=4" alt="IIITV Logo" />
-                    <h1 className="logo-title">Coding Club</h1>
-                </a>
+                    <p className="logo-title">Coding Club</p>
+                </Link>
                 <div className="menu-container">
-                    <Link href={eventsLink} className="text-primary">Events</Link>
-                    <Link href={projectsLink} className="text-primary">Projects</Link>
-                    <Link href={membersLink} className="text-primary">Members</Link>
-                    <Link href={contactUsLink} className="text-primary">Contact Us</Link>
+                    <Link href={eventsLink} className="text-primary" prefetch={false}>Events</Link>
+                    <Link href={projectsLink} className="text-primary" prefetch={false} >Projects</Link>
+                    <Link href={membersLink} className="text-primary" prefetch={false}>Members</Link>
+                    <Link href={contactUsLink} className="text-primary" prefetch={false}>Contact Us</Link>
                 </div>
                 <div className="mobile-menu">
                     <div className="menu-icon">
@@ -41,10 +41,10 @@ function Navbar() {
                     
                     <div className="mobile-menu-container" style={{display : (hiddenMenu ? "none" : "") }}>
                         <div className="mobile-menu-container2">
-                            <p><Link href={eventsLink} className="text-primary">Events </Link></p>
-                            <p><Link href={projectsLink} className="text-primary">Projects </Link></p>
-                            <p><Link href={membersLink} className="text-primary">Members </Link></p>
-                            <p><Link href={contactUsLink} className="text-primary">Contact Us </Link></p>
+                            <p><Link href={eventsLink} className="text-primary" prefetch={false}>Events </Link></p>
+                            <p><Link href={projectsLink} className="text-primary" prefetch={false}>Projects </Link></p>
+                            <p><Link href={membersLink} className="text-primary" prefetch={false}>Members </Link></p>
+                            <p><Link href={contactUsLink} className="text-primary" prefetch={false}>Contact Us </Link></p>
                         </div>
                     </div>
                     
