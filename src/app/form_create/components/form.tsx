@@ -44,12 +44,12 @@ export function Form({
                   <Input id="name" placeholder="Enter your name" required/>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="username">Username</Label>
-                  <Input id="username" placeholder="Enter your username" required/>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" placeholder="Enter your email" required/>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="Enter your phone number" required/>
+                  <Input id="phone" type="tel" placeholder="Enter your phone number" />
                 </div>
               </CardContent>
               <CardFooter className="flex justify-end">

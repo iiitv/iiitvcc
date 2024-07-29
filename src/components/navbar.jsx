@@ -18,7 +18,7 @@ function Navbar() {
         <>
             <div id="pseudo"></div>
             <div className="navbar">
-                <a href="/" className="logo-container">
+                <a href="/home" className="logo-container">
                     <img className="logo-img"  src="https://avatars.githubusercontent.com/u/9347727?s=200&v=4" alt="IIITV Logo" />
                     <h1 className="logo-title">Coding Club</h1>
                 </a>

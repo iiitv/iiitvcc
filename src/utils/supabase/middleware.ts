@@ -54,6 +54,8 @@ export async function updateSession(request: NextRequest) {
     }
   )
 
+  if ( request.nextUrl.pathname === '/' ) return NextResponse.redirect(new URL('/home', request.nextUrl.href))
+
 
   if (request.nextUrl.pathname === '/auth/callback' || request.nextUrl.pathname === '/auth/confirm') return response
 
