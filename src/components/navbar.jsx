@@ -21,6 +21,7 @@ function Navbar() {
             <div className="navbar">
                 <Link href="/" className="logo-container" prefetch={false}>
                     <Image className="logo-img"  src="/cc-logo.png" alt="IIITV Logo" height={512} width={512}/>
+
                     <p className="logo-title">Coding Club</p>
                 </Link>
                 <div className="menu-container">

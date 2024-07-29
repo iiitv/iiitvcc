@@ -104,6 +104,11 @@ export default function Auth(){
             </div>)}
 
           {oauthhidden && <OAuthComponent onClick={Authsignin} />}
+          <div className="text-center text-sm text-muted-foreground">
+            <Link href="/home" className="font-medium hover:underline" prefetch={false}>
+              Back to Home
+            </Link>
+          </div>
         </Component>
       </Suspense>
     )
