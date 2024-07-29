@@ -175,6 +175,8 @@ export function Component( props : Props) {
                 id="remember-me"
                 name="remember-me"
                 className="h-4 w-4 rounded text-primary focus:ring-primary"
+                checked
+                disabled
               />
               <Label htmlFor="remember-me" className="ml-2 block text-sm text-foreground">
                 Remember me

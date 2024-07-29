@@ -21,6 +21,7 @@ export default function Update_password() {
     setLoading(true)
     if( e.currentTarget.password.value !== e.currentTarget.confirmPassword.value ) {
       setErrorMsg("Passwords do not match")
+      setLoading(false)
       return
     }
     const { error } = await supabase.auth.updateUser({
