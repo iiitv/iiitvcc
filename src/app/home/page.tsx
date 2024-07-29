@@ -1,3 +1,4 @@
+import React from "react"
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import Image from "next/image"
@@ -6,28 +7,69 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh">
-      <section className="relative w-full py-12 md:py-24 lg:py-32 bg-primary flex item-center justify-center bg-cover bg-center bg-[url('/home/homebg.jpeg')] after:content-[''] after:w-full after:h-full after:absolute after:top-0 after:-z-0 after:bg-[rgba(0,0,0,.6)] ">
-        <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-6 relative z-20">
-          <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
-            Welcome to the Coding Club
-          </h1>
-          <p className="max-w-[700px] md:text-xl">
-            Join our vibrant community of passionate coders and unlock a world of learning, collaboration, and growth.
-          </p>
-          <Link
-            href="#"
-            className="inline-flex h-10 items-center justify-center rounded-md bg-primary-foreground px-8 text-sm font-medium shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-            prefetch={false}
-          >
-            Join Now
-          </Link>
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-background text-muted flex justify-around">
+        <div className=" px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1240px] flex items-center justify-around">
+          <div className="space-y-4 ">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+              Unlock Your Coding Potential
+            </h1>
+            <p className="max-w-[600px] text-lg md:text-xl">
+              Join our vibrant community of coders and unlock your full potential through workshops, events, and
+              shared resources.
+            </p>
+            <div className="flex flex-col gap-2 justify-center sm:flex-row lg:justify-start">
+              <Link
+                href="/auth"
+                className="inline-flex h-10 items-center justify-center rounded-md bg-primary text-primary-foreground px-8 text-sm font-medium shadow transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                prefetch={false}
+              >
+                Join Now
+              </Link>
+              <Link href="#" className="inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium shadow transition-colors hover:bg-muted hover:text-primary-foreground border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+          <div className="flex justify-center lg:justify-end">
+            <Image
+              src="/home/placeholder.png"
+              alt="Coding Club"
+              width={400}
+              height={600}
+              className="rounded-lg w-[400px] lg:w-[500px]"
+            />
+          </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 flex item-center justify-center">
+      <section id="features" className="bg-background py-20 px-6 md:px-12">
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="flex flex-col items-center text-center">
+              <LaptopIcon className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Workshops</h3>
+              <p className="text-muted-foreground">
+                Dive into hands-on coding workshops and learn from experienced instructors.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <MilestoneIcon className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Mentorship</h3>
+              <p className="text-muted-foreground">
+                Receive personalized guidance from our network of industry mentors.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <GroupIcon className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Community</h3>
+              <p className="text-muted-foreground">Connect with like-minded coders and build lasting friendships.</p>
+            </div>
+          </div>
+        </section>
+      <section className="w-full py-12 md:py-24 lg:py-32 flex item-center justify-center bg-secondary">
         <div className="container px-4 md:px-6 space-y-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Upcoming Events</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Upcoming <span className="text-primary">Events</span></h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Check out our upcoming events and workshops to learn new skills, network with fellow coders, and have
                 fun!
@@ -131,18 +173,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted flex item-center justify-center">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-background flex item-center justify-center">
         <div className="container px-4 md:px-6 space-y-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold text-black tracking-tighter sm:text-5xl">Club Resources</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Club <span className="text-primary">Resources</span></h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Explore our collection of tutorials, projects, and other resources to help you grow as a coder.
               </p>
             </div>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="flex flex-col">
+            <Card className="flex flex-col bg-secondary border-none">
               <CardHeader>
                 <CardTitle>Tutorials</CardTitle>
                 <CardDescription>Learn new technologies and programming languages.</CardDescription>
@@ -180,7 +222,7 @@ export default function Home() {
                 </Link>
               </CardContent>
             </Card>
-            <Card className="flex flex-col">
+            <Card className="flex flex-col bg-secondary border-none">
               <CardHeader>
                 <CardTitle>Projects</CardTitle>
                 <CardDescription>Build real-world applications to showcase your skills.</CardDescription>
@@ -218,7 +260,7 @@ export default function Home() {
                 </Link>
               </CardContent>
             </Card>
-            <Card className="flex flex-col">
+            <Card className="flex flex-col bg-secondary border-none">
               <CardHeader>
                 <CardTitle>Community</CardTitle>
                 <CardDescription>Connect with fellow coders and get support from the community.</CardDescription>
@@ -248,13 +290,105 @@ export default function Home() {
                   href="#"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
-                />
+                >
+                  <div className="text-sm font-medium leading-none group-hover:underline">LinkedIN</div>
+                  <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                  Join our Coding Club on LinkedIn to learn, collaborate, and network!
+                  </div>
+                </Link>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
     </div>
+  )
+}
+
+
+function LaptopIcon(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
+    </svg>
+  )
+}
+
+function GroupIcon(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 7V5c0-1.1.9-2 2-2h2" />
+      <path d="M17 3h2c1.1 0 2 .9 2 2v2" />
+      <path d="M21 17v2c0 1.1-.9 2-2 2h-2" />
+      <path d="M7 21H5c-1.1 0-2-.9-2-2v-2" />
+      <rect width="7" height="5" x="7" y="7" rx="1" />
+      <rect width="7" height="5" x="10" y="12" rx="1" />
+    </svg>
+  )
+}
+
+function MenuIcon(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+  )
+}
+
+
+function MilestoneIcon(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 6H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h13l4-3.5L18 6Z" />
+      <path d="M12 13v8" />
+      <path d="M12 3v3" />
+    </svg>
   )
 }
 

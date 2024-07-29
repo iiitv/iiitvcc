@@ -69,6 +69,8 @@ export async function updateSession(request: NextRequest) {
     response = NextResponse.redirect(new URL('/auth', request.nextUrl.href))
   }else if (!user && request.nextUrl.pathname === '/test_api') {
     response = NextResponse.redirect(new URL('/auth', request.nextUrl.href))
+  } else if (!user && request.nextUrl.pathname === '/auth/update_password') {
+    response = NextResponse.redirect(new URL('/auth', request.nextUrl.href))
   }
 
   // const searchParams = request.nextUrl.searchParams
