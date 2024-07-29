@@ -25,11 +25,7 @@ function Footer() {
                 <hr className="col-span-1 lg:col-span-12 footer-divider-1"/>
                 <div className="col-span-1 lg:col-span-4">
                     <div className="footer-cc-logo">
-                        <img
-                            className="footer-cc-logo-img "
-                            src="https://avatars.githubusercontent.com/u/9347727?s=200&v=4"
-                            alt="IIITV Logo"
-                        />
+                        <Image className="footer-cc-logo-img " src="/cc-logo.png" width={512} height={512} alt="IIITV Logo"/>
                         <div>
                             <p className="footer-cc-logo-title">Coding Club</p> 
                             <p className="footer-cc-logo-subtitle">Blog Website</p>
@@ -41,7 +37,6 @@ function Footer() {
                         <p>
                             Links
                         </p>
-                        <div className="footer-links-divider"></div>
                         <Link href={homeLink} className={montserratFont.className} prefetch={false}>
                             Home
                         </Link>
@@ -66,7 +61,7 @@ function Footer() {
                             <text className={montserratFont.className}>:  codingclub@iiitvadodara.ac.in</text>
                             </Link>
                             <p>Phone</p>
-                            <text className={montserratFont.className}>:  +98875503111 ,9034534472</text>
+                            <text className={montserratFont.className}>:  +919531852385, +919305066259</text>
                             <p>Address</p>
                             <Link href={addressLink} target="_blank" className={montserratFont.className}>:  c/o Block No. 9, Government Engineering College, Sector 28,
                             Gandhinagar, Gujarat
@@ -92,10 +87,10 @@ function Footer() {
                 <hr className="footer-container-2-divider"></hr>
                 <div className="footer-cc-container">
                     <p>Developed by Coding Club</p>
-                    <img
+                    <Image
                         className="footer-cc-logo-img-2"
-                        src="https://avatars.githubusercontent.com/u/9347727?s=200&v=4"
-                        alt="IIITV Logo"
+                        src="/cc-logo.png"
+                        alt="IIITV Logo" width={512} height={512}
                     />
                 </div>
             </div>
