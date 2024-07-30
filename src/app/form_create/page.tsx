@@ -42,11 +42,11 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
+    if ( user ) {
+      console.log('fetching user data');
+      getUserData();
+    } 
     return () => {
-
-      if ( user ) {
-        getUserData();
-      }
     };
   }, [user]);
   

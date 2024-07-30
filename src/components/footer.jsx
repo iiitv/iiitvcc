@@ -8,7 +8,7 @@ const notoSansFont = Noto_Sans({ weight: ["300","400"], subsets: ["latin"] });
 const montserratFont = Montserrat({weight: ["100","400"], subsets: ["latin"] });
 
 function Footer() {
-    const homeLink =        "/";
+    const homeLink =        "/home";
     const eventsLink =      "/events";
     const projectsLink =    "/projects";
     const membersLink =     "/members";

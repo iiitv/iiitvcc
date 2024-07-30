@@ -1,9 +1,11 @@
 import React, { FormEvent, use, useEffect, useState } from "react";
+import Link from "next/link";
 import axios from "axios";
 
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
 import Loader from '@/components/ui/loader'
 
 import { VscEye, VscEyeClosed } from "react-icons/vsc"
@@ -165,6 +167,27 @@ export function Component( props : Props) {
             <i className={`${!(input.name === 'password') && 'hidden'} ${styles.inputicon} ${styles.eyeicon}`} onClick={() => setRevealPassword(!revealPassword)}>{revealPassword?<VscEyeClosed size='23px'/>:<VscEye size='23px'/>}</i>
           </div>
         ))}
+        
+        {auth === 'login' &&
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <Checkbox
+                id="remember-me"
+                name="remember-me"
+                className="h-4 w-4 rounded text-primary focus:ring-primary"
+                checked
+                disabled
+              />
+              <Label htmlFor="remember-me" className="ml-2 block text-sm text-foreground">
+                Remember me
+              </Label>
+            </div>
+            <div className="text-sm">
+              <Link href="auth/reset_password" className="font-medium text-primary hover:text-primary/80" prefetch={false}>
+                Forgot your password?
+              </Link>
+            </div>
+          </div>}
           <div>
             <Button
               type="submit"

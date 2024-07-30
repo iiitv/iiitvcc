@@ -21,7 +21,7 @@ export function Dropdown_Menu({
     <>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="link" size="icon" className="rounded-full outline outline-2 outline-white absolute top-8 right-8">
+        <Button variant="link" size="icon" className="rounded-full outline outline-2 outline-white z-20 fixed top-8 right-8">
           <Avatar className="h-8 w-8">
             <AvatarImage src="/placeholder-user.jpg" />
             <AvatarFallback>JD</AvatarFallback>
