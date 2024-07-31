@@ -6,6 +6,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { cn } from "@/lib/utils"
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,13 +34,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <meta charSet="utf-8" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-      </head>
+        <meta property="og:title" content="Coding Club IIITV" />
+        <meta property="og:site_name" content="IIITVCC" />
+        <meta property="og:url" content="https://iiitvcc.vercel.app" />
+        <meta property="og:description" content="IIITVCC Community Website | Workshops | Mentorship | Community" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://iiitvcc.vercel.app/LinkPreview.png" />
+      </Head>
       <body className={cn(inter.className, 'antialiased' , fontHeading.variable, fontBody.variable)}>
         <script
           type="module"
