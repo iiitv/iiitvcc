@@ -24,7 +24,15 @@ const fontBody = Inter({
 
 export const metadata: Metadata = {
   title: "Coding Club IIITV",
-  description: "IIITV Coding Club Blog Website",
+  description: "IIITV Coding Club Community Website | Workshops | Mentorship | Community",
+  openGraph: {
+    title: 'Coding Club IIITV',
+    description: 'IIITV Coding Club Community Website | Workshops | Mentorship | Community',
+    images: ["https://iiitvcc.vercel.app/LinkPreview.png"],
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://iiitvcc.vercel.app',
+  },
 };
 
 export default function RootLayout({
@@ -40,12 +48,6 @@ export default function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <meta property="og:title" content="Coding Club IIITV" />
-        <meta property="og:site_name" content="IIITVCC" />
-        <meta property="og:url" content="https://iiitvcc.vercel.app" />
-        <meta property="og:description" content="IIITVCC Community Website | Workshops | Mentorship | Community" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://iiitvcc.vercel.app/LinkPreview.png" />
       </Head>
       <body className={cn(inter.className, 'antialiased' , fontHeading.variable, fontBody.variable)}>
         <script
