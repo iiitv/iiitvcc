@@ -1,4 +1,6 @@
-
+.footer{
+    background-color: var(--background);
+}
 .footer-divider-1{  
     width: 90%;
     height: 2.5px;
@@ -34,6 +36,7 @@
     line-height: 100%;
 }
 .footer-cc-logo-subtitle{
+    align-self: flex-end;
     font-weight: 100;
     font-size: 16px;
     color: #E9E9E9;
