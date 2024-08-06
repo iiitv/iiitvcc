@@ -51,7 +51,7 @@ function GenerateEvent({props:event}){
         };
     }, []);
 
-    const eventPoster = "https://media.licdn.com/dms/image/D4D22AQHTRDh3tAk0wA/feedshare-shrink_800/0/1713529970610?e=1725494400&v=beta&t=1BamLpGDgW7rWUcYBUFRkm_35Y1wseXAE9VZS80XbtE";
+    const eventPoster = "/event_poster.avif";
     return (
         <div className="event-div">
             <div className={`event-poster ${eventPosterFixed}`}>
