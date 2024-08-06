@@ -8,6 +8,8 @@ import EventRequirements from "./eventRequirements";
 import EventPrizes from "./eventPrizes";
 import EventConvenors from "./eventConvenors";
 import EventVenue from "./eventVenue";
+import EventWinners from "./eventWinners";
+
 import { Montserrat } from "next/font/google";
 const montserratFont = Montserrat({weight: ["100","400"], subsets: ["latin"]});
 
@@ -31,6 +33,8 @@ function EventDetails(props){
     const [eventRequirements, setEventRequirements] = useState(event.requirements);
     const [eventPrizes , setEventPrizes] = useState(event.prizes);
     const [eventConvenors,setEventConvenors] = useState(event.convenors);
+    const [eventWinners,setEventWinners] = useState(event.winners);
+    
     //To update the remaining registration time each second
     useEffect(()=>{
         setInterval(()=>{
@@ -65,7 +69,9 @@ function EventDetails(props){
         </div>
         
         <hr style={{width : "100%"}}/>
-
+        <div className="event-winner-div rounded-lg shadow-sm bg-secondary p-6 gap-6">
+            {(eventWinners === null || Object.keys(eventWinners).length === 0) ? null:<EventWinners eventWinners={eventWinners}/>}
+        </div>
         <div className={`event-details-description ${montserratFont.className}`}>
             <p className="event-description-title">About Event</p>
             <pre className={`event-description ${montserratFont.className}`}>{eventDescription}</pre>

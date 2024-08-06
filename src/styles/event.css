@@ -125,6 +125,7 @@ pre {
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
+    height: 100%;
 }
 .event-time-title{
     font-weight: 600;
@@ -275,6 +276,53 @@ pre {
 .event-grid-container{
     margin-top: 50px;
 }
+.event-winner-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+}
+.event-winners-title{
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+
+}
+.event-winners-category{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.winner-category-title{
+    font-size: 26px;
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.event-winner-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    
+}
+.winner-name-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+.winner-category-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 @media screen and (max-width : 640px){
     .event-details{
         width: 100%;
@@ -289,6 +337,9 @@ pre {
     .event-prizes>*{
         justify-content: center;
     }
+    .event-prizes>ul>*{
+        font-size: 18px;
+    }
     .event-special-prize-container>ul{
         font-size: 18px;
         align-items: center;
@@ -297,6 +348,65 @@ pre {
     .event-special-prize-container{
         justify-content: center;
         align-items: center;
+    }
+    .event-special-prize-item>*{
+        font-size: 18px;
+    }
+    .event-poster>img{
+        width: 90%;
+        margin-top: 20px;
+    }
+    .event-days-left{
+        width: 100%;
+    }
+    .event-date-time-container{
+        font-size: 18px;
+    }
+    .event-description-title{
+        font-size: 20px;
+    }
+    .event-details-description{
+        font-size: 14px;
+    }
+    .event-mode-duration-container{
+        scale: 80%;
+    }
+    .event-requirement-title{
+        font-size: 20px;
+    }
+    .event-convenors-container{
+        align-items: center;
+    }
+    .event-convenors-title{
+        font-size: 20px;
+    }
+    .event-convenors{
+        justify-content: center;
+    }
+    .event-convenors>*{
+        font-size: 18px;
+    }
+    .event-venue-title{
+        justify-content: center;
+        scale: 80%;
+    }
+    .event-winners-title{
+        font-size: 28px;
+    }
+    
+    .winner-category-title{
+        font-size: 24px;
+    }
+    .winner-name-div{
+        font-size: 22px;
+    }
+    .event-winner-list{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 1fr;
+    }
+    .winner-name-div{
+        height: 100%;
     }
 }
 
@@ -331,7 +441,8 @@ pre {
     }
     .event-date-time-container{
         width: 100%;
-        display: flex;    
+        display: grid;    
+        grid-template-rows: 1fr 1fr;
         justify-content:center;
     }
     .event-mode-duration-container{
