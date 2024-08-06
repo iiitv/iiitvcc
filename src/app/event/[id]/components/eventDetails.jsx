@@ -69,14 +69,11 @@ function EventDetails(props){
         </div>
         
         <hr style={{width : "100%"}}/>
-        <div className="event-winner-div rounded-lg shadow-sm bg-secondary p-6 gap-6">
-            {(eventWinners === null || Object.keys(eventWinners).length === 0) ? null:<EventWinners eventWinners={eventWinners}/>}
-        </div>
+        
         <div className={`event-details-description ${montserratFont.className}`}>
             <p className="event-description-title">About Event</p>
             <pre className={`event-description ${montserratFont.className}`}>{eventDescription}</pre>
         </div>
-
         <div className= {`event-mode-duration-container ${montserratFont.className}`}>
             <EventMode 
                 eventMode = {eventMode}
@@ -84,6 +81,10 @@ function EventDetails(props){
             />
             <EventDuration eventDuration ={eventDuration} />
         </div>
+        <div className="event-winner-div rounded-lg shadow-sm bg-secondary p-6 gap-6">
+            {(eventWinners === null || Object.keys(eventWinners).length === 0) ? null:<EventWinners eventWinners={eventWinners}/>}
+        </div>
+        
         <div className="event-grid-container grid grid-cols-1 lg:grid-cols-2 gap-5 items-stretch justify-stretch">
             <div style={{width:"100%"}} className= {`lg:col-span-1 lg:row-span-1 ${montserratFont.className}`}>
                 <EventRequirements eventRequirements = {eventRequirements}/>
