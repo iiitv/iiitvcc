@@ -1,11 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
 import { SVGProps } from 'react'
 import Loader from '@/components/ui/loader'
 
 export function LoggingOut() {
   return (
-    <div className="grid min-h-screen w-full bg-background">
+    <div className="grid min-h-[100dvh] w-full bg-background">
       <main className="flex flex-col items-center justify-center gap-4 px-4 py-12 md:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-2">
           <LogOutIcon className="h-12 w-12 text-primary" />

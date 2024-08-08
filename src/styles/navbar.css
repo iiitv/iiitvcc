@@ -43,10 +43,21 @@
 	cursor :pointer;
 }
 
+.logo-title-container{
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+}
 .logo-title{
 	font-family: "Noto Sans", sans-serif;
 	font-size: 30px;
 	letter-spacing: -0.05em;
+	line-height: 0.9;
+	margin-top: 10px;
+}
+.logo-subtitle{
+	font-size: 14px;
+	margin-left: 3px;
 }
 
 .menu-container{

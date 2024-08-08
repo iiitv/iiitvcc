@@ -20,7 +20,7 @@ function Footer() {
     const facebookLink =    "https://www.facebook.com/iiitvcc/";
     const iconWidthHeight = "30";
     return (
-        <>
+        <div className="footer">
             <div className={`${notoSansFont.className} footer-container-1 grid grid-cols-1 lg:grid-cols-12`}>
                 <hr className="col-span-1 lg:col-span-12 footer-divider-1"/>
                 <div className="col-span-1 lg:col-span-4">
@@ -28,7 +28,7 @@ function Footer() {
                         <Image className="footer-cc-logo-img " src="/cc-logo.png" width={512} height={512} alt="IIITV Logo"/>
                         <div>
                             <p className="footer-cc-logo-title">Coding Club</p> 
-                            <p className="footer-cc-logo-subtitle">Blog Website</p>
+                            <p className="footer-cc-logo-subtitle">Community</p>
                         </div>
                     </div>
                 </div>
@@ -58,10 +58,10 @@ function Footer() {
                         <div>
                             <p>Email</p>
                             <Link href={ccEmailLink} target="_blank">
-                            <text className={montserratFont.className}>:  codingclub@iiitvadodara.ac.in</text>
+                            <h2 className={montserratFont.className}>:  codingclub@iiitvadodara.ac.in</h2>
                             </Link>
                             <p>Phone</p>
-                            <text className={montserratFont.className}>:  +919531852385, +919305066259</text>
+                            <h2 className={montserratFont.className}>:  +919531852385,+919305066259</h2>
                             <p>Address</p>
                             <Link href={addressLink} target="_blank" className={montserratFont.className}>:  c/o Block No. 9, Government Engineering College, Sector 28,
                             Gandhinagar, Gujarat
@@ -70,10 +70,10 @@ function Footer() {
 
                     </div>
                     <div className="footer-icon-container col-span-1 sm:col-start-12">
-                        <Link href={linkedInLink} prefetch={false} target="_blank"><Image src="linkedin.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Linkedin logo"></Image></Link>
-                        <Link href={twitterLink} prefetch={false} target="_blank"><Image src="twitter-2.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Twitter Logo"></Image></Link>
-                        <Link href={instagramLink} prefetch={false} target="_blank"><Image src="instagram-2.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Instagram Logo"></Image></Link>
-                        <Link href={facebookLink} prefetch={false} target="_blank"><Image src="facebook-2.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Facebook Logo"></Image></Link>
+                        <Link href={linkedInLink} prefetch={false} target="_blank"><Image src="/linkedin.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Linkedin logo"></Image></Link>
+                        <Link href={twitterLink} prefetch={false} target="_blank"><Image src="/twitter-2.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Twitter Logo"></Image></Link>
+                        <Link href={instagramLink} prefetch={false} target="_blank"><Image src="/instagram-2.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Instagram Logo"></Image></Link>
+                        <Link href={facebookLink} prefetch={false} target="_blank"><Image src="/facebook-2.svg" width={iconWidthHeight} height={iconWidthHeight} alt="Facebook Logo"></Image></Link>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@ function Footer() {
                     />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

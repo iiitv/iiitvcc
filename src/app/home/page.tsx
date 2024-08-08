@@ -1,14 +1,32 @@
+'use client'
 import React from "react"
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+import { HeroParallax } from "./components/hero-parallax"
+
 import Image from "next/image"
+// import { useRef } from 'react';
+// import Spline from '@splinetool/react-spline/next';
+
+// export default function App() {
+//   return (
+//     <div>
+//       <Spline
+//       className="!w-[200px] !h-[200px] !bg-primary size-[20px]"
+//         scene="https://prod.spline.design/dF3I7FKWt2eeegk2/scene.splinecode"
+//       />
+//     </div>
+//   );
+// }
+
 
 export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh">
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background text-muted flex justify-around">
-        <div className=" px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1240px] flex items-center justify-around">
+      <HeroParallax products={[]} />
+      <section className="lg:h-[90dvh] w-full py-12 md:py-24 lg:py-0 bg-background text-muted flex justify-around">
+        <div className="px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1240px] flex items-center justify-around">
           <div className="space-y-4 ">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
               Unlock Your Coding Potential
