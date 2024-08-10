@@ -47,7 +47,7 @@ function Page() {
           {columns.map((column, colIndex) => (
             <section
               key={colIndex}
-              className="h-fit w-full md:w-full gap-8 py-4 grid grid-flow-row  md:pl-12"
+              className={`h-fit w-full md:w-full gap-8 py-4 grid grid-flow-row  md:pl-12 ${colIndex==1?'mt-20':undefined}`}
             >
               {column}
             </section>
