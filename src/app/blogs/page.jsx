@@ -82,8 +82,8 @@ export default function Blogs() {
 
     return (
         <>
-        <div className='flex flex-col items-center'>
-            <BlogPosterCover />      
+        <div className='flex flex-col items-center '>
+            <BlogPosterCover/>      
             <div className="blogs-search-div">
                 <input type="text" value={searchInputValue} className={`${montserratFont.className} blogs-search-input`}
                 placeholder='Search...'

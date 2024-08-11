@@ -44,7 +44,7 @@ export default function BlogCard(props) {
                     </Link>
                     <div className={`blogs-data ${montserratFont.className}`}>
                         <hr />
-                        <div className="flex items-center justify-between mt-2">
+                        <div className="flex items-center justify-between gap-2 mt-2">
                             <div className="flex items-center gap-2 ml-4">
                                 <Avatar className="h-8 w-8">
                                     <AvatarImage src="/placeholder-user.jpg" />
