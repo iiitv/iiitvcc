@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&display=swap');
-
 #pseudo{
 	width: 100%;
 	height: 65px;
@@ -49,7 +47,6 @@
 	gap: 0px;
 }
 .logo-title{
-	font-family: "Noto Sans", sans-serif;
 	font-size: 30px;
 	letter-spacing: -0.05em;
 	line-height: 0.9;
@@ -65,7 +62,6 @@
 	display: flex;
 	justify-content: space-evenly;
 	gap: 50px;
-	font-family: "Noto Sans", sans-serif;
 	font-size: 18px;
 }
 
@@ -78,7 +74,8 @@
 	right: 10px;
 	width: 200px;
 	height: 250px;
-	background: var(--secondary);
+	background-color : color-mix(in srgb, var(--background)80%, transparent);
+	backdrop-filter: blur(10px);
 	box-shadow: 5px 5px 4.5px rgba(0, 0, 0, 0.25);
 	border: #ffbade solid 1px;
 	border-radius: 10px;

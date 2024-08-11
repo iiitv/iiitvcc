@@ -1,4 +1,11 @@
-
+@keyframes pulse-poster{
+    0% {
+        filter: saturate(0%) brightness(0%);
+    }
+    100%{
+         filter: saturate(100%) brightness(100%);
+    }
+}
 .blogs-div{
     width: 100%;
     display: flex;
@@ -8,7 +15,6 @@
 .blogs-container{
     width: 95%;
 }
-
 .blogs-search-div{
     position: relative;
     width: max-content;
@@ -119,11 +125,12 @@
 .show-more-button{
 
     box-sizing: border-box;
-    width: 400px;
-    height: 60px;
+    width: 300px;
+    height: 45px;
     
-    background-color : color-mix(in srgb, var(--primary) 10%, transparent);
-    box-shadow: #291f24 1px 1px 15px;
+    background-color : color-mix(in srgb, var(--primary) 5%, transparent);
+    box-shadow:  color-mix(in srgb, #fff 5%, transparent) 1px 1px 15px;
+    border: solid color-mix(in srgb, var(--primary) 20%, transparent) 1px;
     border-radius: 43px;
     
     transition: 0.5s;
@@ -147,6 +154,5 @@
 
         box-sizing: border-box;
         width: 200px;
-        height: 50px;
     }
 }
