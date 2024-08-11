@@ -12,27 +12,36 @@ export default function Page() {
   const [blogId, setBlogId] = useState<string>("24");
   const [events, setEvents] = useState<any[]>([]);
   const [blogs, setBlogs] = useState<any[]>([]);
-  const createEvent = async () => {
+   const createEvent = async () => {
+    if (!selectedPosterFile) {
+      console.error("Missing required event for blog submission");
+      return;
+    }
+  
+    const formData = new FormData();
+    formData.append("name", "CodeStrike v6.0");
+    formData.append("description", "A competitive coding event");
+    formData.append("date", "2024-07-30");
+    formData.append("duration", "180");
+    formData.append("mode", "true");
+    formData.append("host_link", "https://www.example.com");
+    formData.append("requirements", JSON.stringify(["Laptop", "Notebook"]));
+    formData.append("hosted_registration", "true");
+    formData.append("register_until", "2024-09-28");
+    formData.append("registration_link", "https://www.example.com");
+    formData.append("poster", selectedPosterFile);
+    formData.append("venue_link", "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Indian%20Institute%20of%20Information%20Technology%20Vadodara+(IIIT%20Vadodara)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed");
+    formData.append("convenors", JSON.stringify(["devyash", "devyash", "devyash"]));
+    formData.append("prizes", JSON.stringify(["7Cr", "69L", "3.14L", {"fy special": "150 Rupiya"}]));
+    formData.append("winners", JSON.stringify(["devyash", "devyash", "devyash", {"fy special": "devyash"}]));
+    // current time 
+    formData.append("time", new Date().toLocaleTimeString());
+  
     const response = await fetch("/api/v1/create/event/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        event: {
-          name: "CodeStrike v6.0",
-          description: "A competitive coding event",
-          date: "2024-07-30",
-          duration: 180,
-          mode: true,
-          host_link: "https://www.example.com",
-          requirements: ["Laptop", "Notebook"],
-          hosted_registration: true,
-          register_until: "2024-05-28",
-          registration_link: "https://www.example.com",
-        },
-      }),
+      body: formData,
     });
+  
     const data = await response.json();
     console.log(data);
   };

@@ -49,33 +49,6 @@ export default function Blogs() {
         }
     };
     
-    
-    
-    // const blogsArray =[
-    //     {
-    //         "id": 24,
-    //         "title": "Seventh Blog",
-    //         "intro": "This is the seventh blog",
-    //         "writer": "b4e05b86-df08-49d8-a118-51c205216401",
-    //         "created_at": "2024-07-26T07:33:28.697994+00:00",
-    //         "posterUrl": "undefined/web_data/images/24/poster",
-    //         "blogFileUrl": "undefined/web_data/blogs/24/blog",
-    //         "images": []
-    //     },
-    //     {
-    //         "id": 25,
-    //         "title": "ReactJS Tic-Tac-Toe (💥Passed Job Interview 😂  ) (💥Passed Job Interview💥)",
-    //         "intro": "From bugs to brilliance: the journey of a coder. From bugs to brilliance: the journey of a coder. From bugs to brilliance: the journey of a coder. From bugs to brilliance: the journey of a coder. From bugs to brilliance: the journey of a coder. From bugs to brilliance: the journey of a coder",
-    //         "writer": "b4e05b86-df08-49d8-a118-51c205216401",
-    //         "created_at": "2024-06-14T07:33:28.697994+00:00",
-    //         "posterUrl": "undefined/web_data/images/24/poster",
-    //         "blogFileUrl": "undefined/web_data/blogs/24/blog",
-    //         "images": ["https://i.ibb.co/3RWZ6rF/image.png",
-    //             "https://cdn.pixabay.com/photo/2024/05/16/20/20/digital-8766937_1280.png",
-    //             "https://cdn.pixabay.com/photo/2024/05/20/13/28/ai-generated-8775234_1280.png"
-    //         ]
-    //     }
-    // ]
     const handleSearchInputChange = (event) => {
         setSearchInputValue(event.target.value);
     };
