@@ -25,7 +25,7 @@ function Footer() {
                 <hr className="col-span-1 lg:col-span-12 footer-divider-1"/>
                 <div className="col-span-1 lg:col-span-4">
                     <div className="footer-cc-logo">
-                        <Image className="footer-cc-logo-img " src="/cc-logo.png" width={512} height={512} alt="IIITV Logo"/>
+                        <Image className="footer-cc-logo-img " src="/iiitv-logo.svg" width={512} height={512} alt="IIITV Logo"/>
                         <div>
                             <p className="footer-cc-logo-title">Coding Club</p> 
                             <p className="footer-cc-logo-subtitle">Community</p>
@@ -80,16 +80,18 @@ function Footer() {
             <div className={`${montserratFont.className} footer-container-2`}>
                 <div className="footer-dot-container">
                     <p>Designed by DOT</p>
-                    <div className="dot-icon">
-                        <div /><div /><div /><div /><div /><div /><div /><div /><div />
-                    </div>
+                    <Image
+                        className="dot-logo"
+                        src="/dot-logo.svg"
+                        alt="IIITV Logo" width={512} height={512}
+                    />
                 </div>
                 <hr className="footer-container-2-divider"></hr>
                 <div className="footer-cc-container">
                     <p>Developed by Coding Club</p>
                     <Image
                         className="footer-cc-logo-img-2"
-                        src="/cc-logo.png"
+                        src="/iiitv-logo.svg"
                         alt="IIITV Logo" width={512} height={512}
                     />
                 </div>
