@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh">
-      <HeroParallax products={[]} />
+      {/* <HeroParallax products={{'./homebg.jpeg'}} /> */}
       <section className="lg:h-[90dvh] w-full py-12 md:py-24 lg:py-0 bg-background text-muted flex justify-around">
         <div className="px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1240px] flex items-center justify-around">
           <div className="space-y-4 ">

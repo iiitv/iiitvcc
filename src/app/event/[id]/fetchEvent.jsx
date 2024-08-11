@@ -5,6 +5,7 @@ const useFetchEvent = (eventId) => {
     const [event, setEvent] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    console.log(eventId);
 
     useEffect(() => {
         const fetchEvent = async () => {

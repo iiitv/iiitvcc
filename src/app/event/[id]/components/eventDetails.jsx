@@ -15,25 +15,24 @@ const montserratFont = Montserrat({weight: ["100","400"], subsets: ["latin"]});
 
 
 function EventDetails(props){
+    const [isAdmin,setIsAdmin] = useState(true);
 
-    const [isAdmin,setIsAdmin] = useState(true); //Set default to false
-
-    const [event,setEvent] = useState(props.event);
-    const [eventName,setEventName] = useState(event.name);
-    const [eventDescription,setEventDescription] = useState(event.description);
-    const [registerUntilDate,setRegisterUntilDate] = useState(event.register_until);
-    const [registrationLink , setRegistrationLink] = useState(event.registration_link);
-    const [hostedRegistration , setHostedRegistration] = useState(event.hosted_registration);
-    const [hostLink, setHostLink] = useState(event.host_link);
-    const [daysLeftToRegister,setDaysLeftToRegister]= useState(CalculateDaysLeft(registerUntilDate));
-    const [eventDate,setEventDate] = useState(event.date);
-    const [eventDuration , setEventDuration]=useState((CalculateEventDuration(event.duration)));
-    const [eventMode ,setEventMode] = useState(event.mode);
-    const [eventVenue ,setEventVenue] = useState(event.venue);
-    const [eventRequirements, setEventRequirements] = useState(event.requirements);
-    const [eventPrizes , setEventPrizes] = useState(event.prizes);
-    const [eventConvenors,setEventConvenors] = useState(event.convenors);
-    const [eventWinners,setEventWinners] = useState(event.winners);
+    const [event,setEvent] = useState(props.event || '');
+    const [eventName,setEventName] = useState(event.name || "Event Name");
+    const [eventDescription,setEventDescription] = useState(event.description || "No description available");
+    const [registerUntilDate,setRegisterUntilDate] = useState(event.register_until || new Date());
+    const [registrationLink , setRegistrationLink] = useState(event.registration_link || "https://www.registration.com");
+    const [hostedRegistration , setHostedRegistration] = useState(event.hosted_registration || false);
+    const [hostLink, setHostLink] = useState(event.host_link || "https://www.hosted.com");
+    const [daysLeftToRegister,setDaysLeftToRegister]= useState(CalculateDaysLeft(registerUntilDate) || "Registration closed");
+    const [eventDate,setEventDate] = useState(event.date || new Date());
+    const [eventDuration , setEventDuration]=useState((CalculateEventDuration(event.duration)) || "Not Specified");
+    const [eventMode ,setEventMode] = useState(event.mode || false);
+    const [eventVenue ,setEventVenue] = useState(event.venue || "Online");
+    const [eventRequirements, setEventRequirements] = useState(event.requirements || []);
+    const [eventPrizes , setEventPrizes] = useState(event.prizes || []);
+    const [eventConvenors,setEventConvenors] = useState(event.convenors || []);
+    const [eventWinners,setEventWinners] = useState(event.winners || {});
     
     //To update the remaining registration time each second
     useEffect(()=>{

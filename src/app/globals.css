@@ -32,6 +32,9 @@
     --chart-3: #3366cc;
     --chart-4: #ffcc33;
     --chart-5: #ff9933;
+
+    --black: 0, 0, 0;
+    --white: 255, 255, 255;
   }
 }
 
