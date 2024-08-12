@@ -1,6 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 import { Tables } from "@/types/supabase";
+import sharp from "sharp";
+
+
+async function convertToAvif(inputFile: File): Promise<File> {
+  const arrayBuffer = await inputFile.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+
+  const avifBuffer = await sharp(buffer)
+    .avif()
+    .toBuffer();
+
+  const blob = new Blob([avifBuffer], { type: 'image/avif' });
+  const avifFile = new File([blob], inputFile.name, { type: 'image/avif' });
+
+  return avifFile;
+}
 
 function validateRequestBody(body: {
   blogTable: Tables<"blogs">;
@@ -36,8 +52,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const formData = await request.formData();
     const blogData = JSON.parse(formData.get('blogData') as string);
     
-    const poster = formData.get('poster') as File;
+    const posterFile = formData.get('poster') as File;
     const blogFile = formData.get('blog') as File;
+
+    let poster: File = posterFile;
+
+    if (posterFile) {
+      poster = await convertToAvif(posterFile);
+    }
+
     const images = formData.getAll('images') as File[];
 
     const validation = validateRequestBody({
@@ -55,6 +78,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     blogData.writer = user.id;
 
+    const { data: userData, error: userDataError} = await supabase.from("users").select("username").eq("id", user.id);
+
+    if (userDataError || !userData || userData.length === 0) {
+      throw new Error(userDataError?.message || "Failed to get user data");
+    }
+
+    blogData.writer_name = user;
+    blogData.writer_username = userData[0].username;
+    console.log(blogData.writer_name);
+
     const { data: blogs, error: blogsError } = await supabase
       .from("blogs")
       .insert([blogData])
@@ -67,19 +100,25 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     const uploadPromises = [
       supabase.storage
-        .from("web_data")
-        .upload(`blogs/${blogId}/blog`, blogFile),
+        .from(process.env.BUCKET || "")
+        .upload(`blogs/${blogId}/blog`, blogFile, {
+          upsert: true,
+        }),
       supabase.storage
-        .from("web_data")
-        .upload(`images/${blogId}/poster`, poster),
+        .from(process.env.BUCKET || "")
+        .upload(`images/${blogId}/poster`, poster, {
+          upsert: true,
+        }),
     ];
     if (images.length > 0) {
-      images.forEach((image: File) => {
+      images.forEach(async (image: File) => {
         console.log("Uploading image", image);
         uploadPromises.push(
           supabase.storage
-          .from("web_data")
-          .upload(`images/${blogId}/${image.name}`, image)
+          .from(process.env.BUCKET || "")
+          .upload(`images/${blogId}/${image.name}`, await convertToAvif(image), {
+            upsert: true,
+          })
         );
       });
     }
