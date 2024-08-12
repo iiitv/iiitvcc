@@ -1,7 +1,10 @@
 "use client";
 
-import React, { useState, useRef, useMemo } from "react";
-import JoditEditor from "jodit-react";
+import React, { useState, useRef } from "react";
+import dynamic from "next/dynamic";
+
+// Dynamically import JoditEditor to ensure it only runs in the browser
+const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 const Example = () => {
   const editor = useRef(null);
