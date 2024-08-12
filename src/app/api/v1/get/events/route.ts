@@ -19,9 +19,9 @@ export async function GET(request: NextRequest) {
 
     if (category.toLocaleLowerCase() === "upcoming") {
       query = query.gt("date", new Date().toISOString());
-    }else if (category.toLocaleLowerCase() === "past") {
+    } else if (category.toLocaleLowerCase() === "past") {
       query = query.lt("date", new Date().toISOString());
-    }else if (category.toLocaleLowerCase() === "ongoing") {
+    } else if (category.toLocaleLowerCase() === "ongoing") {
       query = query.eq("date", new Date().toISOString());
     }
 

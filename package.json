@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\""
   },
   "dependencies": {
     "@emotion/react": "^11.12.0",
@@ -26,6 +27,7 @@
     "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "jodit-react": "^4.1.2",
     "ldrs": "^1.0.2",
     "lucide-react": "^0.408.0",
     "next": "14.2.5",
@@ -48,6 +50,7 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.19",
     "postcss": "^8",
+    "prettier": "^3.3.3",
     "supabase": "^1.187.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
