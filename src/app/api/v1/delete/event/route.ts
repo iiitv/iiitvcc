@@ -12,14 +12,22 @@ export async function DELETE(request: NextRequest): Promise<NextResponse> {
     if (userError || !user) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
-    const isAdmin = await supabase.from("users").select("admin").eq("id", user.id);
-    if (isAdmin.error || !isAdmin.data || isAdmin.data.length === 0 || !isAdmin.data[0].admin) {
+    const isAdmin = await supabase
+      .from("users")
+      .select("admin")
+      .eq("id", user.id);
+    if (
+      isAdmin.error ||
+      !isAdmin.data ||
+      isAdmin.data.length === 0 ||
+      !isAdmin.data[0].admin
+    ) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
     const url = new URL(request.url);
@@ -28,7 +36,7 @@ export async function DELETE(request: NextRequest): Promise<NextResponse> {
     if (!id) {
       return NextResponse.json(
         { success: false, message: "Invalid or missing event ID" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -41,10 +49,10 @@ export async function DELETE(request: NextRequest): Promise<NextResponse> {
     if (eventError) {
       return NextResponse.json(
         { success: false, message: "Event not found" },
-        { status: 404 }
+        { status: 404 },
       );
     }
-  
+
     const { error } = await supabase.from("events").delete().eq("id", id);
 
     if (error) {
@@ -58,7 +66,7 @@ export async function DELETE(request: NextRequest): Promise<NextResponse> {
   } catch (error: any) {
     return NextResponse.json(
       { success: false, message: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

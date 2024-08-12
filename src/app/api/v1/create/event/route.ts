@@ -7,12 +7,10 @@ async function convertToAvif(inputFile: File): Promise<File> {
   const arrayBuffer = await inputFile.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
 
-  const avifBuffer = await sharp(buffer)
-    .avif()
-    .toBuffer();
+  const avifBuffer = await sharp(buffer).avif().toBuffer();
 
-  const blob = new Blob([avifBuffer], { type: 'image/avif' });
-  const avifFile = new File([blob], inputFile.name, { type: 'image/avif' });
+  const blob = new Blob([avifBuffer], { type: "image/avif" });
+  const avifFile = new File([blob], inputFile.name, { type: "image/avif" });
 
   return avifFile;
 }
@@ -43,7 +41,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     if (userError || !user) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -51,10 +49,15 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       .from("users")
       .select("admin")
       .eq("id", user.id);
-    if (isAdmin.error || !isAdmin.data || isAdmin.data.length === 0 || !isAdmin.data[0].admin) {
+    if (
+      isAdmin.error ||
+      !isAdmin.data ||
+      isAdmin.data.length === 0 ||
+      !isAdmin.data[0].admin
+    ) {
       return NextResponse.json(
         { success: false, message: "Unauthorized" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -75,14 +78,13 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       poster = await convertToAvif(poster_file);
     }
 
-
     delete event.poster;
 
     const validation = validateEvent(event);
     if (!validation.valid) {
       return NextResponse.json(
         { success: false, message: validation.message },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -100,7 +102,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     }
 
     if (poster_file && poster) {
-
       const { error: posterUploadError } = await supabase.storage
         .from(process.env.BUCKET || "")
         .upload(`/events/${eventId}/poster`, poster, {
@@ -120,7 +121,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   } catch (error: any) {
     return NextResponse.json(
       { success: false, message: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
