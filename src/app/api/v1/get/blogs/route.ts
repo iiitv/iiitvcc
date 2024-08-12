@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
+import { getPublicUrl } from "@/lib/utils";
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
@@ -32,19 +33,20 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
 
   
     const blogPromises = blogs.map(async (blog) => {
-      const posterUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/images/${blog.id}/poster`;
-      const blogFileUrl = `${process.env.SUPABASE_STORAGE_URL}/web_data/blogs/${blog.id}/blog`;
+      const posterUrl = `${getPublicUrl(`/images/${blog.id}/poster`)}`;
+      const blogFileUrl = `${getPublicUrl(`/blogs/${blog.id}/blog`)}`;
 
       const { data: images, error: imagesError } = await supabase
         .storage
-        .from('web_data')
+        .from(process.env.BUCKET || "")
         .list(`images/${blog.id}`);
 
       if (imagesError) {
         throw new Error(imagesError.message);
       }
 
-      const imageUrls = images.map(image => `${process.env.SUPABASE_STORAGE_URL}/web_data/images/${blog.id}/${image.name}`);
+
+      const imageUrls = images.map(image => `${getPublicUrl(`/images/${blog.id}/${image.name}`)}`);
 
       return {
         ...blog,
