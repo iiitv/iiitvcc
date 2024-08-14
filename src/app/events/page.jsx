@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import EventBox from "../../components/ui/EventBox";
-
+import { getPublicUrl } from "@/lib/utils"
 function Page() {
   const [events, setEvents] = useState([]);
   const [nextPageEvents, setNextPageEvents] = useState([]);
@@ -66,8 +66,11 @@ function Page() {
   const columns = Array.from({ length: columnCount }, () => []);
 
   events.forEach((event, index) => {
+    let posterUrl = getPublicUrl(`/events/${event.id}/poster`)
+
     columns[index % columnCount].push(
       <EventBox
+      img={posterUrl}
         key={event.id}
         caption={event.description}
         time={event.date}
