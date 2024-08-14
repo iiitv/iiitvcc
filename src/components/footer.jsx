@@ -13,7 +13,7 @@ const montserratFont = Montserrat({
 function Footer() {
   const homeLink = "/home";
   const eventsLink = "/events";
-  const projectsLink = "/projects";
+  const blogsLink = "/blogs";
   const membersLink = "/members";
   const ccEmailLink = "mailto:codingclub@iiitvadodara.ac.in";
   const addressLink = "https://goo.gl/maps/7g5D6XJpMAD2";
@@ -61,11 +61,11 @@ function Footer() {
               Events
             </Link>
             <Link
-              href={projectsLink}
+              href={blogsLink}
               className={montserratFont.className}
               prefetch={false}
             >
-              Projects
+              Blogs
             </Link>
             <Link
               className={montserratFont.className}
