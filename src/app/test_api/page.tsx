@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Button as MUIButton } from "@mui/material";
 
 export default function Page() {
-  const [selectedPosterFile, setSelectedPosterFile] = useState<File | null>(null);
+  const [selectedPosterFile, setSelectedPosterFile] = useState<File | null>(
+    null,
+  );
   const [selectedBlogFile, setSelectedBlogFile] = useState<File | null>(null);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const [eventId, setEventId] = useState<string>("7");
@@ -13,26 +15,51 @@ export default function Page() {
   const [events, setEvents] = useState<any[]>([]);
   const [blogs, setBlogs] = useState<any[]>([]);
   const createEvent = async () => {
+    if (!selectedPosterFile) {
+      console.error("Missing required event for blog submission");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("name", "CodeStrike v6.0");
+    formData.append("description", "A competitive coding event");
+    formData.append("date", "2024-07-30");
+    formData.append("duration", "180");
+    formData.append("mode", "true");
+    formData.append("host_link", "https://www.example.com");
+    formData.append("requirements", JSON.stringify(["Laptop", "Notebook"]));
+    formData.append("hosted_registration", "true");
+    formData.append("register_until", "2024-09-28");
+    formData.append("registration_link", "https://www.example.com");
+    formData.append("poster", selectedPosterFile);
+    formData.append(
+      "venue_link",
+      "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Indian%20Institute%20of%20Information%20Technology%20Vadodara+(IIIT%20Vadodara)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed",
+    );
+    formData.append(
+      "convenors",
+      JSON.stringify(["devyash", "devyash", "devyash"]),
+    );
+    formData.append(
+      "prizes",
+      JSON.stringify(["7Cr", "69L", "3.14L", { "fy special": "150 Rupiya" }]),
+    );
+    formData.append(
+      "winners",
+      JSON.stringify({
+        "Web Dev": ["ABCDEGFHIJKL", "ABCDEGFHIJKL", "ABCDEGFHIJKL"],
+        "Cloud ": ["ABCDEGFHIJKL"],
+        CyberSecurity: ["ABCDEGFHIJKL", "ABCDEGFHIJKL"],
+      }),
+    );
+    // current time
+    formData.append("time", new Date().toLocaleTimeString());
+
     const response = await fetch("/api/v1/create/event/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        event: {
-          name: "CodeStrike v6.0",
-          description: "A competitive coding event",
-          date: "2024-07-30",
-          duration: 180,
-          mode: true,
-          host_link: "https://www.example.com",
-          requirements: ["Laptop", "Notebook"],
-          hosted_registration: true,
-          register_until: "2024-05-28",
-          registration_link: "https://www.example.com",
-        },
-      }),
+      body: formData,
     });
+
     const data = await response.json();
     console.log(data);
   };
@@ -49,10 +76,13 @@ export default function Page() {
     selectedImages.forEach((image) => {
       formData.append("images", image);
     });
-    formData.append("blogData", JSON.stringify({
-      title: "Seventh Blog",
-      intro: "This is the seventh blog",
-    }));
+    formData.append(
+      "blogData",
+      JSON.stringify({
+        title: "Seventh Blog",
+        intro: "This is the seventh blog",
+      }),
+    );
 
     const response = await fetch("/api/v1/submit/blog/", {
       method: "POST",
@@ -120,7 +150,9 @@ export default function Page() {
     console.log(data);
   };
 
-  const handlePosterFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePosterFileChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     if (event.target.files) {
       const file = event.target.files[0];
       setSelectedPosterFile(file);
@@ -144,16 +176,40 @@ export default function Page() {
     <div className="p-4 space-y-4">
       <h1 className="text-2xl font-bold">Test APIs</h1>
       <div className="space-y-2">
-        <Button onClick={createEvent} className="w-full bg-green-500 text-white">Create Event</Button>
-        <Button onClick={submitBlog} className="w-full bg-yellow-500 text-white">Submit Blog</Button>
-        <Button onClick={deleteEvent} className="w-full bg-red-500 text-white">Delete Event</Button>
-        <Button onClick={getBlog} className="w-full bg-teal-500 text-white">Get Blog</Button>
-        <Button onClick={getEvent} className="w-full bg-indigo-500 text-white">Get Event</Button>
-        <Button onClick={getEvents} className="w-full bg-pink-500 text-white">Get Events</Button>
-        <Button onClick={getBlogs} className="w-full bg-gray-500 text-white">Get Blogs</Button>
+        <Button
+          onClick={createEvent}
+          className="w-full bg-green-500 text-white"
+        >
+          Create Event
+        </Button>
+        <Button
+          onClick={submitBlog}
+          className="w-full bg-yellow-500 text-white"
+        >
+          Submit Blog
+        </Button>
+        <Button onClick={deleteEvent} className="w-full bg-red-500 text-white">
+          Delete Event
+        </Button>
+        <Button onClick={getBlog} className="w-full bg-teal-500 text-white">
+          Get Blog
+        </Button>
+        <Button onClick={getEvent} className="w-full bg-indigo-500 text-white">
+          Get Event
+        </Button>
+        <Button onClick={getEvents} className="w-full bg-pink-500 text-white">
+          Get Events
+        </Button>
+        <Button onClick={getBlogs} className="w-full bg-gray-500 text-white">
+          Get Blogs
+        </Button>
       </div>
       <label htmlFor="poster-file" className="block">
-        <MUIButton variant="contained" component="span" className="bg-purple-500 text-white">
+        <MUIButton
+          variant="contained"
+          component="span"
+          className="bg-purple-500 text-white"
+        >
           Select Poster Image
         </MUIButton>
         <input
@@ -165,7 +221,11 @@ export default function Page() {
         />
       </label>
       <label htmlFor="blog-file" className="block mt-4">
-        <MUIButton variant="contained" component="span" className="bg-purple-500 text-white">
+        <MUIButton
+          variant="contained"
+          component="span"
+          className="bg-purple-500 text-white"
+        >
           Select Blog File
         </MUIButton>
         <input
@@ -177,7 +237,11 @@ export default function Page() {
         />
       </label>
       <label htmlFor="images-file" className="block mt-4">
-        <MUIButton variant="contained" component="span" className="bg-purple-500 text-white">
+        <MUIButton
+          variant="contained"
+          component="span"
+          className="bg-purple-500 text-white"
+        >
           Select Images
         </MUIButton>
         <input

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button"
-import Loader from '@/components/ui/loader'
+import { Button } from "@/components/ui/button";
+import Loader from "@/components/ui/loader";
 
 // -- icons --
 import { FcGoogle } from "react-icons/fc";
-import { JSX, SVGProps } from "react"
+import { JSX, SVGProps } from "react";
 
-interface Props{
-  onClick: () => Promise<void>
+interface Props {
+  onClick: () => Promise<void>;
 }
 
-export function OAuthComponent(props : Props) {
+export function OAuthComponent(props: Props) {
   const [loading, setLoading] = useState<boolean>(false);
 
   return (
@@ -20,24 +20,34 @@ export function OAuthComponent(props : Props) {
           <div className="w-full border-t border-muted" />
         </div>
         <div className="relative flex justify-center text-sm">
-          <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+          <span className="bg-background px-2 text-muted-foreground">
+            Or continue with
+          </span>
         </div>
       </div>
       <Button
-        onClick = {async () => {
+        onClick={async () => {
           setLoading(true);
           props.onClick().then(() => {
-            setLoading(false)
+            setLoading(false);
           });
         }}
         variant="outline"
         className="group relative flex w-full justify-center rounded-[8px] border border-input bg-background py-6 px-4 text-md font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none focus:opacity-90"
       >
-        {loading ? <i className="flex text-black"><Loader /></i> :
-        <><FcGoogle size={21} className="ml-2 mr-[.1em]"/>oogle</>}
+        {loading ? (
+          <i className="flex text-black">
+            <Loader />
+          </i>
+        ) : (
+          <>
+            <FcGoogle size={21} className="ml-2 mr-[.1em]" />
+            oogle
+          </>
+        )}
       </Button>
     </>
-  )
+  );
 }
 
 function ChromeIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
@@ -60,5 +70,5 @@ function ChromeIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
       <line x1="3.95" x2="8.54" y1="6.06" y2="14" />
       <line x1="10.88" x2="15.46" y1="21.94" y2="14" />
     </svg>
-  )
+  );
 }
