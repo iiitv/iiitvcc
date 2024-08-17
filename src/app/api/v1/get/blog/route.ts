@@ -31,7 +31,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const blogFileUrl = `${getPublicUrl(`/blogs/${id}/blog`)}`;
 
     const { data: images, error: imagesError } = await supabase.storage
-      .from(process.env.BUCKET || "")
+      .from(process.env.NEXT_PUBLIC_BUCKET || "")
       .list(`images/${id}/`);
 
     if (imagesError) {
