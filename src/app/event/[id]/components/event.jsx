@@ -5,6 +5,8 @@ import EventPoster from "./eventPoster";
 import EventDetails from "./eventDetails";
 import useWindowDimensions from "./currentWindowSize";
 
+import { getPublicUrl } from "@/lib/utils";
+
 function GenerateEvent({ props: event }) {
   // Getting current window dimensions
   const { width, height } = useWindowDimensions();
@@ -18,6 +20,8 @@ function GenerateEvent({ props: event }) {
   const [eventPosterFixed, setEventPosterFixed] = useState("");
   const [eventPosterCover, setEventPosterCover] = useState("");
 
+  const [eventPosterAspectRatio, setEventPosterAspectRatio] = useState(1);
+
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);
@@ -26,7 +30,7 @@ function GenerateEvent({ props: event }) {
   // To change classes
   useEffect(() => {
     if (width - height > 0) {
-      if (scrollPosition > width - height - 0.12 * (width - height)) {
+      if (scrollPosition > (width - height - (0.12 * (width - height)))/eventPosterAspectRatio) {
         //
         setEventDetailsFixed("");
         setEventPosterFixed("event-poster-fixed");
@@ -50,7 +54,20 @@ function GenerateEvent({ props: event }) {
     };
   }, []);
 
-  const eventPoster = "/event_poster.avif";
+  const [eventPoster,setEventPoster] = useState(getPublicUrl(`/events/${event.id}/poster`));
+  useEffect(()=>{
+    const img = new Image();
+    img.src = eventPoster;
+    img.onload = () => {
+      const ratio = img.width / img.height;
+      setEventPosterAspectRatio(ratio);
+    };
+    
+    img.onerror = () => {
+      console.error('Failed to load image.');
+    };
+  },[]);
+
   return (
     <div className="event-div">
       <div className={`event-poster ${eventPosterFixed}`}>

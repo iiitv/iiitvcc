@@ -103,7 +103,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
     if (poster_file && poster) {
       const { error: posterUploadError } = await supabase.storage
-        .from(process.env.BUCKET || "")
+        .from(process.env.NEXT_PUBLIC_BUCKET || "")
         .upload(`/events/${eventId}/poster`, poster, {
           upsert: true,
         });
