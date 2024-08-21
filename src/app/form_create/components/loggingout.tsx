@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React from 'react'
 import { SVGProps } from 'react'
 import Loader from '@/components/ui/loader'
+=======
+import React from "react";
+import Link from "next/link";
+import { SVGProps } from "react";
+import Loader from "@/components/ui/loader";
+>>>>>>> e436f9a6b084ae16249a55e8d74868c9bc4c86e1
 
 export function LoggingOut() {
   return (
@@ -8,12 +15,17 @@ export function LoggingOut() {
       <main className="flex flex-col items-center justify-center gap-4 px-4 py-12 md:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-2">
           <LogOutIcon className="h-12 w-12 text-primary" />
-          <h1 className="text-3xl font-bold tracking-tight flex items-center"><span className="mr-3">Logging out...</span><Loader /></h1>
-          <p className="text-muted-foreground">You are being logged out of your account.</p>
+          <h1 className="text-3xl font-bold tracking-tight flex items-center">
+            <span className="mr-3">Logging out...</span>
+            <Loader />
+          </h1>
+          <p className="text-muted-foreground">
+            You are being logged out of your account.
+          </p>
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 function LogOutIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
@@ -34,5 +46,5 @@ function LogOutIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
       <polyline points="16 17 21 12 16 7" />
       <line x1="21" x2="9" y1="12" y2="12" />
     </svg>
-  )
+  );
 }

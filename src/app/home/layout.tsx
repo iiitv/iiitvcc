@@ -1,6 +1,6 @@
-import React from 'react';
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
+import React from "react";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import type { Metadata } from "next";
 import Head from 'next/head';
 
@@ -9,7 +9,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children } : RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
         <Head>
@@ -29,5 +29,5 @@ export default function RootLayout({ children } : RootLayoutProps) {
       {children}
       <Footer />
     </>
-  )
+  );
 }
