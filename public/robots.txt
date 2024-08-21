@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://iiitvcc.vercel.app
+
+# Sitemaps
+Sitemap: https://iiitvcc.vercel.app/sitemap.xml

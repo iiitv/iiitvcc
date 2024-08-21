@@ -73,6 +73,19 @@ export async function updateSession(request: NextRequest) {
     response = NextResponse.redirect(new URL('/auth', request.nextUrl.href))
   }
 
+  // ----------------- ADMIN -----------------
+  // if ( request.nextUrl.pathname.startsWith('/admin') && request.nextUrl.pathname !== '/admin/notAdmin' ) {
+  //   if (error || !user) {
+  //     return NextResponse.redirect(new URL('/auth', request.nextUrl.href))
+  //   }
+  //   const isAdmin = await supabase.from('users').select('admin').eq('id', user?.id)
+  //   if (isAdmin.error || !isAdmin.data || isAdmin.data.length === 0 || !isAdmin.data[0].admin) {
+  //     response = NextResponse.redirect(new URL('/admin/notAdmin', request.nextUrl.href))
+  //   }
+  // }
+  // ----------------- ADMIN -----------------
+
+
   // const searchParams = request.nextUrl.searchParams
   
   // if (request.nextUrl.pathname === '/auth/confirm_email') {
