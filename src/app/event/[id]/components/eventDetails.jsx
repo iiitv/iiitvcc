@@ -49,8 +49,8 @@ function EventDetails(props) {
   const [eventPrizes, setEventPrizes] = useState(event.prizes);
   const [eventConvenors, setEventConvenors] = useState(event.convenors);
   const [eventWinners, setEventWinners] = useState(event.winners);
-  const [eventVenueLink , setEventVenueLink ] = useState(event.venue_link);
-  
+  const [eventVenueLink, setEventVenueLink] = useState(event.venue_link);
+
   //To update the remaining registration time each second
   useEffect(() => {
     setInterval(() => {
@@ -58,49 +58,6 @@ function EventDetails(props) {
     }, 1000);
   }, [daysLeftToRegister]);
 
-<<<<<<< HEAD
-function EventDetails(props){
-    const [isAdmin,setIsAdmin] = useState(true);
-
-    const [event,setEvent] = useState(props.event || '');
-    const [eventName,setEventName] = useState(event.name || "Event Name");
-    const [eventDescription,setEventDescription] = useState(event.description || "No description available");
-    const [registerUntilDate,setRegisterUntilDate] = useState(event.register_until || new Date());
-    const [registrationLink , setRegistrationLink] = useState(event.registration_link || "https://www.registration.com");
-    const [hostedRegistration , setHostedRegistration] = useState(event.hosted_registration || false);
-    const [hostLink, setHostLink] = useState(event.host_link || "https://www.hosted.com");
-    const [daysLeftToRegister,setDaysLeftToRegister]= useState(CalculateDaysLeft(registerUntilDate) || "Registration closed");
-    const [eventDate,setEventDate] = useState(event.date || new Date());
-    const [eventDuration , setEventDuration]=useState((CalculateEventDuration(event.duration)) || "Not Specified");
-    const [eventMode ,setEventMode] = useState(event.mode || false);
-    const [eventVenue ,setEventVenue] = useState(event.venue || "Online");
-    const [eventRequirements, setEventRequirements] = useState(event.requirements || []);
-    const [eventPrizes , setEventPrizes] = useState(event.prizes || []);
-    const [eventConvenors,setEventConvenors] = useState(event.convenors || []);
-    const [eventWinners,setEventWinners] = useState(event.winners || {});
-    
-    //To update the remaining registration time each second
-    useEffect(()=>{
-        setInterval(()=>{
-            setDaysLeftToRegister(CalculateDaysLeft(registerUntilDate))
-        },1000)
-    },[daysLeftToRegister])
-
-
-
-    return <>
-        <div className="event-cover-details grid grid-cols-2 lg:grid-cols-12 gap-2 ">
-            <p className="col-span-2 lg:col-span-6 event-title ">{eventName}</p>
-            
-            <div className="col-span-2 lg:col-span-6 ">
-                <p className="event-days-left " suppressHydrationWarning>{daysLeftToRegister}</p>
-                <Link className={((CalculateDaysLeft(registerUntilDate)==="Registration closed")?"disabled-link ":null)+"col-span-1 inline-flex h-10 items-center justify-center rounded-md bg-primary text-primary-foreground px-8 text-sm font-medium shadow transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"}
-                href={hostedRegistration?registrationLink:hostLink} target="_blank" >
-                    Register
-                </Link>
-                {isAdmin ? DeleteButton() : null}
-            </div>  
-=======
   return (
     <>
       <div className="event-cover-details grid grid-cols-2 lg:grid-cols-12 gap-2 ">
@@ -123,7 +80,6 @@ function EventDetails(props){
             Register
           </Link>
           {isAdmin ? DeleteButton() : null}
->>>>>>> e436f9a6b084ae16249a55e8d74868c9bc4c86e1
         </div>
       </div>
       <div className={`event-date-time-container ${montserratFont.className}`}>
@@ -133,9 +89,7 @@ function EventDetails(props){
         </div>
         <div className="event-time-container rounded-lg border shadow-sm bg-secondary border-none px-4 py-2 gap-6">
           <p className="event-time-title">Event Time</p>
-          <p className="event-time">
-            {convertTo12HourFormat(eventTime)}
-          </p>
+          <p className="event-time">{convertTo12HourFormat(eventTime)}</p>
         </div>
       </div>
 
@@ -173,15 +127,17 @@ function EventDetails(props){
         >
           <EventPrizes eventPrizes={eventPrizes} />
         </div>
-        {eventVenueLink?<div
-          style={{ width: "100%" }}
-          className={`lg:col-span-1 lg:row-start-2 lg:row-span-2 order-last ${montserratFont.className}`}
-        >
-          <EventVenue venueLink={eventVenueLink}/>
-        </div>:null}
+        {eventVenueLink ? (
+          <div
+            style={{ width: "100%" }}
+            className={`lg:col-span-1 lg:row-start-2 lg:row-span-2 order-last ${montserratFont.className}`}
+          >
+            <EventVenue venueLink={eventVenueLink} />
+          </div>
+        ) : null}
 
         <div
-          style={{ width: "100%",height:"100%" }}
+          style={{ width: "100%", height: "100%" }}
           className={`lg:col-span-1 lg:row-span-1 h-full ${montserratFont.className}`}
         >
           <EventConvenors eventConvenors={eventConvenors} />
@@ -243,10 +199,10 @@ function CalculateDaysLeft(date) {
 }
 
 function convertTo12HourFormat(time24) {
-  let [hours, minutes, seconds] = time24.split(':').map(Number);
-  let period = hours >= 12 ? 'PM' : 'AM';
+  let [hours, minutes, seconds] = time24.split(":").map(Number);
+  let period = hours >= 12 ? "PM" : "AM";
   hours = hours % 12 || 12;
-  return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${period}`;
+  return `${hours}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${period}`;
 }
 
 function CalculateEventDuration(totalmins) {

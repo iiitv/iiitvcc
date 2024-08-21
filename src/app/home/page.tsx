@@ -1,10 +1,17 @@
-'use client'
-import React from "react"
-import Link from "next/link"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+"use client";
+import React from "react";
+import Link from "next/link";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 // import { HeroParallax } from "./components/hero-parallax"
 
-import Image from "next/image"
+import Image from "next/image";
 
 // export const products = [
 //   {
@@ -102,19 +109,17 @@ import Image from "next/image"
 //   },
 // ];
 
-
-
 export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh">
       {/* <HeroParallax products={products} /> */}
       <section className="lg:h-[90dvh] w-full py-12 md:py-24 lg:py-0 bg-background text-muted flex justify-around">
         <div className="px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1240px] flex items-center justify-around">
-          <div className="space-y-4 ">
+          <div className="space-y-4 md:flex md:items-center md:flex-col text-center md:text-left">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
               Unlock Your Coding Potential
             </h1>
-            <p className="max-w-[600px] text-lg md:text-xl">
+            <p className=" max-w-[600px] text-lg md:text-xl">
               Join our vibrant community of coders and unlock your full
               potential through workshops, events, and shared resources.
             </p>

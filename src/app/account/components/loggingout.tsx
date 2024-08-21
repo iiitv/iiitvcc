@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-import React from 'react'
-import { SVGProps } from 'react'
-import Loader from '@/components/ui/loader'
-=======
 import React from "react";
-import Link from "next/link";
 import { SVGProps } from "react";
 import Loader from "@/components/ui/loader";
->>>>>>> e436f9a6b084ae16249a55e8d74868c9bc4c86e1
 
 export function LoggingOut() {
   return (

@@ -34,7 +34,7 @@ export default function Update_password() {
     if (error) {
       setErrorMsg(error.message);
     } else {
-      router.replace("/form_create");
+      router.replace("/account");
     }
   }
 

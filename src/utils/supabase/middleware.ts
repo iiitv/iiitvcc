@@ -74,10 +74,8 @@ export async function updateSession(request: NextRequest) {
       request.nextUrl.pathname === "/auth" ||
       request.nextUrl.pathname === "/auth/reset_password")
   ) {
-    response = NextResponse.redirect(
-      new URL("/form_create", request.nextUrl.href),
-    );
-  } else if (!user && request.nextUrl.pathname === "/form_create") {
+    response = NextResponse.redirect(new URL("/account", request.nextUrl.href));
+  } else if (!user && request.nextUrl.pathname === "/account") {
     response = NextResponse.redirect(new URL("/auth", request.nextUrl.href));
   } else if (!user && request.nextUrl.pathname === "/test_api") {
     response = NextResponse.redirect(new URL("/auth", request.nextUrl.href));
@@ -96,7 +94,6 @@ export async function updateSession(request: NextRequest) {
   //   }
   // }
   // ----------------- ADMIN -----------------
-
 
   // const searchParams = request.nextUrl.searchParams
 

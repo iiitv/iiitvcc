@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const token_hash = searchParams.get("token_hash");
   const type = searchParams.get("type") as EmailOtpType | null;
-  const next = searchParams.get("next") ?? "/form_create";
+  const next = searchParams.get("next") ?? "/account";
 
   const redirectTo = req.nextUrl.clone();
   redirectTo.pathname = next;

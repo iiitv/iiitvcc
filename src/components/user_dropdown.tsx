@@ -13,10 +13,18 @@ import { JSX, SVGProps, useEffect, useState } from "react";
 interface Props extends React.HTMLAttributes<HTMLFormElement> {
   email: string | null;
   username: string | null;
+  onProfile: string | null;
+  onSetting: string | null;
   onLogout: () => void;
 }
 
-export function Dropdown_Menu({ email, username, onLogout: logout }: Props) {
+export function Dropdown_Menu({
+  email,
+  username,
+  onProfile: profile,
+  onSetting: setting,
+  onLogout: logout,
+}: Props) {
   return (
     <>
       <DropdownMenu>
@@ -24,7 +32,7 @@ export function Dropdown_Menu({ email, username, onLogout: logout }: Props) {
           <Button
             variant="link"
             size="icon"
-            className="rounded-full outline outline-2 outline-white z-20 fixed top-8 right-8"
+            className="rounded-full outline outline-2 outline-white z-20 fixed top-[1.35em] right-6"
           >
             <Avatar className="h-8 w-8">
               <AvatarImage src="/placeholder-user.jpg" />
@@ -48,13 +56,21 @@ export function Dropdown_Menu({ email, username, onLogout: logout }: Props) {
           </div>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <Link href="#" className="flex items-center gap-2" prefetch={false}>
+            <Link
+              href={profile || "#"}
+              className="flex items-center gap-2"
+              prefetch={false}
+            >
               <div className="h-4 w-4" />
               <span>Profile</span>
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Link href="#" className="flex items-center gap-2" prefetch={false}>
+            <Link
+              href={setting || "#"}
+              className="flex items-center gap-2"
+              prefetch={false}
+            >
               <div className="h-4 w-4" />
               <span>Settings</span>
             </Link>

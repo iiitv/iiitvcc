@@ -1,14 +1,22 @@
 import React from "react";
 
-function EventBox({ time, category, caption, secondCat = false, hostLink , img }) {
+function EventBox({
+  time,
+  category,
+  caption,
+  secondCat = false,
+  hostLink,
+  img,
+}) {
   return (
-    <div >
-      <div style={{
-      backgroundImage:`url(${img})`,
-      backgroundPosition:"center",
-      backgroundRepeat:"no-repeat",
-      backgroundSize:"cover"
-    }}
+    <div>
+      <div
+        style={{
+          backgroundImage: `url(${img})`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
         className={`w-11/12 ${
           secondCat ? "h-24 md:h-40" : "h-40 md:h-60"
         } rounded-3xl ${

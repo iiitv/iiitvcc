@@ -30,6 +30,8 @@
     "axios": "^1.7.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.29",
+    "jodit-react": "^4.1.2",
     "ldrs": "^1.0.2",
     "lucide-react": "^0.408.0",
     "next": "14.2.5",
