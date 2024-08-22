@@ -7,9 +7,8 @@ import { User } from "@supabase/supabase-js";
 import axios from "axios";
 
 import { UserForm } from "./components/userform";
-import { Form } from "./components/form";
-import { Dropdown_Menu } from "./components/dropdown_menu";
-import { LoggingOut } from "./components/loggingout";
+import { Form } from "./components/component";
+import { LoggingOut } from "@/components/ui/loggingout";
 import ErrorDialog from "@/components/error_dialog";
 
 import { cn } from "@/lib/utils";
@@ -118,15 +117,11 @@ export default function Page() {
         <UserForm user_id={user?.id || ""} email={useremail} />
       ) : (
         <>
-          <Dropdown_Menu
-            username={username}
-            email={useremail}
-            onLogout={logout}
-          />
           <Form
             username={username}
             email={useremail}
             disabled={error || loading ? true : false}
+            logout={logout}
           />
         </>
       )}

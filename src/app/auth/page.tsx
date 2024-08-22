@@ -51,7 +51,7 @@ export default function Auth() {
       setError(error);
       return false;
     } else {
-      router.push("/form_create");
+      router.push("/account");
     }
   }
 

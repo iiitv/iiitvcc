@@ -19,11 +19,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        border: "var(--border)",
         input: "var(--input)",
         ring: "var(--ring)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        border: "var(--border)",
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",

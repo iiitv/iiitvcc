@@ -12,7 +12,7 @@
 .inputicon {
   position:absolute;
   top: 50%;
-  color: rgba(var(--black-light), .45);
+  border-radius: 50%;
   font-size: 1rem;
   transform: translateY(-50%);
   transition: 0.5s ease;
@@ -23,5 +23,11 @@
   cursor: pointer;
 }
 .eyeicon:hover {
-  color: rgba(var(--black-light), .65);
+  background: rgba(var(--white), .03);
+}
+.mailicon {
+  left: 15px;
+}
+.passwordicon {
+  left: 15px;
 }

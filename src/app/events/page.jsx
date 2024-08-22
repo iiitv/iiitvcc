@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import EventBox from "../../components/ui/EventBox";
-import { getPublicUrl } from "@/lib/utils"
+import { getPublicUrl } from "@/lib/utils";
 function Page() {
   const [events, setEvents] = useState([]);
   const [nextPageEvents, setNextPageEvents] = useState([]);
   const [pageCount, setPageCount] = useState(1);
   const [hasMoreEvents, setHasMoreEvents] = useState(true);
-  const [columnCount, setColumnCount] = useState(3); 
+  const [columnCount, setColumnCount] = useState(3);
 
   const fetchEvents = async (page) => {
     try {
@@ -45,17 +45,16 @@ function Page() {
       }
     };
 
-   
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setColumnCount(2); 
+        setColumnCount(2);
       } else {
         setColumnCount(3);
       }
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); 
+    handleResize();
     loadInitialEvents();
 
     return () => {
@@ -66,17 +65,17 @@ function Page() {
   const columns = Array.from({ length: columnCount }, () => []);
 
   events.forEach((event, index) => {
-    let posterUrl = getPublicUrl(`/events/${event.id}/poster`)
+    let posterUrl = getPublicUrl(`/events/${event.id}/poster`);
 
     columns[index % columnCount].push(
       <EventBox
-      img={posterUrl}
+        img={posterUrl}
         key={event.id}
         caption={event.description}
         time={event.date}
         category={event.name}
         hostLink={event.host_link}
-      />
+      />,
     );
   });
 
@@ -91,10 +90,7 @@ function Page() {
               className={`h-fit w-full gap-8 py-4 grid grid-flow-row md:pl-12 ${
                 colIndex === 1 && columnCount === 3 ? "mt-32" : ""
               }
-              ${
-                colIndex === 1 && columnCount === 2 ? "mt-20" : ""
-              }`
-               }
+              ${colIndex === 1 && columnCount === 2 ? "mt-20" : ""}`}
             >
               {column}
             </section>

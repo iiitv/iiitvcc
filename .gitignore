@@ -32,3 +32,12 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# admin and users
+/src/app/users
+/src/app/admin
+
+# robots.txt
+/robots.txt
+/sitemap.xml
+/sitemap-[0-9]*.xml

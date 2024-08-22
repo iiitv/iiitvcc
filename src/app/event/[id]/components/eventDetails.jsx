@@ -49,8 +49,8 @@ function EventDetails(props) {
   const [eventPrizes, setEventPrizes] = useState(event.prizes);
   const [eventConvenors, setEventConvenors] = useState(event.convenors);
   const [eventWinners, setEventWinners] = useState(event.winners);
-  const [eventVenueLink , setEventVenueLink ] = useState(event.venue_link);
-  
+  const [eventVenueLink, setEventVenueLink] = useState(event.venue_link);
+
   //To update the remaining registration time each second
   useEffect(() => {
     setInterval(() => {
@@ -89,9 +89,7 @@ function EventDetails(props) {
         </div>
         <div className="event-time-container rounded-lg border shadow-sm bg-secondary border-none px-4 py-2 gap-6">
           <p className="event-time-title">Event Time</p>
-          <p className="event-time">
-            {convertTo12HourFormat(eventTime)}
-          </p>
+          <p className="event-time">{convertTo12HourFormat(eventTime)}</p>
         </div>
       </div>
 
@@ -129,15 +127,17 @@ function EventDetails(props) {
         >
           <EventPrizes eventPrizes={eventPrizes} />
         </div>
-        {eventVenueLink?<div
-          style={{ width: "100%" }}
-          className={`lg:col-span-1 lg:row-start-2 lg:row-span-2 order-last ${montserratFont.className}`}
-        >
-          <EventVenue venueLink={eventVenueLink}/>
-        </div>:null}
+        {eventVenueLink ? (
+          <div
+            style={{ width: "100%" }}
+            className={`lg:col-span-1 lg:row-start-2 lg:row-span-2 order-last ${montserratFont.className}`}
+          >
+            <EventVenue venueLink={eventVenueLink} />
+          </div>
+        ) : null}
 
         <div
-          style={{ width: "100%",height:"100%" }}
+          style={{ width: "100%", height: "100%" }}
           className={`lg:col-span-1 lg:row-span-1 h-full ${montserratFont.className}`}
         >
           <EventConvenors eventConvenors={eventConvenors} />
@@ -199,10 +199,10 @@ function CalculateDaysLeft(date) {
 }
 
 function convertTo12HourFormat(time24) {
-  let [hours, minutes, seconds] = time24.split(':').map(Number);
-  let period = hours >= 12 ? 'PM' : 'AM';
+  let [hours, minutes, seconds] = time24.split(":").map(Number);
+  let period = hours >= 12 ? "PM" : "AM";
   hours = hours % 12 || 12;
-  return `${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${period}`;
+  return `${hours}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${period}`;
 }
 
 function CalculateEventDuration(totalmins) {
