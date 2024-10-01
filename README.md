@@ -205,7 +205,7 @@ We welcome contributions from everyone! To contribute:
    git push origin feature/your-feature-name
    ```
 
-4. Open a pull request to the main repository.
+4. Open a pull request to the *new* branch of the repository.
 
 Before submitting, ensure your code adheres to our coding standards and passes all linting and testing checks.
 
