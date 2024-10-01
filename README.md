@@ -18,7 +18,9 @@ Welcome to the new repository for the **IIITV Coding Club** website! This projec
 
 ## Introduction
 
-This is the official website for the **IIITV Coding Club**, built with modern web technologies. The project is hosted on Vercel and aims to showcase club activities, blogs, events, and more. We encourage you to explore the project and contribute to its development!
+This is the new official website for the **IIITV Coding Club**, built with modern web technologies. The project is hosted on Vercel and aims to showcase club activities, blogs, events, and more. We encourage you to explore the project and contribute to its development!
+
+The live site can be accessed here: [IIITV Coding Club Website](https://iiitvcc.vercel.app/).
 
 ## Features
 
