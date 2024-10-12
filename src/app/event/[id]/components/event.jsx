@@ -30,7 +30,10 @@ function GenerateEvent({ props: event }) {
   // To change classes
   useEffect(() => {
     if (width - height > 0) {
-      if (scrollPosition > (width - height - (0.12 * (width - height)))/eventPosterAspectRatio) {
+      if (
+        scrollPosition >
+        (width - height - 0.12 * (width - height)) / eventPosterAspectRatio
+      ) {
         //
         setEventDetailsFixed("");
         setEventPosterFixed("event-poster-fixed");
@@ -54,19 +57,21 @@ function GenerateEvent({ props: event }) {
     };
   }, []);
 
-  const [eventPoster,setEventPoster] = useState(getPublicUrl(`/events/${event.id}/poster`));
-  useEffect(()=>{
+  const [eventPoster, setEventPoster] = useState(
+    getPublicUrl(`/events/${event.id}/poster`),
+  );
+  useEffect(() => {
     const img = new Image();
     img.src = eventPoster;
     img.onload = () => {
       const ratio = img.width / img.height;
       setEventPosterAspectRatio(ratio);
     };
-    
+
     img.onerror = () => {
-      console.error('Failed to load image.');
+      console.error("Failed to load image.");
     };
-  },[]);
+  }, []);
 
   return (
     <div className="event-div">

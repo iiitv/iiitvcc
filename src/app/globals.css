@@ -32,6 +32,9 @@
     --chart-3: #3366cc;
     --chart-4: #ffcc33;
     --chart-5: #ff9933;
+
+    --black: 0, 0, 0;
+    --white: 255, 255, 255;
   }
 }
 
@@ -52,4 +55,20 @@
 
 input, button, textarea, select {
   font: inherit;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: var(--primary-color);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: #fff3;
 }

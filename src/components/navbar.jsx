@@ -1,14 +1,23 @@
 "use client";
-import React, { use, useState } from "react";
+import React, { use, useState, useEffect } from "react";
+import axios from "axios";
 import "@/styles/navbar.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Noto_Sans } from "next/font/google";
 
+import { supabase } from "@/utils/supabase/client";
+import { Dropdown_Menu } from "./user_dropdown";
+import { LoggingOut } from "@/components/ui/loggingout";
+
 const notoSansFont = Noto_Sans({ weight: ["300", "400"], subsets: ["latin"] });
 
 function Navbar() {
   const [hiddenMenu, setHiddenMenu] = useState(true);
+  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState(null);
+  const [loggingOut, setLoggingOut] = useState(false);
+
   function MenuToggle() {
     setHiddenMenu(!hiddenMenu);
   }
@@ -18,10 +27,66 @@ function Navbar() {
   const membersLink = "/members";
   const contactUsLink = "/contact_us";
 
+  useEffect(() => {
+    const getUser = async () => {
+      const {
+        data: { user },
+        error,
+      } = await supabase.auth.getUser();
+      if (error) {
+        console.log(error.message);
+        return;
+      }
+      setUser(user);
+    };
+    getUser();
+  }, []);
+
+  useEffect(() => {
+    const getUsername = async () => {
+      const { data, error, status } = await supabase
+        .from("users")
+        .select("username")
+        .eq("id", user.id)
+        .single();
+
+      if (status === 406) {
+        const { error } = await getUsernameFromUser();
+        if (error) throw error;
+        return;
+      }
+      setUsername(data.username);
+    };
+
+    if (user) {
+      getUsername();
+    }
+  }, [user]);
+
+  const logout = async () => {
+    setLoggingOut(true);
+    axios.get("/api/logout").then((res) => {
+      window.location.href = "/home";
+    });
+  };
+
+  if (loggingOut) {
+    return <LoggingOut />;
+  }
+
   return (
     <>
+      {user && (
+        <Dropdown_Menu
+          username={username}
+          email={user?.email}
+          onProfile="/account"
+          onLogout={logout}
+        />
+      )}
+
       <div id="pseudo"></div>
-      <div className="navbar">
+      <div className="navbar !py-[2.7em]">
         <Link
           href="/"
           className={`logo-container ${notoSansFont.className}`}
@@ -39,7 +104,9 @@ function Navbar() {
             <p className="logo-subtitle">Community</p>
           </div>
         </Link>
-        <div className={`menu-container ${notoSansFont.className}`}>
+        <div
+          className={`menu-container ${user && "px-9"} ${notoSansFont.className}`}
+        >
           <Link href={eventsLink} className="text-primary" prefetch={false}>
             Events
           </Link>

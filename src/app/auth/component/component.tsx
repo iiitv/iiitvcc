@@ -8,6 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import Loader from "@/components/ui/loader";
 
+// @react icons
+// import { MdEmail } from "react-icons/md";
+import { FaRegUserCircle } from "react-icons/fa";
+import { FiLock } from "react-icons/fi";
+import { FiUnlock } from "react-icons/fi";
+
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import styles from "./styles.module.css";
 import { cn } from "@/lib/utils";
@@ -25,13 +31,26 @@ export function Component(props: Props) {
   let { auth } = props;
   const [password, setPassword] = useState<string>("");
   const [revealPassword, setRevealPassword] = useState<boolean>(false);
+  const [validPassword, setValidPassword] = useState<boolean>(false);
 
   const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    setValidPassword(validatePassword(password));
+  }, [password]);
+
+  const input_email = { name: "email", label: "Email Adress", type: "email" };
+  const input_username = { name: "username", label: "Username", type: "text" };
+  const input_password = {
+    name: "password",
+    label: "Password",
+    type: "password",
+  };
 
   let structure = {
     inputfield: {
       limit: 1,
-      values: [{ name: "email", label: "Email Adress", type: "email" }],
+      values: [input_email],
     },
     button: {
       text: "continue",
@@ -49,10 +68,7 @@ export function Component(props: Props) {
   if (auth === "login") {
     structure.inputfield = {
       limit: 2,
-      values: [
-        { name: "email", label: "Email address", type: "email" },
-        { name: "password", label: "Password", type: "password" },
-      ],
+      values: [input_email, input_password],
     };
     structure.button = {
       text: "Login",
@@ -71,11 +87,7 @@ export function Component(props: Props) {
   } else if (auth === "signup") {
     structure.inputfield = {
       limit: 3,
-      values: [
-        { name: "email", label: "Email address", type: "email" },
-        { name: "username", label: "Username", type: "text" },
-        { name: "password", label: "Password", type: "password" },
-      ],
+      values: [input_email, input_username, input_password],
     };
     structure.button = {
       text: "Sign up",
@@ -102,7 +114,7 @@ export function Component(props: Props) {
           const nextUserSibling = current.username
             .nextElementSibling as HTMLElement;
           nextUserSibling.innerText = "";
-          if (validatePassword(password) && password.length >= 8) {
+          if (validPassword) {
             const bool = await props.SignUp(current);
             if (!bool) setLoading(false);
 
@@ -112,16 +124,7 @@ export function Component(props: Props) {
           } else {
             const nextSibling = current.password
               .nextElementSibling as HTMLElement;
-            if (!validatePassword(password, 1)) {
-              nextSibling.innerText =
-                "Password must be at least 8 characters long";
-            } else if (!validatePassword(password, 2)) {
-              nextSibling.innerText =
-                "Password must contain at least one uppercase, one lowercase and one digit";
-            } else if (!validatePassword(password, 3)) {
-              nextSibling.innerText =
-                "Password must contain at least one special character";
-            }
+            nextSibling.innerText = "Enter a valid password";
           }
         }
         setLoading(false);
@@ -141,7 +144,7 @@ export function Component(props: Props) {
   }, [props.email]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
+    <div className="flex min-h-[100dvh] items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
       <div className="w-full max-w-md space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-foreground">
@@ -182,6 +185,124 @@ export function Component(props: Props) {
                 className={cn(
                   "rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm",
                   input.name === "password" && "pr-12",
+                  input.name !== "email" && "pl-12",
+                  validPassword &&
+                    input.name === "password" &&
+                    auth === "signup" &&
+                    "border-green-600 focus:border-green-600",
+                )}
+              />
+              <span className={cn(styles.error)}></span>
+              <i
+                className={cn(
+                  !(input.name === "password") && "hidden",
+                  styles.inputicon,
+                  styles.eyeicon,
+                )}
+                onClick={() => setRevealPassword(!revealPassword)}
+              >
+                {revealPassword ? (
+                  <VscEyeClosed size="23px" />
+                ) : (
+                  <VscEye size="23px" />
+                )}
+              </i>
+              <i
+                className={cn(
+                  "text-muted-foreground",
+                  validPassword &&
+                    input.name === "password" &&
+                    auth === "signup" &&
+                    "text-green-700 text:border-green-700",
+                  styles.inputicon,
+                  styles.mailicon,
+                )}
+              >
+                {input.name === "username" && <FaRegUserCircle size="23px" />}
+                {input.name === "password" &&
+                  (auth === "signup" && !validPassword ? (
+                    <FiUnlock size="23px" />
+                  ) : (
+                    <FiLock size="23px" />
+                  ))}
+              </i>
+            </div>
+          ))}
+
+          {auth === "signup" && (
+            <ul className="text-white/70 text-[.8rem] px-[1rem] w-full space-y-[1px]">
+              <b>Your password must be</b>
+              <li>
+                &nbsp;{" "}
+                {validatePassword(password, 2) ? (
+                  <span className="text-green-700">
+                    <b>&#10003;</b>
+                  </span>
+                ) : (
+                  <span>&#x2022;&nbsp;</span>
+                )}{" "}
+                uppercase/lowercase and digits
+              </li>
+              <li>
+                &nbsp;{" "}
+                {validatePassword(password, 3) ? (
+                  <span className="text-green-700">
+                    <b>&#10003;</b>
+                  </span>
+                ) : (
+                  <span>&#x2022;&nbsp;</span>
+                )}{" "}
+                special characters like !@#$%^&*()_+
+              </li>
+              <li>
+                &nbsp;{" "}
+                {validatePassword(password, 1) ? (
+                  <span className="text-green-700">
+                    <b>&#10003;</b>
+                  </span>
+                ) : (
+                  <span>&#x2022;&nbsp;</span>
+                )}{" "}
+                at least 8 characters long
+              </li>
+            </ul>
+          )}
+
+          {/* {auth === 'login' &&
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <Checkbox
+                id="remember-me"
+                name="remember-me"
+                className="h-4 w-4 rounded text-primary focus:ring-primary"
+                checked
+                disabled
+              />
+              <Label htmlFor="remember-me" className="ml-2 block text-sm text-foreground">
+                Remember me
+              </Label>
+              <Input
+                onChange={(e) => {
+                  if (input.name === "password") setPassword(e.target.value);
+                }}
+                id={input.name}
+                name={input.name}
+                type={
+                  input.type === "password" && revealPassword
+                    ? "text"
+                    : input.type
+                }
+                autoComplete={
+                  input.name === "password" ? "current-password" : "email"
+                }
+                required
+                placeholder={input.label}
+                disabled={
+                  props.email && input.name === "email" && auth ? true : false
+                }
+                className={cn(
+                  "rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm",
+                  input.name === "password" && "pr-12",
                 )}
               />
               <span className={cn(styles.error)}></span>
@@ -196,7 +317,7 @@ export function Component(props: Props) {
                 )}
               </i>
             </div>
-          ))}
+          ))} */}
 
           {auth === "login" && (
             <div className="flex items-center justify-between">
@@ -257,7 +378,7 @@ function validatePassword(password: string, customCheck: number = 0): boolean {
   const re =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
   const special = /[!@#$%^&*()_+]/;
-  const upper_lower_digit = /^(?=.*[a-z])(?=.*[A-Z])(?=.x\d)[A-Za-z\d]{8,}$/;
+  const upper_lower_digit = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/;
   if (!customCheck) return re.test(password);
   if (customCheck === 1) return password.length >= 8;
   if (customCheck === 2) return upper_lower_digit.test(password);
