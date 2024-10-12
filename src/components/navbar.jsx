@@ -120,7 +120,7 @@ function Navbar() {
             Contact Us
           </Link>
         </div>
-        <div className={`mobile-menu ${notoSansFont.className}`}>
+        <div className={`mobile-menu ${user && "px-16"} ${notoSansFont.className}`}>
           <div className="menu-icon">
             <input
               type="checkbox"
@@ -137,7 +137,7 @@ function Navbar() {
           </div>
 
           <div
-            className="mobile-menu-container"
+            className={`mobile-menu-container `}
             style={{ display: hiddenMenu ? "none" : "" }}
           >
             <div className="mobile-menu-container2">
