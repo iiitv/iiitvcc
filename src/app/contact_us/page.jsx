@@ -10,6 +10,9 @@ import "./styles.css";
 
 import { Montserrat } from "next/font/google";
 
+import axios from "axios";
+import Alert from "@/components/ui/alert";
+
 const montserratFont = Montserrat({
   weight: ["100", "200", "400", "600"],
   subsets: ["latin"],
@@ -19,7 +22,18 @@ export default function Page() {
   const [messageOrBugDropdown, setMessageOrBugDropdown] = useState(false);
   const [messageOrBug, setMessageOrBug] = useState("Message");
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    contact: '',
+    organisation: '',
+    messageType: 'Message', // Initialize with 'Message' by default
+    message: '',
+  });
+
+
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [status, setStatus] = useState('');
 
   const linkedInLink = "https://www.linkedin.com/company/iiitvcc/";
   const twitterLink = "https://x.com/iiitvcc";
@@ -30,6 +44,41 @@ export default function Page() {
   function handleDropDownClick() {
     setMessageOrBugDropdown((prev) => !prev);
   }
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [id]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setStatus("Sending");
+      const response = await axios.post('/api/sendEmail', formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.data.success) {
+        setStatus('Email sent successfully!');
+        setFormSubmitted(true);
+      } else {
+        setStatus('Failed to send email.');
+        console.error("Email sending failed");
+      }
+    } catch (error) {
+      setStatus('Error occurred while sending email.');
+      console.error("Error sending email: ", error);
+    }
+  };
+
+
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div
@@ -62,153 +111,168 @@ export default function Page() {
         <div className="col-span-1 hidden md:flex m-0 p-0 flex justify-center items-end">
           <ManSittingAtTableSvg />
         </div>
-        {formSubmitted ? (
+        {formSubmitted ?
           <div className="col-span-1 w-full flex flex-col mx-3 md:mx-0 md:col-span-3  mt-40 items-center">
             <SuccessIcon />
             <p className=" md:text-2xl text-foreground mt-5">
               Message Send <span className="text-primary">Succesfully...</span>
             </p>
           </div>
-        ) : (
-          <div className="col-span-1 mx-3 md:mx-0 md:col-span-3 mt-5">
-            <div className={`${montserratFont.className} relative`}>
-              <form
-                id="contact_form"
-                className="grid grid-cols-2 gap-x-5 gap-y-2"
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  setFormSubmitted(true);
-                }}
-              >
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="name" className="text-foreground">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    required
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="email" className="text-foreground">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Email"
-                    required
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="contact" className="text-foreground">
-                    Contact No.
-                  </Label>
-                  <Input
-                    id="contact"
-                    type="tel"
-                    placeholder="Contact No."
-                    required
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="organisation" className="text-foreground">
-                    Organisation
-                  </Label>
-                  <Input
-                    id="organisation"
-                    type="text"
-                    placeholder="Organisation Name"
-                    required
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 mt-5">
-                  <Label htmlFor="message_or_bug" className="text-foreground">
-                    Send a Message or report a bug
-                  </Label>
-                  <div>
-                    <div
-                      className="flex justify-between cursor-pointer rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                      onClick={handleDropDownClick}
-                    >
-                      <p id="message_or_bug" className="font-semibold">
-                        {messageOrBug}
-                      </p>
-                      <svg
-                        className={`${messageOrBugDropdown ? "scale-[-1]" : null} -mr-1 h-5 w-5  text-gray-400 cursor-pointer transition-all ease-in-out duration-500`}
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        tabIndex="-1"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+          : (status === "Sending" ? <div className="col-span-1 mx-3 md:mx-0 md:col-span-3 mt-5 items-center justify-center content-center"> <p className=" md:text-3xl text-center text-primary mt-5">Sending...</p></div>:
+            (<div className="col-span-1 mx-3 md:mx-0 md:col-span-3 mt-5">
+                <div className={`${montserratFont.className} relative`}>
+                  <form
+                    id="contact_form"
+                    className="grid grid-cols-2 gap-x-5 gap-y-2"
+                    onSubmit={handleSubmit}
+                  >
+                    <div className="col-span-2 md:col-span-1">
+                      <Label htmlFor="name" className="text-foreground">
+                        Name
+                      </Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        placeholder="Your name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                      />
                     </div>
-                    <div
-                      className={`${messageOrBugDropdown ? null : "hidden"} absolute right-0 z-10 mt-1 bg-secondary focus:border-primary w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
-                      role="menu"
-                      aria-orientation="vertical"
-                      aria-labelledby="menu-button"
-                    >
-                      <div className="py-1" role="none">
-                        <p
-                          href="#"
-                          className="block px-4 py-2 text-sm w-full cursor-pointer"
-                          role="menuitem"
-                          tabIndex="-1"
-                          id="menu-item-0"
-                          onClick={() => {
-                            setMessageOrBug("Message");
-                            setMessageOrBugDropdown(false);
-                          }}
+                    <div className="col-span-2 md:col-span-1">
+                      <Label htmlFor="email" className="text-foreground">
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="Email"
+                        required
+                        onChange={handleChange}
+                        value={formData.email}
+                        className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                      />
+                    </div>
+                    <div className="col-span-2 md:col-span-1">
+                      <Label htmlFor="contact" className="text-foreground">
+                        Contact No.
+                      </Label>
+                      <Input
+                        id="contact"
+                        type="tel"
+                        placeholder="Contact No."
+                        required
+                        onChange={handleChange}
+                        value={formData.contact}
+                        className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                      />
+                    </div>
+                    <div className="col-span-2 md:col-span-1">
+                      <Label htmlFor="organisation" className="text-foreground">
+                        Organisation
+                      </Label>
+                      <Input
+                        id="organisation"
+                        type="text"
+                        placeholder="Organisation Name"
+                        required
+                        onChange={handleChange}
+                        value={formData.organisation}
+                        className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                      />
+                    </div>
+                    <div className="col-span-2 mt-5">
+                      <Label htmlFor="message_or_bug" className="text-foreground">
+                        Send a Message or report a bug
+                      </Label>
+                      <div>
+                        <div
+                          className="flex justify-between cursor-pointer rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                          onClick={handleDropDownClick}
                         >
-                          Message
-                        </p>
-                        <hr className="text-muted-foreground mx-3" />
-                        <p
-                          className="block px-4 py-2 text-sm w-full cursor-pointer"
-                          role="menuitem"
-                          tabIndex="-1"
-                          id="menu-item-1"
-                          onClick={() => {
-                            setMessageOrBug("Report a Bug");
-                            setMessageOrBugDropdown(false);
-                          }}
+                          <p id="message_or_bug" className="font-semibold">
+                            {messageOrBug}
+                          </p>
+                          <svg
+                            className={`${messageOrBugDropdown ? "scale-[-1]" : null} -mr-1 h-5 w-5  text-gray-400 cursor-pointer transition-all ease-in-out duration-500`}
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                            tabIndex="-1"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                        <div
+                          className={`${messageOrBugDropdown ? null : "hidden"} absolute right-0 z-10 mt-1 bg-secondary focus:border-primary w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+                          role="menu"
+                          aria-orientation="vertical"
+                          aria-labelledby="menu-button"
                         >
-                          Report a Bug
-                        </p>
+                          <div className="py-1" role="none">
+                            <p
+                              href="#"
+                              className="block px-4 py-2 text-sm w-full cursor-pointer"
+                              role="menuitem"
+                              tabIndex="-1"
+                              id="menu-item-0"
+                              onClick={() => {
+                                setMessageOrBug("Message");
+                                setMessageOrBugDropdown(false);
+                                setFormData({
+                                  ...formData,
+                                  messageType: "Message",
+                                });
+                              }}
+                            >
+                              Message
+                            </p>
+                            <hr className="text-muted-foreground mx-3" />
+                            <p
+                              className="block px-4 py-2 text-sm w-full cursor-pointer"
+                              role="menuitem"
+                              tabIndex="-1"
+                              id="menu-item-1"
+                              onClick={() => {
+                                setMessageOrBug("Report a Bug");
+                                setMessageOrBugDropdown(false);
+                                setFormData({
+                                  ...formData,
+                                  messageType: "Report a Bug",
+                                });
+                              }}
+                            >
+                              Report a Bug
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                    <div className="col-span-2 mt-5">
+                      <textarea
+                        id="message"
+                        type="text"
+                        placeholder="How can we help?"
+                        required
+                        onChange={handleChange}
+                        value={formData.message}
+                        className="w-full rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm h-64"
+                      />
+                    </div>
+                  </form>
                 </div>
-                <div className="col-span-2 mt-5">
-                  <textarea
-                    id="message"
-                    type="text"
-                    placeholder="How can we help?"
-                    required
-                    className="w-full rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm h-64"
-                  />
-                </div>
-              </form>
-            </div>
-          </div>
-        )}
+              </div>
+            ))}
         <div className="hidden md:flex col-span-1 flex justify-center items-end">
           <ManWithLaptopSvg />
         </div>
       </div>
-      {formSubmitted ? null : (
+      {formSubmitted ? null : (status=== "Sending" ? null : (
         <button form="contact_form" type="submit">
           <div
             className={`${montserratFont.className} m-2 text-xl rounded-full py-2 px-5 bg-primary text-background`}
@@ -216,7 +280,7 @@ export default function Page() {
             Send Your Message
           </div>
         </button>
-      )}
+      ))}
       <div
         className={`${montserratFont.className} mt-24 text-2xl sm:text-3xl md:text-4xl text-center`}
       >
@@ -337,6 +401,8 @@ export default function Page() {
           ></iframe>
         </div>
       </div>
+      {status==='Failed to send email.'?<Alert status={response.data.status} message={response.data.error}/>:null}
+      {status==='Error occurred while sending email.'?<Alert status={500} message={'Error occurred while sending email.'}/>:null}
     </div>
   );
 }
