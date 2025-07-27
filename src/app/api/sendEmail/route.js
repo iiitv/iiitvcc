@@ -1,18 +1,19 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
     const body = await req.json();
     const { name, email, message, contact, organisation, messageType } = body;
     console.log(messageType);
-    
+
     // Determine if it's a bug or a message
-    const typeTitle = messageType==="Message" ?  'Message from User': 'Bug Report from User';
-    const typeMessage = messageType==="Message" ? 'Message' : 'Message/Issue';
+    const typeTitle =
+      messageType === "Message" ? "Message from User" : "Bug Report from User";
+    const typeMessage = messageType === "Message" ? "Message" : "Message/Issue";
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
@@ -41,16 +42,22 @@ export async function POST(req) {
 
     const mailOptions = {
       from: email,
-      to: 'codingclub@iiitvadodara.ac.in',
+      to: "codingclub@iiitvadodara.ac.in",
       subject: `${typeTitle}: ${name}`,
       html: htmlContent,
     };
 
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ success: true, message: 'Email sent successfully' });
+    return NextResponse.json({
+      success: true,
+      message: "Email sent successfully",
+    });
   } catch (error) {
-    console.error('❌ Error sending email:', error);
-    return NextResponse.json({ success: false, message: 'Failed to send email', error: error.message }, { status: 500 });
+    console.error("❌ Error sending email:", error);
+    return NextResponse.json(
+      { success: false, message: "Failed to send email", error: error.message },
+      { status: 500 },
+    );
   }
 }

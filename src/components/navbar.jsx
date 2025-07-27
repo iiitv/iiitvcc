@@ -120,7 +120,9 @@ function Navbar() {
             Contact Us
           </Link>
         </div>
-        <div className={`mobile-menu ${user && "px-16"} ${notoSansFont.className}`}>
+        <div
+          className={`mobile-menu ${user && "px-16"} ${notoSansFont.className}`}
+        >
           <div className="menu-icon">
             <input
               type="checkbox"
