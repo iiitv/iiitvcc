@@ -1,9 +1,9 @@
 "use client";
-import React, { useState ,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import "./styles.css"
+import "./styles.css";
 import Loader from "@/components/ui/loader";
-import EventCard from "./components/eventCard"
+import EventCard from "./components/eventCard";
 
 import { Montserrat, Alata } from "next/font/google";
 const montserratFont = Montserrat({
@@ -23,15 +23,14 @@ export default function Events() {
   const fetchEvents = async (page) => {
     try {
       setHasMoreEvents(false);
-      setLoading(true); 
+      setLoading(true);
       const response = await fetch(`/api/v1/get/events?page=${page}`);
       const data = await response.json();
       return data;
     } catch (error) {
       console.error("Error fetching events:", error);
       return [];
-    }
-    finally {
+    } finally {
       setHasMoreEvents(true);
       setLoading(false);
     }
@@ -62,7 +61,7 @@ export default function Events() {
       }
     };
     loadInitialEvents();
-    }, []);
+  }, []);
 
   return (
     <div className="w-full flex justify-center mt-6">
@@ -77,7 +76,7 @@ export default function Events() {
           </div>
 
           {events.map((event, index) => (
-            <EventCard event={event} key={index}/>
+            <EventCard event={event} key={index} />
           ))}
         </div>
 
@@ -91,15 +90,12 @@ export default function Events() {
         ) : (
           hasMoreEvents && (
             <div
-            className={`${montserratFont.className} w-full flex justify-center my-10`}
-          >
-            <button
-              className="show-more-button"
-              onClick={getMoreEvents}
+              className={`${montserratFont.className} w-full flex justify-center my-10`}
             >
-              <p>Show More</p>
-            </button>
-          </div>
+              <button className="show-more-button" onClick={getMoreEvents}>
+                <p>Show More</p>
+              </button>
+            </div>
           )
         )}
       </div>

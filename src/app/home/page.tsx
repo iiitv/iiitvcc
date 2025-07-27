@@ -273,7 +273,7 @@ export default function Home() {
           </div>
 
           <div className="lg:flex grid gap-6 lg:justify-center sm:grid-cols-2 lg:grid-cols-3">
-          {displayedEvents.length > 0 ? (
+            {displayedEvents.length > 0 ? (
               displayedEvents.map((event) => (
                 <Card key={event.id} className="lg:w-1/3 w-full flex flex-col">
                   <CardHeader>
@@ -284,15 +284,21 @@ export default function Home() {
                     <div className="grid gap-2">
                       <div className="flex items-center gap-2">
                         <CalendarIcon className="h-5 w-5 text-muted-foreground" />
-                        <p className="text-sm text-muted-foreground">{formatDate(event.date)}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {formatDate(event.date)}
+                        </p>
                       </div>
                       <div className="flex items-center gap-2">
                         <ClockIcon className="h-5 w-5 text-muted-foreground" />
-                        <p className="text-sm text-muted-foreground">{formatTime(event.time)}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {formatTime(event.time)}
+                        </p>
                       </div>
                       <div className="flex items-center gap-2">
                         <LocateIcon className="h-5 w-5 text-muted-foreground" />
-                        <p className="text-sm text-muted-foreground">{event.mode?"Online":"Offline"}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {event.mode ? "Online" : "Offline"}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -309,7 +315,10 @@ export default function Home() {
               ))
             ) : (
               <div className="w-full col-span-5 content-center justify-center flex py-20 lg:pt-16 lg:pb-44">
-                <p className="text-center sm:text-xl">No <span className="text-primary">{selectedCategory}</span> events available. Check back soon for future updates.</p>
+                <p className="text-center sm:text-xl">
+                  No <span className="text-primary">{selectedCategory}</span>{" "}
+                  events available. Check back soon for future updates.
+                </p>
               </div>
             )}
           </div>
@@ -498,19 +507,18 @@ const formatTime = (timeString: string): string => {
   const timeRegex = /^(\d{2}):(\d{2}):(\d{2})$/;
   const match = timeString.match(timeRegex);
   if (!match) {
-    return 'Invalid Time Format';
+    return "Invalid Time Format";
   }
-  
+
   let hours = parseInt(match[1], 10);
   const minutes = parseInt(match[2], 10);
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const ampm = hours >= 12 ? "PM" : "AM";
   hours = hours % 12;
   hours = hours ? hours : 12; // Handle midnight (0 becomes 12)
-  const formattedMinutes = String(minutes).padStart(2, '0');
-  
+  const formattedMinutes = String(minutes).padStart(2, "0");
+
   return `${hours}:${formattedMinutes} ${ampm}`;
 };
-
 
 function LaptopIcon(
   props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>,
