@@ -31,7 +31,7 @@ function validateRequestBody(body: {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   try {
     const {

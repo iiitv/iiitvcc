@@ -10,7 +10,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   });
 
   const body = await req.json();
-  const supabase = createClient();
+  const supabase = await createClient();
   const searchParams = req.nextUrl.searchParams;
   const option = searchParams.get("option");
 

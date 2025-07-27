@@ -3,7 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const body = await req.json();
     if (!body.username) {
       return NextResponse.json(
