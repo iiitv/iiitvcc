@@ -4,7 +4,7 @@ import { getPublicUrl } from "@/lib/utils";
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
 
     const url = new URL(request.url);
     const limit = url.searchParams.get("limit");

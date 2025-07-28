@@ -1,6 +1,5 @@
 "use server";
 import { createClient } from "@/utils/supabase/server";
-import exp from "constants";
 
 export async function fetchTeamData() {
   const supabase = await createClient();

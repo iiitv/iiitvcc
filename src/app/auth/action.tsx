@@ -7,7 +7,7 @@ export const Login = async (credentials: {
   email: string;
   password: string;
 }) => {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword({
     email: credentials.email as string,
     password: credentials.password as string,
@@ -25,7 +25,7 @@ export const SignUp = async (credentials: {
 }) => {
   const origin = headers().get("origin");
   const username = credentials.username;
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user, session },
@@ -53,7 +53,7 @@ export const AuthSignIn = async () => {
   const origin = headers().get("origin");
   const gmail = cookies()?.get("email")?.value || "";
 
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {

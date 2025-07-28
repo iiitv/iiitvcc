@@ -4,7 +4,7 @@ import { Tables } from "@/types/supabase";
 
 export async function DELETE(request: NextRequest): Promise<NextResponse> {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const {
       data: { user },
       error: userError,
