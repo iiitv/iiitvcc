@@ -22,7 +22,8 @@ function Navbar() {
     setHiddenMenu(!hiddenMenu);
   }
 
-  const eventsLink = "/events/1";
+  const aboutLink = "/about";
+  const eventsLink = "/events";
   const blogsLink = "/blogs";
   const membersLink = "/members";
   const contactUsLink = "/contact_us";
@@ -107,6 +108,9 @@ function Navbar() {
         <div
           className={`menu-container ${user && "px-9"} ${notoSansFont.className}`}
         >
+          <Link href={aboutLink} className="text-primary" prefetch={false}>
+            About
+          </Link>
           <Link href={eventsLink} className="text-primary" prefetch={false}>
             Events
           </Link>
@@ -143,6 +147,15 @@ function Navbar() {
             style={{ display: hiddenMenu ? "none" : "" }}
           >
             <div className="mobile-menu-container2">
+              <p>
+                <Link
+                  href={aboutLink}
+                  className="text-primary"
+                  prefetch={false}
+                >
+                  About{" "}
+                </Link>
+              </p>
               <p>
                 <Link
                   href={eventsLink}
