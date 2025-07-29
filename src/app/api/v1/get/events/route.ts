@@ -14,6 +14,7 @@ export async function GET(request: NextRequest) {
     let query = supabase
       .from("events")
       .select("*")
+      .order("date", { ascending: false })
       .range(offset, offset + limit - 1);
 
     if (category.toLocaleLowerCase() === "upcoming") {

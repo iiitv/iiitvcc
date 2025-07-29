@@ -1,4 +1,5 @@
 .show-more-button {
+    padding: 10px ;
     text-align: center;
     box-sizing: border-box;
     background-color: color-mix(in srgb, var(--primary) 5%, transparent);
