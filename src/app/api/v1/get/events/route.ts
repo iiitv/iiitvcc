@@ -1,4 +1,3 @@
-// /api/v1/get/events/?category=upcoming&limit=10&page=1
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 

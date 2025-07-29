@@ -22,7 +22,7 @@ function Navbar() {
     setHiddenMenu(!hiddenMenu);
   }
 
-  const eventsLink = "/events";
+  const eventsLink = "/events/1";
   const blogsLink = "/blogs";
   const membersLink = "/members";
   const contactUsLink = "/contact_us";

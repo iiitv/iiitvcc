@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+"use client";
+import { useState } from "react";
 
 import { getPublicUrl } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 import { Montserrat, Alata } from "next/font/google";
 const montserratFont = Montserrat({
@@ -25,7 +27,7 @@ export default function EventCard(props) {
       <Link href={`\\event\\${event.id}`}>
         <div className="flex flex-col">
           <div className="w-full h-full border-2 border-primary rounded-2xl overflow-hidden">
-            <img src={posterUrl} className="object-cover" />
+            <Image src={posterUrl} width={500} height={300} alt={`Poster for ${event.name}`} className="object-cover" />
           </div>
           <div className={`${montserratFont.className} ms-2 mt-1`}>
             <p className="text-primary">

@@ -12,7 +12,7 @@ const montserratFont = Montserrat({
 
 function Footer() {
   const homeLink = "/home";
-  const eventsLink = "/events";
+  const eventsLink = "/events/1";
   const blogsLink = "/blogs";
   const membersLink = "/members";
   const ccEmailLink = "mailto:codingclub@iiitvadodara.ac.in";
