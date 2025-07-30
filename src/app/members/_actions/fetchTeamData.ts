@@ -7,7 +7,7 @@ export async function fetchTeamData() {
     .from("team")
     .select("*")
     .order("batch", { ascending: true })
-    .order("id", { ascending: true });
+    .order("name", { ascending: true });
 
   if (error) {
     console.error("Error fetching team data:", error);

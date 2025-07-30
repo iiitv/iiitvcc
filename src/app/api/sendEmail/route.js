@@ -5,7 +5,6 @@ export async function POST(req) {
   try {
     const body = await req.json();
     const { name, email, message, contact, organisation, messageType } = body;
-    console.log(messageType);
 
     // Determine if it's a bug or a message
     const typeTitle =

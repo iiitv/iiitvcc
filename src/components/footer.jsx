@@ -12,6 +12,7 @@ const montserratFont = Montserrat({
 
 function Footer() {
   const homeLink = "/home";
+  const aboutLink = "/about";
   const eventsLink = "/events";
   const blogsLink = "/blogs";
   const membersLink = "/members";
@@ -52,6 +53,13 @@ function Footer() {
               prefetch={false}
             >
               Home
+            </Link>
+            <Link
+              href={aboutLink}
+              className={montserratFont.className}
+              prefetch={false}
+            >
+              About Us
             </Link>
             <Link
               href={eventsLink}

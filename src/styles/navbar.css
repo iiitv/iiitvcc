@@ -73,7 +73,7 @@
 	top: 75px;
 	right: 10px;
 	width: 200px;
-	height: 250px;
+	height: 300px;
 	background-color : color-mix(in srgb, var(--background)80%, transparent);
 	backdrop-filter: blur(10px);
 	box-shadow: 5px 5px 4.5px rgba(0, 0, 0, 0.25);

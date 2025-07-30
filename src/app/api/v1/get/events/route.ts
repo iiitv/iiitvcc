@@ -1,4 +1,3 @@
-// /api/v1/get/events/?category=upcoming&limit=10&page=1
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 
@@ -15,6 +14,7 @@ export async function GET(request: NextRequest) {
     let query = supabase
       .from("events")
       .select("*")
+      .order("date", { ascending: false })
       .range(offset, offset + limit - 1);
 
     if (category.toLocaleLowerCase() === "upcoming") {
