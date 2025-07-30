@@ -100,12 +100,15 @@ export default function About() {
             <AnimatedSection>
                 <section className="py-20">
                     <div className="container px-4 md:px-6">
-                        <div className="grid gap-10 lg:grid-flow-col lg:auto-cols-max items-center">
+                        <div className="grid gap-14 lg:grid-flow-col lg:auto-cols-max items-center">
                             <div className="flex items-center justify-center">
                                 <Image src={"/mission2.png"} width={300} height={300} className="opacity-90 pointer-events-none" alt="mission" />
                             </div>
-                            <div className="space-y-6 max-w-4xl text-center md:text-start">
-                                <h2 className="text-5xl font-bold tracking-tighter sm:text-4xl md:text-7xl">Our Mission</h2>
+                            <div className="space-y-6 max-w-3xl text-center md:text-start">
+                                <div className="flex gap-7 items-center justify-center md:justify-start">
+                                    <h2 className="text-5xl font-bold sm:text-4xl md:text-7xl ">Our</h2>
+                                    <h2 className="text-5xl font-bold sm:text-4xl md:text-7xl ">Mission</h2>
+                                </div>
                                 <p className="text-2xl text-muted-foreground">
                                     To create an inclusive environment where every student can code, innovate, and become a leader in technology. We celebrate curiosity, teamwork, and turning ideas into impact.
                                 </p>
@@ -123,14 +126,17 @@ export default function About() {
                 <section className="py-20 bg-muted/30">
                     <div className="container px-4 md:px-6">
                         <div className="grid gap-10 lg:grid-flow-col lg:auto-cols-max items-center">
-                            <div className="space-y-6 max-w-4xl text-center md:text-start order-2 lg:order-1">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-7xl">Our Vision</h2>
+                            <div className="space-y-6 max-w-3xl text-center md:text-start order-2 lg:order-1">
+                                <div className="flex gap-7 items-center justify-center md:justify-start">
+                                    <h2 className="text-5xl font-bold sm:text-4xl md:text-7xl ">Our</h2>
+                                    <h2 className="text-5xl font-bold sm:text-4xl md:text-7xl ">Vision</h2>
+                                </div>
                                 <p className="text-2xl text-muted-foreground">
                                     To be a beacon for innovation, nurturing a culture of continuous learning and collaboration that inspires students to shape the technological landscape of tomorrow.
                                 </p>
                             </div>
                             <div className="flex items-center justify-center order-1 lg:order-2">
-                                <Image src={"/vision.png"} width={300} height={300} className="opacity-90 pointer-events-none" alt="vision" />
+                                <Image src={"/vision.png"} width={250} height={250} className="opacity-90 pointer-events-none" alt="vision" />
                             </div>
                         </div>
                     </div>
@@ -142,7 +148,10 @@ export default function About() {
                 <section className="py-20 bg-muted/30">
                     <div className="container px-4 md:px-6">
                         <div className="text-center space-y-4 mb-16">
-                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Values</h2>
+                            <div className="flex gap-7 items-center justify-center">
+                                <h2 className="text-5xl font-bold sm:text-4xl md:text-7xl ">Our</h2>
+                                <h2 className="text-5xl font-bold sm:text-4xl md:text-7xl ">Values</h2>
+                            </div>
                             <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
                                 These principles guide our club and help us achieve more together.
                             </p>
