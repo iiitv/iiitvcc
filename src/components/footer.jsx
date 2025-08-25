@@ -16,6 +16,8 @@ function Footer() {
   const eventsLink = "/events";
   const blogsLink = "/blogs";
   const membersLink = "/members";
+  const resourcesLink = "/resources";
+  const contactUsLink = "/contact_us";
   const ccEmailLink = "mailto:codingclub@iiitvadodara.ac.in";
   const addressLink = "https://goo.gl/maps/7g5D6XJpMAD2";
   const linkedInLink = "https://www.linkedin.com/company/iiitvcc/";
@@ -81,6 +83,20 @@ function Footer() {
               prefetch={false}
             >
               Members
+            </Link>
+            <Link
+              className={montserratFont.className}
+              href={resourcesLink}
+              prefetch={false}
+            >
+              Resources
+            </Link>
+            <Link
+              className={montserratFont.className}
+              href={contactUsLink}
+              prefetch={false}
+            >
+              Contact Us
             </Link>
           </div>
 

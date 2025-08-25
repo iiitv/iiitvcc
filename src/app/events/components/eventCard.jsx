@@ -22,7 +22,7 @@ export default function EventCard(props) {
   let posterUrl = getPublicUrl(`/events/${event.id}/poster`);
   return (
     <div
-      className={`${montserratFont.className} lg:row-span-2 lg:col-span-1 w-full h-full`}
+      className={`${montserratFont.className} lg:row-span-2 lg:col-span-1 w-fit h-fit`}
     >
       <Link href={`\\event\\${event.id}`}>
         <div className="flex flex-col">

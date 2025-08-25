@@ -60,7 +60,7 @@ function EventDetails(props) {
 
   return (
     <>
-      <div className="event-cover-details grid grid-cols-2 lg:grid-cols-12 gap-2 ">
+      <div className="event-cover-details grid grid-cols-2 lg:grid-cols-12 gap-2">
         <p className="col-span-2 lg:col-span-6 event-title ">{eventName}</p>
 
         <div className="col-span-2 lg:col-span-6 ">
