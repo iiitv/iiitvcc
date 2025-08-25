@@ -255,10 +255,11 @@ export default function Home() {
                   <button
                     key={category}
                     onClick={() => handleCategoryChange(category)}
-                    className={` px-2 py-1 md:px-4 md:py-2 rounded-md ${selectedCategory === category
-                      ? "bg-primary text-secondary text-sm sm:text-base"
-                      : "bg-secondary text-sm sm:text-base border hover:bg-muted hover:text-secondary transition duration-250"
-                      }`}
+                    className={` px-2 py-1 md:px-4 md:py-2 rounded-md ${
+                      selectedCategory === category
+                        ? "bg-primary text-secondary text-sm sm:text-base"
+                        : "bg-secondary text-sm sm:text-base border hover:bg-muted hover:text-secondary transition duration-250"
+                    }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
                   </button>
@@ -321,13 +322,13 @@ export default function Home() {
               </div>
             )}
           </div>
-          {(displayedEvents.length > 0) && <div
-            className={`w-full flex justify-center my-10`}
-          >
-            <Link className="show-more-button" href="/events">
-              <p>View All</p>
-            </Link>
-          </div>}
+          {displayedEvents.length > 0 && (
+            <div className={`w-full flex justify-center my-10`}>
+              <Link className="show-more-button" href="/events">
+                <p>View All</p>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32 bg-background flex item-center justify-center">
@@ -492,9 +493,7 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          <div
-            className={`w-full flex justify-center my-10`}
-          >
+          <div className={`w-full flex justify-center my-10`}>
             <Link className="show-more-button" href="/resources">
               <p>All Resources</p>
             </Link>

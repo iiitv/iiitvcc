@@ -1,78 +1,78 @@
 [
-    {
-        "text": "The machine does not isolate man from the great problems of nature but plunges him more deeply into them.",
-        "author": "Antoine de Saint-Exupéry"
-    },
-    {
-        "text": "Any sufficiently advanced technology is indistinguishable from magic.",
-        "author": "Arthur C. Clarke"
-    },
-    {
-        "text": "To understand recursion, one must first understand recursion.",
-        "author": "Stephen Hawking (attributed)"
-    },
-    {
-        "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
-        "author": "Will Durant, interpreting Aristotle"
-    },
-    {
-        "text": "The real question is not whether machines think but whether men do.",
-        "author": "B.F. Skinner"
-    },
-    {
-        "text": "The machine does not isolate man from the great problems of nature but plunges him more deeply into them.",
-        "author": "Antoine de Saint-Exupéry"
-    },
-    {
-        "text": "There is no innovation and creativity without failure. Period.",
-        "author": "Brené Brown"
-    },
-    {
-        "text": "Simplicity is the ultimate sophistication.",
-        "author": "Leonardo da Vinci"
-    },
-    {
-        "text": "We build our computers the way we build our cities—over time, without a plan, on top of ruins.",
-        "author": "Ellen Ullman"
-    },
-    {
-        "text": "The code you write makes you a programmer. The code you delete makes you a good one.",
-        "author": "Mario Fusco"
-    },
-    {
-        "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
-        "author": "Harold Abelson"
-    },
-    {
-        "text": "The art of programming is the art of organizing complexity, of mastering multitude and avoiding its bastard chaos as effectively as possible.",
-        "author": "Edsger W. Dijkstra"
-    },
-    {
-        "text": "Knowledge is of no value unless you put it into practice.",
-        "author": "Anton Chekhov"
-    },
-    {
-        "text": "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.",
-        "author": "Antoine de Saint-Exupéry"
-    },
-    {
-        "text": "Good code is its own best documentation.",
-        "author": "Steve McConnell"
-    },
-    {
-        "text": "One of my most productive days was throwing away 1000 lines of code.",
-        "author": "Ken Thompson"
-    },
-    {
-        "text": "The question of whether a computer can think is no more interesting than the question of whether a submarine can swim.",
-        "author": "Edsger W. Dijkstra"
-    },
-    {
-        "text": "Code never lies, comments sometimes do.",
-        "author": "Ron Jeffries"
-    },
-    {
-        "text": "Software and cathedrals are much the same — first we build them, then we pray.",
-        "author": "Sam Redwine"
-    }
+  {
+    "text": "The machine does not isolate man from the great problems of nature but plunges him more deeply into them.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "text": "Any sufficiently advanced technology is indistinguishable from magic.",
+    "author": "Arthur C. Clarke"
+  },
+  {
+    "text": "To understand recursion, one must first understand recursion.",
+    "author": "Stephen Hawking (attributed)"
+  },
+  {
+    "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+    "author": "Will Durant, interpreting Aristotle"
+  },
+  {
+    "text": "The real question is not whether machines think but whether men do.",
+    "author": "B.F. Skinner"
+  },
+  {
+    "text": "The machine does not isolate man from the great problems of nature but plunges him more deeply into them.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "text": "There is no innovation and creativity without failure. Period.",
+    "author": "Brené Brown"
+  },
+  {
+    "text": "Simplicity is the ultimate sophistication.",
+    "author": "Leonardo da Vinci"
+  },
+  {
+    "text": "We build our computers the way we build our cities—over time, without a plan, on top of ruins.",
+    "author": "Ellen Ullman"
+  },
+  {
+    "text": "The code you write makes you a programmer. The code you delete makes you a good one.",
+    "author": "Mario Fusco"
+  },
+  {
+    "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
+    "author": "Harold Abelson"
+  },
+  {
+    "text": "The art of programming is the art of organizing complexity, of mastering multitude and avoiding its bastard chaos as effectively as possible.",
+    "author": "Edsger W. Dijkstra"
+  },
+  {
+    "text": "Knowledge is of no value unless you put it into practice.",
+    "author": "Anton Chekhov"
+  },
+  {
+    "text": "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  {
+    "text": "Good code is its own best documentation.",
+    "author": "Steve McConnell"
+  },
+  {
+    "text": "One of my most productive days was throwing away 1000 lines of code.",
+    "author": "Ken Thompson"
+  },
+  {
+    "text": "The question of whether a computer can think is no more interesting than the question of whether a submarine can swim.",
+    "author": "Edsger W. Dijkstra"
+  },
+  {
+    "text": "Code never lies, comments sometimes do.",
+    "author": "Ron Jeffries"
+  },
+  {
+    "text": "Software and cathedrals are much the same — first we build them, then we pray.",
+    "author": "Sam Redwine"
+  }
 ]

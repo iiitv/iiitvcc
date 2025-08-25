@@ -29,7 +29,6 @@ function Navbar() {
   const resourcesLink = "/resources";
   const contactUsLink = "/contact_us";
 
-
   useEffect(() => {
     const getUser = async () => {
       const {

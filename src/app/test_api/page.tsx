@@ -14,9 +14,8 @@ export default function Page() {
   const [blogId, setBlogId] = useState<string>("24");
   const [events, setEvents] = useState<any[]>([]);
   const [blogs, setBlogs] = useState<any[]>([]);
-  
-  const createEvent = async () => {
 
+  const createEvent = async () => {
     if (!selectedPosterFile) {
       console.error("Missing required event for blog submission");
       return;
@@ -56,7 +55,7 @@ export default function Page() {
     );
     // current time
     formData.append("time", new Date().toLocaleTimeString());
-    
+
     const response = await fetch("/api/v1/create/event/", {
       method: "POST",
       body: formData,
@@ -179,9 +178,7 @@ export default function Page() {
       <h1 className="text-2xl font-bold">Test APIs</h1>
       <div className="space-y-2">
         <Button
-          onClick={() => (
-            createEvent()
-          )}
+          onClick={() => createEvent()}
           className="w-full bg-green-500 text-white"
         >
           Create Event

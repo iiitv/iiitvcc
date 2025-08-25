@@ -13,7 +13,7 @@ export function useScrollAnimation() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
     observer.observe(ref.current);
     return () => observer.disconnect();

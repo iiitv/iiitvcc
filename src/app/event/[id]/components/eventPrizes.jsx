@@ -25,7 +25,6 @@ export default function EventPrizes(props) {
             </ul>
           </div>
         ))}
-
       </div>
     </div>
   );

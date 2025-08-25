@@ -5,7 +5,6 @@ import "./styles.css";
 import Loader from "@/components/ui/loader";
 import EventCard from "./components/eventCard";
 
-
 import { Montserrat, Alata } from "next/font/google";
 const montserratFont = Montserrat({
   weight: ["100", "200", "400", "600"],
@@ -72,7 +71,6 @@ export default function Events() {
     setRandomIndex(Math.floor(Math.random() * quotes.length));
   }, []);
 
-
   return (
     <div className="w-full flex justify-center mt-6">
       <div className="w-[95%] flex flex-col">
@@ -81,10 +79,14 @@ export default function Events() {
         </p>
         <div className="grid lg:grid-cols-3 gap-14 px-4 mt-6 sm:grid-cols-2 grid-cols-1 grid-rows-1">
           {/* Static Quote Box in 2nd column, 1st row */}
-          <div className={`h-fit self-center lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-1 sm:col-span-2 col-span-1 p-4 rounded-xl flex flex-col gap-3 items-center justify-center text-white text-center text-xl lg:text-3xl ${alataFont.className}`}>
-            
-            <span>"{randomIndex && (quotes[randomIndex].text)}"</span>
-            <span className="text-pink-200 text-sm lg:text-xl"> — {randomIndex && (quotes[randomIndex].author)}</span>
+          <div
+            className={`h-fit self-center lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-1 sm:col-span-2 col-span-1 p-4 rounded-xl flex flex-col gap-3 items-center justify-center text-white text-center text-xl lg:text-3xl ${alataFont.className}`}
+          >
+            <span>"{randomIndex && quotes[randomIndex].text}"</span>
+            <span className="text-pink-200 text-sm lg:text-xl">
+              {" "}
+              — {randomIndex && quotes[randomIndex].author}
+            </span>
           </div>
 
           {events.map((event, index) => (
