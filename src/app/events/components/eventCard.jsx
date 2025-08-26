@@ -22,12 +22,18 @@ export default function EventCard(props) {
   let posterUrl = getPublicUrl(`/events/${event.id}/poster`);
   return (
     <div
-      className={`${montserratFont.className} lg:row-span-2 lg:col-span-1 w-full h-full`}
+      className={`${montserratFont.className} lg:row-span-2 lg:col-span-1 w-fit h-fit`}
     >
       <Link href={`\\event\\${event.id}`}>
         <div className="flex flex-col">
           <div className="w-full h-full border-2 border-primary rounded-2xl overflow-hidden">
-            <Image src={posterUrl} width={1000} height={500} alt={`Poster for ${event.name}`} className="object-cover" />
+            <Image
+              src={posterUrl}
+              width={1000}
+              height={500}
+              alt={`Poster for ${event.name}`}
+              className="object-cover"
+            />
           </div>
           <div className={`${montserratFont.className} ms-2 mt-1`}>
             <p className="text-primary">

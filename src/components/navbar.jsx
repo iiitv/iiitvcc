@@ -26,6 +26,7 @@ function Navbar() {
   const eventsLink = "/events";
   const blogsLink = "/blogs";
   const membersLink = "/members";
+  const resourcesLink = "/resources";
   const contactUsLink = "/contact_us";
 
   useEffect(() => {
@@ -120,6 +121,9 @@ function Navbar() {
           <Link href={membersLink} className="text-primary" prefetch={false}>
             Members
           </Link>
+          <Link href={resourcesLink} className="text-primary" prefetch={false}>
+            Resources
+          </Link>
           <Link href={contactUsLink} className="text-primary" prefetch={false}>
             Contact Us
           </Link>
@@ -181,6 +185,15 @@ function Navbar() {
                   prefetch={false}
                 >
                   Members{" "}
+                </Link>
+              </p>
+              <p>
+                <Link
+                  href={resourcesLink}
+                  className="text-primary"
+                  prefetch={false}
+                >
+                  Resources{" "}
                 </Link>
               </p>
               <p>

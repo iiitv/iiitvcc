@@ -82,7 +82,7 @@ const TeamSection = () => {
                 className={cn(
                   "py-0 px-8 text-[clamp(.9rem,1.0rem+0.9333vw,1.2rem)] transition",
                   activeTeam === batch &&
-                  "bg-primary text-secondary font-bold border-primary",
+                    "bg-primary text-secondary font-bold border-primary",
                 )}
               >
                 {batch}
@@ -95,7 +95,7 @@ const TeamSection = () => {
           className={cn(
             "py-0 px-8 text-[clamp(.9rem,1.0rem+0.9333vw,1.2rem)] transition",
             activeTeam === "Developers" &&
-            "bg-primary text-secondary font-bold border-primary",
+              "bg-primary text-secondary font-bold border-primary",
           )}
         >
           Developers
@@ -106,7 +106,12 @@ const TeamSection = () => {
       </div>
       <div className="mt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {teamMembers
-          .filter((item) => (((item.batch === activeTeam) && item.position.some((pos: string) => pos === "Member")) || (activeTeam==="Developers" && item.is_dev)))
+          .filter(
+            (item) =>
+              (item.batch === activeTeam &&
+                item.position.some((pos: string) => pos === "Member")) ||
+              (activeTeam === "Developers" && item.is_dev),
+          )
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((item, idx) => (
             <div className="p-4" key={item.id}>
@@ -130,8 +135,8 @@ const TeamSection = () => {
                     ? "translate-y-0"
                     : "translate-y-0 sm:mt-[15%] midChild",
                   focusCard !== null &&
-                  focusCard !== item.id &&
-                  "scale-[.98] duration-500 blur-[4px]",
+                    focusCard !== item.id &&
+                    "scale-[.98] duration-500 blur-[4px]",
                 )}
               >
                 <div className="relative w-full h-full overflow-hidden rounded-md">
