@@ -97,7 +97,7 @@ export default function Events() {
         {loading ? (
           <div className="w-full flex justify-center p-12">
             <p className={`text-xl px-5 ${montserratFont.className}`}>
-              Loading...{" "}
+              The Events are escaping their brackets! Brace for impact ...{" "}
             </p>
             <Loader />
           </div>
