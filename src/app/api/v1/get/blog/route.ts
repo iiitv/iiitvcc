@@ -27,8 +27,8 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       );
     }
 
-    const posterUrl = `${getPublicUrl(`/images/${id}/poster`)}`;
-    const blogFileUrl = `${getPublicUrl(`/blogs/${id}/blog`)}`;
+  const posterUrl = `${getPublicUrl(`/images/${id}/poster`)}`;
+  const blogFileUrl = `${getPublicUrl(`/blogs/${id}/blog`)}`;
 
     const { data: images, error: imagesError } = await supabase.storage
       .from(process.env.NEXT_PUBLIC_BUCKET || "")
@@ -41,16 +41,19 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       );
     }
 
-    const imageUrls = images.map(
-      (image) => `${getPublicUrl(`/blogs/${id}/images/${image.name}`)}`,
-    );
-
+    // Determine if a banner exists and filter gallery images to exclude poster/banner
+    const hasBanner = images.some((img) => img.name === "banner");
+    const imageUrls = images
+      .filter((img) => img.name !== "poster" && img.name !== "banner")
+      .map((image) => `${getPublicUrl(`/images/${id}/${image.name}`)}`);
+    console.log("Image URLs:", imageUrls);
     return NextResponse.json({
       success: true,
       message: "Blog retrieved successfully",
       blog: {
         ...blog,
         posterUrl,
+        ...(hasBanner ? { bannerUrl: `${getPublicUrl(`/images/${id}/banner`)}` } : {}),
         blogFileUrl,
         images: imageUrls,
       },

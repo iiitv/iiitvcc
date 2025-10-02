@@ -15,11 +15,11 @@ export default function BlogCard(props) {
   const [blogPosterUrl, setBlogPosterUrl] = useState(blog.posterUrl);
   const [blogTitle, setBlogTitle] = useState(blog.title);
   const [blogIntro, setBlogIntro] = useState(blog.intro);
-  const [creatorName, setCreatorName] = useState("Devesh Sawant");
+  const [creatorName, setCreatorName] = useState(blog.writer_username || "Unknown");
   const [createdAt, setCreatedAt] = useState(blog.created_at);
-  const [blogPoster, setblogPoster] = useState("/event_poster.avif");
-  const [blogLikes, setBlogLikes] = useState("10");
-  const [blogComments, setBlogComments] = useState("10");
+  const [blogPoster, setblogPoster] = useState(blog.posterUrl || blog.poster || "/event_poster.avif");
+  const [blogLikes, setBlogLikes] = useState(blog.likes !== undefined ? blog.likes : "0");
+  const [blogComments, setBlogComments] = useState(blog.comments !== undefined ? blog.comments : "0");
 
   console.log(trimString(blogTitle, 45));
 

@@ -223,7 +223,7 @@ function AddEvent() {
                     registrationHosted &&
                     <div className="w-fit flex flex-col">
                         <label htmlFor="eventRegisterUntil" className="mb-1 font-medium text-white text-center">Event Register Until</label>
-                        <input type="date" id="eventRegisterUntil" name="register_until" className="p-2 border rounded" required />
+                        <input type="datetime-local" id="eventRegisterUntil" name="register_until" className="p-2 border rounded" required />
                     </div>
                 }
                 {

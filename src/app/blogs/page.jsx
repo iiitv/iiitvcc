@@ -57,6 +57,15 @@ export default function Blogs() {
     setSearchInputValue(event.target.value);
   };
 
+  //local filtering
+  const filteredBlogs = blogsArray.filter(blog => {
+    if (!searchInputValue.trim()) return true;
+    const search = searchInputValue.toLowerCase();
+    const title = (blog.title || '').toLowerCase();
+    const description = (blog.description || '').toLowerCase();
+    return title.includes(search) || description.includes(search);
+  });
+
   return (
     <>
       <div className="flex flex-col items-center ">
@@ -74,7 +83,7 @@ export default function Blogs() {
           </Link>
         </div>
       </div>
-      <GenerateBlogCards blogs={blogsArray} />
+      <GenerateBlogCards blogs={filteredBlogs} />
 
       {loading ? (
         <div className="w-full flex justify-center p-12">
