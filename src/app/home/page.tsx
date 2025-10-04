@@ -229,8 +229,7 @@ export default function Home() {
             <MilestoneIcon className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-2xl font-bold mb-2">Mentorship</h3>
             <p className="text-muted-foreground">
-              Receive personalized guidance from our network of industry
-              mentors.
+              Receive personalized guidance from our members and alumni.
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
@@ -467,7 +466,7 @@ export default function Home() {
                   prefetch={false}
                 >
                   <div className="text-sm font-medium leading-none group-hover:underline">
-                    LinkedIN
+                    LinkedIn
                   </div>
                   <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                     Join our Coding Club on LinkedIn to learn, collaborate, and

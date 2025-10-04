@@ -10,6 +10,12 @@ export async function dislikeBlog(_: any, formData: FormData) {
     }
 
     const supabase = await createClient();
+    
+    const { data } = await supabase.auth.getUser();
+    if (!data?.user) {
+      console.log("User not authenticated");
+      return { success: false, message: "User not authenticated" };
+    }
 
     const { data: current, error: fetchErr } = await supabase
       .from("blogs")

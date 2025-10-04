@@ -23,6 +23,36 @@ function Resources() {
       href: "/resources/web-dev",
       img: "/web-dev.png",
     },
+    {
+      title: "Development & Tools",
+      desc: "Essential programming resources, student tools, and development environments.",
+      href: "/resources/development",
+      img: "/tools.png", 
+    },
+    {
+      title: "Machine Learning",
+      desc: "AI/ML frameworks, courses, and practical resources for data science and deep learning.",
+      href: "/resources/ml",
+      img: "/ml.png", 
+    },
+    {
+      title: "Android Development",
+      desc: "Native and cross-platform mobile app development with Kotlin, Java, and Flutter.",
+      href: "/resources/android",
+      img: "/android.png",
+    },
+    {
+      title: "Blockchain Development",
+      desc: "Smart contracts, DApps, and decentralized application development resources.",
+      href: "/resources/blockchain",
+      img: "/blockchain.png", 
+    },
+    {
+      title: "UI/UX Design",
+      desc: "Design tools, inspiration platforms, and resources for creating beautiful user experiences.",
+      href: "/resources/uiux",
+      img: "/uiux.png",
+    },
   ];
 
   return (
@@ -30,7 +60,7 @@ function Resources() {
       <div className={`${alataFont.className} text-4xl underline mb-8`}>
         Resources
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-7xl px-4">
         {resources.map((res) => (
           <div
             key={res.title}

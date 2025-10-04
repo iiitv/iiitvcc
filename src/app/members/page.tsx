@@ -106,7 +106,7 @@ const TeamSection = () => {
               "bg-primary text-secondary font-bold border-primary",
             )}
           >
-            Developers
+            Website Developers
           </Button>
         </div>)}
 

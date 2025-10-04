@@ -35,7 +35,7 @@ export default function About() {
     { number: "25+", label: "Active Members" },
     { number: "5+", label: "National Hackathon Wins" },
     { number: "30+", label: "Projects Built" },
-    { number: "20+", label: "Workshops Yearly" },
+    { number: "20+", label: "Workshops" },
   ];
 
   return (
@@ -130,7 +130,7 @@ export default function About() {
                 </p>
                 <p className="text-2xl text-muted-foreground">
                   Our mentorship, competitions, and workshops empower
-                  everyone—from beginners to pros.
+                  everyone - from beginners to pros.
                 </p>
               </div>
             </div>

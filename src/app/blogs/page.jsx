@@ -28,7 +28,7 @@ export default function Blogs() {
   useEffect(() => {
     if (!loading && blogs) {
       setBlogsArray((prevBlogs) => {
-        // Create a new array by filtering out blogs that already exist in the array based on a unique identifier
+        // create a new array by filtering out blogs that already exist in the array based on blog id
         const newBlogs = blogs.filter(
           (blog) => !prevBlogs.some((prevBlog) => prevBlog.id === blog.id),
         );

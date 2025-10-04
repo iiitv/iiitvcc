@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useParams } from "next/navigation"
+import { useRouter, useParams } from "next/navigation"
 import { likeBlog } from "./_actions/like"
 import { dislikeBlog } from "./_actions/dislike"
 import Loader from "@/components/ui/loader"
@@ -31,6 +31,7 @@ export default function BlogPage() {
   const [lightboxIndex, setLightboxIndex] = useState(0)
   const routeParams = useParams()
   const blogId = routeParams?.id?.toString()
+  const router = useRouter()
 
   useEffect(() => {
     async function fetchBlog() {
@@ -60,7 +61,7 @@ export default function BlogPage() {
       const key = `liked_blog_${blog.id || blogId}`
       const val = typeof window !== "undefined" ? localStorage.getItem(key) : null
       setLiked(val === "1")
-    } catch {}
+    } catch { }
   }, [blog, blogId])
 
   const authorName = useMemo(() => blog?.writer_username || blog?.writer_name || blog?.author || "Unknown", [blog])
@@ -95,47 +96,51 @@ export default function BlogPage() {
     if (!blogId || likeLoading) return
     const key = `liked_blog_${blog.id || blogId}`
     setLikeLoading(true)
-    
-    // Store current state for potential rollback
+
     const previousLiked = liked
     const previousLikes = likes
-    
-    // Optimistically update UI immediately
+
+    // update UI immediately
     if (liked) {
       setLiked(false)
       setLikes((l) => Math.max(0, l - 1))
       try {
         localStorage.setItem(key, "0")
-      } catch {}
+      } catch { }
     } else {
       setLiked(true)
       setLikes((l) => l + 1)
       try {
         localStorage.setItem(key, "1")
-      } catch {}
+      } catch { }
     }
-    
+
     try {
       let res;
       const formData = new FormData()
       formData.append('id', blogId)
-      
+
       if (previousLiked) {
         res = await dislikeBlog(null, formData)
-        if (!res?.success) throw new Error(res?.message || "Failed to dislike")
+        if(res?.message === "User not authenticated") {
+          router.push("/auth");
+        }
+        else if (!res?.success) throw new Error(res?.message || "Failed to dislike")
       } else {
-        res = await likeBlog(null, formData)
-        if (!res?.success) throw new Error(res?.message || "Failed to like")
+        res = await likeBlog(null, formData);
+        if (res?.message === "User not authenticated") {
+          router.push("/auth");
+        }
+        else if (!res?.success) throw new Error(res?.message || "Failed to like")
+
       }
-      // Update with actual server count if available
       if (typeof res.likes === "number") setLikes(res.likes)
     } catch (e) {
-      // Revert UI changes on error
       setLiked(previousLiked)
       setLikes(previousLikes)
       try {
         localStorage.setItem(key, previousLiked ? "1" : "0")
-      } catch {}
+      } catch { }
     } finally {
       setLikeLoading(false)
     }
@@ -257,14 +262,14 @@ export default function BlogPage() {
         </div>
 
         <div className="bg-card/95 backdrop-blur-sm rounded-2xl shadow-sm border border-border/50 p-8 md:p-12 mb-8">
-          <div 
+          <div
             className={`max-w-none text-xl ${inter.className}`}
             style={{
               lineHeight: '1.7',
             }}
-            dangerouslySetInnerHTML={{ __html: blog.content || "" }} 
+            dangerouslySetInnerHTML={{ __html: blog.content || "" }}
           />
-          
+
           <style jsx>{`
             div :global(h1) {
               font-size: 2.5rem;
@@ -336,11 +341,10 @@ export default function BlogPage() {
                 type="button"
                 onClick={likeAction}
                 disabled={likeLoading}
-                className={`cursor-pointer inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium ${
-                  liked
-                    ? "bg-primary/20 border-primary text-primary hover:bg-primary/30"
-                    : "bg-secondary border-border text-foreground hover:bg-secondary/80 hover:border-primary/50"
-                } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
+                className={`cursor-pointer inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium ${liked
+                  ? "bg-primary/20 border-primary text-primary hover:bg-primary/30"
+                  : "bg-secondary border-border text-foreground hover:bg-secondary/80 hover:border-primary/50"
+                  } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
                 aria-pressed={liked}
                 aria-label={liked ? "Liked" : "Like this article"}
               >
@@ -356,7 +360,7 @@ export default function BlogPage() {
                 >
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
-                <span>{liked ? "Liked" : "Like"}</span>
+                <span>{liked ? "Likes" : "Like"}</span>
                 <span className="text-sm opacity-70">({likes})</span>
               </button>
             </div>

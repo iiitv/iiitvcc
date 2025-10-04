@@ -17,7 +17,6 @@ export default function CPStaticResources() {
         <h2 className="text-2xl font-semibold mb-3">init_mains()</h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4 text-base">
-            {/* Language preference */}
             <div className="flex flex-col gap-1">
               <span className="font-medium">
                 Language — <span>C++</span> (preferred)
@@ -86,15 +85,27 @@ export default function CPStaticResources() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                <div className="text-card-foreground">
-                  Solve questions on{' '}
-                  <Link
-                  href="#"
+                <Link
+                  href="https://usaco.guide/bronze/intro-complete"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  USACO Guide — Complete Search (Bronze)
+
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <div className="text-card-foreground">
+                  Solve questions on{' '}
+                  <Link
+                    href="https://vjudge.net/group/road-to-init-mains?r=9egW7lTmVRevLskbSKMX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
                   >
-                  VJudge
+                    VJudge
                   </Link>{' '}
                   for Road To init_mains().
                 </div>
@@ -159,41 +170,20 @@ export default function CPStaticResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">What after <code>init_mains()</code>?</h2>
+
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <div>Start with the TLE sheet.</div>
+              <div>We will start with Winter of Code in December. Its Resources will be shared here soon!</div>
             </li>
+            <h2> But if you want to get started earlier, you can:</h2>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                Start giving div3/div4 contests on Codeforces; after progress, start div2 as well.{' '}
-                <Link href="https://codeforces.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
-                  codeforces.com
-                </Link>
-              </div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <div>
-                You can refer to Striver A2Z for DSA:{' '}
-                <Link
-                  href="https://youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&si=9tT0xzA6N4hANGjw"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
-                >
-                  Striver A2Z Playlist
-                </Link>
-              </div>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <div>
-                For CP, follow the USACO Guide (it’s good):
+                For CP, start following the USACO Guide (it’s good):
                 <ul className="mt-1 space-y-1 pl-4">
-                  white    <li className="flex items-start gap-2">
+                  <li className="flex items-start gap-2">
                     <span className="mt-2 h-2 w-2 rounded-full bg-white" />
                     <Link href="https://usaco.guide/bronze/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
                       Bronze
@@ -206,6 +196,41 @@ export default function CPStaticResources() {
                     </Link>
                   </li>
                 </ul>
+              </div>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <div>
+                Start giving div3/div4 contests on Codeforces; after progress, start div2 as well.{' '}
+                <Link href="https://codeforces.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+                  codeforces.com
+                </Link>
+              </div>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <div>Practice from the
+              <Link href="https://www.tle-eliminators.com/cp-sheet" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+                TLE Eliminator's CP-31 sheet
+              </Link>
+               <span>(Follow  it for question practice. It has very nice set of questions).</span>
+              </div>
+            </li>
+            
+            <li className="flex items-start gap-2">
+              <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+              <div>
+                You can refer to Striver A2Z for DSA:{' '}
+                <Link
+                  href="https://youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&si=9tT0xzA6N4hANGjw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Striver A2Z Playlist
+                </Link>
               </div>
             </li>
             <li className="flex items-start gap-2">
