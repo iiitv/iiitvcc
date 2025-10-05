@@ -57,7 +57,7 @@ export function Dropdown_Menu({
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <Link
-              href={profile || "#"}
+              href={profile || "/profile"}
               className="flex items-center gap-2"
               prefetch={false}
             >

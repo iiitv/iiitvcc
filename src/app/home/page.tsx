@@ -229,8 +229,7 @@ export default function Home() {
             <MilestoneIcon className="w-12 h-12 text-primary mb-4" />
             <h3 className="text-2xl font-bold mb-2">Mentorship</h3>
             <p className="text-muted-foreground">
-              Receive personalized guidance from our network of industry
-              mentors.
+              Receive personalized guidance from our members and alumni.
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
@@ -344,8 +343,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="flex flex-col bg-secondary border-none">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            {/* <Card className="flex flex-col bg-secondary border-none">
               <CardHeader>
                 <CardTitle>Tutorials</CardTitle>
                 <CardDescription>
@@ -354,6 +353,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex-1 grid gap-4">
                 <Link
+                  target="_blank"
                   href="#"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
@@ -367,6 +367,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link
+                  target="_blank"
                   href="#"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
@@ -380,6 +381,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link
+                  target="_blank"
                   href="#"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
@@ -393,7 +395,7 @@ export default function Home() {
                   </div>
                 </Link>
               </CardContent>
-            </Card>
+            </Card> */}
             <Card className="flex flex-col bg-secondary border-none">
               <CardHeader>
                 <CardTitle>Projects</CardTitle>
@@ -403,44 +405,22 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex-1 grid gap-4">
                 <Link
-                  href="#"
+                  target="_blank"
+                  href="https://github.com/iiitv"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   <div className="text-sm font-medium leading-none group-hover:underline">
-                    Todo List App
-                  </div>
-                  <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    Build a simple todo list application using HTML, CSS, and
-                    JavaScript.
-                  </div>
-                </Link>
-                <Link
-                  href="#"
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  prefetch={false}
-                >
-                  <div className="text-sm font-medium leading-none group-hover:underline">
-                    Weather App
-                  </div>
-                  <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                    Create a weather application that fetches data from a
-                    weather API.
-                  </div>
-                </Link>
-                <Link
-                  href="#"
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  prefetch={false}
-                >
-                  <div className="text-sm font-medium leading-none group-hover:underline">
-                    E-commerce Website
+                    IIITV Open Source
                   </div>
                   <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                     Build a full-stack e-commerce website with a shopping cart
                     and checkout process.
                   </div>
                 </Link>
+                {/* Empty divs to maintain grid height and alignment */}
+                <div className="hidden sm:block" />
+                <div className="hidden sm:block" />
               </CardContent>
             </Card>
             <Card className="flex flex-col bg-secondary border-none">
@@ -452,7 +432,8 @@ export default function Home() {
               </CardHeader>
               <CardContent className="flex-1 grid gap-4">
                 <Link
-                  href="#"
+                  target="_blank"
+                  href="https://discord.gg/RgGAHarP"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
@@ -465,6 +446,7 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link
+                  target="_blank"
                   href="#"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
@@ -478,12 +460,13 @@ export default function Home() {
                   </div>
                 </Link>
                 <Link
-                  href="#"
+                  target="_blank"
+                  href="https://www.linkedin.com/company/iiitvcc/"
                   className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
                   <div className="text-sm font-medium leading-none group-hover:underline">
-                    LinkedIN
+                    LinkedIn
                   </div>
                   <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                     Join our Coding Club on LinkedIn to learn, collaborate, and

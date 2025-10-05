@@ -28,7 +28,7 @@ export default function Blogs() {
   useEffect(() => {
     if (!loading && blogs) {
       setBlogsArray((prevBlogs) => {
-        // Create a new array by filtering out blogs that already exist in the array based on a unique identifier
+        // create a new array by filtering out blogs that already exist in the array based on blog id
         const newBlogs = blogs.filter(
           (blog) => !prevBlogs.some((prevBlog) => prevBlog.id === blog.id),
         );
@@ -57,6 +57,15 @@ export default function Blogs() {
     setSearchInputValue(event.target.value);
   };
 
+  //local filtering
+  const filteredBlogs = blogsArray.filter((blog) => {
+    if (!searchInputValue.trim()) return true;
+    const search = searchInputValue.toLowerCase();
+    const title = (blog.title || "").toLowerCase();
+    const description = (blog.description || "").toLowerCase();
+    return title.includes(search) || description.includes(search);
+  });
+
   return (
     <>
       <div className="flex flex-col items-center ">
@@ -74,7 +83,7 @@ export default function Blogs() {
           </Link>
         </div>
       </div>
-      <GenerateBlogCards blogs={blogsArray} />
+      <GenerateBlogCards blogs={filteredBlogs} />
 
       {loading ? (
         <div className="w-full flex justify-center p-12">

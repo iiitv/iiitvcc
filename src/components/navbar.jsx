@@ -82,7 +82,7 @@ function Navbar() {
         <Dropdown_Menu
           username={username}
           email={user?.email}
-          onProfile="/account"
+          onProfile="/profile"
           onLogout={logout}
         />
       )}
