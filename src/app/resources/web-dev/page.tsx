@@ -8,7 +8,8 @@ export default function WebDevResources() {
           Web Development Resources
         </h1>
         <p className="mt-3 text-sm sm:text-base text-white-foreground">
-          Complete roadmap for web development from basics to advanced topics including frontend, backend, and full-stack development.
+          Complete roadmap for web development from basics to advanced topics
+          including frontend, backend, and full-stack development.
         </p>
       </header>
 
@@ -30,7 +31,8 @@ export default function WebDevResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                Languages: <span className="font-medium">HTML, CSS, JavaScript</span>
+                Languages:{" "}
+                <span className="font-medium">HTML, CSS, JavaScript</span>
               </div>
             </li>
           </ul>
@@ -96,7 +98,7 @@ export default function WebDevResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                Complete this before moving ahead: {' '}
+                Complete this before moving ahead:{" "}
                 <Link
                   href="https://javascript30.com/"
                   target="_blank"
@@ -117,9 +119,11 @@ export default function WebDevResources() {
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Frameworks & Libraries:</span>
-              <span className="text-sm text-muted-foreground">React, Angular, Vue, Bootstrap</span>
+              <span className="text-sm text-muted-foreground">
+                React, Angular, Vue, Bootstrap
+              </span>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -153,7 +157,9 @@ export default function WebDevResources() {
                 >
                   Frontend Masters
                 </Link>
-                <span className="text-sm text-muted-foreground">(Use GitHub Student Education Pack)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Use GitHub Student Education Pack)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -177,9 +183,11 @@ export default function WebDevResources() {
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Technologies:</span>
-              <span className="text-sm text-muted-foreground">NodeJS, Django, GoLang, Flask</span>
+              <span className="text-sm text-muted-foreground">
+                NodeJS, Django, GoLang, Flask
+              </span>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -200,7 +208,8 @@ export default function WebDevResources() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
                 >
-                  DRF Tutorial: Build a Backend REST API with Python & Django - Udemy
+                  DRF Tutorial: Build a Backend REST API with Python & Django -
+                  Udemy
                 </Link>
               </li>
               <li className="flex items-start gap-2">
@@ -237,7 +246,7 @@ export default function WebDevResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                For Udemy coupons, visit: {' '}
+                For Udemy coupons, visit:{" "}
                 <Link
                   href="#"
                   className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
@@ -251,19 +260,25 @@ export default function WebDevResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Helpful YouTube Channels</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Helpful YouTube Channels
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <div>Wes Bos, thenewboston, Net Ninja, Coding Entrepreneurs, Corey Schafer</div>
+              <div>
+                Wes Bos, thenewboston, Net Ninja, Coding Entrepreneurs, Corey
+                Schafer
+              </div>
             </li>
           </ul>
         </div>
       </section>
 
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
-        Keep practicing and building projects to strengthen your web development skills!
+        Keep practicing and building projects to strengthen your web development
+        skills!
       </footer>
     </div>
   );

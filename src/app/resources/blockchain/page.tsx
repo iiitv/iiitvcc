@@ -8,7 +8,8 @@ export default function BlockchainResources() {
           Blockchain Development Resources
         </h1>
         <p className="mt-3 text-sm sm:text-base text-white-foreground">
-          Comprehensive guide for blockchain development, smart contracts, and decentralized application (DApp) development.
+          Comprehensive guide for blockchain development, smart contracts, and
+          decentralized application (DApp) development.
         </p>
       </header>
 
@@ -18,17 +19,22 @@ export default function BlockchainResources() {
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Programming Languages:</span>
-              <span className="text-sm text-muted-foreground">JavaScript, Python, or Java</span>
+              <span className="text-sm text-muted-foreground">
+                JavaScript, Python, or Java
+              </span>
             </div>
-            
+
             <div className="flex flex-col gap-1">
               <span className="font-medium">Web Backend Programming:</span>
-              <span className="text-sm text-muted-foreground">Node.js, Django, etc.</span>
+              <span className="text-sm text-muted-foreground">
+                Node.js, Django, etc.
+              </span>
             </div>
-            
+
             <div className="rounded-md border border-amber-200/40 bg-amber-50/60 dark:bg-amber-950/30 px-4 py-3">
               <p className="text-sm text-amber-800 dark:text-amber-200">
-                <span className="font-semibold">Note:</span> For backend programming requirements, refer to the Web Development section.
+                <span className="font-semibold">Note:</span> For backend
+                programming requirements, refer to the Web Development section.
               </p>
             </div>
           </div>
@@ -36,7 +42,9 @@ export default function BlockchainResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Core Blockchain Concepts</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Core Blockchain Concepts
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -64,14 +72,20 @@ export default function BlockchainResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Blockchain Development Courses</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Blockchain Development Courses
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
-              <span className="font-medium">Coursera Blockchain Specialization:</span>
-              <span className="text-sm text-muted-foreground">Complete courses 1, 2, and 3 of the series</span>
+              <span className="font-medium">
+                Coursera Blockchain Specialization:
+              </span>
+              <span className="text-sm text-muted-foreground">
+                Complete courses 1, 2, and 3 of the series
+              </span>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -83,7 +97,9 @@ export default function BlockchainResources() {
                 >
                   Blockchain Specialization - Coursera
                 </Link>
-                <span className="text-sm text-muted-foreground">(Courses 1, 2, and 3)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Courses 1, 2, and 3)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -102,14 +118,18 @@ export default function BlockchainResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Smart Contract Development</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Smart Contract Development
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Primary Language:</span>
-              <span className="text-sm text-muted-foreground">Solidity (for Ethereum)</span>
+              <span className="text-sm text-muted-foreground">
+                Solidity (for Ethereum)
+              </span>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -132,7 +152,9 @@ export default function BlockchainResources() {
                 >
                   Remix IDE
                 </Link>
-                <span className="text-sm text-muted-foreground">(Online Solidity IDE)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Online Solidity IDE)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -144,7 +166,9 @@ export default function BlockchainResources() {
                 >
                   Truffle Suite
                 </Link>
-                <span className="text-sm text-muted-foreground">(Development framework)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Development framework)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -156,7 +180,9 @@ export default function BlockchainResources() {
                 >
                   Hardhat
                 </Link>
-                <span className="text-sm text-muted-foreground">(Ethereum development environment)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Ethereum development environment)
+                </span>
               </li>
             </ul>
           </div>
@@ -169,9 +195,11 @@ export default function BlockchainResources() {
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Frontend Technologies:</span>
-              <span className="text-sm text-muted-foreground">React, Vue.js, Angular (with Web3 integration)</span>
+              <span className="text-sm text-muted-foreground">
+                React, Vue.js, Angular (with Web3 integration)
+              </span>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -183,7 +211,9 @@ export default function BlockchainResources() {
                 >
                   Web3.js
                 </Link>
-                <span className="text-sm text-muted-foreground">(Ethereum JavaScript API)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Ethereum JavaScript API)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -195,7 +225,9 @@ export default function BlockchainResources() {
                 >
                   Ethers.js
                 </Link>
-                <span className="text-sm text-muted-foreground">(Ethereum library)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Ethereum library)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -207,7 +239,9 @@ export default function BlockchainResources() {
                 >
                   MetaMask
                 </Link>
-                <span className="text-sm text-muted-foreground">(Wallet integration)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Wallet integration)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -219,7 +253,9 @@ export default function BlockchainResources() {
                 >
                   IPFS
                 </Link>
-                <span className="text-sm text-muted-foreground">(Decentralized storage)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Decentralized storage)
+                </span>
               </li>
             </ul>
           </div>
@@ -233,7 +269,8 @@ export default function BlockchainResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Test Networks:</span> Ropsten, Rinkeby, Goerli (Ethereum testnets)
+                <span className="font-medium">Test Networks:</span> Ropsten,
+                Rinkeby, Goerli (Ethereum testnets)
               </div>
             </li>
             <li className="flex items-start gap-2">
@@ -246,7 +283,9 @@ export default function BlockchainResources() {
               >
                 Test ETH Faucets
               </Link>
-              <span className="text-sm text-muted-foreground">(Free test tokens)</span>
+              <span className="text-sm text-muted-foreground">
+                (Free test tokens)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -258,12 +297,15 @@ export default function BlockchainResources() {
               >
                 OpenZeppelin
               </Link>
-              <span className="text-sm text-muted-foreground">(Secure smart contract library)</span>
+              <span className="text-sm text-muted-foreground">
+                (Secure smart contract library)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Mainnet Deployment:</span> Ethereum, Polygon, Binance Smart Chain
+                <span className="font-medium">Mainnet Deployment:</span>{" "}
+                Ethereum, Polygon, Binance Smart Chain
               </div>
             </li>
           </ul>
@@ -271,7 +313,9 @@ export default function BlockchainResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Additional Learning Resources</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Additional Learning Resources
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -295,7 +339,9 @@ export default function BlockchainResources() {
               >
                 CryptoZombies
               </Link>
-              <span className="text-sm text-muted-foreground">(Learn Solidity by building games)</span>
+              <span className="text-sm text-muted-foreground">
+                (Learn Solidity by building games)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -340,14 +386,20 @@ export default function BlockchainResources() {
           <div className="space-y-4">
             <div className="rounded-md border border-red-200/40 bg-red-50/60 dark:bg-red-950/30 px-4 py-3">
               <p className="text-sm text-red-800 dark:text-red-200">
-                <span className="font-semibold">Security Warning:</span> Always audit smart contracts before deploying to mainnet. Consider using established security frameworks and getting professional audits for production applications.
+                <span className="font-semibold">Security Warning:</span> Always
+                audit smart contracts before deploying to mainnet. Consider
+                using established security frameworks and getting professional
+                audits for production applications.
               </p>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                <div>Start with simple smart contracts and gradually increase complexity</div>
+                <div>
+                  Start with simple smart contracts and gradually increase
+                  complexity
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -363,7 +415,9 @@ export default function BlockchainResources() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                <div>Keep up with the rapidly evolving blockchain ecosystem</div>
+                <div>
+                  Keep up with the rapidly evolving blockchain ecosystem
+                </div>
               </li>
             </ul>
           </div>
@@ -371,7 +425,8 @@ export default function BlockchainResources() {
       </section>
 
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
-        Blockchain development is rapidly evolving. Stay updated with the latest developments and always prioritize security!
+        Blockchain development is rapidly evolving. Stay updated with the latest
+        developments and always prioritize security!
       </footer>
     </div>
   );

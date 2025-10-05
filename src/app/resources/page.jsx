@@ -27,13 +27,13 @@ function Resources() {
       title: "Development & Tools",
       desc: "Essential programming resources, student tools, and development environments.",
       href: "/resources/development",
-      img: "/tools.png", 
+      img: "/tools.png",
     },
     {
       title: "Machine Learning",
       desc: "AI/ML frameworks, courses, and practical resources for data science and deep learning.",
       href: "/resources/ml",
-      img: "/ml.png", 
+      img: "/ml.png",
     },
     {
       title: "Android Development",
@@ -45,7 +45,7 @@ function Resources() {
       title: "Blockchain Development",
       desc: "Smart contracts, DApps, and decentralized application development resources.",
       href: "/resources/blockchain",
-      img: "/blockchain.png", 
+      img: "/blockchain.png",
     },
     {
       title: "UI/UX Design",

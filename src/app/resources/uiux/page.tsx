@@ -8,7 +8,8 @@ export default function UIUXResources() {
           UI/UX Design Resources
         </h1>
         <p className="mt-3 text-sm sm:text-base text-white-foreground">
-          Comprehensive guide for User Interface and User Experience design, from fundamentals to advanced design principles and tools.
+          Comprehensive guide for User Interface and User Experience design,
+          from fundamentals to advanced design principles and tools.
         </p>
       </header>
 
@@ -19,31 +20,36 @@ export default function UIUXResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Color Theory:</span> Understanding color psychology and harmony
+                <span className="font-medium">Color Theory:</span> Understanding
+                color psychology and harmony
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Typography:</span> Font selection, hierarchy, and readability
+                <span className="font-medium">Typography:</span> Font selection,
+                hierarchy, and readability
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Layout & Composition:</span> Grid systems, spacing, and visual hierarchy
+                <span className="font-medium">Layout & Composition:</span> Grid
+                systems, spacing, and visual hierarchy
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">User Research:</span> Understanding user needs and behaviors
+                <span className="font-medium">User Research:</span>{" "}
+                Understanding user needs and behaviors
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Usability Principles:</span> Accessibility, intuitiveness, and efficiency
+                <span className="font-medium">Usability Principles:</span>{" "}
+                Accessibility, intuitiveness, and efficiency
               </div>
             </li>
           </ul>
@@ -67,7 +73,9 @@ export default function UIUXResources() {
                   >
                     Figma
                   </Link>
-                  <span className="text-sm text-muted-foreground">(Free, collaborative)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (Free, collaborative)
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -79,7 +87,9 @@ export default function UIUXResources() {
                   >
                     Sketch
                   </Link>
-                  <span className="text-sm text-muted-foreground">(Mac only)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (Mac only)
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -102,7 +112,9 @@ export default function UIUXResources() {
                   >
                     Canva
                   </Link>
-                  <span className="text-sm text-muted-foreground">(Beginner-friendly)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (Beginner-friendly)
+                  </span>
                 </li>
               </ul>
             </div>
@@ -192,7 +204,9 @@ export default function UIUXResources() {
                   >
                     GIMP
                   </Link>
-                  <span className="text-sm text-muted-foreground">(Free alternative)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (Free alternative)
+                  </span>
                 </li>
               </ul>
             </div>
@@ -206,10 +220,12 @@ export default function UIUXResources() {
           <div className="space-y-4">
             <div className="rounded-md border border-green-200/40 bg-green-50/60 dark:bg-green-950/30 px-4 py-3">
               <p className="text-sm text-green-800 dark:text-green-200">
-                <span className="font-semibold">Recommended:</span> Visit these platforms regularly for design inspiration and to stay updated with current design trends.
+                <span className="font-semibold">Recommended:</span> Visit these
+                platforms regularly for design inspiration and to stay updated
+                with current design trends.
               </p>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -221,7 +237,9 @@ export default function UIUXResources() {
                 >
                   CodePen
                 </Link>
-                <span className="text-sm text-muted-foreground">(Code examples and interactive designs)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Code examples and interactive designs)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -233,7 +251,9 @@ export default function UIUXResources() {
                 >
                   Dribbble
                 </Link>
-                <span className="text-sm text-muted-foreground">(Design inspiration and trends)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Design inspiration and trends)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -245,7 +265,9 @@ export default function UIUXResources() {
                 >
                   Behance
                 </Link>
-                <span className="text-sm text-muted-foreground">(Portfolio showcase)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Portfolio showcase)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -257,7 +279,9 @@ export default function UIUXResources() {
                 >
                   Awwwards
                 </Link>
-                <span className="text-sm text-muted-foreground">(Award-winning web design)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Award-winning web design)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -269,7 +293,9 @@ export default function UIUXResources() {
                 >
                   Pinterest
                 </Link>
-                <span className="text-sm text-muted-foreground">(Visual inspiration boards)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Visual inspiration boards)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -400,7 +426,9 @@ export default function UIUXResources() {
                   >
                     unDraw
                   </Link>
-                  <span className="text-sm text-muted-foreground">(Illustrations)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (Illustrations)
+                  </span>
                 </li>
               </ul>
             </div>
@@ -493,37 +521,43 @@ export default function UIUXResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">1. Research:</span> Understand users, competitors, and requirements
+                <span className="font-medium">1. Research:</span> Understand
+                users, competitors, and requirements
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">2. Ideation:</span> Brainstorm and sketch initial concepts
+                <span className="font-medium">2. Ideation:</span> Brainstorm and
+                sketch initial concepts
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">3. Wireframing:</span> Create low-fidelity structural layouts
+                <span className="font-medium">3. Wireframing:</span> Create
+                low-fidelity structural layouts
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">4. Prototyping:</span> Build interactive mockups
+                <span className="font-medium">4. Prototyping:</span> Build
+                interactive mockups
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">5. Testing:</span> Validate design with users
+                <span className="font-medium">5. Testing:</span> Validate design
+                with users
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">6. Iteration:</span> Refine based on feedback
+                <span className="font-medium">6. Iteration:</span> Refine based
+                on feedback
               </div>
             </li>
           </ul>
@@ -531,7 +565,8 @@ export default function UIUXResources() {
       </section>
 
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
-        Great design comes with practice and continuous learning. Start with simple projects and build a diverse portfolio!
+        Great design comes with practice and continuous learning. Start with
+        simple projects and build a diverse portfolio!
       </footer>
     </div>
   );

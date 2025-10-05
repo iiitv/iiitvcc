@@ -1,176 +1,192 @@
-"use client"
-import { useEffect, useMemo, useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { useRouter, useParams } from "next/navigation"
-import { likeBlog } from "./_actions/like"
-import { dislikeBlog } from "./_actions/dislike"
-import Loader from "@/components/ui/loader"
-import { Playfair_Display, Inter } from "next/font/google"
+"use client";
+import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter, useParams } from "next/navigation";
+import { likeBlog } from "./_actions/like";
+import { dislikeBlog } from "./_actions/dislike";
+import Loader from "@/components/ui/loader";
+import { Playfair_Display, Inter } from "next/font/google";
 
 const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-serif",
-})
+});
 
 const inter = Inter({
   weight: ["300", "400", "500", "600"],
   subsets: ["latin"],
   variable: "--font-sans",
-})
+});
 
 export default function BlogPage() {
-  const [blog, setBlog] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState("")
-  const [likes, setLikes] = useState(0)
-  const [liked, setLiked] = useState(false)
-  const [likeLoading, setLikeLoading] = useState(false)
-  const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [lightboxIndex, setLightboxIndex] = useState(0)
-  const routeParams = useParams()
-  const blogId = routeParams?.id?.toString()
-  const router = useRouter()
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [likes, setLikes] = useState(0);
+  const [liked, setLiked] = useState(false);
+  const [likeLoading, setLikeLoading] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const routeParams = useParams();
+  const blogId = routeParams?.id?.toString();
+  const router = useRouter();
 
   useEffect(() => {
     async function fetchBlog() {
-      setLoading(true)
-      setError("")
+      setLoading(true);
+      setError("");
       try {
-        const res = await fetch(`/api/v1/get/blog?id=${blogId}`)
-        const data = await res.json()
+        const res = await fetch(`/api/v1/get/blog?id=${blogId}`);
+        const data = await res.json();
         if (data.success && data.blog) {
-          setBlog(data.blog)
+          setBlog(data.blog);
         } else {
-          setError("Blog not found")
+          setError("Blog not found");
         }
       } catch (err) {
-        setError("Failed to fetch blog")
+        setError("Failed to fetch blog");
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    if (blogId) fetchBlog()
-  }, [blogId])
+    if (blogId) fetchBlog();
+  }, [blogId]);
 
   useEffect(() => {
-    if (!blog) return
-    setLikes(typeof blog.likes === "number" ? blog.likes : 0)
+    if (!blog) return;
+    setLikes(typeof blog.likes === "number" ? blog.likes : 0);
     try {
-      const key = `liked_blog_${blog.id || blogId}`
-      const val = typeof window !== "undefined" ? localStorage.getItem(key) : null
-      setLiked(val === "1")
-    } catch { }
-  }, [blog, blogId])
+      const key = `liked_blog_${blog.id || blogId}`;
+      const val =
+        typeof window !== "undefined" ? localStorage.getItem(key) : null;
+      setLiked(val === "1");
+    } catch {}
+  }, [blog, blogId]);
 
-  const authorName = useMemo(() => blog?.writer_username || blog?.writer_name || blog?.author || "Unknown", [blog])
-  const posterSrc = blog?.bannerUrl || "/iiitvcc_banner.png"
+  const authorName = useMemo(
+    () =>
+      blog?.writer_username || blog?.writer_name || blog?.author || "Unknown",
+    [blog],
+  );
+  const posterSrc = blog?.bannerUrl || "/iiitvcc_banner.png";
   const readingTimeLabel = useMemo(() => {
-    if (!blog) return "1 sec read"
-    const WPM = 200
-    const introWords = (blog.intro || "").trim().split(/\s+/).filter(Boolean).length
-    const bodyText = blog.content ? blog.content.replace(/<[^>]*>/g, " ") : ""
-    const bodyWords = bodyText.trim().split(/\s+/).filter(Boolean).length
-    const totalWords = introWords + bodyWords
+    if (!blog) return "1 sec read";
+    const WPM = 200;
+    const introWords = (blog.intro || "")
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean).length;
+    const bodyText = blog.content ? blog.content.replace(/<[^>]*>/g, " ") : "";
+    const bodyWords = bodyText.trim().split(/\s+/).filter(Boolean).length;
+    const totalWords = introWords + bodyWords;
 
-    const minutes = totalWords / WPM
+    const minutes = totalWords / WPM;
     if (minutes < 1) {
-      const seconds = Math.max(1, Math.round(minutes * 60))
-      return `${seconds} sec read`
+      const seconds = Math.max(1, Math.round(minutes * 60));
+      return `${seconds} sec read`;
     }
-    const minsRounded = Math.round(minutes)
-    return `${minsRounded} min read`
-  }, [blog])
+    const minsRounded = Math.round(minutes);
+    return `${minsRounded} min read`;
+  }, [blog]);
 
-  const imageList = blog?.images || []
+  const imageList = blog?.images || [];
   const openLightbox = (idx) => {
-    setLightboxIndex(idx)
-    setLightboxOpen(true)
-  }
-  const closeLightbox = () => setLightboxOpen(false)
-  const prevImage = () => setLightboxIndex((i) => (i - 1 + imageList.length) % imageList.length)
-  const nextImage = () => setLightboxIndex((i) => (i + 1) % imageList.length)
+    setLightboxIndex(idx);
+    setLightboxOpen(true);
+  };
+  const closeLightbox = () => setLightboxOpen(false);
+  const prevImage = () =>
+    setLightboxIndex((i) => (i - 1 + imageList.length) % imageList.length);
+  const nextImage = () => setLightboxIndex((i) => (i + 1) % imageList.length);
 
   const likeAction = async () => {
-    if (!blogId || likeLoading) return
-    const key = `liked_blog_${blog.id || blogId}`
-    setLikeLoading(true)
+    if (!blogId || likeLoading) return;
+    const key = `liked_blog_${blog.id || blogId}`;
+    setLikeLoading(true);
 
-    const previousLiked = liked
-    const previousLikes = likes
+    const previousLiked = liked;
+    const previousLikes = likes;
 
     // update UI immediately
     if (liked) {
-      setLiked(false)
-      setLikes((l) => Math.max(0, l - 1))
+      setLiked(false);
+      setLikes((l) => Math.max(0, l - 1));
       try {
-        localStorage.setItem(key, "0")
-      } catch { }
+        localStorage.setItem(key, "0");
+      } catch {}
     } else {
-      setLiked(true)
-      setLikes((l) => l + 1)
+      setLiked(true);
+      setLikes((l) => l + 1);
       try {
-        localStorage.setItem(key, "1")
-      } catch { }
+        localStorage.setItem(key, "1");
+      } catch {}
     }
 
     try {
       let res;
-      const formData = new FormData()
-      formData.append('id', blogId)
+      const formData = new FormData();
+      formData.append("id", blogId);
 
       if (previousLiked) {
-        res = await dislikeBlog(null, formData)
-        if(res?.message === "User not authenticated") {
+        res = await dislikeBlog(null, formData);
+        if (res?.message === "User not authenticated") {
           router.push("/auth");
-        }
-        else if (!res?.success) throw new Error(res?.message || "Failed to dislike")
+        } else if (!res?.success)
+          throw new Error(res?.message || "Failed to dislike");
       } else {
         res = await likeBlog(null, formData);
         if (res?.message === "User not authenticated") {
           router.push("/auth");
-        }
-        else if (!res?.success) throw new Error(res?.message || "Failed to like")
-
+        } else if (!res?.success)
+          throw new Error(res?.message || "Failed to like");
       }
-      if (typeof res.likes === "number") setLikes(res.likes)
+      if (typeof res.likes === "number") setLikes(res.likes);
     } catch (e) {
-      setLiked(previousLiked)
-      setLikes(previousLikes)
+      setLiked(previousLiked);
+      setLikes(previousLikes);
       try {
-        localStorage.setItem(key, previousLiked ? "1" : "0")
-      } catch { }
+        localStorage.setItem(key, previousLiked ? "1" : "0");
+      } catch {}
     } finally {
-      setLikeLoading(false)
+      setLikeLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     const onKey = (e) => {
-      if (!lightboxOpen) return
-      if (e.key === "Escape") closeLightbox()
-      if (e.key === "ArrowLeft") prevImage()
-      if (e.key === "ArrowRight") nextImage()
-    }
-    window.addEventListener("keydown", onKey)
-    return () => window.removeEventListener("keydown", onKey)
-  }, [lightboxOpen, imageList.length])
+      if (!lightboxOpen) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxOpen, imageList.length]);
 
   if (loading) {
     return (
-      <div className={`min-h-screen flex flex-col items-center justify-center bg-background ${inter.className}`}>
+      <div
+        className={`min-h-screen flex flex-col items-center justify-center bg-background ${inter.className}`}
+      >
         <Loader />
-        <p className="mt-6 text-muted-foreground text-sm tracking-wide">Loading article...</p>
+        <p className="mt-6 text-muted-foreground text-sm tracking-wide">
+          Loading article...
+        </p>
       </div>
-    )
+    );
   }
 
   if (error)
     return (
-      <div className={`min-h-screen flex items-center justify-center p-6 bg-background ${inter.className}`}>
+      <div
+        className={`min-h-screen flex items-center justify-center p-6 bg-background ${inter.className}`}
+      >
         <div className="max-w-md w-full p-8 border border-border bg-card rounded-lg shadow-sm">
-          <h2 className={`text-2xl font-medium mb-3 text-card-foreground ${playfair.className}`}>
+          <h2
+            className={`text-2xl font-medium mb-3 text-card-foreground ${playfair.className}`}
+          >
             Unable to load article
           </h2>
           <p className="mb-6 text-muted-foreground">{error}</p>
@@ -190,11 +206,13 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
-    )
-  if (!blog) return null
+    );
+  if (!blog) return null;
 
   return (
-    <div className={`min-h-screen bg-background ${inter.variable} ${playfair.variable}`}>
+    <div
+      className={`min-h-screen bg-background ${inter.variable} ${playfair.variable}`}
+    >
       <div className="relative h-[40vh] md:h-[45vh] lg:h-[50vh] w-full">
         <Link
           href="/"
@@ -231,7 +249,9 @@ export default function BlogPage() {
       </div>
 
       <article className={`max-w-4xl mx-auto px-6 -mt-24 relative z-2`}>
-        <div className={`bg-card/95 backdrop-blur-sm rounded-2xl shadow-xl border border-border/50 p-8 md:p-12 mb-12 ${inter.className}`}>
+        <div
+          className={`bg-card/95 backdrop-blur-sm rounded-2xl shadow-xl border border-border/50 p-8 md:p-12 mb-12 ${inter.className}`}
+        >
           <div className="flex items-center gap-3 text-lg text-primary mb-4">
             <span>{authorName}</span>
             <span>•</span>
@@ -265,7 +285,7 @@ export default function BlogPage() {
           <div
             className={`max-w-none text-xl ${inter.className}`}
             style={{
-              lineHeight: '1.7',
+              lineHeight: "1.7",
             }}
             dangerouslySetInnerHTML={{ __html: blog.content || "" }}
           />
@@ -311,7 +331,11 @@ export default function BlogPage() {
 
         {blog.images && blog.images.length > 0 && (
           <section className="bg-card/95 backdrop-blur-sm rounded-2xl shadow-sm border border-border/50 p-8 md:p-12 mb-8">
-            <h2 className={`text-3xl font-medium mb-8 text-card-foreground ${playfair.className}`}>Gallery</h2>
+            <h2
+              className={`text-3xl font-medium mb-8 text-card-foreground ${playfair.className}`}
+            >
+              Gallery
+            </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {blog.images.map((img, idx) => (
                 <button
@@ -341,10 +365,11 @@ export default function BlogPage() {
                 type="button"
                 onClick={likeAction}
                 disabled={likeLoading}
-                className={`cursor-pointer inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium ${liked
-                  ? "bg-primary/20 border-primary text-primary hover:bg-primary/30"
-                  : "bg-secondary border-border text-foreground hover:bg-secondary/80 hover:border-primary/50"
-                  } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
+                className={`cursor-pointer inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium ${
+                  liked
+                    ? "bg-primary/20 border-primary text-primary hover:bg-primary/30"
+                    : "bg-secondary border-border text-foreground hover:bg-secondary/80 hover:border-primary/50"
+                } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
                 aria-pressed={liked}
                 aria-label={liked ? "Liked" : "Like this article"}
               >
@@ -376,7 +401,10 @@ export default function BlogPage() {
           aria-modal="true"
           onClick={closeLightbox}
         >
-          <div className="relative w-[90vw] h-[80vh] max-w-6xl" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative w-[90vw] h-[80vh] max-w-6xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <Image
               src={imageList[lightboxIndex] || "/placeholder.svg"}
               alt={`Image ${lightboxIndex + 1} of ${imageList.length}`}
@@ -416,7 +444,11 @@ export default function BlogPage() {
                     stroke="currentColor"
                     strokeWidth="2"
                   >
-                    <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="M15 6l-6 6 6 6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
                 <button
@@ -433,7 +465,11 @@ export default function BlogPage() {
                     stroke="currentColor"
                     strokeWidth="2"
                   >
-                    <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="M9 6l6 6-6 6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </button>
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium">
@@ -445,20 +481,20 @@ export default function BlogPage() {
         </div>
       )}
     </div>
-  )
+  );
 }
 
 function ShareActions({ title }) {
-  const [copied, setCopied] = useState(false)
-  const url = typeof window !== "undefined" ? window.location.href : ""
+  const [copied, setCopied] = useState(false);
+  const url = typeof window !== "undefined" ? window.location.href : "";
 
   const copy = async () => {
     if (url) {
-      await navigator.clipboard.writeText(url)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
-  }
+  };
 
   return (
     <button
@@ -477,7 +513,11 @@ function ShareActions({ title }) {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M20 6L9 17l-5-5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
           <span>Link Copied!</span>
         </>
@@ -492,13 +532,21 @@ function ShareActions({ title }) {
             stroke="currentColor"
             strokeWidth="2"
           >
-            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" strokeLinecap="round" strokeLinejoin="round" />
-            <polyline points="16 6 12 2 8 6" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <polyline
+              points="16 6 12 2 8 6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
             <line x1="12" y1="2" x2="12" y2="15" strokeLinecap="round" />
           </svg>
           <span>Share</span>
         </>
       )}
     </button>
-  )
+  );
 }

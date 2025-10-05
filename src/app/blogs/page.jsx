@@ -58,11 +58,11 @@ export default function Blogs() {
   };
 
   //local filtering
-  const filteredBlogs = blogsArray.filter(blog => {
+  const filteredBlogs = blogsArray.filter((blog) => {
     if (!searchInputValue.trim()) return true;
     const search = searchInputValue.toLowerCase();
-    const title = (blog.title || '').toLowerCase();
-    const description = (blog.description || '').toLowerCase();
+    const title = (blog.title || "").toLowerCase();
+    const description = (blog.description || "").toLowerCase();
     return title.includes(search) || description.includes(search);
   });
 

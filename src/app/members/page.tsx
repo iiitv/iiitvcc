@@ -78,7 +78,14 @@ const TeamSection = () => {
         about technology and coding, we would love to have you on our team!
       </p>
 
-      {(teamMembers.length === 0 || fetchingTeam) ? (<div className="flex flex-row items-center justify-center mt-8 gap-3"><div className="text-3xl text-center">Booting up the team matrix...</div><Loader/></div>) : (
+      {teamMembers.length === 0 || fetchingTeam ? (
+        <div className="flex flex-row items-center justify-center mt-8 gap-3">
+          <div className="text-3xl text-center">
+            Booting up the team matrix...
+          </div>
+          <Loader />
+        </div>
+      ) : (
         <div className="my-8 space-x-6 absolute w-full">
           {teamMembers.length > 0 &&
             Array.from(new Set(teamMembers.map((item) => item.batch))).map(
@@ -90,7 +97,7 @@ const TeamSection = () => {
                   className={cn(
                     "py-0 px-8 text-[clamp(.9rem,1.0rem+0.9333vw,1.2rem)] transition",
                     activeTeam === batch &&
-                    "bg-primary text-secondary font-bold border-primary",
+                      "bg-primary text-secondary font-bold border-primary",
                   )}
                 >
                   {batch}
@@ -103,12 +110,13 @@ const TeamSection = () => {
             className={cn(
               "py-0 px-8 text-[clamp(.9rem,1.0rem+0.9333vw,1.2rem)] transition",
               activeTeam === "Developers" &&
-              "bg-primary text-secondary font-bold border-primary",
+                "bg-primary text-secondary font-bold border-primary",
             )}
           >
             Website Developers
           </Button>
-        </div>)}
+        </div>
+      )}
 
       <div className="absolute z-[-1] left-1/2 -translate-x-1/2 -translate-y-[15%] text-[clamp(6rem,1.3333rem+14.9333vw,20rem)] font-extrabold text-[#36354a] select-none tracking-widest uppercase">
         {activeTeam}
@@ -144,8 +152,8 @@ const TeamSection = () => {
                     ? "translate-y-0"
                     : "translate-y-0 sm:mt-[15%] midChild",
                   focusCard !== null &&
-                  focusCard !== item.id &&
-                  "scale-[.98] duration-500 blur-[4px]",
+                    focusCard !== item.id &&
+                    "scale-[.98] duration-500 blur-[4px]",
                 )}
               >
                 <div className="relative w-full h-full overflow-hidden rounded-md">

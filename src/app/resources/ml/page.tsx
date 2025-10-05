@@ -8,7 +8,9 @@ export default function MLResources() {
           Machine Learning Resources
         </h1>
         <p className="mt-3 text-sm sm:text-base text-white-foreground">
-          Complete roadmap for machine learning and AI, from mathematical foundations to advanced deep learning concepts and practical applications.
+          Complete roadmap for machine learning and AI, from mathematical
+          foundations to advanced deep learning concepts and practical
+          applications.
         </p>
       </header>
 
@@ -18,24 +20,32 @@ export default function MLResources() {
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Programming Languages:</span>
-              <span className="text-sm text-muted-foreground">Python, C++, R, Julia</span>
+              <span className="text-sm text-muted-foreground">
+                Python, C++, R, Julia
+              </span>
             </div>
-            
+
             <div className="flex flex-col gap-1">
               <span className="font-medium">Frameworks:</span>
-              <span className="text-sm text-muted-foreground">PyTorch, TensorFlow, Caffe</span>
+              <span className="text-sm text-muted-foreground">
+                PyTorch, TensorFlow, Caffe
+              </span>
             </div>
-            
+
             <div className="flex flex-col gap-1">
               <span className="font-medium">Libraries:</span>
-              <span className="text-sm text-muted-foreground">Pandas, Matplotlib, scikit-learn, OpenCV</span>
+              <span className="text-sm text-muted-foreground">
+                Pandas, Matplotlib, scikit-learn, OpenCV
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Mathematical Foundations</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Mathematical Foundations
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -63,14 +73,18 @@ export default function MLResources() {
               >
                 Beautiful Linear Algebra Visualization by 3Blue1Brown
               </Link>
-              <span className="text-sm text-muted-foreground">(Essence of Linear Algebra)</span>
+              <span className="text-sm text-muted-foreground">
+                (Essence of Linear Algebra)
+              </span>
             </li>
           </ul>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Essential Tools & References</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Essential Tools & References
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -91,7 +105,9 @@ export default function MLResources() {
               >
                 Sklearn Documentation
               </Link>
-              <span className="text-sm text-muted-foreground">(Tutorial in itself)</span>
+              <span className="text-sm text-muted-foreground">
+                (Tutorial in itself)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -103,7 +119,9 @@ export default function MLResources() {
               >
                 Machine Learning by sentdex (YouTube)
               </Link>
-              <span className="text-sm text-muted-foreground">(Better than most Udemy courses)</span>
+              <span className="text-sm text-muted-foreground">
+                (Better than most Udemy courses)
+              </span>
             </li>
           </ul>
         </div>
@@ -159,7 +177,9 @@ export default function MLResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Machine Learning Courses</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Machine Learning Courses
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -194,7 +214,9 @@ export default function MLResources() {
               >
                 Practical Deep Learning for Coders
               </Link>
-              <span className="text-sm text-muted-foreground">(Prerequisite: Python)</span>
+              <span className="text-sm text-muted-foreground">
+                (Prerequisite: Python)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -223,15 +245,19 @@ export default function MLResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Practice Platforms & Computing Resources</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Practice Platforms & Computing Resources
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="rounded-md border border-green-200/40 bg-green-50/60 dark:bg-green-950/30 px-4 py-3">
               <p className="text-sm text-green-800 dark:text-green-200">
-                <span className="font-semibold">Tip:</span> If your machine is not powerful enough, use cloud platforms with free GPU/TPU access
+                <span className="font-semibold">Tip:</span> If your machine is
+                not powerful enough, use cloud platforms with free GPU/TPU
+                access
               </p>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -243,7 +269,9 @@ export default function MLResources() {
                 >
                   Google Colab
                 </Link>
-                <span className="text-sm text-muted-foreground">(Free GPU, TPU, storage)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Free GPU, TPU, storage)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -255,7 +283,9 @@ export default function MLResources() {
                 >
                   Kaggle Notebooks
                 </Link>
-                <span className="text-sm text-muted-foreground">(GPU, TPU, preinstalled dependencies)</span>
+                <span className="text-sm text-muted-foreground">
+                  (GPU, TPU, preinstalled dependencies)
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -271,8 +301,11 @@ export default function MLResources() {
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
                 <div>
-                  Access to IIITV's "Param Shavak" supercomputer with GPU accelerators{' '}
-                  <span className="text-sm text-muted-foreground">(read specs for details)</span>
+                  Access to IIITV's "Param Shavak" supercomputer with GPU
+                  accelerators{" "}
+                  <span className="text-sm text-muted-foreground">
+                    (read specs for details)
+                  </span>
                 </div>
               </li>
             </ul>
@@ -281,7 +314,8 @@ export default function MLResources() {
       </section>
 
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
-        Start with the fundamentals, practice on real datasets, and gradually build more complex projects!
+        Start with the fundamentals, practice on real datasets, and gradually
+        build more complex projects!
       </footer>
     </div>
   );

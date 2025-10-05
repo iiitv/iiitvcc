@@ -129,8 +129,8 @@ export default function About() {
                   celebrate curiosity, teamwork, and turning ideas into impact.
                 </p>
                 <p className="text-2xl text-muted-foreground">
-                  Our mentorship, competitions, and workshops empower
-                  everyone - from beginners to pros.
+                  Our mentorship, competitions, and workshops empower everyone -
+                  from beginners to pros.
                 </p>
               </div>
             </div>

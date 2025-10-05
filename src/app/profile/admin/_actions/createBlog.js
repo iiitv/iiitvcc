@@ -1,4 +1,3 @@
-
 "use server";
 import { createClient } from "@/utils/supabase/server";
 // import { Tables } from "@/types/supabase";
@@ -36,14 +35,14 @@ export async function createBlog(formData) {
 
     // Use formData to handle file uploads
     const blogData = JSON.parse(formData.get("blogData"));
-  const posterFile = formData.get("poster");
-  const bannerFile = formData.get("banner");
-  const blogFile = formData.get("blog");
+    const posterFile = formData.get("poster");
+    const bannerFile = formData.get("banner");
+    const blogFile = formData.get("blog");
     let poster = posterFile;
     if (posterFile) {
       poster = await convertToAvif(posterFile);
     }
-  const images = formData.getAll("images");
+    const images = formData.getAll("images");
 
     const validation = validateRequestBody({
       blogTable: blogData,
@@ -112,7 +111,8 @@ export async function createBlog(formData) {
     }
 
     const uploadResults = await Promise.all(uploadPromises);
-    const [blogUploadResult, posterUploadResult, ...imageUploadResults] = uploadResults;
+    const [blogUploadResult, posterUploadResult, ...imageUploadResults] =
+      uploadResults;
     if (blogUploadResult.error || posterUploadResult.error) {
       throw new Error(
         blogUploadResult.error?.message || posterUploadResult.error?.message,
@@ -136,8 +136,6 @@ export async function createBlog(formData) {
     };
   }
 }
-
-
 
 // import { createClient } from "@/utils/supabase/server";
 // import sharp from "sharp";

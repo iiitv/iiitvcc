@@ -8,7 +8,8 @@ export default function DevelopmentResources() {
           Development Resources
         </h1>
         <p className="mt-3 text-sm sm:text-base text-white-foreground">
-          Comprehensive resources for learning computer science, programming languages, tools, and development environments.
+          Comprehensive resources for learning computer science, programming
+          languages, tools, and development environments.
         </p>
       </header>
 
@@ -26,7 +27,9 @@ export default function DevelopmentResources() {
               >
                 OSSU - Computer Science
               </Link>
-              <span className="text-sm text-muted-foreground">(Free self-taught education in CS/IT)</span>
+              <span className="text-sm text-muted-foreground">
+                (Free self-taught education in CS/IT)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -38,7 +41,9 @@ export default function DevelopmentResources() {
               >
                 Learn X in Y minutes
               </Link>
-              <span className="text-sm text-muted-foreground">(Quick dive into programming languages)</span>
+              <span className="text-sm text-muted-foreground">
+                (Quick dive into programming languages)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -50,21 +55,26 @@ export default function DevelopmentResources() {
               >
                 Developer Roadmaps
               </Link>
-              <span className="text-sm text-muted-foreground">(All development roadmaps)</span>
+              <span className="text-sm text-muted-foreground">
+                (All development roadmaps)
+              </span>
             </li>
           </ul>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Student Tools & Benefits</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Student Tools & Benefits
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="rounded-md border border-blue-200/40 bg-blue-50/60 dark:bg-blue-950/30 px-4 py-3 mb-4">
             <p className="text-sm text-blue-800 dark:text-blue-200">
-              <span className="font-semibold">Note:</span> Use your Institute ID for all the resources listed below
+              <span className="font-semibold">Note:</span> Use your Institute ID
+              for all the resources listed below
             </p>
           </div>
-          
+
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -76,7 +86,9 @@ export default function DevelopmentResources() {
               >
                 GitHub Education Pack
               </Link>
-              <span className="text-sm text-muted-foreground">(Free access to many development tools)</span>
+              <span className="text-sm text-muted-foreground">
+                (Free access to many development tools)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -88,7 +100,9 @@ export default function DevelopmentResources() {
               >
                 Coursera for Campus
               </Link>
-              <span className="text-sm text-muted-foreground">(Free online learning for university students)</span>
+              <span className="text-sm text-muted-foreground">
+                (Free online learning for university students)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -111,7 +125,9 @@ export default function DevelopmentResources() {
               >
                 AWS Educate
               </Link>
-              <span className="text-sm text-muted-foreground">(Credits, training, and tools)</span>
+              <span className="text-sm text-muted-foreground">
+                (Credits, training, and tools)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -123,7 +139,9 @@ export default function DevelopmentResources() {
               >
                 JetBrains Student License
               </Link>
-              <span className="text-sm text-muted-foreground">(All JetBrains IDEs)</span>
+              <span className="text-sm text-muted-foreground">
+                (All JetBrains IDEs)
+              </span>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -168,7 +186,9 @@ export default function DevelopmentResources() {
               >
                 MATLAB and Simulink
               </Link>
-              <span className="text-sm text-muted-foreground">(Campus license)</span>
+              <span className="text-sm text-muted-foreground">
+                (Campus license)
+              </span>
             </li>
           </ul>
         </div>
@@ -179,7 +199,9 @@ export default function DevelopmentResources() {
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium mb-2">Offline Code Editors (For normal people)</h3>
+              <h3 className="font-medium mb-2">
+                Offline Code Editors (For normal people)
+              </h3>
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -265,7 +287,9 @@ export default function DevelopmentResources() {
                   >
                     Online GDB
                   </Link>
-                  <span className="text-sm text-muted-foreground">(for C/C++)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (for C/C++)
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -277,7 +301,9 @@ export default function DevelopmentResources() {
                   >
                     DartPad
                   </Link>
-                  <span className="text-sm text-muted-foreground">(for Dart)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (for Dart)
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -290,7 +316,7 @@ export default function DevelopmentResources() {
                     >
                       Google Colab
                     </Link>
-                    {' / '}
+                    {" / "}
                     <Link
                       href="https://www.kaggle.com/code"
                       target="_blank"
@@ -299,7 +325,9 @@ export default function DevelopmentResources() {
                     >
                       Kaggle Kernels
                     </Link>
-                    <span className="text-sm text-muted-foreground block">(for Python, ML/AI/Data Science)</span>
+                    <span className="text-sm text-muted-foreground block">
+                      (for Python, ML/AI/Data Science)
+                    </span>
                   </div>
                 </li>
               </ul>
@@ -311,7 +339,7 @@ export default function DevelopmentResources() {
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
                   <div>
-                    Vim (Enhanced: 
+                    Vim (Enhanced:
                     <Link
                       href="https://neovim.io/"
                       target="_blank"
@@ -319,7 +347,8 @@ export default function DevelopmentResources() {
                       className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline ml-1"
                     >
                       Neovim
-                    </Link>)
+                    </Link>
+                    )
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
@@ -411,7 +440,9 @@ export default function DevelopmentResources() {
                   >
                     MIT's Missing Semester of CS Education
                   </Link>
-                  <span className="text-sm text-muted-foreground">(very interesting!)</span>
+                  <span className="text-sm text-muted-foreground">
+                    (very interesting!)
+                  </span>
                 </li>
               </ul>
             </div>
@@ -421,7 +452,8 @@ export default function DevelopmentResources() {
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                  <div>Object-Oriented Programming (OOP): 
+                  <div>
+                    Object-Oriented Programming (OOP):
                     <Link
                       href="#"
                       className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline ml-1"
@@ -432,7 +464,8 @@ export default function DevelopmentResources() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                  <div>Database Management System (DBMS): 
+                  <div>
+                    Database Management System (DBMS):
                     <Link
                       href="#"
                       className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline ml-1"
@@ -454,7 +487,7 @@ export default function DevelopmentResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                Subscribe to mailing list by Avi Aryan: {' '}
+                Subscribe to mailing list by Avi Aryan:{" "}
                 <Link
                   href="https://aviaryan.com/letters"
                   target="_blank"
@@ -474,7 +507,8 @@ export default function DevelopmentResources() {
       </section>
 
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
-        Remember: Consistent practice and building projects is key to becoming a successful developer!
+        Remember: Consistent practice and building projects is key to becoming a
+        successful developer!
       </footer>
     </div>
   );

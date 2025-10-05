@@ -27,8 +27,8 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       );
     }
 
-  const posterUrl = `${getPublicUrl(`/images/${id}/poster`)}`;
-  const blogFileUrl = `${getPublicUrl(`/blogs/${id}/blog`)}`;
+    const posterUrl = `${getPublicUrl(`/images/${id}/poster`)}`;
+    const blogFileUrl = `${getPublicUrl(`/blogs/${id}/blog`)}`;
 
     const { data: images, error: imagesError } = await supabase.storage
       .from(process.env.NEXT_PUBLIC_BUCKET || "")
@@ -53,7 +53,9 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       blog: {
         ...blog,
         posterUrl,
-        ...(hasBanner ? { bannerUrl: `${getPublicUrl(`/images/${id}/banner`)}` } : {}),
+        ...(hasBanner
+          ? { bannerUrl: `${getPublicUrl(`/images/${id}/banner`)}` }
+          : {}),
         blogFileUrl,
         images: imageUrls,
       },

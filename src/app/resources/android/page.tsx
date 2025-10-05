@@ -8,7 +8,9 @@ export default function AndroidResources() {
           Android Development Resources
         </h1>
         <p className="mt-3 text-sm sm:text-base text-white-foreground">
-          Complete guide for Android app development including native development with Kotlin/Java and cross-platform development with Flutter.
+          Complete guide for Android app development including native
+          development with Kotlin/Java and cross-platform development with
+          Flutter.
         </p>
       </header>
 
@@ -21,7 +23,7 @@ export default function AndroidResources() {
               <div className="flex flex-col gap-1">
                 <span className="font-medium">For Native Development:</span>
                 <div className="text-sm text-muted-foreground">
-                  Kotlin/Java and XML - {' '}
+                  Kotlin/Java and XML -{" "}
                   <Link
                     href="https://www.youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q"
                     target="_blank"
@@ -37,7 +39,9 @@ export default function AndroidResources() {
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div className="flex flex-col gap-1">
                 <span className="font-medium">For Cross-Platform:</span>
-                <span className="text-sm text-muted-foreground">JavaScript/Dart</span>
+                <span className="text-sm text-muted-foreground">
+                  JavaScript/Dart
+                </span>
               </div>
             </li>
             <li className="flex items-start gap-2">
@@ -53,14 +57,18 @@ export default function AndroidResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Native Android Development</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Native Android Development
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Primary Technologies:</span>
-              <span className="text-sm text-muted-foreground">Kotlin, Java, XML, Android Studio</span>
+              <span className="text-sm text-muted-foreground">
+                Kotlin, Java, XML, Android Studio
+              </span>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -87,7 +95,9 @@ export default function AndroidResources() {
                 >
                   Google Codelab - Kotlin
                 </Link>
-                <span className="text-sm text-muted-foreground">(Get a taste of working with Kotlin)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Get a taste of working with Kotlin)
+                </span>
               </li>
             </ul>
           </div>
@@ -95,14 +105,18 @@ export default function AndroidResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Cross-Platform Development with Flutter</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Cross-Platform Development with Flutter
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Primary Technology:</span>
-              <span className="text-sm text-muted-foreground">Dart, Flutter Framework</span>
+              <span className="text-sm text-muted-foreground">
+                Dart, Flutter Framework
+              </span>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -125,7 +139,9 @@ export default function AndroidResources() {
                 >
                   Google Codelab - Flutter
                 </Link>
-                <span className="text-sm text-muted-foreground">(Get a taste of working with Flutter)</span>
+                <span className="text-sm text-muted-foreground">
+                  (Get a taste of working with Flutter)
+                </span>
               </li>
             </ul>
           </div>
@@ -133,7 +149,9 @@ export default function AndroidResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Flutter-Specific Resources</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Flutter-Specific Resources
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
@@ -168,32 +186,39 @@ export default function AndroidResources() {
               >
                 Fireship.io channel - YouTube
               </Link>
-              <span className="text-sm text-muted-foreground">(Quality content for individual concepts)</span>
+              <span className="text-sm text-muted-foreground">
+                (Quality content for individual concepts)
+              </span>
             </li>
           </ul>
         </div>
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">Development Environment Setup</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          Development Environment Setup
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Android Studio:</span> Official IDE for Android development
+                <span className="font-medium">Android Studio:</span> Official
+                IDE for Android development
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Flutter SDK:</span> For cross-platform development
+                <span className="font-medium">Flutter SDK:</span> For
+                cross-platform development
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                <span className="font-medium">Emulator/Physical Device:</span> For testing applications
+                <span className="font-medium">Emulator/Physical Device:</span>{" "}
+                For testing applications
               </div>
             </li>
           </ul>
@@ -206,18 +231,24 @@ export default function AndroidResources() {
           <div className="space-y-4">
             <div className="rounded-md border border-blue-200/40 bg-blue-50/60 dark:bg-blue-950/30 px-4 py-3">
               <p className="text-sm text-blue-800 dark:text-blue-200">
-                <span className="font-semibold">Resources for Help:</span> Official documentation and StackOverflow are invaluable for understanding concepts and troubleshooting.
+                <span className="font-semibold">Resources for Help:</span>{" "}
+                Official documentation and StackOverflow are invaluable for
+                understanding concepts and troubleshooting.
               </p>
             </div>
-            
+
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                <div>Start with simple projects and gradually increase complexity</div>
+                <div>
+                  Start with simple projects and gradually increase complexity
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                <div>Focus on understanding Android architecture and lifecycle</div>
+                <div>
+                  Focus on understanding Android architecture and lifecycle
+                </div>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -229,7 +260,9 @@ export default function AndroidResources() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                <div>Test your apps on different screen sizes and Android versions</div>
+                <div>
+                  Test your apps on different screen sizes and Android versions
+                </div>
               </li>
             </ul>
           </div>
@@ -289,7 +322,8 @@ export default function AndroidResources() {
       </section>
 
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
-        Start building small apps and gradually work your way up to more complex projects. The key is consistent practice!
+        Start building small apps and gradually work your way up to more complex
+        projects. The key is consistent practice!
       </footer>
     </div>
   );

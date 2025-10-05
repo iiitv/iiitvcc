@@ -18,9 +18,11 @@ export default function GenerateBlogCards(props) {
       <div className="blogs-container">
         <p className={`blogs-heading-title ${alataFont.className}`}>Blogs</p>
         <div className="grid md:grid-cols-2 ">
-          {[...blogs].sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
-          ))}
+          {[...blogs]
+            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+            .map((blog) => (
+              <BlogCard key={blog.id} blog={blog} />
+            ))}
         </div>
       </div>
     </div>

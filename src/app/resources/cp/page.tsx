@@ -8,8 +8,9 @@ export default function CPStaticResources() {
           Competitive Programming: Ramp-up
         </h1>
         <p className="mt-3 text-sm sm:text-base texwhite-foreground">
-          This is to give you a ramp up towards CP from scratch and platforms for <code>init_mains()</code>.
-          More resources for advanced level will be provided for Winter of Code after <code>init_mains()</code>.
+          This is to give you a ramp up towards CP from scratch and platforms
+          for <code>init_mains()</code>. More resources for advanced level will
+          be provided for Winter of Code after <code>init_mains()</code>.
         </p>
       </header>
 
@@ -44,7 +45,9 @@ export default function CPStaticResources() {
                     >
                       Code With Harry
                     </Link>
-                    <span className="text-sm text-muted-foreground">(watch lectures 1–19)</span>
+                    <span className="text-sm text-muted-foreground">
+                      (watch lectures 1–19)
+                    </span>
                   </div>
                 </li>
               </ul>
@@ -53,7 +56,8 @@ export default function CPStaticResources() {
             {/* Note callout */}
             <div className="rounded-md border border-amber-200/40 bg-amber-50/60 dark:bg-amber-950/30 px-4 py-3">
               <p className="text-sm text-amber-800 dark:text-amber-200">
-                <span className="font-semibold">Note:</span> Don't waste much time learning the language and getting into tiny details.
+                <span className="font-semibold">Note:</span> Don't waste much
+                time learning the language and getting into tiny details.
               </p>
             </div>
 
@@ -68,7 +72,6 @@ export default function CPStaticResources() {
                   className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
                 >
                   USACO Guide — Intro to CP
-
                 </Link>
               </li>
               <li className="flex items-start gap-2">
@@ -80,7 +83,6 @@ export default function CPStaticResources() {
                   className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
                 >
                   USACO Guide — Time Complexity (Bronze)
-
                 </Link>
               </li>
               <li className="flex items-start gap-2">
@@ -92,13 +94,12 @@ export default function CPStaticResources() {
                   className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
                 >
                   USACO Guide — Complete Search (Bronze)
-
                 </Link>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-2 h-2 w-2 rounded-full bg-white" />
                 <div className="text-card-foreground">
-                  Solve questions on{' '}
+                  Solve questions on{" "}
                   <Link
                     href="https://vjudge.net/group/road-to-init-mains?r=9egW7lTmVRevLskbSKMX"
                     target="_blank"
@@ -106,7 +107,7 @@ export default function CPStaticResources() {
                     className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
                   >
                     VJudge
-                  </Link>{' '}
+                  </Link>{" "}
                   for Road To init_mains().
                 </div>
               </li>
@@ -116,51 +117,88 @@ export default function CPStaticResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">After <code>init_mains()</code></h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          After <code>init_mains()</code>
+        </h2>
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                Learn STL (C++):{' '}
-                <Link href="https://youtu.be/RRVYpIET_RU" target="_blank" rel="noopener noreferrer" className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+                Learn STL (C++):{" "}
+                <Link
+                  href="https://youtu.be/RRVYpIET_RU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
                   YouTube — C++ STL
                 </Link>
               </div>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Link href="https://usaco.guide/general/fast-io" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+              <Link
+                href="https://usaco.guide/general/fast-io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+              >
                 Fast I/O
               </Link>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Link href="https://usaco.guide/general/basic-debugging" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+              <Link
+                href="https://usaco.guide/general/basic-debugging"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+              >
                 Basic Debugging
               </Link>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Link href="https://usaco.guide/general/debugging-checklist" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+              <Link
+                href="https://usaco.guide/general/debugging-checklist"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+              >
                 Debugging Checklist
               </Link>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Link href="https://usaco.guide/general/debugging-cpp" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+              <Link
+                href="https://usaco.guide/general/debugging-cpp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+              >
                 Debugging C++
               </Link>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Link href="https://usaco.guide/general/generic-code" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+              <Link
+                href="https://usaco.guide/general/generic-code"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+              >
                 Generic Code
               </Link>
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <Link href="https://usaco.guide/general/lambda-funcs" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+              <Link
+                href="https://usaco.guide/general/lambda-funcs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+              >
                 Lambda Functions
               </Link>
             </li>
@@ -169,13 +207,18 @@ export default function CPStaticResources() {
       </section>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-3">What after <code>init_mains()</code>?</h2>
+        <h2 className="text-2xl font-semibold mb-3">
+          What after <code>init_mains()</code>?
+        </h2>
 
         <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <div>We will start with Winter of Code in December. Its Resources will be shared here soon!</div>
+              <div>
+                We will start with Winter of Code in December. Its Resources
+                will be shared here soon!
+              </div>
             </li>
             <h2> But if you want to get started earlier, you can:</h2>
             <li className="flex items-start gap-2">
@@ -185,13 +228,23 @@ export default function CPStaticResources() {
                 <ul className="mt-1 space-y-1 pl-4">
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                    <Link href="https://usaco.guide/bronze/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+                    <Link
+                      href="https://usaco.guide/bronze/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                    >
                       Bronze
                     </Link>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-                    <Link href="https://usaco.guide/silver/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+                    <Link
+                      href="https://usaco.guide/silver/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                    >
                       Silver
                     </Link>
                   </li>
@@ -202,8 +255,14 @@ export default function CPStaticResources() {
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                Start giving div3/div4 contests on Codeforces; after progress, start div2 as well.{' '}
-                <Link href="https://codeforces.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
+                Start giving div3/div4 contests on Codeforces; after progress,
+                start div2 as well.{" "}
+                <Link
+                  href="https://codeforces.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
                   codeforces.com
                 </Link>
               </div>
@@ -211,18 +270,27 @@ export default function CPStaticResources() {
 
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <div>Practice from the
-              <Link href="https://www.tle-eliminators.com/cp-sheet" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline">
-                TLE Eliminator's CP-31 sheet
-              </Link>
-               <span>(Follow  it for question practice. It has very nice set of questions).</span>
+              <div>
+                Practice from the
+                <Link
+                  href="https://www.tle-eliminators.com/cp-sheet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  TLE Eliminator's CP-31 sheet
+                </Link>
+                <span>
+                  (Follow it for question practice. It has very nice set of
+                  questions).
+                </span>
               </div>
             </li>
-            
+
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
               <div>
-                You can refer to Striver A2Z for DSA:{' '}
+                You can refer to Striver A2Z for DSA:{" "}
                 <Link
                   href="https://youtube.com/playlist?list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&si=9tT0xzA6N4hANGjw"
                   target="_blank"
@@ -235,7 +303,9 @@ export default function CPStaticResources() {
             </li>
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
-              <div>Practice from the TLE sheet and start giving regular contests.</div>
+              <div>
+                Practice from the TLE sheet and start giving regular contests.
+              </div>
             </li>
           </ul>
         </div>
