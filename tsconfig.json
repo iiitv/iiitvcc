@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "src/app/events/[eventsIdx]/_actions/fetchEvents.js",
     "src/app/resources/page.jsx",
-    "src/app/resources/layout.tsx"
+    "src/app/resources/layout.tsx",
+    "src/app/resources/cp/page.temp"
   ],
   "exclude": ["node_modules"]
 }

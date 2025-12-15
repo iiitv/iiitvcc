@@ -311,8 +311,228 @@ export default function CPStaticResources() {
         </div>
       </section>
 
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-3">Winter of Code</h2>
+        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+          <h3 className="text-2xl font-semibold mb-4 text-center underline">
+            Week 1
+          </h3>
+
+          <div className="mb-6">
+            <div className="font-medium mb-2 text-center">Topics:</div>
+            <div className="font-bold text-center">
+              Arrays, Sorting, Number Theory
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="font-medium mb-3">Resources:</h4>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://youtu.be/FPu9Uld7W-E"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Time Complexity
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/introduction-to-strings-data-structure-and-algorithm-tutorials/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  String
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/array-data-structure/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Array
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/introduction-to-sorting-algorithm/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Sorting
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://youtube.com/playlist?list=PLauivoElc3giVROwL-6g9hO-LlSen_NaV&feature=shared"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Number Theory (only till number theory)
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/number-theory-competitive-programming/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Number Theory GFG
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://cp-algorithms.com/algebra/binary-exp.html"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Maths CP Algorithms
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://cp-algorithms.com/algebra/factorial-divisors.html"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Combinatorics CP Algorithms
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-medium mb-3">Questions:</h4>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/problems/sort-the-array0055/1"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Sort The Array | Practice | GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/description/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Minimum Operations to Make the Array Increasing - LeetCode
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Sort an array of 0s, 1s and 2s | Practice | GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Permutations of a given string | Practice | GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/program-count-occurrence-given-character-string/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Program to count occurrence of a given character in a string -
+                  GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/find-repetitive-element-1-n-1/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Find the only repetitive element between 1 to N-1 -
+                  GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://leetcode.com/problems/plus-one/description/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Plus One - LeetCode
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/problems/partition-a-number-into-two-divisible-parts3605/1"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Partition a number into two divisible parts | Practice |
+                  GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://codeforces.com/contest/131/problem/B"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Opposites Attract | CF
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://codeforces.com/contest/1176/problem/B"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Merge it | CF
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.codechef.com/problems/NAS_2523"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  GCD Permutations | CodeChef
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://codeforces.com/contest/148/problem/A"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  No. of Dragons | CF
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://codeforces.com/contest/1203/problem/C"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Common Divs | CF
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
-        More resources will follow for Winter of Code. Look out for blogs.
+        More resources will follow for Winter of Code. Look out here!
       </footer>
     </div>
   );
