@@ -51,7 +51,7 @@ export default function Auth() {
       setError(error);
       return false;
     } else {
-      router.push("/account");
+      router.push("/profile/account");
     }
   }
 
