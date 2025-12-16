@@ -16,8 +16,8 @@ function validateRequestBody(body) {
   if (!body.blogTable.title) {
     return { valid: false, message: "Title is required" };
   }
-  if (!body.poster || !body.blog) {
-    return { valid: false, message: "Poster and blog files are required" };
+  if (!body.blog) {
+    return { valid: false, message: "Blog content is required" };
   }
   return { valid: true };
 }
@@ -33,7 +33,6 @@ export async function createBlog(formData) {
       return { success: false, message: "Unauthorized" };
     }
 
-    // Use formData to handle file uploads
     const blogData = JSON.parse(formData.get("blogData"));
     const posterFile = formData.get("poster");
     const bannerFile = formData.get("banner");
@@ -79,12 +78,16 @@ export async function createBlog(formData) {
         .upload(`blogs/${blogId}/blog`, blogFile, {
           upsert: true,
         }),
-      supabase.storage
-        .from(process.env.NEXT_PUBLIC_BUCKET || "")
-        .upload(`images/${blogId}/poster`, poster, {
-          upsert: true,
-        }),
     ];
+    if (poster) {
+      uploadPromises.push(
+        supabase.storage
+          .from(process.env.NEXT_PUBLIC_BUCKET || "")
+          .upload(`images/${blogId}/poster`, poster, {
+            upsert: true,
+          }),
+      );
+    }
     if (bannerFile) {
       uploadPromises.push(
         supabase.storage
@@ -111,14 +114,7 @@ export async function createBlog(formData) {
     }
 
     const uploadResults = await Promise.all(uploadPromises);
-    const [blogUploadResult, posterUploadResult, ...imageUploadResults] =
-      uploadResults;
-    if (blogUploadResult.error || posterUploadResult.error) {
-      throw new Error(
-        blogUploadResult.error?.message || posterUploadResult.error?.message,
-      );
-    }
-    for (const result of imageUploadResults) {
+    for (const result of uploadResults) {
       if (result.error) {
         throw new Error(result.error.message);
       }
