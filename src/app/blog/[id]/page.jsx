@@ -213,11 +213,11 @@ export default function BlogPage() {
     <div
       className={`min-h-screen bg-background ${inter.variable} ${playfair.variable}`}
     >
-      <div className="relative h-[40vh] md:h-[45vh] lg:h-[50vh] w-full">
+      <div className="relative h-[30vh] sm:h-[35vh] md:h-[45vh] lg:h-[50vh] w-full">
         <Link
           href="/"
           aria-label="Back to home"
-          className="absolute top-6 left-6 z-[5] inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-black bg-white hover:bg-white/50 rounded-full border border-white  transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="absolute top-4 left-4 sm:top-6 sm:left-6 z-[5] inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-black bg-white hover:bg-white/50 rounded-full border border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -248,20 +248,20 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
 
-      <article className={`max-w-4xl mx-auto px-6 -mt-24 relative z-2`}>
+      <article className={`max-w-4xl mx-auto px-4 sm:px-6 -mt-16 sm:-mt-20 md:-mt-24 relative z-2`}>
         <div
-          className={`bg-card/95 backdrop-blur-sm rounded-2xl shadow-xl border border-border/50 p-8 md:p-12 mb-12 ${inter.className}`}
+          className={`bg-card/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border border-border/50 p-5 sm:p-8 md:p-12 mb-8 sm:mb-12 ${inter.className}`}
         >
-          <div className="flex items-center gap-3 text-lg text-primary mb-4">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-primary mb-3 sm:mb-4">
             <span>{authorName}</span>
-            <span>•</span>
+            <span className="xs:inline">•</span>
             <span>{readingTimeLabel}</span>
             {blog?.created_at && (
               <>
                 <span>•</span>
                 <time dateTime={blog.created_at}>
                   {new Date(blog.created_at).toLocaleDateString("en-US", {
-                    month: "long",
+                    month: "short",
                     day: "numeric",
                     year: "numeric",
                   })}
@@ -270,20 +270,20 @@ export default function BlogPage() {
             )}
           </div>
           <h1
-            className={`text-4xl md:text-5xl lg:text-6xl font-medium text-card-foreground mb-6 leading-tight tracking-tight ${playfair.className}`}
+            className={`text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-medium text-card-foreground mb-4 sm:mb-6 leading-tight tracking-tight ${playfair.className}`}
           >
             {blog.title}
           </h1>
           {blog.intro && (
-            <p className="text-xl text-foreground/80 text-white/50 leading-relaxed border-l-2 border-primary pl-6 italic">
+            <p className="text-base sm:text-lg md:text-xl text-foreground/80 text-white/50 leading-relaxed border-l-2 border-primary pl-4 sm:pl-6 italic">
               {blog.intro}
             </p>
           )}
         </div>
 
-        <div className="bg-card/95 backdrop-blur-sm rounded-2xl shadow-sm border border-border/50 p-8 md:p-12 mb-8">
+        <div className="bg-card/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm border border-border/50 p-5 sm:p-8 md:p-12 mb-6 sm:mb-8">
           <div
-            className={`max-w-none text-xl ${inter.className}`}
+            className={`max-w-none text-base sm:text-lg md:text-xl ${inter.className}`}
             style={{
               lineHeight: "1.7",
             }}
@@ -292,33 +292,59 @@ export default function BlogPage() {
 
           <style jsx>{`
             div :global(h1) {
-              font-size: 2.5rem;
+              font-size: 1.75rem;
               font-weight: 700;
-              margin-bottom: 1.5rem;
-              margin-top: 2rem;
+              margin-bottom: 1rem;
+              margin-top: 1.5rem;
               color: var(--card-foreground);
               line-height: 1.2;
             }
-            div :global(h2) {
-              font-size: 2rem;
-              font-weight: 600;
-              margin-bottom: 1rem;
-              margin-top: 2rem;
-              color: var(--card-foreground);
-              line-height: 1.3;
+            @media (min-width: 640px) {
+              div :global(h1) {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                margin-top: 2rem;
+              }
             }
-            div :global(h3) {
+            div :global(h2) {
               font-size: 1.5rem;
-              font-weight: 500;
+              font-weight: 600;
               margin-bottom: 0.75rem;
               margin-top: 1.5rem;
               color: var(--card-foreground);
+              line-height: 1.3;
+            }
+            @media (min-width: 640px) {
+              div :global(h2) {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                margin-top: 2rem;
+              }
+            }
+            div :global(h3) {
+              font-size: 1.25rem;
+              font-weight: 500;
+              margin-bottom: 0.5rem;
+              margin-top: 1rem;
+              color: var(--card-foreground);
               line-height: 1.4;
             }
+            @media (min-width: 640px) {
+              div :global(h3) {
+                font-size: 1.5rem;
+                margin-bottom: 0.75rem;
+                margin-top: 1.5rem;
+              }
+            }
             div :global(p) {
-              margin-bottom: 1.5rem;
+              margin-bottom: 1.25rem;
               line-height: 1.7;
               color: var(--foreground);
+            }
+            @media (min-width: 640px) {
+              div :global(p) {
+                margin-bottom: 1.5rem;
+              }
             }
             div :global(section) {
               margin-bottom: 2rem;
@@ -330,13 +356,13 @@ export default function BlogPage() {
         </div>
 
         {blog.images && blog.images.length > 0 && (
-          <section className="bg-card/95 backdrop-blur-sm rounded-2xl shadow-sm border border-border/50 p-8 md:p-12 mb-8">
+          <section className="bg-card/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm border border-border/50 p-5 sm:p-8 md:p-12 mb-6 sm:mb-8">
             <h2
-              className={`text-3xl font-medium mb-8 text-card-foreground ${playfair.className}`}
+              className={`text-2xl sm:text-3xl font-medium mb-5 sm:mb-8 text-card-foreground ${playfair.className}`}
             >
               Gallery
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4">
               {blog.images.map((img, idx) => (
                 <button
                   key={idx}
@@ -358,14 +384,14 @@ export default function BlogPage() {
           </section>
         )}
 
-        <div className="bg-card/95 backdrop-blur-sm rounded-2xl shadow-sm border border-border/50 p-8 md:p-12 mb-16">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <div className="bg-card/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm border border-border/50 p-5 sm:p-8 md:p-12 mb-10 sm:mb-16">
+          <div className="flex flex-row items-center justify-between gap-3 sm:gap-4">
+            <div className="flex items-center">
               <button
                 type="button"
                 onClick={likeAction}
                 disabled={likeLoading}
-                className={`cursor-pointer inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium ${
+                className={`cursor-pointer inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium text-sm sm:text-base ${
                   liked
                     ? "bg-primary/20 border-primary text-primary hover:bg-primary/30"
                     : "bg-secondary border-border text-foreground hover:bg-secondary/80 hover:border-primary/50"
@@ -376,17 +402,17 @@ export default function BlogPage() {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
                   fill={liked ? "currentColor" : "none"}
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="transition-all duration-300"
+                  className="transition-all duration-300 sm:w-5 sm:h-5"
                 >
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                 </svg>
-                <span>{liked ? "Likes" : "Like"}</span>
-                <span className="text-sm opacity-70">({likes})</span>
+                <span>{liked ? "Liked" : "Like"}</span>
+                <span className="text-xs sm:text-sm opacity-70">({likes})</span>
               </button>
             </div>
             <ShareActions title={blog.title} />
@@ -396,13 +422,13 @@ export default function BlogPage() {
 
       {lightboxOpen && imageList.length > 0 && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-md p-4"
           role="dialog"
           aria-modal="true"
           onClick={closeLightbox}
         >
           <div
-            className="relative w-[90vw] h-[80vh] max-w-6xl"
+            className="relative w-full h-[70vh] sm:w-[90vw] sm:h-[80vh] max-w-6xl"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -412,15 +438,16 @@ export default function BlogPage() {
               className="object-contain"
             />
             <button
-              className="absolute top-4 right-4 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
               onClick={closeLightbox}
               aria-label="Close"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
-                width="20"
-                height="20"
+                width="18"
+                height="18"
+                className="sm:w-5 sm:h-5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -431,15 +458,16 @@ export default function BlogPage() {
             {imageList.length > 1 && (
               <>
                 <button
-                  className="absolute left-4 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 p-2 sm:p-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
                   onClick={prevImage}
                   aria-label="Previous image"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
+                    className="sm:w-6 sm:h-6"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -452,15 +480,16 @@ export default function BlogPage() {
                   </svg>
                 </button>
                 <button
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 p-2 sm:p-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
                   onClick={nextImage}
                   aria-label="Next image"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
+                    width="20"
+                    height="20"
+                    className="sm:w-6 sm:h-6"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -472,7 +501,7 @@ export default function BlogPage() {
                     />
                   </svg>
                 </button>
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium">
+                <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-xs sm:text-sm font-medium">
                   {lightboxIndex + 1} / {imageList.length}
                 </div>
               </>
@@ -499,7 +528,7 @@ function ShareActions({ title }) {
   return (
     <button
       onClick={copy}
-      className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium"
+      className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium text-sm sm:text-base w-fit"
       title="Share article"
     >
       {copied ? (
@@ -507,11 +536,12 @@ function ShareActions({ title }) {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            width="18"
-            height="18"
+            width="16"
+            height="16"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
+            className="sm:w-[18px] sm:h-[18px]"
           >
             <path
               d="M20 6L9 17l-5-5"
@@ -519,18 +549,19 @@ function ShareActions({ title }) {
               strokeLinejoin="round"
             />
           </svg>
-          <span>Link Copied!</span>
+          <span>Copied!</span>
         </>
       ) : (
         <>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            width="18"
-            height="18"
+            width="16"
+            height="16"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
+            className="sm:w-[18px] sm:h-[18px]"
           >
             <path
               d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"

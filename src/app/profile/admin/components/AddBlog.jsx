@@ -5,6 +5,43 @@ import dynamic from "next/dynamic";
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 import { createBlog } from "../_actions/createBlog";
 
+// custom styles to fix Jodit dialog text color and bg
+const joditStyles = `
+  .jodit-dialog,
+  .jodit-dialog__panel,
+  .jodit-popup,
+  .jodit-popup__content,
+  .jodit-ui-form,
+  .jodit-ui-input,
+  .jodit-ui-input__wrapper,
+  .jodit-ui-input__input,
+  .jodit-ui-block,
+  .jodit-ui-form__group,
+  .jodit-ui-checkbox,
+  .jodit-ui-checkbox__label,
+  .jodit-dialog__header-title,
+  .jodit-dialog__content,
+  .jodit-ui-input__label {
+    color: #000 !important;
+    background-color: #fff !important;
+  }
+  .jodit-ui-input__input {
+    border: 1px solid #ccc !important;
+  }
+  .jodit-ui-input__label,
+  .jodit-ui-checkbox__label span {
+    color: #333 !important;
+    background: transparent !important;
+  }
+  .jodit-dialog__header {
+    background-color: #f5f5f5 !important;
+    border-bottom: 1px solid #ddd !important;
+  }
+  .jodit-dialog__header-title {
+    background: transparent !important;
+  }
+`;
+
 function AddBlog() {
   const editor = useRef(null);
   const [title, setTitle] = useState("");
@@ -39,8 +76,8 @@ function AddBlog() {
     e.preventDefault();
     setSuccess("");
     setError("");
-    if (!title.trim() || !intro.trim() || !content.trim() || !posterFile) {
-      setError("All fields are required.");
+    if (!title.trim() || !intro.trim() || !content.trim()) {
+      setError("Title, intro, and content are required.");
       return;
     }
     setLoading(true);
@@ -54,7 +91,9 @@ function AddBlog() {
           content,
         }),
       );
-      formData.append("poster", posterFile);
+      if (posterFile) {
+        formData.append("poster", posterFile);
+      }
       // The blog file is the HTML content as a Blob
       const blogBlob = new Blob([content], { type: "text/html" });
       formData.append("blog", blogBlob, "blog.html");
@@ -84,6 +123,8 @@ function AddBlog() {
 
   return (
     <div className="flex flex-col items-center m-3 w-full h-fit border-2 border-primary rounded-3xl p-4 shadow text-black">
+      {/* Inject Jodit dialog fix styles */}
+      <style>{joditStyles}</style>
       <form
         onSubmit={handleSubmit}
         className="my-10 flex flex-col items-center gap-4"
@@ -123,7 +164,7 @@ function AddBlog() {
             htmlFor="blogPoster"
             className="mb-1 font-medium text-white text-center"
           >
-            Event Poster
+            Event Poster (or use default)
           </label>
           <div className="flex flex-col items-center gap-1 mt-4 mb-4">
             <button
@@ -147,7 +188,6 @@ function AddBlog() {
             className="hidden"
             onChange={handlePosterChange}
             accept="image/*"
-            required
           />
         </div>
         {/* banner  */}
