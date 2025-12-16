@@ -62,7 +62,7 @@ export default function BlogPage() {
       const val =
         typeof window !== "undefined" ? localStorage.getItem(key) : null;
       setLiked(val === "1");
-    } catch {}
+    } catch { }
   }, [blog, blogId]);
 
   const authorName = useMemo(
@@ -115,13 +115,13 @@ export default function BlogPage() {
       setLikes((l) => Math.max(0, l - 1));
       try {
         localStorage.setItem(key, "0");
-      } catch {}
+      } catch { }
     } else {
       setLiked(true);
       setLikes((l) => l + 1);
       try {
         localStorage.setItem(key, "1");
-      } catch {}
+      } catch { }
     }
 
     try {
@@ -148,7 +148,7 @@ export default function BlogPage() {
       setLikes(previousLikes);
       try {
         localStorage.setItem(key, previousLiked ? "1" : "0");
-      } catch {}
+      } catch { }
     } finally {
       setLikeLoading(false);
     }
@@ -217,7 +217,7 @@ export default function BlogPage() {
         <Link
           href="/"
           aria-label="Back to home"
-          className="absolute top-4 left-4 sm:top-6 sm:left-6 z-[5] inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-black bg-white hover:bg-white/50 rounded-full border border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="absolute top-16 left-4 sm:top-6 sm:left-6 z-[5] inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-black bg-white hover:bg-white/50 rounded-full border border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -242,8 +242,7 @@ export default function BlogPage() {
           alt={blog.title || "Blog cover"}
           fill
           priority
-          className="object-cover"
-          sizes="100vw"
+          className="object-cover m-0 p-0"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
@@ -391,11 +390,10 @@ export default function BlogPage() {
                 type="button"
                 onClick={likeAction}
                 disabled={likeLoading}
-                className={`cursor-pointer inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium text-sm sm:text-base ${
-                  liked
+                className={`cursor-pointer inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium text-sm sm:text-base ${liked
                     ? "bg-primary/20 border-primary text-primary hover:bg-primary/30"
                     : "bg-secondary border-border text-foreground hover:bg-secondary/80 hover:border-primary/50"
-                } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
+                  } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
                 aria-pressed={liked}
                 aria-label={liked ? "Liked" : "Like this article"}
               >
