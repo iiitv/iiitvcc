@@ -62,7 +62,7 @@ export default function BlogPage() {
       const val =
         typeof window !== "undefined" ? localStorage.getItem(key) : null;
       setLiked(val === "1");
-    } catch { }
+    } catch {}
   }, [blog, blogId]);
 
   const authorName = useMemo(
@@ -115,13 +115,13 @@ export default function BlogPage() {
       setLikes((l) => Math.max(0, l - 1));
       try {
         localStorage.setItem(key, "0");
-      } catch { }
+      } catch {}
     } else {
       setLiked(true);
       setLikes((l) => l + 1);
       try {
         localStorage.setItem(key, "1");
-      } catch { }
+      } catch {}
     }
 
     try {
@@ -148,7 +148,7 @@ export default function BlogPage() {
       setLikes(previousLikes);
       try {
         localStorage.setItem(key, previousLiked ? "1" : "0");
-      } catch { }
+      } catch {}
     } finally {
       setLikeLoading(false);
     }
@@ -247,7 +247,9 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
 
-      <article className={`max-w-4xl mx-auto px-4 sm:px-6 -mt-16 sm:-mt-20 md:-mt-24 relative z-2`}>
+      <article
+        className={`max-w-4xl mx-auto px-4 sm:px-6 -mt-16 sm:-mt-20 md:-mt-24 relative z-2`}
+      >
         <div
           className={`bg-card/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border border-border/50 p-5 sm:p-8 md:p-12 mb-8 sm:mb-12 ${inter.className}`}
         >
@@ -390,10 +392,11 @@ export default function BlogPage() {
                 type="button"
                 onClick={likeAction}
                 disabled={likeLoading}
-                className={`cursor-pointer inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium text-sm sm:text-base ${liked
+                className={`cursor-pointer inline-flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background font-medium text-sm sm:text-base ${
+                  liked
                     ? "bg-primary/20 border-primary text-primary hover:bg-primary/30"
                     : "bg-secondary border-border text-foreground hover:bg-secondary/80 hover:border-primary/50"
-                  } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
+                } ${likeLoading ? "opacity-70 cursor-not-allowed" : ""}`}
                 aria-pressed={liked}
                 aria-label={liked ? "Liked" : "Like this article"}
               >

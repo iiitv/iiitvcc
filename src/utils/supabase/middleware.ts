@@ -74,7 +74,9 @@ export async function updateSession(request: NextRequest) {
       request.nextUrl.pathname === "/auth" ||
       request.nextUrl.pathname === "/auth/reset_password")
   ) {
-    response = NextResponse.redirect(new URL("/profile/account", request.nextUrl.href));
+    response = NextResponse.redirect(
+      new URL("/profile/account", request.nextUrl.href),
+    );
   } else if (!user && request.nextUrl.pathname.startsWith("/profile")) {
     response = NextResponse.redirect(new URL("/auth", request.nextUrl.href));
   } else if (!user && request.nextUrl.pathname === "/test_api") {
