@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { Crimson_Text } from "next/font/google";
 import {
   Card,
   CardHeader,
@@ -16,6 +17,12 @@ import axios from "axios";
 
 import Image from "next/image";
 import "./styles.css";
+
+const junicode = Crimson_Text({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 // export const products = [
 //   {
 //     title: "Moonbeam",
@@ -178,39 +185,42 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh">
       {/* <HeroParallax products={products} /> */}
-      <section className="lg:h-[90dvh] w-full py-12 md:py-24 lg:py-0 bg-background text-muted flex justify-around">
-        <div className="px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1240px] flex items-center justify-around">
-          <div className="space-y-4 md:flex md:items-center md:flex-col text-center md:text-left">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              Unlock Your Coding Potential
+      <section className="lg:h-[90dvh] w-[85%] mx-auto py-12 md:py-24 lg:py-0 bg-background text-muted flex justify-around">
+        <div className=" gap-6 lg:grid-cols-2 lg:gap-0 max-w-[1240px] flex items-center justify-around">
+          <div className="w-[50%] md:flex md:items-start md:flex-col text-left">
+            <h1
+              className={`mb-4 text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] ${junicode.className}`}
+            >
+              Unlock Your
+              <br /> Coding Potential
             </h1>
-            <p className=" max-w-[600px] text-lg md:text-xl">
+            <p className="text-lg md:text-lg px-2 mb-6">
               Join our vibrant community of coders and unlock your full
               potential through workshops, events, and shared resources.
             </p>
-            <div className="flex flex-col gap-2 justify-center sm:flex-row lg:justify-start">
+            <div className="flex flex-col gap-3 px-2 items-start sm:flex-row">
               <Link
                 href="/auth"
-                className="active:scale-95 transition-all duration-100 ease-in-out inline-flex h-10 items-center justify-center rounded-md bg-primary text-primary-foreground px-8 text-sm font-medium shadow hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                className="btn-brutalist h-10 bg-transparent text-primary border-primary text-md"
                 prefetch={false}
               >
                 Join Now
               </Link>
               <Link
                 href="/about"
-                className="active:scale-95 transition-all duration-200 ease-in-out inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium shadow hover:bg-muted hover:text-primary-foreground border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                className="btn-brutalist h-10 bg-background text-foreground border-foreground text-md"
               >
                 Learn More
               </Link>
             </div>
           </div>
-          <div className="flex justify-center lg:justify-end">
+          <div className="w-[50%] flex justify-end relative pointer-events-none">
             <Image
-              src="/home/placeholder.png"
-              alt="Coding Club"
-              width={400}
-              height={600}
-              className="rounded-lg w-[400px] lg:w-[500px]"
+              src="/poster.jpg"
+              alt="IIITV Coding Club"
+              width={540}
+              height={405}
+              className="shadow-2xl shadow-black/50 rounded-2xl"
             />
           </div>
         </div>
@@ -254,10 +264,10 @@ export default function Home() {
                   <button
                     key={category}
                     onClick={() => handleCategoryChange(category)}
-                    className={` px-2 py-1 md:px-4 md:py-2 rounded-md ${
+                    className={`btn-brutalist h-10 text-sm sm:text-base ${
                       selectedCategory === category
-                        ? "bg-primary text-secondary text-sm sm:text-base"
-                        : "bg-secondary text-sm sm:text-base border hover:bg-muted hover:text-secondary transition duration-250"
+                        ? "bg-transparent text-primary border-primary"
+                        : "bg-secondary text-foreground border-foreground"
                     }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -304,7 +314,7 @@ export default function Home() {
                   <CardFooter>
                     <Link
                       href={`/event/${event.id}`}
-                      className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                      className="btn-brutalist h-9 bg-transparent text-primary border-primary text-sm"
                       prefetch={false}
                     >
                       Register
@@ -323,8 +333,11 @@ export default function Home() {
           </div>
           {displayedEvents.length > 0 && (
             <div className={`w-full flex justify-center my-10`}>
-              <Link className="show-more-button" href="/events">
-                <p>View All</p>
+              <Link
+                className="btn-brutalist h-10 bg-transparent text-primary border-primary text-sm"
+                href="/events"
+              >
+                View All
               </Link>
             </div>
           )}
@@ -477,8 +490,11 @@ export default function Home() {
             </Card>
           </div>
           <div className={`w-full flex justify-center my-10`}>
-            <Link className="show-more-button" href="/resources">
-              <p>All Resources</p>
+            <Link
+              className="btn-brutalist h-10 bg-transparent text-primary border-primary text-sm"
+              href="/resources"
+            >
+              All Resources
             </Link>
           </div>
         </div>
