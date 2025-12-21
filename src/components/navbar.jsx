@@ -1,16 +1,13 @@
 "use client";
-import React, { use, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "@/styles/navbar.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Noto_Sans } from "next/font/google";
 
 import { supabase } from "@/utils/supabase/client";
 import { Dropdown_Menu } from "./user_dropdown";
 import { LoggingOut } from "@/components/ui/loggingout";
-
-const notoSansFont = Noto_Sans({ weight: ["300", "400"], subsets: ["latin"] });
 
 function Navbar() {
   const [hiddenMenu, setHiddenMenu] = useState(true);
@@ -53,8 +50,6 @@ function Navbar() {
         .single();
 
       if (status === 406) {
-        const { error } = await getUsernameFromUser();
-        if (error) throw error;
         return;
       }
       setUsername(data.username);
@@ -88,123 +83,126 @@ function Navbar() {
       )}
 
       <div id="pseudo"></div>
-      <div className="navbar !py-[2.7em]">
-        <Link
-          href="/"
-          className={`logo-container ${notoSansFont.className}`}
-          prefetch={false}
-        >
-          <Image
-            className="logo-img"
-            src="/iiitv-logo.svg"
-            alt="IIITV Logo"
-            height={512}
-            width={512}
-          />
-          <div className="logo-title-container">
-            <p className="logo-title">Coding Club</p>
-            <p className="logo-subtitle">Community</p>
-          </div>
-        </Link>
-        <div
-          className={`menu-container ${user && "px-9"} ${notoSansFont.className}`}
-        >
-          <Link href={aboutLink} className="text-primary" prefetch={false}>
-            About
-          </Link>
-          <Link href={eventsLink} className="text-primary" prefetch={false}>
-            Events
-          </Link>
-          <Link href={blogsLink} className="text-primary" prefetch={false}>
-            Blogs
-          </Link>
-          <Link href={membersLink} className="text-primary" prefetch={false}>
-            Members
-          </Link>
-          <Link href={resourcesLink} className="text-primary" prefetch={false}>
-            Resources
-          </Link>
-          <Link href={contactUsLink} className="text-primary" prefetch={false}>
-            Contact Us
-          </Link>
-        </div>
-        <div
-          className={`mobile-menu ${user && "px-16"} ${notoSansFont.className}`}
-        >
-          <div className="menu-icon">
-            <input
-              type="checkbox"
-              id="hi"
-              hidden
-              onChange={MenuToggle}
-              value={!hiddenMenu}
+      <div className="navbar">
+        <div className="navbar-content">
+          <Link href="/" className="logo-container" prefetch={false}>
+            <Image
+              className="logo-img"
+              src="/iiitv-logo.svg"
+              alt="IIITV Logo"
+              height={512}
+              width={512}
             />
-            <label className="menu" htmlFor="hi">
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-            </label>
+            <div className="logo-title-container">
+              <p className="logo-title">Coding Club</p>
+            </div>
+          </Link>
+
+          <div className="menu-container">
+            <Link href={aboutLink} className="nav-link" prefetch={false}>
+              About
+            </Link>
+            <Link href={eventsLink} className="nav-link" prefetch={false}>
+              Events
+            </Link>
+            <Link href={blogsLink} className="nav-link" prefetch={false}>
+              Blogs
+            </Link>
+            <Link href={membersLink} className="nav-link" prefetch={false}>
+              Members
+            </Link>
+            <Link href={resourcesLink} className="nav-link" prefetch={false}>
+              Resources
+            </Link>
           </div>
 
-          <div
-            className={`mobile-menu-container `}
-            style={{ display: hiddenMenu ? "none" : "" }}
-          >
-            <div className="mobile-menu-container2">
-              <p>
+          <div className="menu-right">
+            {/* Contact Us Button */}
+            <Link href={contactUsLink} className="contact-btn" prefetch={false}>
+              Contact Us
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className="mobile-menu">
+            <div className="menu-icon">
+              <input
+                type="checkbox"
+                id="hi"
+                hidden
+                onChange={MenuToggle}
+                checked={!hiddenMenu}
+              />
+              <label className="menu" htmlFor="hi">
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+              </label>
+            </div>
+
+            <div
+              className="mobile-menu-container"
+              style={{ display: hiddenMenu ? "none" : "" }}
+            >
+              <div className="mobile-menu-container2">
                 <Link
                   href={aboutLink}
-                  className="text-primary"
+                  className="mobile-menu-item"
                   prefetch={false}
                 >
-                  About{" "}
+                  About
                 </Link>
-              </p>
-              <p>
-                <Link
-                  href={eventsLink}
-                  className="text-primary"
-                  prefetch={false}
-                >
-                  Events{" "}
-                </Link>
-              </p>
-              <p>
-                <Link
-                  href={blogsLink}
-                  className="text-primary"
-                  prefetch={false}
-                >
-                  Blogs{" "}
-                </Link>
-              </p>
-              <p>
                 <Link
                   href={membersLink}
-                  className="text-primary"
+                  className="mobile-menu-item"
                   prefetch={false}
                 >
-                  Members{" "}
+                  Members
                 </Link>
-              </p>
-              <p>
+                <Link
+                  href={eventsLink}
+                  className="mobile-menu-item"
+                  prefetch={false}
+                >
+                  Events
+                </Link>
+                <Link
+                  href={blogsLink}
+                  className="mobile-menu-item"
+                  prefetch={false}
+                >
+                  Blogs
+                </Link>
                 <Link
                   href={resourcesLink}
-                  className="text-primary"
+                  className="mobile-menu-item"
                   prefetch={false}
                 >
-                  Resources{" "}
+                  Resources
                 </Link>
-              </p>
-              <p>
                 <Link
                   href={contactUsLink}
-                  className="text-primary"
+                  className="mobile-menu-item mobile-contact-btn"
                   prefetch={false}
                 >
-                  Contact Us{" "}
+                  Contact Us
                 </Link>
-              </p>
+              </div>
             </div>
           </div>
         </div>

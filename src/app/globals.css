@@ -2,11 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .btn-brutalist {
+    width: fit-content;
+    font-weight: 500;
+    padding: 0.25rem 1.25rem;
+    border: 1.5px solid;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 0 0 currentColor;
+    transition-duration: 200ms;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-brutalist:hover:not(:disabled) {
+    box-shadow: 0 0 0 0 currentColor;
+    transform: translate(2px, 2px);
+  }
+
+  .btn-brutalist:active:not(:disabled) {
+    transform: translate(2px, 2px);
+  }
+
+  .btn-brutalist:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    box-shadow: 2px 2px 0 0 currentColor;
+    transform: translate(0, 0);
+  }
+
+  @media (min-width: 640px) {
+    .btn-brutalist {
+      width: fit-content;
+    }
+  }
+}
+
 @layer base {
   :root {
-    --background:  #201F31;
+    --background: #13141f;
     --foreground: #fcfdff;
-    --card: #201F31;
+    --card: #13141f;
     --card-foreground: #fcfdff;
     --popover: #ffffff;
     --popover-foreground: #1d0209;
@@ -44,16 +82,24 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground;
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
   }
 }
 
-
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -73,11 +119,12 @@ input, button, textarea, select {
   background: #fff3;
 }
 
-
 .animated-scroll {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  transition:
+    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animated-scroll.visible {

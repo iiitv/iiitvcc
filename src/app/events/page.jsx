@@ -5,13 +5,6 @@ import "./styles.css";
 import Loader from "@/components/ui/loader";
 import EventCard from "./components/eventCard";
 
-import { Montserrat, Alata } from "next/font/google";
-const montserratFont = Montserrat({
-  weight: ["100", "200", "400", "600"],
-  subsets: ["latin"],
-});
-const alataFont = Alata({ weight: ["400"], subsets: ["latin"] });
-
 const quotes = require("./qoutes.json");
 
 export default function Events() {
@@ -72,42 +65,41 @@ export default function Events() {
   }, []);
 
   return (
-    <div className="w-full flex justify-center mt-6">
-      <div className="w-[95%] flex flex-col">
-        <p className={`underline mb-4 lg:text-5xl ml-4 ${alataFont.className}`}>
-          Events
-        </p>
-        <div className="grid lg:grid-cols-3 gap-14 px-4 mt-6 sm:grid-cols-2 grid-cols-1 grid-rows-1">
-          {/* Static Quote Box in 2nd column, 1st row */}
-          <div
-            className={`h-fit self-center lg:col-start-2 lg:col-span-1 lg:row-start-1 lg:row-span-1 sm:col-span-2 col-span-1 p-4 rounded-xl flex flex-col gap-3 items-center justify-center text-white text-center text-xl lg:text-3xl ${alataFont.className}`}
-          >
-            <span>"{randomIndex && quotes[randomIndex].text}"</span>
-            <span className="text-pink-200 text-sm lg:text-xl">
-              {" "}
-              — {randomIndex && quotes[randomIndex].author}
-            </span>
-          </div>
+    <div className="w-full flex justify-center mt-8 mb-16">
+      <div className="w-[90%] sm:w-full max-w-[1400px] flex flex-col px-4 lg:px-8">
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center mb-6 lg:mb-10">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-4">Our Events</h1>
+          <div className="w-24 h-1 bg-primary mb-4"></div>
+          <p className="text-md lg:text-lg text-muted-foreground max-w-2xl">
+            Explore our past and upcoming events that bring together innovation,
+            learning, and community
+          </p>
+        </div>
 
+        {/* Events Grid */}
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 lg:gap-12 mb-12">
           {events.map((event, index) => (
             <EventCard event={event} key={index} />
           ))}
         </div>
 
+        {/* Loading State */}
         {loading ? (
-          <div className="w-full flex justify-center p-12">
-            <p className={`text-xl px-5 ${montserratFont.className}`}>
-              The Events are escaping their brackets! Brace for impact ...{" "}
-            </p>
+          <div className="w-full flex flex-col items-center justify-center py-16">
             <Loader />
+            <p className="text-lg text-muted-foreground mt-6">
+              Loading more amazing events...
+            </p>
           </div>
         ) : (
           hasMoreEvents && (
-            <div
-              className={`${montserratFont.className} w-full flex justify-center my-10`}
-            >
-              <button className="show-more-button" onClick={getMoreEvents}>
-                <p>Show More</p>
+            <div className="w-full flex justify-center">
+              <button
+                className="btn-brutalist text-md bg-transparent text-primary border-primary"
+                onClick={getMoreEvents}
+              >
+                Show More
               </button>
             </div>
           )

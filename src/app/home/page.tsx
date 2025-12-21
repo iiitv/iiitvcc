@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { Crimson_Text } from "next/font/google";
 import {
   Card,
   CardHeader,
@@ -16,6 +17,12 @@ import axios from "axios";
 
 import Image from "next/image";
 import "./styles.css";
+
+const junicode = Crimson_Text({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
 // export const products = [
 //   {
 //     title: "Moonbeam",
@@ -178,39 +185,42 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh">
       {/* <HeroParallax products={products} /> */}
-      <section className="lg:h-[90dvh] w-full py-12 md:py-24 lg:py-0 bg-background text-muted flex justify-around">
-        <div className="px-4 md:px-6 grid gap-6 lg:grid-cols-2 lg:gap-12 max-w-[1240px] flex items-center justify-around">
-          <div className="space-y-4 md:flex md:items-center md:flex-col text-center md:text-left">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              Unlock Your Coding Potential
+      <section className="sm:h-[90dvh] w-[85%] mx-auto py-16 md:py-24 lg:py-0 bg-background text-muted flex justify-around">
+        <div className=" gap-6 lg:grid-cols-2 lg:gap-0 max-w-[1240px] flex flex-col lg:flex-row items-center justify-around">
+          <div className="w-full lg:w-[50%] md:flex md:items-start md:flex-col text-left order-2 lg:order-1">
+            <h1
+              className={`mb-4 text-6xl lg:text-[5.5rem] ${junicode.className}`}
+            >
+              Unlock Your
+              <br /> Coding Potential
             </h1>
-            <p className=" max-w-[600px] text-lg md:text-xl">
+            <p className="text-md md:text-lg px-2 mb-6">
               Join our vibrant community of coders and unlock your full
               potential through workshops, events, and shared resources.
             </p>
-            <div className="flex flex-col gap-2 justify-center sm:flex-row lg:justify-start">
+            <div className="flex gap-3 px-2 items-start flex-row">
               <Link
                 href="/auth"
-                className="active:scale-95 transition-all duration-100 ease-in-out inline-flex h-10 items-center justify-center rounded-md bg-primary text-primary-foreground px-8 text-sm font-medium shadow hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                className="btn-brutalist h-10 bg-transparent text-primary border-primary text-md"
                 prefetch={false}
               >
                 Join Now
               </Link>
               <Link
                 href="/about"
-                className="active:scale-95 transition-all duration-200 ease-in-out inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium shadow hover:bg-muted hover:text-primary-foreground border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                className="btn-brutalist h-10 bg-background text-foreground border-foreground text-md"
               >
                 Learn More
               </Link>
             </div>
           </div>
-          <div className="flex justify-center lg:justify-end">
+          <div className="w-full lg:w-[50%] flex justify-center lg:justify-end relative pointer-events-none order-1 lg:order-2 mb-8 lg:mb-0">
             <Image
-              src="/home/placeholder.png"
-              alt="Coding Club"
-              width={400}
-              height={600}
-              className="rounded-lg w-[400px] lg:w-[500px]"
+              src="/poster.jpg"
+              alt="IIITV Coding Club"
+              width={540}
+              height={405}
+              className="shadow-2xl shadow-black/50 rounded-2xl"
             />
           </div>
         </div>
@@ -241,10 +251,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-24 flex item-center justify-center bg-secondary">
-        <div className="container px-4 md:px-6 space-y-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+      <section className="w-full py-12 md:py-24 lg:py-16 flex item-center justify-center bg-secondary">
+        <div className="container px-4 md:px-6 space-y-4">
+          <div className="flex flex-col items-center justify-center space-y-4 mb-6  text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-2">
               {categoryTitles[selectedCategory]}
               <span className="text-primary">Events</span>
             </h2>
@@ -254,10 +264,10 @@ export default function Home() {
                   <button
                     key={category}
                     onClick={() => handleCategoryChange(category)}
-                    className={` px-2 py-1 md:px-4 md:py-2 rounded-md ${
+                    className={`btn-brutalist h-10 text-md sm:text-base ${
                       selectedCategory === category
-                        ? "bg-primary text-secondary text-sm sm:text-base"
-                        : "bg-secondary text-sm sm:text-base border hover:bg-muted hover:text-secondary transition duration-250"
+                        ? "bg-transparent text-primary border-primary"
+                        : "bg-secondary text-foreground border-foreground"
                     }`}
                   >
                     {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -265,7 +275,7 @@ export default function Home() {
                 ),
               )}
             </div>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-6xl text-muted-foreground md:text-md/relaxed lg:text-md/relaxed xl:text-md/relaxed">
               Check out our events and workshops to learn new skills, network
               with fellow coders, and have fun!
             </p>
@@ -304,7 +314,7 @@ export default function Home() {
                   <CardFooter>
                     <Link
                       href={`/event/${event.id}`}
-                      className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                      className="btn-brutalist h-9 bg-transparent text-primary border-primary text-sm"
                       prefetch={false}
                     >
                       Register
@@ -322,26 +332,27 @@ export default function Home() {
             )}
           </div>
           {displayedEvents.length > 0 && (
-            <div className={`w-full flex justify-center my-10`}>
-              <Link className="show-more-button" href="/events">
-                <p>View All</p>
+            <div className={`w-full flex justify-center mb-10`}>
+              <Link
+                className="btn-brutalist h-10 bg-transparent text-primary border-primary text-md"
+                href="/events"
+              >
+                View All
               </Link>
             </div>
           )}
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-background flex item-center justify-center">
-        <div className="container px-4 md:px-6 space-y-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Club <span className="text-primary">Resources</span>
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Explore our collection of tutorials, projects, and other
-                resources to help you grow as a coder.
-              </p>
-            </div>
+      <section className="w-full py-16 md:py-24 lg:py-0 lg:pt-16 lg:pb-36 flex item-center justify-center bg-background">
+        <div className="container px-4 md:px-6 space-y-4">
+          <div className="flex flex-col items-center justify-center space-y-4 mb-6  text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              Club <span className="text-primary">Resources</span>
+            </h2>
+            <p className="max-w-6xl text-muted-foreground md:text-md/relaxed lg:text-md/relaxed xl:text-md/relaxed">
+              Explore our collection of tutorials, projects, and other resources
+              to help you grow as a coder.
+            </p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {/* <Card className="flex flex-col bg-secondary border-none">
@@ -403,24 +414,21 @@ export default function Home() {
                   Build real-world applications to showcase your skills.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex-1 grid gap-4">
+              <CardContent className="grid gap-4">
                 <Link
                   target="_blank"
                   href="https://github.com/iiitv"
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
-                  <div className="text-sm font-medium leading-none group-hover:underline">
+                  <div className="text-base font-medium leading-none group-hover:underline">
                     IIITV Open Source
                   </div>
-                  <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                  <div className="line-clamp-2 text-base leading-snug text-muted-foreground">
                     Build a full-stack e-commerce website with a shopping cart
                     and checkout process.
                   </div>
                 </Link>
-                {/* Empty divs to maintain grid height and alignment */}
-                <div className="hidden sm:block" />
-                <div className="hidden sm:block" />
               </CardContent>
             </Card>
             <Card className="flex flex-col bg-secondary border-none">
@@ -434,13 +442,13 @@ export default function Home() {
                 <Link
                   target="_blank"
                   href="https://discord.gg/RgGAHarP"
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
-                  <div className="text-sm font-medium leading-none group-hover:underline">
+                  <div className="text-base font-medium leading-none group-hover:underline">
                     Discord Server
                   </div>
-                  <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                  <div className="line-clamp-2 text-base leading-snug text-muted-foreground">
                     Join our vibrant Discord server to chat, ask questions, and
                     collaborate with other members.
                   </div>
@@ -448,13 +456,13 @@ export default function Home() {
                 <Link
                   target="_blank"
                   href="#"
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
-                  <div className="text-sm font-medium leading-none group-hover:underline">
+                  <div className="text-base font-medium leading-none group-hover:underline">
                     Meetups
                   </div>
-                  <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                  <div className="line-clamp-2 text-base leading-snug text-muted-foreground">
                     Attend our local and virtual meetups to network, learn, and
                     share your projects.
                   </div>
@@ -462,13 +470,13 @@ export default function Home() {
                 <Link
                   target="_blank"
                   href="https://www.linkedin.com/company/iiitvcc/"
-                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   prefetch={false}
                 >
-                  <div className="text-sm font-medium leading-none group-hover:underline">
+                  <div className="text-base font-medium leading-none group-hover:underline">
                     LinkedIn
                   </div>
-                  <div className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                  <div className="line-clamp-2 text-base leading-snug text-muted-foreground">
                     Join our Coding Club on LinkedIn to learn, collaborate, and
                     network!
                   </div>
@@ -476,9 +484,12 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-          <div className={`w-full flex justify-center my-10`}>
-            <Link className="show-more-button" href="/resources">
-              <p>All Resources</p>
+          <div className={`w-full flex justify-center mb-10`}>
+            <Link
+              className="btn-brutalist h-10 bg-transparent text-primary border-primary text-md"
+              href="/resources"
+            >
+              All Resources
             </Link>
           </div>
         </div>
