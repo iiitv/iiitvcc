@@ -45,9 +45,6 @@ export default function About() {
           <div className="w-[85%] mx-auto px-4 md:px-6">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="space-y-6">
-                <div className="border border-white rounded-full bg-white/10 w-fit px-4 py-1.5 text-sm font-medium">
-                  About Us
-                </div>
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl lg:text-6xl">
                   Empowering Coders at IIIT Vadodara
                 </h1>
