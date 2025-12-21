@@ -9,12 +9,6 @@ import Link from "next/link";
 import BlogPosterCover from "./components/blogCoverPoster";
 import GenerateBlogCards from "./components/generateBlogCards";
 
-import { Montserrat } from "next/font/google";
-const montserratFont = Montserrat({
-  weight: ["100", "200", "400", "600"],
-  subsets: ["latin"],
-});
-
 export default function Blogs() {
   const router = useRouter();
 
@@ -67,44 +61,74 @@ export default function Blogs() {
   });
 
   return (
-    <>
-      <div className="flex flex-col items-center ">
+    <div className="w-full flex flex-col items-center">
+      {/* Hero Section with Cover */}
+      <div className="w-full flex flex-col items-center">
         <BlogPosterCover />
-        <div className="blogs-search-div">
-          <input
-            type="text"
-            value={searchInputValue}
-            className={`${montserratFont.className} blogs-search-input`}
-            placeholder="Search..."
-            onChange={handleSearchInputChange}
-          />
-          <Link href="#">
-            <SearchIcon />
-          </Link>
+
+        {/* Search Bar */}
+        <div className="relative -mt-8 z-10 mb-12">
+          <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-secondary/80 backdrop-blur-md border-2 border-primary/30 shadow-lg hover:shadow-xl transition-all duration-300">
+            <input
+              type="text"
+              value={searchInputValue}
+              className="bg-transparent outline-none text-base md:text-lg w-32 md:w-64 transition-all duration-300 focus:w-48 md:focus:w-80 placeholder:text-muted-foreground"
+              placeholder="Search blogs..."
+              onChange={handleSearchInputChange}
+            />
+            <Link
+              href="#"
+              className="text-primary hover:text-primary/80 transition-colors"
+            >
+              <SearchIcon />
+            </Link>
+          </div>
         </div>
       </div>
-      <GenerateBlogCards blogs={filteredBlogs} />
 
-      {loading ? (
-        <div className="w-full flex justify-center p-12">
-          <p className={`text-xl px-5 ${montserratFont.className}`}>
-            Loading...{" "}
+      {/* Main Content */}
+      <div className="w-full max-w-[1400px] px-4 lg:px-8">
+        {/* Header Section */}
+        <div className="flex flex-col mb-8 lg:mb-12">
+          <h1 className="text-4xl lg:text-5xl font-bold mb-3">
+            Our <span className="text-primary">Blogs</span>
+          </h1>
+          <div className="w-20 h-1 bg-primary mb-4"></div>
+          <p className="text-base lg:text-lg text-muted-foreground max-w-2xl">
+            Dive into our collection of articles, tutorials, and insights from
+            our community
           </p>
-          <Loader />
         </div>
-      ) : hasMore ? (
-        <div
-          className={`${montserratFont.className} w-full flex justify-center`}
-        >
-          <button
-            className="show-more-button"
-            onClick={() => handlePageChange(currentPage + 1)}
-          >
-            <p>Show More</p>
-          </button>
-        </div>
-      ) : null}
-    </>
+
+        {/* Blog Cards */}
+        <GenerateBlogCards blogs={filteredBlogs} />
+
+        {/* Loading / Show More */}
+        {loading ? (
+          <div className="w-full flex flex-col items-center justify-center py-16">
+            <Loader />
+            <p className="text-lg text-muted-foreground mt-6">
+              Loading more blogs...
+            </p>
+          </div>
+        ) : hasMore ? (
+          <div className="w-full flex justify-center mb-16">
+            <button
+              className="btn-brutalist text-base bg-transparent text-primary border-primary px-8 py-3"
+              onClick={handlePageChange}
+            >
+              Show More
+            </button>
+          </div>
+        ) : (
+          <div className="w-full flex justify-center py-8 mb-16">
+            <p className="text-muted-foreground text-sm">
+              You've reached the end of our blog collection
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -112,8 +136,8 @@ const SearchIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 128 128"
-    width={30}
-    height={30}
+    width={24}
+    height={24}
     fill="currentColor"
     id="search"
   >

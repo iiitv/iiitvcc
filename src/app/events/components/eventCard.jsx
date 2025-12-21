@@ -5,42 +5,34 @@ import { getPublicUrl } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Montserrat, Alata } from "next/font/google";
-const montserratFont = Montserrat({
-  weight: ["100", "200", "400", "600"],
-  subsets: ["latin"],
-});
-const boldMontserratFont = Montserrat({
-  weight: ["600"],
-  subsets: ["latin"],
-});
-
 export default function EventCard(props) {
   const [event, setEvent] = useState(props.event);
   const [eventDate, setEventDate] = useState(event.date);
   const [eventTime, setEventTime] = useState(event.time);
   let posterUrl = getPublicUrl(`/events/${event.id}/poster`);
   return (
-    <div
-      className={`${montserratFont.className} lg:row-span-2 lg:col-span-1 w-fit h-fit`}
-    >
+    <div className="lg:row-span-2 lg:col-span-1 w-full h-fit group">
       <Link href={`\\event\\${event.id}`}>
-        <div className="flex flex-col">
-          <div className="w-full h-full border-2 border-primary rounded-2xl overflow-hidden">
+        <div className="flex flex-col transition-transform duration-300 ease-out group-hover:-translate-y-2">
+          <div className="w-full aspect-square border-2 border-primary rounded-2xl overflow-hidden shadow-md group-hover:shadow-2xl group-hover:shadow-primary/20 transition-all duration-300">
             <Image
               src={posterUrl}
               width={1000}
-              height={500}
+              height={1000}
               alt={`Poster for ${event.name}`}
-              className="object-cover"
+              className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
             />
           </div>
-          <div className={`${montserratFont.className} ms-2 mt-1`}>
-            <p className="text-primary">
+          <div className="ms-2 mt-3">
+            <p className="text-primary text-sm font-medium mb-1 transition-colors duration-300 group-hover:text-primary/80">
               {formatDate(eventDate)} | {formatTime(eventTime)}
             </p>
-            <p className="font-semibold text-xl">{event.name}</p>
-            <p className="text-sm">{trimString(event.description, 50)}</p>
+            <p className="font-semibold text-xl mb-2 transition-colors duration-300 group-hover:text-primary">
+              {event.name}
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {trimString(event.description, 50)}
+            </p>
           </div>
         </div>
       </Link>

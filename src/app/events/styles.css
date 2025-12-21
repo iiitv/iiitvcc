@@ -1,26 +1,30 @@
 .show-more-button {
-    padding: 10px ;
-    text-align: center;
-    box-sizing: border-box;
-    background-color: color-mix(in srgb, var(--primary) 5%, transparent);
-    box-shadow: color-mix(in srgb, #fff 5%, transparent) 1px 1px 15px;
-    border: solid color-mix(in srgb, var(--primary) 20%, transparent) 1px;
-    border-radius: 10px;
-    transition: 0.5s;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+  box-shadow: color-mix(in srgb, #fff 5%, transparent) 1px 1px 15px;
+  border: solid color-mix(in srgb, var(--primary) 20%, transparent) 1px;
+  border-radius: 10px;
+  transition: 0.5s;
 }
 
 .show-more-button:hover {
-    background-color: color-mix(in srgb, var(--muted-foreground) 40%, transparent);
+  background-color: color-mix(
+    in srgb,
+    var(--muted-foreground) 40%,
+    transparent
+  );
 }
 
 .show-more-button p {
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--primary);
 }
 
-@media screen and (max-width : 1024px) {
-    .show-more-button {
-        box-sizing: border-box;
-    }
+@media screen and (max-width: 1024px) {
+  .show-more-button {
+    box-sizing: border-box;
+  }
 }

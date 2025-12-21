@@ -1,13 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Montserrat, Alata } from "next/font/google";
-
-const montserratFont = Montserrat({
-  weight: ["100", "200", "400", "600"],
-  subsets: ["latin"],
-});
-
-const alataFont = Alata({ weight: ["400"], subsets: ["latin"] });
 
 function Resources() {
   const resources = [
@@ -56,44 +48,71 @@ function Resources() {
   ];
 
   return (
-    <div className="mt-6 sm:mt-10 flex flex-col items-center px-4">
-      <div
-        className={`${alataFont.className} text-2xl sm:text-3xl md:text-4xl underline mb-6 sm:mb-8 text-center`}
-      >
-        Resources
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 w-full max-w-7xl px-4 sm:px-6">
-        {resources.map((res) => (
-          <div
-            key={res.title}
-            className={`flex flex-col border rounded-lg hover:shadow-lg transition-shadow h-full ${montserratFont.className}`}
-          >
-            <div className="relative w-full h-48 sm:h-40 md:h-48">
-              <Image
-                src={res.img}
-                alt={res.title}
-                className="rounded-t-lg object-cover"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-              />
+    <div className="w-full flex justify-center mt-8 mb-16">
+      <div className="w-[90%] flex flex-col px-4 lg:px-8">
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-4">Resources</h1>
+          <div className="w-24 h-1 bg-primary mb-6"></div>
+          <p className="text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            Curated collection of tutorials, tools, and learning materials to
+            help you master various technologies and advance your skills
+          </p>
+        </div>
+
+        {/* Resources Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {resources.map((resource) => (
+            <div
+              key={resource.title}
+              className="group bg-secondary rounded-2xl shadow-md hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden border border-border hover:border-primary/50 flex flex-col"
+            >
+              {/* Image Section */}
+              <div className="relative w-full h-56 overflow-hidden">
+                <Image
+                  src={resource.img}
+                  alt={resource.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+
+              {/* Content Section */}
+              <div className="flex flex-col flex-1 p-6">
+                <h2 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                  {resource.title}
+                </h2>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1 line-clamp-3">
+                  {resource.desc}
+                </p>
+
+                {/* Explore Button */}
+                <Link
+                  href={resource.href}
+                  className="btn-brutalist text-base bg-transparent text-primary border-primary w-full justify-center"
+                  prefetch={false}
+                >
+                  Explore
+                </Link>
+              </div>
             </div>
-            <div className="flex flex-col flex-1 p-4 sm:p-6">
-              <h2 className="text-lg sm:text-xl font-semibold mb-2 line-clamp-2">
-                {res.title}
-              </h2>
-              <p className="text-sm text-muted-foreground flex-1 line-clamp-3 mb-4">
-                {res.desc}
-              </p>
-              <Link
-                href={res.href}
-                className="active:scale-95 transition-all duration-100 ease-in-out inline-flex h-9 sm:h-10 items-center justify-center rounded-md bg-primary text-primary-foreground px-6 sm:px-8 text-sm sm:text-base font-medium shadow w-full sm:w-fit"
-                prefetch={false}
-              >
-                Explore
-              </Link>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Additional Info Section */}
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground text-sm">
+            Can't find what you're looking for?{" "}
+            <Link
+              href="/contact_us"
+              className="text-primary hover:underline font-medium"
+            >
+              Let us know
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

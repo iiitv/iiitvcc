@@ -3,238 +3,249 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { fetchTeamData } from "./_actions/fetchTeamData";
-import Image from "next/image";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
-import Loading from "@/components/loading";
 import Loader from "@/components/ui/loader";
-
 import { motion, type Variants } from "framer-motion";
 
-// React icon
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import "./styles.css";
+// React icons
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { ArrowUpRight } from "lucide-react";
 
-const itemVariants: Variants = {
-  open: {
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
     opacity: 1,
-    transition: { duration: 0.5 },
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
   },
-  closed: { opacity: 0, transition: { duration: 0.3 } },
 };
 
 const TeamSection = () => {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);
   const [activeTeam, setActiveTeam] = useState<string | null>(null);
-  const [focusCard, setFocusCard] = useState<number | null>(null);
-  const [isScroll, setIsScroll] = useState<number>(-1);
-
-  const [currCard, setcurrCard] = useState(null);
-  const [ShowMore, setShowMore] = useState(null);
-
-  const [fetchingTeam, setfetchingTeam] = useState(false);
+  const [fetchingTeam, setFetchingTeam] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScroll(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setfetchingTeam(true);
+    setFetchingTeam(true);
     const fetchTeam = async () => {
       const data = await fetchTeamData();
       if (data.length > 0) {
-        // applying transformation to the profile pictures
+        // Apply transformation to the profile pictures
         const transformation = "ar_2:3,c_crop/";
         data.forEach((item: any) => {
           item.pfp = item.pfp.replace("upload/", `upload/${transformation}`);
         });
 
-        console.log("Fetched team data:", data[0].pfp);
         setTeamMembers(data);
         setActiveTeam(data[data.length - 1].batch);
       }
-      setfetchingTeam(false);
+      setFetchingTeam(false);
     };
 
     fetchTeam();
   }, []);
 
-  return (
-    <section className="font-poppins font-light text-center py-[min(20vh,6rem)] w-[calc(min(90rem,90%))] mx-auto my-16 relative">
-      <h2 className="text-white text-[clamp(3.5rem,3rem+1.6vw,5rem)] -mt-[0.625rem] font-extrabold">
-        MEET OUR <div className="text-primary">TEAM</div>
-      </h2>
-      <p className="text-gray-400 max-w-[50rem] mx-auto leading-relaxed text-[clamp(0.9rem,0.825rem+0.3vw,1.2rem)]">
-        Our team is a group of passionate individuals who are dedicated to
-        making a difference in the world of technology. We are a diverse group
-        of people who are united by our love for coding and technology. We are
-        committed to helping each other grow and learn, and we are always
-        looking for new members to join us on our journey. If you are passionate
-        about technology and coding, we would love to have you on our team!
-      </p>
+  const batches =
+    teamMembers.length > 0
+      ? Array.from(new Set(teamMembers.map((item) => item.batch)))
+      : [];
 
-      {teamMembers.length === 0 || fetchingTeam ? (
-        <div className="flex flex-row items-center justify-center mt-8 gap-3">
-          <div className="text-3xl text-center">
-            Booting up the team matrix...
-          </div>
-          <Loader />
+  return (
+    <div className="w-full flex flex-col items-center py-12 lg:py-20">
+      <div className="w-[90%] px-4 lg:px-8">
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center mb-8 lg:mb-12">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            A small team with{" "}
+            <span className="relative inline-block">impressive cred</span>.
+          </h1>
+          <div className="w-24 h-1 bg-primary mb-6"></div>
+          <p className="text-sm lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            Want to work with some of the best talent and build software used by
+            all the companies you know and love? Join the team — we're hiring
+            remotely all over the world!
+          </p>
         </div>
-      ) : (
-        <div className="my-8 space-x-6 absolute w-full">
-          {teamMembers.length > 0 &&
-            Array.from(new Set(teamMembers.map((item) => item.batch))).map(
-              (batch) => (
-                <Button
-                  variant={"ghost"}
+
+        {/* Team Filter Buttons */}
+        {fetchingTeam ? (
+          <div className="flex flex-col items-center justify-center my-16 gap-4">
+            <Loader />
+            <p className="text-lg text-muted-foreground">
+              Loading team members...
+            </p>
+          </div>
+        ) : (
+          <>
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+              {batches.map((batch) => (
+                <button
                   key={batch}
                   onClick={() => setActiveTeam(batch)}
                   className={cn(
-                    "py-0 px-8 text-[clamp(.9rem,1.0rem+0.9333vw,1.2rem)] transition",
-                    activeTeam === batch &&
-                      "bg-primary text-secondary font-bold border-primary",
+                    "btn-brutalist px-6 py-2 text-base font-medium",
+                    activeTeam === batch
+                      ? "bg-transparent text-primary border-primary"
+                      : "bg-secondary text-foreground border-foreground",
                   )}
                 >
                   {batch}
-                </Button>
-              ),
-            )}
-          <Button
-            variant={"ghost"}
-            onClick={() => setActiveTeam("Developers")}
-            className={cn(
-              "py-0 px-8 text-[clamp(.9rem,1.0rem+0.9333vw,1.2rem)] transition",
-              activeTeam === "Developers" &&
-                "bg-primary text-secondary font-bold border-primary",
-            )}
-          >
-            Website Developers
-          </Button>
-        </div>
-      )}
-
-      <div className="absolute z-[-1] left-1/2 -translate-x-1/2 -translate-y-[15%] text-[clamp(6rem,1.3333rem+14.9333vw,20rem)] font-extrabold text-[#36354a] select-none tracking-widest uppercase">
-        {activeTeam}
-      </div>
-      <div className="mt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {teamMembers
-          .filter(
-            (item) =>
-              (item.batch === activeTeam &&
-                item.position.some((pos: string) => pos === "Member")) ||
-              (activeTeam === "Developers" && item.is_dev),
-          )
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .map((item, idx) => (
-            <div className="p-4" key={item.id}>
-              <motion.div
-                onMouseEnter={() => {
-                  setcurrCard(item.id);
-                  setFocusCard(item.id);
-                }}
-                onMouseLeave={() => {
-                  setcurrCard(null);
-                  setFocusCard(null);
-                  setShowMore(null);
-                }}
-                onClick={() => setcurrCard(item.id)}
-                initial={false}
-                animate={isScroll - idx * 120 > 0 ? "open" : "closed"}
-                variants={itemVariants}
+                </button>
+              ))}
+              <button
+                onClick={() => setActiveTeam("Developers")}
                 className={cn(
-                  "card relative cursor-pointer grayscale-[100%]  hover:grayscale-[0%] transition-all  rounded-md",
-                  idx % 3 !== 1
-                    ? "translate-y-0"
-                    : "translate-y-0 sm:mt-[15%] midChild",
-                  focusCard !== null &&
-                    focusCard !== item.id &&
-                    "scale-[.98] duration-500 blur-[4px]",
+                  "btn-brutalist px-6 py-2 text-base font-medium",
+                  activeTeam === "Developers"
+                    ? "bg-transparent text-primary border-primary"
+                    : "bg-secondary text-foreground border-foreground",
                 )}
               >
-                <div className="relative w-full h-full overflow-hidden rounded-md">
-                  <CldImage
-                    src={item.pfp}
-                    alt={`Photo of ${item.name}`}
-                    width={400}
-                    height={600}
-                    preserveTransformations
-                    className={`w-full grayscale hover:grayscale-0 transition duration-500`}
-                  />
-
-                  <div
-                    className={`${ShowMore === item.id ? "h-full w-full bg-black/70" : ""}  ${currCard === item.id ? "translate-y-0" : "translate-y-full invisible pointer-events-none"} absolute inset-0 flex flex-col pb-4 items-center justify-end transition-all duration-300 ease-in-out opacity-100 text-white z-20 card-bg-linear-gradient`}
-                  >
-                    <div className="flex flex-col items-center gap-2 max-w-[90%]">
-                      <h1 className="text-2xl">About</h1>
-
-                      <div className={`w-full flex flex-col`}>
-                        <p
-                          className={`${ShowMore === item.id ? "overflow-y-scroll max-h-80 rounded-lg" : "overflow-hidden text-ellipsis line-clamp-3"} transition-all duration-300 ease-in-out`}
-                        >
-                          {item.about}
-                        </p>
-                        {item.about.length > 150 && (
-                          <p
-                            className="text-pink-500 hover:underline cursor-pointer"
-                            onClick={() => {
-                              setShowMore(
-                                ShowMore === item.id ? null : item.id,
-                              );
-                            }}
-                          >
-                            {ShowMore === item.id ? "Read Less" : "Read More"}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex flex-col mt-4 gap-2 max-w-[80%]">
-                      <h1 className="text-2xl">Expertise</h1>
-                      <p>{item.expertise.join(", ")}</p>
-                    </div>
-
-                    <ul className="flex justify-center items-center space-x-2 mt-4 mb-6 ">
-                      {item.socials.map((socialItem: any, idx: number) => (
-                        <li key={idx}>
-                          <Link
-                            href={socialItem.url}
-                            target="_blank"
-                            className="text-white hover:text-pink-500 transition"
-                          >
-                            {socialItem.platform === "github" ? (
-                              <FaGithub className="text-xl" />
-                            ) : (
-                              <FaLinkedinIn className="text-xl" />
-                            )}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div
-                    className={`transition-all duration-300 ease-in-out ${currCard === item.id ? "translate-y-full invisible pointer-events-none" : "translate-y-0"} absolute bottom-0 left-0 right-0 p-6 text-center text-white z-10`}
-                  >
-                    <h3 className="text-lg font-medium">{item.name}</h3>
-                    <p className="text-sm tracking-wider font-light">
-                      {item.position
-                        .map(
-                          (pos: string) =>
-                            pos.charAt(0).toUpperCase() + pos.slice(1),
-                        )
-                        .join(", ")}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+                Website Developers
+              </button>
             </div>
-          ))}
+
+            {/* Team Members Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {teamMembers
+                .filter(
+                  (item) =>
+                    (item.batch === activeTeam &&
+                      item.position.some((pos: string) => pos === "Member")) ||
+                    (activeTeam === "Developers" && item.is_dev),
+                )
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((member, idx) => (
+                  <TeamMemberCard key={member.id} member={member} index={idx} />
+                ))}
+            </div>
+
+            {teamMembers.filter(
+              (item) =>
+                (item.batch === activeTeam &&
+                  item.position.some((pos: string) => pos === "Member")) ||
+                (activeTeam === "Developers" && item.is_dev),
+            ).length === 0 && (
+              <div className="text-center py-16">
+                <p className="text-muted-foreground text-lg">
+                  No team members found for this selection.
+                </p>
+              </div>
+            )}
+          </>
+        )}
       </div>
-    </section>
+    </div>
+  );
+};
+
+interface TeamMemberCardProps {
+  member: any;
+  index: number;
+}
+
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={cardVariants}
+      className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Background Image */}
+      <div className="relative w-full aspect-[3/4] overflow-hidden">
+        <CldImage
+          src={member.pfp}
+          alt={`Photo of ${member.name}`}
+          width={500}
+          height={700}
+          preserveTransformations
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+
+        {/* Gradient Overlay - Always visible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+
+        {/* Content Overlay */}
+        <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
+          {/* Backdrop blur container for name and content */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/10">
+            {/* Name and Arrow */}
+            <div className="flex items-start justify-between mb-2">
+              <h3 className="text-2xl font-bold">{member.name}</h3>
+              <Link
+                href={member.socials[0]?.url || "#"}
+                target="_blank"
+                className="p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+                aria-label={`View ${member.name}'s profile`}
+              >
+                <ArrowUpRight className="w-5 h-5" />
+              </Link>
+            </div>
+
+            {/* Position */}
+            <p className="text-sm text-gray-300 mb-3 font-medium">
+              {member.position
+                .map(
+                  (pos: string) => pos.charAt(0).toUpperCase() + pos.slice(1),
+                )
+                .join(", ")}
+            </p>
+
+            {/* About - Shows on hover */}
+            <div
+              className={cn(
+                "transition-all duration-500 overflow-hidden",
+                isHovered ? "max-h-40 opacity-100 mb-3" : "max-h-0 opacity-0",
+              )}
+            >
+              <p className="text-sm text-gray-200 leading-relaxed line-clamp-4">
+                {member.about}
+              </p>
+            </div>
+
+            {/* Expertise - Shows on hover */}
+            {member.expertise && member.expertise.length > 0 && (
+              <div
+                className={cn(
+                  "transition-all duration-500 overflow-hidden",
+                  isHovered ? "max-h-20 opacity-100 mb-4" : "max-h-0 opacity-0",
+                )}
+              >
+                <p className="text-xs text-gray-400 line-clamp-2">
+                  {member.expertise.join(" • ")}
+                </p>
+              </div>
+            )}
+
+            {/* Social Links */}
+            <div className="flex items-center gap-3">
+              {member.socials.map((social: any, idx: number) => (
+                <Link
+                  key={idx}
+                  href={social.url}
+                  target="_blank"
+                  className="p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-200"
+                  aria-label={`${member.name}'s ${social.platform}`}
+                >
+                  {social.platform === "github" ? (
+                    <FaGithub className="w-4 h-4" />
+                  ) : (
+                    <FaLinkedinIn className="w-4 h-4" />
+                  )}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 

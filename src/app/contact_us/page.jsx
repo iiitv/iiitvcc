@@ -8,15 +8,8 @@ import ManWithLaptopSvg from "./components/manWithLaptopSvg";
 import ManSittingAtTableSvg from "./components/manSittingAtTableSvg";
 import "./styles.css";
 
-import { Montserrat } from "next/font/google";
-
 import axios from "axios";
 import Alert from "@/components/ui/alert";
-
-const montserratFont = Montserrat({
-  weight: ["100", "200", "400", "600"],
-  subsets: ["latin"],
-});
 
 export default function Page() {
   const [messageOrBugDropdown, setMessageOrBugDropdown] = useState(false);
@@ -78,340 +71,334 @@ export default function Page() {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <div
-        className={`${montserratFont.className} flex gap-1 justify-center items-center my-5`}
-      >
-        <p>IIIT Vadodara</p>
-        <div className="bg-white rounded-full w-2 h-2"></div>
-        <p className="text-primary">Coding Club</p>
-      </div>
-      <div
-        className={`${montserratFont.className} tracking-tighter text-5xl sm:text-7xl font-semibold flex gap-5 justify-center`}
-      >
-        <p>
-          Contact <span className="text-primary">Us</span>
-        </p>
-      </div>
-      <div
-        className={`${montserratFont.className} tracking-tighter text-xs sm:text-base sm:w-1/2 flex gap-5 justify-center text-center`}
-      >
-        <p>
-          At the Coding Club of IIIT Vadodara, we're more than just a group of
-          programmers—we're a community of innovators, creators, and
-          problem-solvers. Whether you have a burning question, a brilliant
-          idea, or just want to collaborate with like-minded tech enthusiasts,
-          we're here to connect. Reach out to us and let's turn your coding
-          dreams into reality!
-        </p>
-      </div>
-      <div className="grid w-full gird-cols-12 md:grid-cols-5 text-primary">
-        <div className="col-span-1 hidden md:flex m-0 p-0 flex justify-center items-end">
-          <ManSittingAtTableSvg />
+    <div className="w-full flex justify-center mt-8 mb-16">
+      <div className="w-full max-w-[1400px] flex flex-col px-4 lg:px-8">
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center mb-6 lg:mb-8">
+          <div className="flex gap-2 items-center mb-2">
+            <p className="text-sm text-muted-foreground">IIIT Vadodara</p>
+            <div className="bg-primary rounded-full w-1.5 h-1.5"></div>
+            <p className="text-sm text-primary font-medium">Coding Club</p>
+          </div>
+          <h1 className="text-5xl lg:text-7xl font-bold mb-4">
+            Contact <span className="text-primary">Us</span>
+          </h1>
+          <div className="w-24 h-1 bg-primary"></div>
         </div>
-        {formSubmitted ? (
-          <div className="col-span-1 w-full flex flex-col mx-3 md:mx-0 md:col-span-3  mt-40 items-center">
-            <SuccessIcon />
-            <p className=" md:text-2xl text-foreground mt-5">
-              Message Send <span className="text-primary">Succesfully...</span>
-            </p>
+        {/* Form Section */}
+        <div className="grid w-full grid-cols-12 md:grid-cols-5 gap-8 text-primary">
+          <div className="col-span-1 hidden md:flex m-0 p-0 justify-center items-end">
+            <ManSittingAtTableSvg />
           </div>
-        ) : status === "Sending" ? (
-          <div className="col-span-1 mx-3 md:mx-0 md:col-span-3 mt-5 items-center justify-center content-center">
-            {" "}
-            <p className=" md:text-3xl text-center text-primary mt-5">
-              Sending...
-            </p>
-          </div>
-        ) : (
-          <div className="col-span-1 mx-3 md:mx-0 md:col-span-3 mt-5">
-            <div className={`${montserratFont.className} relative`}>
-              <form
-                id="contact_form"
-                className="grid grid-cols-2 gap-x-5 gap-y-2"
-                onSubmit={handleSubmit}
-              >
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="name" className="text-foreground">
-                    Name
-                  </Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="email" className="text-foreground">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Email"
-                    required
-                    onChange={handleChange}
-                    value={formData.email}
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="contact" className="text-foreground">
-                    Contact No.
-                  </Label>
-                  <Input
-                    id="contact"
-                    type="tel"
-                    placeholder="Contact No."
-                    required
-                    onChange={handleChange}
-                    value={formData.contact}
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 md:col-span-1">
-                  <Label htmlFor="organisation" className="text-foreground">
-                    Organisation
-                  </Label>
-                  <Input
-                    id="organisation"
-                    type="text"
-                    placeholder="Organisation Name"
-                    required
-                    onChange={handleChange}
-                    value={formData.organisation}
-                    className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                  />
-                </div>
-                <div className="col-span-2 mt-5">
-                  <Label htmlFor="message_or_bug" className="text-foreground">
-                    Send a Message or report a bug
-                  </Label>
-                  <div>
-                    <div
-                      className="flex justify-between cursor-pointer rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
-                      onClick={handleDropDownClick}
-                    >
-                      <p id="message_or_bug" className="font-semibold">
-                        {messageOrBug}
-                      </p>
-                      <svg
-                        className={`${messageOrBugDropdown ? "scale-[-1]" : null} -mr-1 h-5 w-5  text-gray-400 cursor-pointer transition-all ease-in-out duration-500`}
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        tabIndex="-1"
+          {formSubmitted ? (
+            <div className="col-span-12 md:col-span-3 flex flex-col items-center justify-center py-20">
+              <SuccessIcon />
+              <p className="text-xl md:text-2xl text-foreground mt-6">
+                Message Sent <span className="text-primary">Successfully!</span>
+              </p>
+            </div>
+          ) : status === "Sending" ? (
+            <div className="col-span-12 md:col-span-3 flex items-center justify-center py-20">
+              <p className="text-2xl md:text-3xl text-center text-primary">
+                Sending...
+              </p>
+            </div>
+          ) : (
+            <div className="col-span-12 md:col-span-3">
+              <div className="relative">
+                <form
+                  id="contact_form"
+                  className="grid grid-cols-2 gap-x-5 gap-y-2"
+                  onSubmit={handleSubmit}
+                >
+                  <div className="col-span-2 md:col-span-1">
+                    <Label htmlFor="name" className="text-foreground">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      type="text"
+                      placeholder="Your name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                    />
+                  </div>
+                  <div className="col-span-2 md:col-span-1">
+                    <Label htmlFor="email" className="text-foreground">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Email"
+                      required
+                      onChange={handleChange}
+                      value={formData.email}
+                      className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                    />
+                  </div>
+                  <div className="col-span-2 md:col-span-1">
+                    <Label htmlFor="contact" className="text-foreground">
+                      Contact No.
+                    </Label>
+                    <Input
+                      id="contact"
+                      type="tel"
+                      placeholder="Contact No."
+                      required
+                      onChange={handleChange}
+                      value={formData.contact}
+                      className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                    />
+                  </div>
+                  <div className="col-span-2 md:col-span-1">
+                    <Label htmlFor="organisation" className="text-foreground">
+                      Organisation
+                    </Label>
+                    <Input
+                      id="organisation"
+                      type="text"
+                      placeholder="Organisation Name"
+                      required
+                      onChange={handleChange}
+                      value={formData.organisation}
+                      className="rounded-[8px] border border-input bg-background px-4 py-6 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                    />
+                  </div>
+                  <div className="col-span-2 mt-5">
+                    <Label htmlFor="message_or_bug" className="text-foreground">
+                      Send a Message or report a bug
+                    </Label>
+                    <div>
+                      <div
+                        className="flex justify-between cursor-pointer rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm"
+                        onClick={handleDropDownClick}
                       >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      className={`${messageOrBugDropdown ? null : "hidden"} absolute right-0 z-10 mt-1 bg-secondary focus:border-primary w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
-                      role="menu"
-                      aria-orientation="vertical"
-                      aria-labelledby="menu-button"
-                    >
-                      <div className="py-1" role="none">
-                        <p
-                          href="#"
-                          className="block px-4 py-2 text-sm w-full cursor-pointer"
-                          role="menuitem"
-                          tabIndex="-1"
-                          id="menu-item-0"
-                          onClick={() => {
-                            setMessageOrBug("Message");
-                            setMessageOrBugDropdown(false);
-                            setFormData({
-                              ...formData,
-                              messageType: "Message",
-                            });
-                          }}
-                        >
-                          Message
+                        <p id="message_or_bug" className="font-semibold">
+                          {messageOrBug}
                         </p>
-                        <hr className="text-muted-foreground mx-3" />
-                        <p
-                          className="block px-4 py-2 text-sm w-full cursor-pointer"
-                          role="menuitem"
+                        <svg
+                          className={`${messageOrBugDropdown ? "scale-[-1]" : null} -mr-1 h-5 w-5  text-gray-400 cursor-pointer transition-all ease-in-out duration-500`}
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
                           tabIndex="-1"
-                          id="menu-item-1"
-                          onClick={() => {
-                            setMessageOrBug("Report a Bug");
-                            setMessageOrBugDropdown(false);
-                            setFormData({
-                              ...formData,
-                              messageType: "Report a Bug",
-                            });
-                          }}
                         >
-                          Report a Bug
-                        </p>
+                          <path
+                            fillRule="evenodd"
+                            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <div
+                        className={`${messageOrBugDropdown ? null : "hidden"} absolute right-0 z-10 mt-1 bg-secondary focus:border-primary w-56 origin-top-right rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby="menu-button"
+                      >
+                        <div className="py-1" role="none">
+                          <p
+                            href="#"
+                            className="block px-4 py-2 text-sm w-full cursor-pointer"
+                            role="menuitem"
+                            tabIndex="-1"
+                            id="menu-item-0"
+                            onClick={() => {
+                              setMessageOrBug("Message");
+                              setMessageOrBugDropdown(false);
+                              setFormData({
+                                ...formData,
+                                messageType: "Message",
+                              });
+                            }}
+                          >
+                            Message
+                          </p>
+                          <hr className="text-muted-foreground mx-3" />
+                          <p
+                            className="block px-4 py-2 text-sm w-full cursor-pointer"
+                            role="menuitem"
+                            tabIndex="-1"
+                            id="menu-item-1"
+                            onClick={() => {
+                              setMessageOrBug("Report a Bug");
+                              setMessageOrBugDropdown(false);
+                              setFormData({
+                                ...formData,
+                                messageType: "Report a Bug",
+                              });
+                            }}
+                          >
+                            Report a Bug
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-span-2 mt-5">
-                  <textarea
-                    id="message"
-                    type="text"
-                    placeholder="How can we help?"
-                    required
-                    onChange={handleChange}
-                    value={formData.message}
-                    className="w-full rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm h-64"
-                  />
-                </div>
-              </form>
+                  <div className="col-span-2 mt-5">
+                    <textarea
+                      id="message"
+                      type="text"
+                      placeholder="How can we help?"
+                      required
+                      onChange={handleChange}
+                      value={formData.message}
+                      className="w-full rounded-[8px] border border-input bg-background px-4 py-4 text-foreground placeholder-muted-foreground focus:z-10 focus:border-primary focus:outline-none sm:text-sm h-64"
+                    />
+                  </div>
+                </form>
+              </div>
             </div>
+          )}
+          <div className="hidden md:flex col-span-1 justify-center items-end">
+            <ManWithLaptopSvg />
+          </div>
+        </div>
+        {formSubmitted ? null : status === "Sending" ? null : (
+          <div className="flex justify-center mt-8 mb-12">
+            <button
+              form="contact_form"
+              type="submit"
+              className="btn-brutalist text-base bg-transparent text-primary border-primary px-8 py-3"
+            >
+              Send Your Message
+            </button>
           </div>
         )}
-        <div className="hidden md:flex col-span-1 flex justify-center items-end">
-          <ManWithLaptopSvg />
+
+        {/* Social Links Section */}
+        <div className="flex flex-col items-center mt-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-8">
+            Get in touch with{" "}
+            <span className="text-primary">IIITV Coding Club</span>
+          </h2>
         </div>
-      </div>
-      {formSubmitted ? null : status === "Sending" ? null : (
-        <button form="contact_form" type="submit">
-          <div
-            className={`${montserratFont.className} m-2 text-xl rounded-full py-2 px-5 bg-primary text-background`}
-          >
-            Send Your Message
-          </div>
-        </button>
-      )}
-      <div
-        className={`${montserratFont.className} mt-24 text-2xl sm:text-3xl md:text-4xl text-center`}
-      >
-        <p>Get in touch with</p>
-        <p>
-          IIITV <span className="text-primary">Coding Club</span>
-        </p>
-      </div>
-      <div className="flex m-5 sm:gap-5 md:gap-10">
-        <Link href={facebookLink}>
-          <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
-            <Image
-              src={"/facebook-2.svg"}
-              width={40}
-              height={40}
-              alt="Facebook Icon"
-              style={{ zIndex: "1" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0"
-            ></Image>
-            <Image
-              src={"/facebook-2.svg"}
-              width={50}
-              height={50}
-              alt="Facebook Icon"
-              style={{ filter: "blur(10px)" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
-            ></Image>
-          </div>
-        </Link>
-        <Link href={instagramLink}>
-          <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
-            <Image
-              src={"/instagram-2.svg"}
-              width={40}
-              height={40}
-              alt="Instagram Icon"
-              style={{ zIndex: "1" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0"
-            ></Image>
-            <Image
-              src={"/instagram-2.svg"}
-              width={50}
-              height={50}
-              alt="Instagram Icon"
-              style={{ filter: "blur(10px)" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
-            ></Image>
-          </div>
-        </Link>
-        <Link href={twitterLink}>
-          <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
-            <Image
-              src={"/twitter-2.svg"}
-              width={40}
-              height={40}
-              alt="Twitter Icon"
-              style={{ zIndex: "1" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0"
-            ></Image>
-            <Image
-              src={"/twitter-2.svg"}
-              width={50}
-              height={50}
-              alt="Twitter Icon"
-              style={{ filter: "blur(10px)" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
-            ></Image>
-          </div>
-        </Link>
-        <Link href={linkedInLink}>
-          <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
-            <Image
-              src={"/linkedin.svg"}
-              width={40}
-              height={40}
-              alt="Linkedin Icon"
-              style={{ zIndex: "1" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0"
-            ></Image>
-            <Image
-              src={"/linkedin.svg"}
-              width={50}
-              height={50}
-              alt="Linkedin Icon"
-              style={{ filter: "blur(10px)" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
-            ></Image>
-          </div>
-        </Link>
-        <Link href={ccEmailLink}>
-          <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
-            <Image
-              src={"/gmail.svg"}
-              width={40}
-              height={40}
-              alt="Gmail Icon"
-              style={{ zIndex: "1" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0"
-            ></Image>
-            <Image
-              src={"/gmail.svg"}
-              width={50}
-              height={50}
-              alt="Gmail Icon"
-              style={{ filter: "blur(10px)" }}
-              className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
-            ></Image>
-          </div>
-        </Link>
-      </div>
-      <div className="mb-10 w-full flex justify-center items-center">
-        <div className="col-span-6 w-full mx-3 md:w-3/5">
-          <iframe
-            className="rounded-xl"
-            width="100%"
-            height="500"
-            src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Indian%20Institute%20of%20Information%20Technology%20Vadodara+(IIIT%20Vadodara)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          ></iframe>
+        <div className="flex justify-center gap-6 md:gap-10 mb-12">
+          <Link href={facebookLink}>
+            <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
+              <Image
+                src={"/facebook-2.svg"}
+                width={40}
+                height={40}
+                alt="Facebook Icon"
+                style={{ zIndex: "1" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0"
+              ></Image>
+              <Image
+                src={"/facebook-2.svg"}
+                width={50}
+                height={50}
+                alt="Facebook Icon"
+                style={{ filter: "blur(10px)" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
+              ></Image>
+            </div>
+          </Link>
+          <Link href={instagramLink}>
+            <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
+              <Image
+                src={"/instagram-2.svg"}
+                width={40}
+                height={40}
+                alt="Instagram Icon"
+                style={{ zIndex: "1" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0"
+              ></Image>
+              <Image
+                src={"/instagram-2.svg"}
+                width={50}
+                height={50}
+                alt="Instagram Icon"
+                style={{ filter: "blur(10px)" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
+              ></Image>
+            </div>
+          </Link>
+          <Link href={twitterLink}>
+            <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
+              <Image
+                src={"/twitter-2.svg"}
+                width={40}
+                height={40}
+                alt="Twitter Icon"
+                style={{ zIndex: "1" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0"
+              ></Image>
+              <Image
+                src={"/twitter-2.svg"}
+                width={50}
+                height={50}
+                alt="Twitter Icon"
+                style={{ filter: "blur(10px)" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
+              ></Image>
+            </div>
+          </Link>
+          <Link href={linkedInLink}>
+            <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
+              <Image
+                src={"/linkedin.svg"}
+                width={40}
+                height={40}
+                alt="Linkedin Icon"
+                style={{ zIndex: "1" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0"
+              ></Image>
+              <Image
+                src={"/linkedin.svg"}
+                width={50}
+                height={50}
+                alt="Linkedin Icon"
+                style={{ filter: "blur(10px)" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
+              ></Image>
+            </div>
+          </Link>
+          <Link href={ccEmailLink}>
+            <div className="socials-link-div grid grid-cols-1 justify-items-center items-center">
+              <Image
+                src={"/gmail.svg"}
+                width={40}
+                height={40}
+                alt="Gmail Icon"
+                style={{ zIndex: "1" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0"
+              ></Image>
+              <Image
+                src={"/gmail.svg"}
+                width={50}
+                height={50}
+                alt="Gmail Icon"
+                style={{ filter: "blur(10px)" }}
+                className="col-span-1 row-start-1 col-span-full m-0 p-0 opacity-0 transition-all ease-in-out duration-500"
+              ></Image>
+            </div>
+          </Link>
         </div>
+
+        {/* Map Section */}
+        <div className="w-full flex justify-center items-center mb-12">
+          <div className="w-full lg:w-4/5">
+            <iframe
+              className="rounded-2xl shadow-lg"
+              width="100%"
+              height="500"
+              src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Indian%20Institute%20of%20Information%20Technology%20Vadodara+(IIIT%20Vadodara)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+          </div>
+        </div>
+
+        {/* Alerts */}
+        {status === "Failed to send email." ? (
+          <Alert status={response.data.status} message={response.data.error} />
+        ) : null}
+        {status === "Error occurred while sending email." ? (
+          <Alert status={500} message={"Error occurred while sending email."} />
+        ) : null}
       </div>
-      {status === "Failed to send email." ? (
-        <Alert status={response.data.status} message={response.data.error} />
-      ) : null}
-      {status === "Error occurred while sending email." ? (
-        <Alert status={500} message={"Error occurred while sending email."} />
-      ) : null}
     </div>
   );
 }
