@@ -1,12 +1,12 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { fetchTeamData } from "./_actions/fetchTeamData";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import Loader from "@/components/ui/loader";
-import { motion, type Variants } from "framer-motion";
+import { motion, type Variants, AnimatePresence } from "framer-motion";
 
 // React icons
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -19,12 +19,14 @@ const cardVariants: Variants = {
     y: 0,
     transition: { duration: 0.5, ease: "easeOut" },
   },
+  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.3 } },
 };
 
 const TeamSection = () => {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);
   const [activeTeam, setActiveTeam] = useState<string | null>(null);
   const [fetchingTeam, setFetchingTeam] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     setFetchingTeam(true);
@@ -51,6 +53,15 @@ const TeamSection = () => {
       ? Array.from(new Set(teamMembers.map((item) => item.batch)))
       : [];
 
+  const filteredMembers = teamMembers
+    .filter(
+      (item) =>
+        (item.batch === activeTeam &&
+          item.position.some((pos: string) => pos === "Member")) ||
+        (activeTeam === "Developers" && item.is_dev),
+    )
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <div className="w-full flex flex-col items-center py-12 lg:py-20">
       <div className="w-[90%] px-4 lg:px-8">
@@ -61,10 +72,11 @@ const TeamSection = () => {
             <span className="relative inline-block">impressive cred</span>.
           </h1>
           <div className="w-24 h-1 bg-primary mb-6"></div>
-            <p className="text-sm lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
-              Meet the talented members of our coding club who are passionate about
-              building innovative projects and fostering a community of developers.
-            </p>
+          <p className="text-sm lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+            Meet the talented members of our coding club who are passionate
+            about building innovative projects and fostering a community of
+            developers.
+          </p>
         </div>
 
         {/* Team Filter Buttons */}
@@ -83,7 +95,7 @@ const TeamSection = () => {
                   key={batch}
                   onClick={() => setActiveTeam(batch)}
                   className={cn(
-                    "btn-brutalist px-6 py-2 text-base font-medium",
+                    "btn-brutalist px-6 py-2 text-base font-medium transition-all",
                     activeTeam === batch
                       ? "bg-transparent text-primary border-primary"
                       : "bg-secondary text-foreground border-foreground",
@@ -95,7 +107,7 @@ const TeamSection = () => {
               <button
                 onClick={() => setActiveTeam("Developers")}
                 className={cn(
-                  "btn-brutalist px-6 py-2 text-base font-medium",
+                  "btn-brutalist px-6 py-2 text-base font-medium transition-all",
                   activeTeam === "Developers"
                     ? "bg-transparent text-primary border-primary"
                     : "bg-secondary text-foreground border-foreground",
@@ -106,26 +118,28 @@ const TeamSection = () => {
             </div>
 
             {/* Team Members Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-              {teamMembers
-                .filter(
-                  (item) =>
-                    (item.batch === activeTeam &&
-                      item.position.some((pos: string) => pos === "Member")) ||
-                    (activeTeam === "Developers" && item.is_dev),
-                )
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map((member, idx) => (
-                  <TeamMemberCard key={member.id} member={member} index={idx} />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTeam}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+              >
+                {filteredMembers.map((member, idx) => (
+                  <TeamMemberCard
+                    key={member.id}
+                    member={member}
+                    index={idx}
+                    hasAnimated={hasAnimated}
+                    setHasAnimated={setHasAnimated}
+                  />
                 ))}
-            </div>
+              </motion.div>
+            </AnimatePresence>
 
-            {teamMembers.filter(
-              (item) =>
-                (item.batch === activeTeam &&
-                  item.position.some((pos: string) => pos === "Member")) ||
-                (activeTeam === "Developers" && item.is_dev),
-            ).length === 0 && (
+            {filteredMembers.length === 0 && (
               <div className="text-center py-16">
                 <p className="text-muted-foreground text-lg">
                   No team members found for this selection.
@@ -142,16 +156,51 @@ const TeamSection = () => {
 interface TeamMemberCardProps {
   member: any;
   index: number;
+  hasAnimated: boolean;
+  setHasAnimated: (value: boolean) => void;
 }
 
-const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member, index }) => {
+const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
+  member,
+  index,
+  hasAnimated,
+  setHasAnimated,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [shouldAnimate, setShouldAnimate] = useState(!hasAnimated);
+
+  useEffect(() => {
+    if (!hasAnimated) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setHasAnimated(true);
+              setShouldAnimate(false);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      if (cardRef.current) {
+        observer.observe(cardRef.current);
+      }
+
+      return () => {
+        if (cardRef.current) {
+          observer.unobserve(cardRef.current);
+        }
+      };
+    }
+  }, [hasAnimated, setHasAnimated]);
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
+      ref={cardRef}
+      initial={shouldAnimate ? "hidden" : "visible"}
+      animate="visible"
       variants={cardVariants}
       className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500"
       onMouseEnter={() => setIsHovered(true)}

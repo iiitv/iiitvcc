@@ -11,13 +11,13 @@ jobs:
         timeout-minutes: 240
         with:
           secret: ${{ github.TOKEN }}
-          approvers: thedevyashsaini # GitHub username of the approver
+          approvers: thedevyashsaini,0xanshu # GitHub username of the approver
           minimum-approvals: 1
           issue-title: "Deploying PR to dev from staging"
           issue-body: "Please approve or deny the deployment of this PR."
           exclude-workflow-initiator-as-approver: true
-          additional-approved-words: ''
-          additional-denied-words: ''
+          additional-approved-words: ""
+          additional-denied-words: ""
       - uses: actions/checkout@v4
       - uses: amondnet/vercel-action@v25
         id: vercel-deploy

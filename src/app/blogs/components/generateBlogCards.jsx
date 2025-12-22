@@ -8,11 +8,13 @@ export default function GenerateBlogCards(props) {
 
   return (
     <div className="w-full mb-8">
-      <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 auto-rows-fr">
         {[...blogs]
           .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
           .map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
+            <div key={blog.id} className="min-w-0">
+              <BlogCard blog={blog} />
+            </div>
           ))}
       </div>
 
