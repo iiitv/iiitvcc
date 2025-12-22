@@ -61,11 +61,10 @@ const TeamSection = () => {
             <span className="relative inline-block">impressive cred</span>.
           </h1>
           <div className="w-24 h-1 bg-primary mb-6"></div>
-          <p className="text-sm lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
-            Want to work with some of the best talent and build software used by
-            all the companies you know and love? Join the team — we're hiring
-            remotely all over the world!
-          </p>
+            <p className="text-sm lg:text-lg text-muted-foreground max-w-3xl leading-relaxed">
+              Meet the talented members of our coding club who are passionate about
+              building innovative projects and fostering a community of developers.
+            </p>
         </div>
 
         {/* Team Filter Buttons */}

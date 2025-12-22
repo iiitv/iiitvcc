@@ -15,7 +15,7 @@ function Footer() {
   const twitterLink = "https://x.com/iiitvcc";
   const instagramLink = "https://www.instagram.com/codingclub_iiitv/";
   const githubLink = "https://github.com/iiitv";
-  const discordLink = "https://discord.gg/RgGAHarP";
+  const discordLink = "https://discord.gg/EuRGyYCcwe";
 
   return (
     <footer className="bg-background border-t border-foreground/10 w-full flex justify-center">

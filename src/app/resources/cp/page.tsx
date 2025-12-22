@@ -529,7 +529,199 @@ export default function CPStaticResources() {
             </ul>
           </div>
         </div>
+       
+        <div className="my-4 rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+          <h3 className="text-2xl font-semibold mb-4 text-center underline">
+            Week 2
+          </h3>
+
+          <div className="mb-6">
+            <div className="font-medium mb-2 text-center">Topics:</div>
+            <div className="font-bold text-center">
+              Bit Manipulation, 2 Pointer, Sliding Window
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="font-medium mb-3">Resources:</h4>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://youtube.com/playlist?list=PLauivoElc3giVROwL-6g9hO-LlSen_NaV&feature=shared"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Bit Manipulation Playlist
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/bit-manipulation-for-competitive-programming/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Bit Manipulation (GFG)
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://youtu.be/ijKmiFqjzi4?feature=shared"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Two Pointer Technique (Videos)
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://youtube.com/playlist?list=PL_z_8CaSLPWeM8BDJmIYDaoQ5zuwyxnfj&feature=shared"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Sliding Window (Videos)
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/dsa/two-pointers-technique/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Two Pointer (GFG)
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/dsa/window-sliding-technique/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Sliding Window (GFG)
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://usaco.guide/silver/two-pointers?lang=cpp"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                Extra Resource - Two Pointer (USACO guide)
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-medium mb-3">Questions:</h4>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/calculate-bitwise-or-of-two-integers-from-their-given-bitwise-and-and-bitwise-xor-values/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Calculate Bitwise OR of two integers from their given Bitwise AND and Bitwise XOR values - GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/problems/print-all-bitwise-subsets-of-a-number-n3301/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Print all bitwise subsets of a number N | Practice | GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://leetcode.com/problems/single-number/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Single Number | Leetcode
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.codechef.com/problems/APPENDOR"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Append OR | CodeChef 
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.codechef.com/problems/XXOORR"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  XXOORR | CodeChef
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/find-repetitive-element-1-n-1/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Find the only repetitive element between 1 to N-1 -
+                  GeeksforGeeks
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://leetcode.com/problems/plus-one/description/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Plus One - LeetCode
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://www.geeksforgeeks.org/problems/partition-a-number-into-two-divisible-parts3605/1"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Partition a number into two divisible parts | Practice |
+                  GeeksforGeeks
+                </Link>
+              </li>
+             
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://leetcode.com/problems/container-with-most-water/description/"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                  Container With Most Water
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://cses.fi/problemset/task/3222"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                 Sliding Window Distinct Values
+                </Link>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-2 h-2 w-2 rounded-full bg-white" />
+                <Link
+                  href="https://cses.fi/problemset/task/1640"
+                  className="text-sky-600 dark:text-sky-300 hover:text-sky-700 dark:hover:text-sky-200 hover:underline"
+                >
+                 Sum of Two Values
+                </Link>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
       </section>
+
 
       <footer className="pt-6 border-t border-white/10 text-sm text-muted-foreground">
         More resources will follow for Winter of Code. Look out here!
