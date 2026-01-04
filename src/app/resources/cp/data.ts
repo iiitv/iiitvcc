@@ -46,7 +46,13 @@ export const afterInitMainsLinks: ResourceData[] = [
   },
 ];
 
-export const winterOfCodeWeeks = [
+export const winterOfCodeWeeks: {
+  weekNumber: number;
+  topics: string;
+  resources: ResourceData[];
+  questions: ResourceData[];
+  note?: string;
+}[] = [
   {
     weekNumber: 1,
     topics: "Arrays, Sorting, Number Theory",
@@ -310,4 +316,65 @@ export const winterOfCodeWeeks = [
 
     ],
   },
+  {
+    weekNumber: 4,
+    topics: "Recursion, Backtracking",
+    resources: [
+      {
+        title: "Recursion | GFG",
+        url: "https://www.geeksforgeeks.org/introduction-to-recursion-data-structure-and-algorithm-tutorials/",
+      },
+      {
+        title: "Backtracking | GFG",
+        url: "https://www.geeksforgeeks.org/introduction-to-backtracking-data-structure-and-algorithm-tutorials/#what-is-backtracking",
+      },
+      {
+        title: "Recursion | Video | Striver",
+        url: "https://youtube.com/playlist?list=PLgUwDviBIf0rGlzIn_7rsaR2FQ5e6ZOL9&si=ob2PtlMFJ0bmgGpF",
+      },
+      {
+        title: "Recursion | Video | Hindi",
+        url: "https://www.youtube.com/playlist?list=PL_z_8CaSLPWeT1ffjiImo0sYTcnLzo-wY",
+      },
+      {
+        title: "Backtracking | Video",
+        url: "https://www.youtube.com/playlist?list=PL_z_8CaSLPWdbOTog8Jxk9XOjzUs3egMP",
+      },
+    ],
+    questions: [
+      {
+        title: "Generate Parentheses | Practice | GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/problems/generate-all-possible-parentheses/1",
+      },
+      {
+        title: "Print all combinations | Set-2 - GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/",
+      },
+      {
+        title: "Generate all binary strings | Practice | GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/problems/generate-all-binary-strings/1",
+      },
+      {
+        title: "Sum of Nth Power  | Practice | GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/problems/express-as-sum-of-power-of-natural-numbers5647/1",
+      },
+      {
+        title: "N-Queens Problem | Practice | GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/problems/n-queen-problem0315/1",
+      },
+      {
+        title: "Longest Possible Route in a Matrix with Hurdles | Practice | GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/problems/longest-possible-route-in-a-matrix-with-hurdles/1"
+      },
+      {
+        title: "Partition Array to K Subsets | Practice | GeeksforGeeks",
+        url : "https://www.geeksforgeeks.org/problems/partition-array-to-k-subsets/1",
+      },
+      {
+        title: "Largest Number in K Swaps | Practice | GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/problems/largest-number-in-k-swaps-1587115620/1",
+      }
+    ],
+    note: "Focus on the Recursion part completely if you think you can't complete backtracking. Else try to do both."
+  }
 ];
