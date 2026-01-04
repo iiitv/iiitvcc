@@ -55,7 +55,7 @@ export interface ResourceData {
   url: string;
 }
 
-export function WeekSection({ weekNumber, topics, resources, questions }: { weekNumber: number, topics: string, resources: ResourceData[], questions: ResourceData[] }) {
+export function WeekSection({ weekNumber, topics, resources, questions, note }: { weekNumber: number, topics: string, resources: ResourceData[], questions: ResourceData[], note?: string }) {
   return (
     <ResourceCard className="mb-6">
       <h3 className="text-2xl font-semibold mb-4 text-center underline">
@@ -68,6 +68,14 @@ export function WeekSection({ weekNumber, topics, resources, questions }: { week
           {topics}
         </div>
       </div>
+
+      {note && (
+        <div className="mb-6 rounded-md border border-amber-200/40 bg-amber-50/60 dark:bg-amber-950/30 px-4 py-3">
+          <p className="text-sm text-amber-800 dark:text-amber-200">
+            <span className="font-semibold">Note:</span> {note}
+          </p>
+        </div>
+      )}
 
       <div className="mb-6">
         <h4 className="font-medium mb-3">Resources:</h4>

@@ -165,6 +165,7 @@ export default function CPStaticResources() {
             topics={week.topics}
             resources={week.resources}
             questions={week.questions}
+            note={week.note}
           />
         ))}
       </section>
