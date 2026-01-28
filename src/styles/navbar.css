@@ -24,7 +24,7 @@
 }
 
 .navbar-content {
-  width: 90%;
+  width: 100%;
   max-width: 1400px;
   display: flex;
   justify-content: space-between;
@@ -39,6 +39,7 @@
   gap: 12px;
   cursor: pointer;
   transition: opacity 0.2s;
+  margin-left: 5%;
 }
 
 .logo-container:hover {

@@ -4,9 +4,8 @@ import axios from "axios";
 import "@/styles/navbar.css";
 import Link from "next/link";
 import Image from "next/image";
-
 import { supabase } from "@/utils/supabase/client";
-import { Dropdown_Menu } from "./user_dropdown";
+import { ProfileDropdown } from "./profile_dropdown";
 import { LoggingOut } from "@/components/ui/loggingout";
 
 function Navbar() {
@@ -74,14 +73,12 @@ function Navbar() {
   return (
     <>
       {user && (
-        <Dropdown_Menu
+        <ProfileDropdown
           username={username}
           email={user?.email}
-          onProfile="/profile"
           onLogout={logout}
         />
       )}
-
       <div id="pseudo"></div>
       <div className="navbar">
         <div className="navbar-content">
@@ -114,29 +111,12 @@ function Navbar() {
             <Link href={resourcesLink} className="nav-link" prefetch={false}>
               Resources
             </Link>
-          </div>
-
-          <div className="menu-right">
-            {/* Contact Us Button */}
-            <Link href={contactUsLink} className="contact-btn" prefetch={false}>
+            <Link href={contactUsLink} className="nav-link" prefetch={false}>
               Contact Us
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 8H13M13 8L9 4M13 8L9 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
             </Link>
           </div>
+
+          <div className="menu-right">{/* Empty spacer for balance */}</div>
 
           {/* Mobile Menu */}
           <div className="mobile-menu">

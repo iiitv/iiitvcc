@@ -31,22 +31,15 @@ export function Dropdown_Menu({
         <DropdownMenuTrigger asChild>
           <Button
             variant="link"
-            size="icon"
-            className="rounded-full outline outline-2 outline-white z-20 fixed top-[1.35em] right-6"
+            size="default"
+            className="z-[150] fixed top-[1.35em] right-10 focus:outline-none focus-visible:outline-none focus-visible:ring-0 hover:bg-transparent text-white"
           >
-            <Avatar className="h-8 w-8">
-              <AvatarImage src="/placeholder-user.jpg" />
-              <AvatarFallback>JD</AvatarFallback>
-            </Avatar>
+            {username || "User"}
             <span className="sr-only">Toggle user menu</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <div className="flex items-center gap-2 p-2 max-w-[22rem] min-w-[12rem]">
-            <Avatar className="h-8 w-8">
-              <AvatarImage src="/placeholder-user.jpg" />
-              <AvatarFallback>JD</AvatarFallback>
-            </Avatar>
             <div className="grid gap-0.5 leading-none">
               <div className="font-semibold">{username || "username"}</div>
               <div className="text-sm text-muted-foreground ">
