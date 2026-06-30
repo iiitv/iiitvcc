@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { SVGProps } from "react";
+import { JSX, SVGProps } from "react";
 import Loader from "@/components/ui/loader";
 
 export function LoggingOut() {
