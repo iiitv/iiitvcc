@@ -22,6 +22,8 @@ jobs:
           additional-approved-words: ""
           additional-denied-words: ""
       - uses: actions/checkout@v4
+      - name: Install pnpm
+        run: npm install --global pnpm
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
