@@ -15,7 +15,7 @@ export default function DevelopmentResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Free CS Education</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -67,7 +67,7 @@ export default function DevelopmentResources() {
         <h2 className="text-2xl font-semibold mb-3">
           Student Tools & Benefits
         </h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="rounded-md border border-blue-200/40 bg-blue-50/60 dark:bg-blue-950/30 px-4 py-3 mb-4">
             <p className="text-sm text-blue-800 dark:text-blue-200">
               <span className="font-semibold">Note:</span> Use your Institute ID
@@ -196,7 +196,7 @@ export default function DevelopmentResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Code Editors & IDEs</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div>
               <h3 className="font-medium mb-2">
@@ -363,7 +363,7 @@ export default function DevelopmentResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Essential Skills</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div>
               <h3 className="font-medium mb-2">Version Control with Git</h3>
@@ -482,7 +482,7 @@ export default function DevelopmentResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Community & Networking</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />

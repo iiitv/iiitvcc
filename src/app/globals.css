@@ -122,8 +122,8 @@
     --destructive: #751a1a;
     --destructive-hover: #8c1f1f;
     --destructive-foreground: #fcfdff;
-    --border: #e6eaf0;
-    --input: #e6eaf0;
+    --border: rgba(255, 255, 255, 0.15);
+    --input: rgba(255, 255, 255, 0.15);
     --ring: #1d0209;
     --radius: 0.5rem;
     --chart-1: #33cc99;

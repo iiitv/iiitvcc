@@ -133,7 +133,7 @@ function AddBlog() {
         <input
           type="text"
           placeholder="Blog Title"
-          className="border rounded px-3 py-2"
+          className="border rounded px-3 py-2 bg-white text-black"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           disabled={loading}
@@ -142,7 +142,7 @@ function AddBlog() {
         <label className="block font-medium text-white">Summary or Quote</label>
         <textarea
           placeholder="Short Intro / Summary / Quote"
-          className="border rounded px-3 mb-2"
+          className="border rounded px-3 mb-2 bg-white text-black"
           value={intro}
           onChange={(e) => setIntro(e.target.value)}
           rows={2}

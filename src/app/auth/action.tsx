@@ -81,7 +81,7 @@ export const checkEmailForOrganisation = async (credentials: {
   const organisation = new Set(["iiitv.ac.in", "iiitvadodara.ac.in"]);
   cookiesStore.set("email", credentials.email as string);
   if (organisation.has(credentials.email.split("@")[1])) {
-    redirect(`?auth=login&organisation=iiitv`);
+    redirect(`/auth?auth=login&organisation=iiitv`);
   }
-  redirect(`?auth=login`);
+  redirect(`/auth?auth=login`);
 };

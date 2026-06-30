@@ -79,7 +79,7 @@ function EventDetails(props) {
           >
             Register
           </Link>
-          {isAdmin ? DeleteButton() : null}
+          {isAdmin ? <DeleteButton /> : null}
         </div>
       </div>
       <div className={`event-date-time-container ${montserratFont.className}`}>

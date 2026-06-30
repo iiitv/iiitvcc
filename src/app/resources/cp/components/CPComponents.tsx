@@ -10,7 +10,7 @@ export function ResourceCard({
 }) {
   return (
     <div
-      className={`rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6 ${className}`}
+      className={`rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6 ${className}`}
     >
       {children}
     </div>

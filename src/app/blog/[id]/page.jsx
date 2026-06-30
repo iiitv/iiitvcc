@@ -217,7 +217,7 @@ export default function BlogPage() {
         <Link
           href="/"
           aria-label="Back to home"
-          className="absolute top-16 left-4 sm:top-6 sm:left-6 z-[5] inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-black bg-white hover:bg-white/50 rounded-full border border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="absolute top-16 left-4 sm:top-6 sm:left-6 z-5 inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-black bg-white hover:bg-white/50 rounded-full border border-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -244,7 +244,7 @@ export default function BlogPage() {
           priority
           className="object-cover m-0 p-0"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-transparent" />
       </div>
 
       <article

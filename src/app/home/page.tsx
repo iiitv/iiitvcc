@@ -220,6 +220,8 @@ export default function Home() {
               alt="IIITV Coding Club"
               width={540}
               height={405}
+              priority
+              style={{ width: "100%", height: "auto" }}
               className="shadow-2xl shadow-black/50 rounded-2xl"
             />
           </div>

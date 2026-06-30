@@ -16,7 +16,7 @@ export default function MLResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Prerequisites</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Programming Languages:</span>
@@ -46,7 +46,7 @@ export default function MLResources() {
         <h2 className="text-2xl font-semibold mb-3">
           Mathematical Foundations
         </h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -85,7 +85,7 @@ export default function MLResources() {
         <h2 className="text-2xl font-semibold mb-3">
           Essential Tools & References
         </h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -129,7 +129,7 @@ export default function MLResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Learning Resources</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -180,7 +180,7 @@ export default function MLResources() {
         <h2 className="text-2xl font-semibold mb-3">
           Machine Learning Courses
         </h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -248,7 +248,7 @@ export default function MLResources() {
         <h2 className="text-2xl font-semibold mb-3">
           Practice Platforms & Computing Resources
         </h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="rounded-md border border-green-200/40 bg-green-50/60 dark:bg-green-950/30 px-4 py-3">
               <p className="text-sm text-green-800 dark:text-green-200">

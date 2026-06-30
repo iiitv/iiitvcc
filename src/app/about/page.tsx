@@ -41,7 +41,7 @@ export default function About() {
     <div className="flex flex-col items-center">
       {/* Hero Section */}
       <AnimatedSection>
-        <section className="relative min-h-[90dvh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-secondary/5 w-full">
+        <section className="relative min-h-[90dvh] flex items-center justify-center bg-linear-to-br from-primary/5 via-background to-secondary/5 w-full">
           <div className="w-[85%] mx-auto px-4 md:px-6">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="space-y-6">
@@ -79,7 +79,7 @@ export default function About() {
 
       {/* Stats Section */}
       <AnimatedSection>
-        <section className="py-20 bg-muted/50 w-full">
+        <section className="py-20 bg-transparent w-full">
           <div className="w-[85%] mx-auto px-4 md:px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-32 items-center justify-items-center">
               {stats.map((stat, index) => (
