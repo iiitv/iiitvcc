@@ -6,12 +6,15 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
     steps:
       - uses: trstringer/manual-approval@v1
         timeout-minutes: 240
         with:
           secret: ${{ github.TOKEN }}
-          approvers: thedevyashsaini,0xanshu, MrQuantum1915 # GitHub username of the approver
+          approvers: thedevyashsaini,0xanshu,MrQuantum1915 # GitHub username of the approver
           minimum-approvals: 1
           issue-title: "Deploying PR to dev from staging"
           issue-body: "Please approve or deny the deployment of this PR."
@@ -19,13 +22,17 @@ jobs:
           additional-approved-words: ""
           additional-denied-words: ""
       - uses: actions/checkout@v4
-      - uses: amondnet/vercel-action@v25
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
         id: vercel-deploy
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID}}
-          vercel-project-id: ${{ secrets.PROJECT_ID}}
+        run: |
+          DEPLOY_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "preview-url=$DEPLOY_URL" >> $GITHUB_OUTPUT
       - name: preview-url
         run: |
           echo ${{ steps.vercel-deploy.outputs.preview-url }}
