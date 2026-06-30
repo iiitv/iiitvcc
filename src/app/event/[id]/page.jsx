@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
 import { useRouter } from "next/navigation";
 import GenerateEvent from "./components/event";
 import useFetchEvent from "./fetchEvent";
 import Loading from "@/components/loading";
 
-function Event({ params }) {
+function Event(props) {
+  const params = use(props.params);
   const eventId = params.id;
   const { event, loading, error } = useFetchEvent(eventId);
   const router = useRouter();

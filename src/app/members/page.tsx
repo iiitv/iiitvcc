@@ -207,7 +207,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Background Image */}
-      <div className="relative w-full aspect-[3/4] overflow-hidden">
+      <div className="relative w-full aspect-3/4 overflow-hidden">
         <CldImage
           src={member.pfp}
           alt={`Photo of ${member.name}`}
@@ -218,7 +218,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
         />
 
         {/* Gradient Overlay - Always visible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent" />
 
         {/* Content Overlay */}
         <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">

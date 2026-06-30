@@ -15,7 +15,7 @@ export default function WebDevResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Prerequisites</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -41,7 +41,7 @@ export default function WebDevResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">HTML & CSS Fundamentals</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -82,7 +82,7 @@ export default function WebDevResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">JavaScript</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -115,7 +115,7 @@ export default function WebDevResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Frontend Development</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Frameworks & Libraries:</span>
@@ -179,7 +179,7 @@ export default function WebDevResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Backend Development</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="flex flex-col gap-1">
               <span className="font-medium">Technologies:</span>
@@ -230,7 +230,7 @@ export default function WebDevResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Comprehensive Courses</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -263,7 +263,7 @@ export default function WebDevResources() {
         <h2 className="text-2xl font-semibold mb-3">
           Helpful YouTube Channels
         </h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />

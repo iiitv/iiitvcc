@@ -15,7 +15,7 @@ export default function UIUXResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Design Fundamentals</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -58,7 +58,7 @@ export default function UIUXResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Design Tools</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div>
               <h3 className="font-medium mb-2">UI Design Tools</h3>
@@ -216,7 +216,7 @@ export default function UIUXResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Inspiration & Examples</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div className="rounded-md border border-green-200/40 bg-green-50/60 dark:bg-green-950/30 px-4 py-3">
               <p className="text-sm text-green-800 dark:text-green-200">
@@ -315,7 +315,7 @@ export default function UIUXResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Learning Resources</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />
@@ -378,7 +378,7 @@ export default function UIUXResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Free Resources & Assets</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <div className="space-y-4">
             <div>
               <h3 className="font-medium mb-2">Icons & Graphics</h3>
@@ -516,7 +516,7 @@ export default function UIUXResources() {
 
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-3">Design Process</h2>
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
+        <div className="rounded-xl border border-white/10 bg-linear-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6">
           <ul className="space-y-2">
             <li className="flex items-start gap-2">
               <span className="mt-2 h-2 w-2 rounded-full bg-white" />

@@ -108,11 +108,13 @@ export const winterOfCodeWeeks: {
         url: "https://www.geeksforgeeks.org/problems/permutations-of-a-given-string2041/1",
       },
       {
-        title: "Program to count occurrence of a given character in a string - GeeksforGeeks",
+        title:
+          "Program to count occurrence of a given character in a string - GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/program-count-occurrence-given-character-string/",
       },
       {
-        title: "Find the only repetitive element between 1 to N-1 - GeeksforGeeks",
+        title:
+          "Find the only repetitive element between 1 to N-1 - GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/find-repetitive-element-1-n-1/",
       },
       {
@@ -120,7 +122,8 @@ export const winterOfCodeWeeks: {
         url: "https://leetcode.com/problems/plus-one/description/",
       },
       {
-        title: "Partition a number into two divisible parts | Practice | GeeksforGeeks",
+        title:
+          "Partition a number into two divisible parts | Practice | GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/problems/partition-a-number-into-two-divisible-parts3605/1",
       },
       {
@@ -180,11 +183,13 @@ export const winterOfCodeWeeks: {
     ],
     questions: [
       {
-        title: "Calculate Bitwise OR of two integers from their given Bitwise AND and Bitwise XOR values - GeeksforGeeks",
+        title:
+          "Calculate Bitwise OR of two integers from their given Bitwise AND and Bitwise XOR values - GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/calculate-bitwise-or-of-two-integers-from-their-given-bitwise-and-and-bitwise-xor-values/",
       },
       {
-        title: "Print all bitwise subsets of a number N | Practice | GeeksforGeeks",
+        title:
+          "Print all bitwise subsets of a number N | Practice | GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/problems/print-all-bitwise-subsets-of-a-number-n3301/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
       },
       {
@@ -200,7 +205,8 @@ export const winterOfCodeWeeks: {
         url: "https://www.codechef.com/problems/XXOORR",
       },
       {
-        title: "Find the only repetitive element between 1 to N-1 - GeeksforGeeks",
+        title:
+          "Find the only repetitive element between 1 to N-1 - GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/find-repetitive-element-1-n-1/",
       },
       {
@@ -208,7 +214,8 @@ export const winterOfCodeWeeks: {
         url: "https://leetcode.com/problems/plus-one/description/",
       },
       {
-        title: "Partition a number into two divisible parts | Practice | GeeksforGeeks",
+        title:
+          "Partition a number into two divisible parts | Practice | GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/problems/partition-a-number-into-two-divisible-parts3605/1",
       },
       {
@@ -235,7 +242,7 @@ export const winterOfCodeWeeks: {
       },
       {
         title: "Greedy Algo | Free Code Camp",
-        url: "https://www.freecodecamp.org/news/greedy-algorithms/"
+        url: "https://www.freecodecamp.org/news/greedy-algorithms/",
       },
       {
         title: "(Additional) Introduction to Greedy Algorithms | USACO Guide",
@@ -268,7 +275,8 @@ export const winterOfCodeWeeks: {
         url: "https://www.geeksforgeeks.org/problems/job-sequencing-problem-1587115620/1",
       },
       {
-        title: "Job SequencMinimum increment/decrement to make array non-Increasing | Practice | GFG",
+        title:
+          "Job SequencMinimum increment/decrement to make array non-Increasing | Practice | GFG",
         url: "https://www.geeksforgeeks.org/problems/minimum-incrementdecrement-to-make-array-non-increasing--170637/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article",
       },
       {
@@ -312,8 +320,6 @@ export const winterOfCodeWeeks: {
         title: "X - Subarrays | Practice | HackerEarth",
         url: "https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/x-subarrays-2-6179b2c0/",
       },
-
-
     ],
   },
   {
@@ -363,18 +369,19 @@ export const winterOfCodeWeeks: {
         url: "https://www.geeksforgeeks.org/problems/n-queen-problem0315/1",
       },
       {
-        title: "Longest Possible Route in a Matrix with Hurdles | Practice | GeeksforGeeks",
-        url: "https://www.geeksforgeeks.org/problems/longest-possible-route-in-a-matrix-with-hurdles/1"
+        title:
+          "Longest Possible Route in a Matrix with Hurdles | Practice | GeeksforGeeks",
+        url: "https://www.geeksforgeeks.org/problems/longest-possible-route-in-a-matrix-with-hurdles/1",
       },
       {
         title: "Partition Array to K Subsets | Practice | GeeksforGeeks",
-        url : "https://www.geeksforgeeks.org/problems/partition-array-to-k-subsets/1",
+        url: "https://www.geeksforgeeks.org/problems/partition-array-to-k-subsets/1",
       },
       {
         title: "Largest Number in K Swaps | Practice | GeeksforGeeks",
         url: "https://www.geeksforgeeks.org/problems/largest-number-in-k-swaps-1587115620/1",
-      }
+      },
     ],
-    note: "Focus on the Recursion part completely if you think you can't complete backtracking. Else try to do both."
-  }
+    note: "Focus on the Recursion part completely if you think you can't complete backtracking. Else try to do both.",
+  },
 ];

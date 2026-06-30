@@ -146,7 +146,7 @@ function AddEvent() {
             type="text"
             id="eventName"
             name="name"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             placeholder="Enter event name"
             required
           />
@@ -161,7 +161,7 @@ function AddEvent() {
           <textarea
             id="eventDescription"
             name="description"
-            className="p-2 border rounded w-full resize-y min-h-[100px]"
+            className="p-2 border rounded w-full resize-y min-h-[100px] bg-white text-black"
             placeholder="Enter event description"
             required
           ></textarea>
@@ -177,7 +177,7 @@ function AddEvent() {
             type="date"
             id="eventDate"
             name="date"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             required
           />
         </div>
@@ -192,7 +192,7 @@ function AddEvent() {
             type="time"
             id="eventTime"
             name="time"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             placeholder="Enter event time"
             required
           />
@@ -208,7 +208,7 @@ function AddEvent() {
             type="number"
             id="eventDuration"
             name="duration"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             placeholder="Enter event duration"
             required
           />
@@ -224,7 +224,7 @@ function AddEvent() {
             onChange={(e) => setmode(e.target.value)}
             id="eventMode"
             name="mode"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             required
           >
             <option value="true">Online</option>
@@ -243,7 +243,7 @@ function AddEvent() {
               type="text"
               id="eventVenue"
               name="venue"
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-white text-black"
               placeholder="Enter event venue"
               required
             />
@@ -262,7 +262,7 @@ function AddEvent() {
               type="url"
               id="eventVenueLink"
               name="venue_link"
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-white text-black"
               placeholder="Enter event venue link"
               required
             />
@@ -295,7 +295,7 @@ function AddEvent() {
                 <div className="flex items-center gap-2 mb-2">
                   <input
                     type="text"
-                    className="p-2 border rounded w-1/3"
+                    className="p-2 border rounded w-1/3 bg-white text-black"
                     placeholder="Category (e.g. CP, Web Dev)"
                     value={cat.category}
                     onChange={(e) =>
@@ -315,7 +315,7 @@ function AddEvent() {
                   <div key={prizeIdx} className="flex items-center gap-2 mb-1">
                     <input
                       type="text"
-                      className="p-2 border rounded w-1/3"
+                      className="p-2 border rounded w-1/3 bg-white text-black"
                       placeholder="Prize Label (e.g. Winner)"
                       value={prize.label}
                       onChange={(e) =>
@@ -325,7 +325,7 @@ function AddEvent() {
                     />
                     <input
                       type="text"
-                      className="p-2 border rounded w-1/2"
+                      className="p-2 border rounded w-1/2 bg-white text-black"
                       placeholder="Prize Value (e.g. Rs 250 Zomato Voucher)"
                       value={prize.value}
                       onChange={(e) =>
@@ -372,7 +372,7 @@ function AddEvent() {
             type="text"
             id="eventRequirements"
             name="requirements"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             placeholder="Enter event requirements (comma separated)"
             required
           />
@@ -389,7 +389,7 @@ function AddEvent() {
             type="url"
             id="eventHostLink"
             name="host_link"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             placeholder="Enter event host link"
             required
           />
@@ -404,7 +404,7 @@ function AddEvent() {
           <select
             id="eventHostedRegistration"
             name="hosted_registration"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             required
             value={registrationHosted}
             onChange={(e) => setregistrationHosted(e.target.value === "true")}
@@ -425,7 +425,7 @@ function AddEvent() {
               type="datetime-local"
               id="eventRegisterUntil"
               name="register_until"
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-white text-black"
               required
             />
           </div>
@@ -442,7 +442,7 @@ function AddEvent() {
               type="url"
               id="eventRegistrationLink"
               name="registration_link"
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-white text-black"
               placeholder="Enter event registration link"
               required
             />
@@ -458,7 +458,7 @@ function AddEvent() {
           <textarea
             id="eventConvenors"
             name="convenors"
-            className="p-2 border rounded"
+            className="p-2 border rounded bg-white text-black"
             placeholder="Enter event convenors (comma separated)"
             required
           />

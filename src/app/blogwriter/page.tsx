@@ -19,7 +19,7 @@ const Example = () => {
       onChange={(newContent) => {
         console.log(newContent);
       }}
-      className="text-black !h-screen"
+      className="text-black h-screen!"
     />
   );
 };

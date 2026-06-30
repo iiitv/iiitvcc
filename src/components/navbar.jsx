@@ -80,7 +80,7 @@ function Navbar() {
         />
       )}
       <div id="pseudo"></div>
-      <div className="navbar">
+      <div className="navbar bg-background/20 backdrop-blur-md">
         <div className="navbar-content">
           <Link href="/" className="logo-container" prefetch={false}>
             <Image

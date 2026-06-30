@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+next-env.d.ts
 
 # production
 /build
@@ -38,6 +39,6 @@ yarn-error.log*
 /src/app/admin
 
 # robots.txt
-/robots.txt
-/sitemap.xml
-/sitemap-[0-9]*.xml
+/public/robots.txt
+/public/sitemap.xml
+/public/sitemap-[0-9]*.xml

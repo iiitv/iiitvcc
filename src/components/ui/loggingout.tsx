@@ -1,13 +1,12 @@
 "use client";
-import React from "react";
-import { SVGProps } from "react";
+import { JSX, SVGProps } from "react";
 import Loader from "@/components/ui/loader";
 
 export function LoggingOut() {
   document.body.style.overflow = "hidden";
 
   return (
-    <div className="grid min-h-[100dvh] w-full bg-background absolute top-0 right-0">
+    <div className="grid min-h-dvh w-full bg-background absolute top-0 right-0">
       <main className="flex flex-col items-center justify-center gap-4 px-4 py-12 md:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-2">
           <LogOutIcon className="h-12 w-12 text-primary" />

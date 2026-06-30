@@ -93,8 +93,8 @@ export default function Confirm() {
   };
 
   return (
-    <div className="flex min-h-[100dvh] lg:flex-row flex-col bg-background">
-      <div className="lg:h-[100vh] h-[50vh] w-[100vw] flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 lg:scale-[1.1]">
+    <div className="flex min-h-dvh lg:flex-row flex-col bg-background">
+      <div className="lg:h-screen h-[50vh] w-screen flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8 lg:scale-[1.1]">
         <div className="mx-auto max-w-md text-center">
           <CircleCheckIcon className="mx-auto h-12 w-12 text-primary" />
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -135,7 +135,7 @@ export default function Confirm() {
           </div>
         </div>
       </div>
-      <div className="lg:h-[100vh] h-[50vh] w-[100vw] flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <div className="lg:h-screen h-[50vh] w-screen flex flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         <Image
           src="/auth/confirm_email_logo.svg"
           alt="Confirm Email"

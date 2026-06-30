@@ -39,7 +39,7 @@ export default function Update_password() {
   }
 
   return (
-    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
+    <div className="flex min-h-dvh flex-col items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-md w-full space-y-6">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Update Password</h1>
