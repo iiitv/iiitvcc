@@ -74,7 +74,9 @@ export const AuthSignIn = async () => {
   return { error: "Error signing in", url: null };
 };
 
-export const checkEmailForOrganisation = async (credentials: { email: string }) => {
+export const checkEmailForOrganisation = async (credentials: {
+  email: string;
+}) => {
   const cookiesStore = await cookies();
   const organisation = new Set(["iiitv.ac.in", "iiitvadodara.ac.in"]);
   cookiesStore.set("email", credentials.email as string);

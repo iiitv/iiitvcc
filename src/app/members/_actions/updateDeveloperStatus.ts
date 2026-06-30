@@ -3,7 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 
 export async function updateDeveloperStatus(
   name: string,
-  isDev: boolean
+  isDev: boolean,
 ): Promise<{ success: boolean; message: string }> {
   try {
     const supabase = await createClient();

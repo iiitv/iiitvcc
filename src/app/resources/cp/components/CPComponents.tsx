@@ -1,31 +1,47 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 
-export function ResourceCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function ResourceCard({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
-    <div className={`rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6 ${className}`}>
+    <div
+      className={`rounded-xl border border-white/10 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-900/30 dark:to-gray-900/10 p-5 sm:p-6 ${className}`}
+    >
       {children}
     </div>
   );
 }
 
-export function ResourceSection({ title, children, className = "" }: { title: ReactNode; children: ReactNode; className?: string }) {
+export function ResourceSection({
+  title,
+  children,
+  className = "",
+}: {
+  title: ReactNode;
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <section className={`mb-10 ${className}`}>
       <h2 className="text-2xl font-semibold mb-3">{title}</h2>
-      <ResourceCard>
-        {children}
-      </ResourceCard>
+      <ResourceCard>{children}</ResourceCard>
     </section>
   );
 }
 
-export function ResourceList({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <ul className={`space-y-2 ${className}`}>
-      {children}
-    </ul>
-  );
+export function ResourceList({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <ul className={`space-y-2 ${className}`}>{children}</ul>;
 }
 
 export function ResourceItem({ children }: { children: ReactNode }) {
@@ -37,8 +53,20 @@ export function ResourceItem({ children }: { children: ReactNode }) {
   );
 }
 
-export function ResourceLink({ href, children, external = true, className = "" }: { href: string; children: ReactNode; external?: boolean; className?: string }) {
-  const props = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+export function ResourceLink({
+  href,
+  children,
+  external = true,
+  className = "",
+}: {
+  href: string;
+  children: ReactNode;
+  external?: boolean;
+  className?: string;
+}) {
+  const props = external
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
   return (
     <Link
       href={href}
@@ -55,7 +83,19 @@ export interface ResourceData {
   url: string;
 }
 
-export function WeekSection({ weekNumber, topics, resources, questions, note }: { weekNumber: number, topics: string, resources: ResourceData[], questions: ResourceData[], note?: string }) {
+export function WeekSection({
+  weekNumber,
+  topics,
+  resources,
+  questions,
+  note,
+}: {
+  weekNumber: number;
+  topics: string;
+  resources: ResourceData[];
+  questions: ResourceData[];
+  note?: string;
+}) {
   return (
     <ResourceCard className="mb-6">
       <h3 className="text-2xl font-semibold mb-4 text-center underline">
@@ -64,9 +104,7 @@ export function WeekSection({ weekNumber, topics, resources, questions, note }: 
 
       <div className="mb-6">
         <div className="font-medium mb-2 text-center">Topics:</div>
-        <div className="font-bold text-center">
-          {topics}
-        </div>
+        <div className="font-bold text-center">{topics}</div>
       </div>
 
       {note && (

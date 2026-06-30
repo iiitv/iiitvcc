@@ -7,11 +7,7 @@ import {
   ResourceSection,
   WeekSection,
 } from "./components/CPComponents";
-import {
-  afterInitMainsLinks,
-  initMainsLinks,
-  winterOfCodeWeeks,
-} from "./data";
+import { afterInitMainsLinks, initMainsLinks, winterOfCodeWeeks } from "./data";
 
 export default function CPStaticResources() {
   return (
@@ -83,7 +79,13 @@ export default function CPStaticResources() {
         </ResourceCard>
       </section>
 
-      <ResourceSection title={<span>After <code>init_mains()</code></span>}>
+      <ResourceSection
+        title={
+          <span>
+            After <code>init_mains()</code>
+          </span>
+        }
+      >
         <ResourceList>
           {afterInitMainsLinks.map((link, idx) => (
             <ResourceItem key={idx}>
@@ -93,26 +95,38 @@ export default function CPStaticResources() {
         </ResourceList>
       </ResourceSection>
 
-      <ResourceSection title={<span>What after <code>init_mains()</code>?</span>}>
+      <ResourceSection
+        title={
+          <span>
+            What after <code>init_mains()</code>?
+          </span>
+        }
+      >
         <ResourceList>
           <ResourceItem>
             <div>
-              We will start with Winter of Code in December. Its Resources
-              will be shared here soon!
+              We will start with Winter of Code in December. Its Resources will
+              be shared here soon!
             </div>
           </ResourceItem>
-          
-          <div className="pt-2 pb-1 font-semibold text-lg">But if you want to get started earlier, you can:</div>
-          
+
+          <div className="pt-2 pb-1 font-semibold text-lg">
+            But if you want to get started earlier, you can:
+          </div>
+
           <ResourceItem>
             <div>
               For CP, start following the USACO Guide (it’s good):
               <ResourceList className="mt-1 pl-4">
                 <ResourceItem>
-                  <ResourceLink href="https://usaco.guide/bronze/">Bronze</ResourceLink>
+                  <ResourceLink href="https://usaco.guide/bronze/">
+                    Bronze
+                  </ResourceLink>
                 </ResourceItem>
                 <ResourceItem>
-                  <ResourceLink href="https://usaco.guide/silver/">Silver</ResourceLink>
+                  <ResourceLink href="https://usaco.guide/silver/">
+                    Silver
+                  </ResourceLink>
                 </ResourceItem>
               </ResourceList>
             </div>
@@ -122,7 +136,9 @@ export default function CPStaticResources() {
             <div>
               Start giving div3/div4 contests on Codeforces; after progress,
               start div2 as well.{" "}
-              <ResourceLink href="https://codeforces.com">codeforces.com</ResourceLink>
+              <ResourceLink href="https://codeforces.com">
+                codeforces.com
+              </ResourceLink>
             </div>
           </ResourceItem>
 
@@ -133,7 +149,8 @@ export default function CPStaticResources() {
                 TLE Eliminator's CP-31 sheet
               </ResourceLink>
               <span>
-                {" "}(Follow it for question practice. It has very nice set of
+                {" "}
+                (Follow it for question practice. It has very nice set of
                 questions).
               </span>
             </div>
@@ -147,7 +164,7 @@ export default function CPStaticResources() {
               </ResourceLink>
             </div>
           </ResourceItem>
-          
+
           <ResourceItem>
             <div>
               Practice from the TLE sheet and start giving regular contests.
