@@ -7,7 +7,7 @@ async function convertToAvif(inputFile) {
   const arrayBuffer = await inputFile.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
   const avifBuffer = await sharp(buffer).avif().toBuffer();
-  const blob = new Blob([avifBuffer], { type: "image/avif" });
+  const blob = new Blob([new Uint8Array(avifBuffer)], { type: "image/avif" });
   const avifFile = new File([blob], inputFile.name, { type: "image/avif" });
   return avifFile;
 }

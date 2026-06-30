@@ -23,7 +23,8 @@ export const SignUp = async (credentials: {
   email: string;
   password: string;
 }) => {
-  const origin = headers().get("origin");
+  const headersList = await headers();
+  const origin = headersList.get("origin");
   const username = credentials.username;
   const supabase = await createClient();
 
@@ -50,8 +51,10 @@ export const SignUp = async (credentials: {
 };
 
 export const AuthSignIn = async () => {
-  const origin = headers().get("origin");
-  const gmail = cookies()?.get("email")?.value || "";
+  const headersList = await headers();
+  const origin = headersList.get("origin");
+  const cookieStore = await cookies();
+  const gmail = cookieStore.get("email")?.value || "";
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
@@ -71,8 +74,8 @@ export const AuthSignIn = async () => {
   return { error: "Error signing in", url: null };
 };
 
-export const checkEmailForOrganisation = (credentials: { email: string }) => {
-  const cookiesStore = cookies();
+export const checkEmailForOrganisation = async (credentials: { email: string }) => {
+  const cookiesStore = await cookies();
   const organisation = new Set(["iiitv.ac.in", "iiitvadodara.ac.in"]);
   cookiesStore.set("email", credentials.email as string);
   if (organisation.has(credentials.email.split("@")[1])) {
