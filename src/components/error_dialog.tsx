@@ -10,27 +10,15 @@ import {
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { JSX, SVGProps } from "react";
-import PropsTypes from "prop-types";
-
-ErrorDialog.propTypes = {
-  status: PropsTypes.number,
-  error: PropsTypes.string,
-};
-
-ErrorDialog.defaultProps = {
-  status: 500,
-  error: null,
-  error_message: "unknown",
-};
 
 export default function ErrorDialog({
-  status,
-  error,
-  error_message,
+  status = 500,
+  error = null,
+  error_message = "unknown",
 }: {
-  status: number;
-  error: string | null;
-  error_message: string;
+  status?: number;
+  error?: string | null;
+  error_message?: string;
 }) {
   const router = useRouter();
   const ReportError = () => {
