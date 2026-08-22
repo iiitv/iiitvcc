@@ -270,18 +270,18 @@ function Footer() {
                   Phone
                 </p>
                 <Link
-                  href="tel:+919531852385"
+                  href="tel:+919928082608"
                   className="text-base text-muted-foreground hover:text-primary transition-colors block"
                 >
-                  +919531852385
+                  +919928082608 (Secretary)
                 </Link>
 
                 <div className="space-y-1">
                   <Link
-                    href="tel:+919305066259"
+                    href="tel:+919558431735"
                     className="text-base text-muted-foreground hover:text-primary transition-colors block"
                   >
-                    +919305066259
+                    +919558431735 (Joint Secretary)
                   </Link>
                 </div>
               </li>
