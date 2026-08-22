@@ -60,7 +60,15 @@ const TeamSection = () => {
           item.position.some((pos: string) => pos === "Member")) ||
         (activeTeam === "Developers" && item.is_dev),
     )
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => {
+      const aHas = a.display_order !== null && a.display_order !== undefined;
+      const bHas = b.display_order !== null && b.display_order !== undefined;
+
+      if (aHas && bHas) return a.display_order - b.display_order;
+      if (aHas && !bHas) return -1;
+      if (!aHas && bHas) return 1;
+      return a.name.localeCompare(b.name);
+    });
 
   return (
     <div className="w-full flex flex-col items-center py-12 lg:py-20">
