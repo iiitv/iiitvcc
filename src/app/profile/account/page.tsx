@@ -10,6 +10,7 @@ import { UserForm } from "./components/userform";
 import { Form } from "./components/component";
 import { LoggingOut } from "@/components/ui/loggingout";
 import ErrorDialog from "@/components/error_dialog";
+import CodingProfiles from "./components/CodingProfiles";
 
 import { cn } from "@/lib/utils";
 
@@ -123,6 +124,7 @@ export default function Page() {
             disabled={error || loading ? true : false}
             logout={logout}
           />
+          {user && <CodingProfiles userId={user.id} />}
         </>
       )}
       {error && <ErrorDialog error_message={error} />}

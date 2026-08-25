@@ -22,6 +22,7 @@ function Navbar() {
   const eventsLink = "/events";
   const blogsLink = "/blogs";
   const membersLink = "/members";
+  const leaderboardLink = "/leaderboard";
   const resourcesLink = "/resources";
   const contactUsLink = "/contact_us";
 
@@ -108,6 +109,9 @@ function Navbar() {
             <Link href={membersLink} className="nav-link" prefetch={false}>
               Members
             </Link>
+            <Link href={leaderboardLink} className="nav-link" prefetch={false}>
+              Leaderboard
+            </Link>
             <Link href={resourcesLink} className="nav-link" prefetch={false}>
               Resources
             </Link>
@@ -167,6 +171,13 @@ function Navbar() {
                   prefetch={false}
                 >
                   Blogs
+                </Link>
+                <Link
+                  href={leaderboardLink}
+                  className="mobile-menu-item"
+                  prefetch={false}
+                >
+                  Leaderboard
                 </Link>
                 <Link
                   href={resourcesLink}
