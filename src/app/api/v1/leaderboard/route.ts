@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
     rank: index + 1,
     user_id: entry.user_id,
     site_username:
-      (entry.users as { username: string } | null)?.username ?? "Unknown",
+      (entry.users as { username: string }[] | null)?.[0]?.username ?? "Unknown",
     platform_username: (entry as Record<string, unknown>)[usernameField] as string,
     rating: (entry as Record<string, unknown>)[ratingField] as number | null,
     updated_at: entry.updated_at,

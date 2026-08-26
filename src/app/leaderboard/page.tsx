@@ -17,18 +17,22 @@ async function getLeaderboard(
   const { data, error } = await supabase
     .from("coding_profiles")
     .select(
-      `user_id, ${usernameField}, ${ratingField}, updated_at, users(username)`,
+      `user_id, ${usernameField}, ${ratingField}, updated_at, users!coding_profiles_user_id_fkey(username)`,
     )
     .eq(verifiedField, true)
     .order(ratingField, { ascending: false, nullsFirst: false });
 
-  if (error || !data) return [];
+  if (error) {
+    console.error("Leaderboard query failed:", error);
+    return [];
+  }
+  if (!data) return [];
 
   return data.map((entry, index) => ({
     rank: index + 1,
     user_id: entry.user_id,
     site_username:
-      (entry.users as { username: string } | null)?.username ?? "Unknown",
+      (entry.users as unknown as { username: string } | null)?.username ?? "Unknown",
     platform_username: (entry as Record<string, unknown>)[
       usernameField
     ] as string,
