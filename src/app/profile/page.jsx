@@ -25,13 +25,15 @@ export default async function ProfilePage() {
   const isAdmin = await checkIsAdmin();
   const supabase = await createClient();
   const { data: supaUser } = await supabase.auth.getUser();
-  // console.log(supaUser.user.user_metadata.avatar_url);
+
+  const { data: userRow } = await supabase
+    .from("users")
+    .select("username")
+    .eq("id", supaUser.user.id)
+    .single();
 
   const user = {
-    name:
-      supaUser.user.user_metadata.full_name ||
-      supaUser.user.user_metadata.name ||
-      "John Doe",
+    name: userRow?.username || "John Doe",
     email: supaUser.user.email,
     // avatar: supaUser.user.user_metadata.avatar_url || "/profile-pic.jpg",
     avatar: "/profile-pic.jpg",
