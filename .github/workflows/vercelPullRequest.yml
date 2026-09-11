@@ -3,6 +3,12 @@ on:
   pull_request_target:
     branches:
       - new
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -16,12 +22,16 @@ jobs:
           secret: ${{ github.TOKEN }}
           approvers: thedevyashsaini,0xanshu,MrQuantum1915 # GitHub username of the approver
           minimum-approvals: 1
-          issue-title: "Deploying PR to dev from staging"
+          issue-title: "Deploying PR #${{ github.event.pull_request.number }} from ${{ github.head_ref }} to ${{ github.base_ref }}"
           issue-body: "Please approve or deny the deployment of this PR."
           exclude-workflow-initiator-as-approver: true
           additional-approved-words: ""
           additional-denied-words: ""
+      
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install pnpm
         run: npm install --global pnpm
       - name: Install Vercel CLI
@@ -35,6 +45,16 @@ jobs:
         run: |
           DEPLOY_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
           echo "preview-url=$DEPLOY_URL" >> $GITHUB_OUTPUT
-      - name: preview-url
-        run: |
-          echo ${{ steps.vercel-deploy.outputs.preview-url }}
+     
+      - name: Comment Preview URL on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `**Vercel Preview Deployment**: ${process.env.PREVIEW_URL}`
+            })
+        env:
+          PREVIEW_URL: ${{ steps.vercel-deploy.outputs.preview-url }}
