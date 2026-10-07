@@ -113,7 +113,7 @@ export default function Page() {
   return loggingoff ? (
     <LoggingOut />
   ) : (
-    <>
+    <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-8 sm:px-6 lg:flex-row lg:items-start lg:gap-12 lg:px-8">
       {usernameInput ? (
         <UserForm user_id={user?.id || ""} email={useremail} />
       ) : (
@@ -128,6 +128,6 @@ export default function Page() {
         </>
       )}
       {error && <ErrorDialog error_message={error} />}
-    </>
+    </main>
   );
 }

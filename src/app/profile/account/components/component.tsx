@@ -22,7 +22,7 @@ interface Props extends React.HTMLAttributes<HTMLFormElement> {
 
 export function Form({ username, email, disabled, logout }: Props) {
   return (
-    <div className="flex min-h-screen items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+    <div className="flex w-full flex-1 items-start justify-center">
       <div className="w-full max-w-md space-y-8">
         <div className="space-y-2 text-center">
           <h1 className="text-4xl font-bold">
@@ -49,7 +49,7 @@ export function Form({ username, email, disabled, logout }: Props) {
           <Card className="w-full max-w-md mx-auto border-none bg-secondary">
             <CardHeader>
               <CardDescription>
-                Please fill out the details below to create questions.
+                Some buttons for you to play around with :)
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">

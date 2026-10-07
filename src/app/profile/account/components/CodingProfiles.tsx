@@ -460,7 +460,7 @@ export default function CodingProfiles({ userId }: { userId: string }) {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto mt-6">
+    <section className="w-full max-w-md flex-1 lg:mt-0">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg font-semibold text-foreground">
           🏆 Coding Profiles
@@ -497,7 +497,7 @@ export default function CodingProfiles({ userId }: { userId: string }) {
           />
         </div>
       )}
-    </div>
+    </section>
   );
 }
 
