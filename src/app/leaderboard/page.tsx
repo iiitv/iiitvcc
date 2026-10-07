@@ -1,6 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import LeaderboardClient from "./components/LeaderboardClient";
-import type { LeaderboardEntry } from "@/app/api/v1/leaderboard/route";
+import type { LeaderboardEntry } from "@/types/leaderboard";
 
 async function getLeaderboard(
   platform: "leetcode" | "codeforces",

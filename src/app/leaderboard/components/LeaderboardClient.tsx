@@ -2,7 +2,7 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import type { LeaderboardEntry } from "@/app/api/v1/leaderboard/route";
+import type { LeaderboardEntry } from "@/types/leaderboard";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface Props {
