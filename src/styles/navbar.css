@@ -4,7 +4,7 @@
 }
 
 .navbar {
-  height: 80px;
+  height: 82px;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -22,10 +22,11 @@
 
 .navbar-content {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1500px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   padding: 0 2rem;
 }
 
@@ -36,7 +37,8 @@
   gap: 12px;
   cursor: pointer;
   transition: opacity 0.2s;
-  margin-left: 5%;
+  flex: 0 0 auto;
+  min-width: 200px;
 }
 
 .logo-container:hover {
@@ -70,21 +72,23 @@
 
 /* Menu Container */
 .menu-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  flex: 1 1 auto;
+  gap: clamp(1rem, 1.8vw, 2rem);
   font-size: 16px;
   color: #e0e0e0;
+  flex-wrap: nowrap;
 }
 
 /* Menu Right Container */
 .menu-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1rem;
+  flex: 0 0 120px;
 }
 
 /* Nav Link */
