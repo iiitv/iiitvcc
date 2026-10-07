@@ -94,6 +94,15 @@ pnpm pretty
 ```
 6. **Push and PR**: Push to your fork and submit a Pull Request to the `new` branch of the main repository. Preview URLs will automatically be generated for your pull request on approval.
 
+## Server Actions vs API Routes
+
+For new mutating features (things that create/update/delete data on behalf of a logged-in user), prefer **Next.js Server Actions** over Axios + a `/api/v1/...` route handler.
+
+- Axios API routes were the original pattern (predates the team's familiarity with Server Actions) — existing ones don't need to be migrated on their own, but new work should use Server Actions.
+- Convention: colocate actions in a `_actions/` folder next to the component/page that uses them, one action (or a small related group) per file, e.g. `src/app/blog/[id]/_actions/like.ts` or `src/app/profile/account/_actions/verify-profile.ts`.
+- Start the file with `"use server";`, export typed async functions, and call them **directly** from client components — no `axios.post`/`fetch` to your own API needed.
+- GET-only/read endpoints (e.g. `src/app/api/v1/leaderboard/route.ts`) can stay as route handlers; this convention is specifically for mutations.
+
 ## Licence
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

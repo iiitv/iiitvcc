@@ -9,6 +9,53 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      coding_profiles: {
+        Row: {
+          user_id: string;
+          leetcode_username: string | null;
+          leetcode_verified: boolean | null;
+          leetcode_verify_code: string | null;
+          leetcode_rating: number | null;
+          codeforces_username: string | null;
+          codeforces_verified: boolean | null;
+          codeforces_verify_code: string | null;
+          codeforces_rating: number | null;
+          updated_at: string | null;
+        };
+        Insert: {
+          user_id: string;
+          leetcode_username?: string | null;
+          leetcode_verified?: boolean | null;
+          leetcode_verify_code?: string | null;
+          leetcode_rating?: number | null;
+          codeforces_username?: string | null;
+          codeforces_verified?: boolean | null;
+          codeforces_verify_code?: string | null;
+          codeforces_rating?: number | null;
+          updated_at?: string | null;
+        };
+        Update: {
+          user_id?: string;
+          leetcode_username?: string | null;
+          leetcode_verified?: boolean | null;
+          leetcode_verify_code?: string | null;
+          leetcode_rating?: number | null;
+          codeforces_username?: string | null;
+          codeforces_verified?: boolean | null;
+          codeforces_verify_code?: string | null;
+          codeforces_rating?: number | null;
+          updated_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "coding_profiles_user_id_fkey";
+            columns: ["user_id"];
+            isOneToOne: true;
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
       blogs: {
         Row: {
           created_at: string;
