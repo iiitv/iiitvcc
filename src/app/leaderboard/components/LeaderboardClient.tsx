@@ -299,7 +299,7 @@ export default function LeaderboardClient({
               <span className="text-primary">Leaderboard</span>
             </h1>
             <p className="text-muted-foreground text-base max-w-md mx-auto">
-              Competitive programming rankings of IIITV Coding Club members.
+              Competitive programming rankings of IIITV students.
               Ratings sync from live platform data.
             </p>
           </motion.div>
